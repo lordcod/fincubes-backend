@@ -1,6 +1,5 @@
 from collections import defaultdict
 import json
-import logging
 import re
 import uuid
 
@@ -12,21 +11,17 @@ with open("output_results.json", 'rb') as file:
 data = defaultdict(list)
 
 distance_header_re = re.compile(
-    r"(.+) - (\d+) (метров|м)?(.+)\(.+\)", re.IGNORECASE)
+    r"(.+) - (\d+) метров (.+)", re.IGNORECASE)
 
 styles = {
-    'ныряние в ластах в длину': 'APNEA',
-    'плавание в ластах': 'SURFACE',
-    'плавание в классических ластах': 'BIFINS',
-    'подводное плавание': 'IMMERSION',
+    'Ныряние в ластах в длину': 'APNEA',
+    'Плавание в ластах': 'SURFACE',
+    'Плавание в классических ластах': 'BIFINS',
+    'Подводное плавание': 'IMMERSION',
 }
 sexs = {
-    'женщины': 'F',
-    'мужчины': 'M',
-    'девочки': 'F',
-    'девушки': 'F',
-    'мальчики': 'M',
-    'юноши': 'M',
+    'Женщины': 'F',
+    'Мужчины': 'M',
 }
 
 
@@ -34,10 +29,9 @@ sportsmans = {}
 
 for result in output['individual_results']:
     res = distance_header_re.fullmatch(result['distance'])
-    style, distance, _, sex, *_ = res.groups()
+    style, distance, sex = res.groups()
 
-    stroke, distance, sex = styles[style.lower().strip()], int(
-        distance), sexs[sex.lower().strip()]
+    stroke, distance, sex = styles[style], int(distance), sexs[sex]
 
     key = (
         result['last_name'],
@@ -49,15 +43,24 @@ for result in output['individual_results']:
     )
     data = sportsmans.setdefault(key, [])
 
-    if not result['dsq'] and not result['result']:
-        print('Found not dsq and not rsl: %s', result)
+    points = result['points']
+    if points is not None and points.isdigit():
+        points = int(points)
+
+    place = result['place']
+    if place.isdigit():
+        place = int(place)
 
     data.append({
         'stroke': stroke,
         'distance': distance,
         'result': result['result'],
+        'final': result['final'],
+        'place': place,
         'final_rank': result['final_rank'],
+        'points': points,
         'record': result['record'],
+        'dsq_final': result['dsq_final'],
         'dsq': result['dsq'],
     })
 

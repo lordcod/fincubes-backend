@@ -1,5 +1,5 @@
 from pathlib import Path
-from models_no_final_no_points.swim import SwimResultsParser
+from models.swim import SwimResultsParser
 
 # Константы для ошибок
 
