@@ -28,6 +28,7 @@ class Stats:
             'with_register': Stats.with_register,
             'results': Stats.results,
             'clubs_wa': dict(Stats.clubs_wa),
+            'dsq_items': Stats.dsq_items
         }
 
 

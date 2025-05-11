@@ -10,9 +10,9 @@ with open("output_results.json", 'rb') as file:
 
 
 data = defaultdict(list)
-"Плавание в ластах - 100 метров Девушки 2011 -2012 г.р."
+
 distance_header_re = re.compile(
-    r"(.+) - (\d+) (метров|м)\s([А-Яа-я]+)\s+.+", re.IGNORECASE)
+    r"(.+) - (\d+) (метров|м)?(.+)\(.+\)", re.IGNORECASE)
 
 styles = {
     'ныряние в ластах в длину': 'APNEA',
@@ -25,25 +25,16 @@ sexs = {
     'мужчины': 'M',
     'девочки': 'F',
     'девушки': 'F',
-    'юниорки': 'F',
-    'юниоры': 'M',
     'мальчики': 'M',
     'юноши': 'M',
 }
 
 
 sportsmans = {}
-storage_dist = {}
 
 for result in output['individual_results']:
     res = distance_header_re.fullmatch(result['distance'])
-    if not res:
-        if res not in storage_dist:
-            print(result['distance'])
-            storage_dist[res] = input('> ').split(';')
-        style, distance, sex = storage_dist[res]
-    else:
-        style, distance, _, sex, *_ = res.groups()
+    style, distance, _, sex, *_ = res.groups()
 
     stroke, distance, sex = styles[style.lower().strip()], int(
         distance), sexs[sex.lower().strip()]
