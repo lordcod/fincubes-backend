@@ -15,6 +15,8 @@ class SwimResult:
     final_rank: str = ""
     points: str = ""
     record: str = ""
+    dsq: bool = False
+    dsq_final: bool = False
 
 
 @dataclass

@@ -5,8 +5,70 @@ from .swim_types import *
 
 ERROR_VALUES = [
     "DSQ", "Фальстарт", "не допущен", "не явился", "Сошёл",
-    "Нар. пр. сор", "Переныр 15м", "Мед отвод", "Переныр"
+    "Нар. пр. сор", "Переныр 15м", "Переныр 15м.", "Мед отвод", "Переныр",
+    "Фальстарт лично", "Сошёл лично", "Нар. пр. сор лично"
 ]
+
+INPUT_TOKENS = {}
+OUTPUT_TOKENS = {}
+
+# Регулярные выражения
+
+regex_normal = re.compile(r"""
+    ^(?P<place>\d+)\s*
+    (?P<rank>(?:[123]\sюн|[123]|КМС|МС|МСМК|ЗМС)?)\s+
+    (?P<last_name>\S+)\s+
+    (?P<first_name>\S+)\s+
+    (?P<birth_year>\d{4})\s+
+    (?P<team>.+?)\s+
+    (?P<result>\d{2}:\d{2},\d{2})\s*
+    (?P<final_time>\d{2}:\d{2},\d{2})?\s*
+    (?P<final_rank>(?:[123]\sюн|[123]|КМС|МС|МСМК|ЗМС)?)?\s*
+    (?P<points>(?:лично|\d+))?$
+""", re.VERBOSE | re.IGNORECASE)
+
+
+regex_dq = re.compile(r"""
+    ^(?P<rank>(?:[123]\sюн|[123]|КМС|МС|МСМК|ЗМС)?)\s+
+    (?P<last_name>\S+)\s+
+    (?P<first_name>\S+)\s+
+    (?P<birth_year>\d{4})\s+
+    (?P<team>.+?)\s+
+    (?P<result>
+        Фальстарт|
+        не\sдопущен|
+        не\sявился|
+        Сошёл|
+        Переныр\s?15м\.?|
+        Нар\.\spr\.\sсор|
+        Мед\sотвод|
+        Переныр
+    )\s*
+    (?P<points>(?:лично|\d+))?$
+""", re.VERBOSE | re.IGNORECASE)
+
+
+regex_dq_final_result = re.compile(r"""
+    ^(?P<place>\d+)\s*
+    (?P<rank>(?:[123]\sюн|[123]|КМС|МС|МСМК|ЗМС)?)\s+
+    (?P<last_name>\S+)\s+
+    (?P<first_name>\S+)\s+
+    (?P<birth_year>\d{4})\s+
+    (?P<team>.+?)\s+
+    (?P<result>\d{2}:\d{2},\d{2})\s+
+    (?P<disqualification_status>
+        Фальстарт|
+        не\sдопущен|
+        не\sявился|
+        Сошёл|
+        Переныр\s?15м\.?|
+        Нар\.\spr\.\sсор|
+        Мед\sотвод|
+        Переныр
+    )\s*
+    (?P<final_rank>(?:МС|МСМК|КМС|[123]))?\s*
+    (?P<points>(?:лично|\d+))?$
+""", re.VERBOSE | re.IGNORECASE)
 
 
 class IndividualParser:
@@ -18,154 +80,116 @@ class IndividualParser:
     def parse_individual_result(self, line):
         """Парсит строку с результатами индивидуального участника."""
         try:
-            tokens = line.split()
+            match = regex_normal.match(line)
+            if match:
+                self._process_normal_result(match, line)
+                return
 
-            # Проверяем на наличие "Фальстарт" или других ошибок
-            points, result, final = self.check_for_errors(tokens)
+            match = regex_dq.match(line)
+            if match:
+                self._process_disqualified_no_result(match, line)
+                return
 
-            # Если нет ошибок, продолжаем обычное извлечение данных
-            if not result:
-                place, rank, last_name, first_name, birth_year, result, final, final_rank, team, points = self.extract_tokens(
-                    tokens)
-            else:
-                # В случае ошибки (например, фальстарт), извлекаем только ошибки
-                place, rank, last_name, first_name, birth_year, result, final, final_rank, team, points = self.extract_error_tokens(
-                    tokens)
+            match = regex_dq_final_result.match(line)
+            if match:
+                self._process_disqualified_with_result(match, line)
+                return
 
-            swr = SwimResult(
-                distance=self.state.current_distance,
-                place=place,
-                rank=rank,
-                last_name=last_name,
-                first_name=first_name,
-                birth_year=birth_year,
-                team=team,
-                result=result,
-                final=final,
-                final_rank=final_rank,
-                points=points
-            )
-            self.state.current_athlete = swr
-            self.state.individual_rows.append(swr)
+            logging.error(
+                f"[INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: {line}")
         except Exception as e:
             logging.error(f"[INDIVIDUAL_PARSE_ERROR] {line} - {e}")
 
-    def check_for_errors(self, tokens):
-        """Проверяет строку на наличие ошибок, таких как 'Фальстарт'."""
-        points = ""
-        result = ""
-        final = ""
+    def _process_normal_result(self, match, line):
+        """Обработка обычной строки с результатом."""
+        place = match.group("place")
+        rank = match.group("rank")
+        last_name = match.group("last_name")
+        first_name = match.group("first_name")
+        birth_year = match.group("birth_year")
+        team = match.group("team").strip()
+        result = match.group("result")
+        final_time = match.group("final_time") or ''
+        final_rank = match.group("final_rank")
+        points = match.group("points")
 
-        # Если строка содержит ошибку (например, Фальстарт)
-        if any(error in tokens for error in self.ERROR_VALUES):
-            result = "Фальстарт"  # Или другая ошибка
-            final = result
-            points = ""  # Очков не будет
-        return points, result, final
+        if result in self.ERROR_VALUES:
+            final_rank = result
+            result = ""
+            points = ""
 
-    def extract_tokens(self, tokens):
-        """Экстрагирует необходимые данные из токенов (нормальный случай)."""
-        rank = self.extract_razryad(tokens[-2])
-        points = tokens[-1] if tokens[-1].isdigit() or tokens[-1].lower() == "лично" else ""
+        swr = SwimResult(
+            distance=self.state.current_distance,
+            place=place,
+            rank=rank,
+            last_name=last_name,
+            first_name=first_name,
+            birth_year=birth_year,
+            team=team,
+            result=result,
+            final=final_time,
+            final_rank=final_rank,
+            points=points
+        )
 
-        result, final = self.extract_time_and_result(tokens)
-        result_index = tokens.index(result)
+        self.state.current_athlete = swr
+        self.state.individual_rows.append(swr)
 
-        # Находим индекс года рождения
-        birth_year_index = next(i for i in range(
-            result_index - 1, -1, -1) if re.match(r"\d{4}", tokens[i]))
-        birth_year = tokens[birth_year_index]
-        first_name = tokens[birth_year_index - 1]
-        last_name = tokens[birth_year_index - 2]
+    def _process_disqualified_no_result(self, match, line):
+        """Обработка дисквалификации без результата."""
+        rank = match.group("rank")
+        last_name = match.group("last_name")
+        first_name = match.group("first_name")
+        birth_year = match.group("birth_year")
+        team = match.group("team").strip()
+        disqualification_status = match.group("result")
+        points = match.group("points")
 
-        # Место — если первое значение — это число
-        place = tokens[0] if tokens[0].isdigit() else ''
+        swr = SwimResult(
+            distance=self.state.current_distance,
+            place="",
+            rank=rank,
+            last_name=last_name,
+            first_name=first_name,
+            birth_year=birth_year,
+            team=team,
+            result=disqualification_status,
+            final="",
+            final_rank="",
+            points=points,
+            dsq=True
+        )
 
-        # Команду берём между годом рождения и результатом
-        if final:
-            result_index -= 1
-        team_tokens = tokens[birth_year_index + 1:result_index]
-        team = " ".join(team_tokens).strip()
+        self.state.current_athlete = swr
+        self.state.individual_rows.append(swr)
 
-        return place, rank, last_name, first_name, birth_year, result, final, rank, team, points
+    def _process_disqualified_with_result(self, match, line):
+        """Обработка дисквалификации с результатом в финале."""
+        place = match.group("place")
+        rank = match.group("rank")
+        last_name = match.group("last_name")
+        first_name = match.group("first_name")
+        birth_year = match.group("birth_year")
+        team = match.group("team").strip()
+        result = match.group("result")
+        disqualification_status = match.group("disqualification_status")
+        final_rank = match.group("final_rank")
+        points = match.group("points")
 
-    def extract_error_tokens(self, tokens):
-        """Экстрагирует данные в случае ошибок (например, Фальстарт)."""
-        place = tokens.pop(0) if tokens[0].isdigit(
-        ) and tokens[0] not in ('1', '2', '3') else ''
-        rank = tokens[0]
-        last_name = tokens[1]
-        first_name = tokens[2]
-        birth_year = tokens[3]
-        points = tokens[-1]
+        swr = SwimResult(
+            distance=self.state.current_distance,
+            place=place,
+            rank=rank,
+            last_name=last_name,
+            first_name=first_name,
+            birth_year=birth_year,
+            team=team,
+            result=result,
+            final=disqualification_status,
+            final_rank=final_rank,
+            points=points,
+            dsq_final=True
+        )
 
-        # Ищем индекс ошибки
-        error_index = next((i for i, t in enumerate(
-            tokens) if t in self.ERROR_VALUES), None)
-
-        # Сохраняем команду (до ошибки)
-        team_tokens = tokens[4:error_index -
-                             1 if place else error_index] if error_index else tokens[4:]
-        team = " ".join(team_tokens).strip()
-
-        # Определяем, была ли попытка (по наличию времени до ошибки)
-        result = ""
-        final = tokens[error_index] if error_index else ""
-
-        # Попытка засчитана — значит до ошибки было время
-        for i in range(error_index - 1, 3, -1):
-            if re.match(r"\d{1,2}:\d{2},\d{2}", tokens[i]):
-                result = tokens[i]
-                break
-
-        # Ищем разряд в конце строки
-        final_rank = ""
-        for token in reversed(tokens):
-            if self.extract_razryad(token):
-                final_rank = self.extract_razryad(token)
-                break
-
-        if not result and final:
-            result = final
-            final = ""
-        if not (result and final):
-            final_rank = ""
-        return place, rank, last_name, first_name, birth_year, result, final, final_rank, team, points
-
-    def extract_razryad(self, token):
-        """Извлекает разряд из строки."""
-        valid_ranks = ["МСМК", "КМС", "МС", "Разряд"]  # Разряды
-        if token in valid_ranks:
-            return token
-        return ""  # Если не найден разряд, возвращаем пустую строку
-
-    def extract_time_and_result(self, tokens):
-        """Извлекает время и результат из токенов."""
-        result = ""
-        final = ""
-        time_pattern = r"\d{1,2}:\d{2},\d{2}"
-
-        # Ищем время и ошибки
-        for i in range(len(tokens) - 1, 0, -1):
-            if re.match(time_pattern, tokens[i]):
-                if not result:
-                    result = tokens[i]
-                elif not final:
-                    final = tokens[i]
-                    break
-            elif tokens[i] in self.ERROR_VALUES:
-                if not result:
-                    result = tokens[i]
-                elif not final:
-                    final = tokens[i]
-                    break
-        return result, final
-
-    def extract_name_and_birth_year(self, tokens, result_index):
-        """Извлекает фамилию, имя и год рождения."""
-        birth_year_index = next(i for i in range(
-            result_index - 1, -1, -1) if re.match(r"\d{4}", tokens[i]))
-        birth_year = tokens[birth_year_index]
-        first_name = tokens[birth_year_index - 1]
-        last_name = tokens[birth_year_index - 2]
-        return last_name, first_name, birth_year
+        self.state.current_athlete = swr
+        self.state.individual_rows.append(swr)
