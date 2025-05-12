@@ -45,9 +45,8 @@ class RegisterParser:
         self.itogi_file = itogi
         self.results = defaultdict(list)
         self.athletes = defaultdict(list)
-
         self.distance_re = re.compile(
-            r"(.+) - (\d+) (метров|м)\s([А-Яа-я]+)\s+.+", re.IGNORECASE)
+            r"(.+) - (\d+) (метров|м) ([а-я]+)(\s\(.+\))?", re.IGNORECASE)
         self.time_regex = re.compile(r'(\d{2})[:\.,](\d{2})[:\.,](\d{1,2})')
 
     def parse_time(self, time_str):
@@ -98,7 +97,7 @@ class RegisterParser:
         )
         self.athletes[key] = {
             "first_name": result['first_name'].title(),
-            "last_name": result['last_name'],
+            "last_name": result['last_name'].title(),
             'birth_year': str(result['birth_year']),
             'team': result['team'],
             'rank': result['rank'],
@@ -125,7 +124,7 @@ class RegisterParser:
             dsq=result.get('dsq', False),
             dsq_final=result.get('dsq_final', False),
             place=self.parse_integer(result.get('place')),
-            points=self.parse_point(result.get('point')),
+            points=self.parse_point(result.get('points')),
         ))
 
     def save_itogi(self):

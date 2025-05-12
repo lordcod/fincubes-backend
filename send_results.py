@@ -6,6 +6,11 @@ import re
 from typing import Optional
 import aiohttp
 
+token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5OTk5MjY5MDEwZGRkZEBnbWFpbC5jb20iLCJleHAiOjE3NDc2MzU3NDN9.rUg1d_O7ApTlUs4m5cj1nSkmiujLnVMxqosWM-eVyx4"
+headers = {
+    'Authorization': 'Bearer '+token
+}
+
 
 class AthleteProcessor:
     def __init__(
@@ -85,7 +90,8 @@ class AthleteProcessor:
             'license': rank,
             'gender': gender
         }
-        async with session.post(self.athlete_api_url, json=athlete_data) as response:
+
+        async with session.post(self.athlete_api_url, json=athlete_data, headers=headers) as response:
             data = await response.json()
             if not response.ok:
                 print(data)
@@ -120,7 +126,7 @@ class AthleteProcessor:
             'points': points
         }
 
-        async with session.post(f'{self.results_api_url}/{athlete_id}', json=result_data) as response:
+        async with session.post(f'{self.results_api_url}/{athlete_id}', json=result_data, headers=headers) as response:
             if not response.ok:
                 data = await response.json()
                 print(data)

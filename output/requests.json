@@ -1,0 +1,1099 @@
+{
+  "264": {
+    "club": ["Кемеровская область - Кузбасс", "Кемеровская область"],
+    "athlete": {
+      "last_name": "Фадеева",
+      "first_name": "Злата",
+      "birth_year": "2010",
+      "club": "Кемеровская область - Кузбасс",
+      "city": null,
+      "license": "КМС",
+      "gender": "F",
+      "id": 264,
+      "created_at": "2025-05-11T00:33:12.012949Z",
+      "updated_at": "2025-05-11T00:33:12.012949Z"
+    }
+  },
+  "21": {
+    "club": ["Кемеровская область - Кузбасс", "Кемеровская область"],
+    "athlete": {
+      "last_name": "Тюнина",
+      "first_name": "Дарья",
+      "birth_year": "2008",
+      "club": "Кемеровская область - Кузбасс",
+      "city": null,
+      "license": "МС",
+      "gender": "F",
+      "id": 21,
+      "created_at": "2025-05-11T00:31:59.894351Z",
+      "updated_at": "2025-05-11T00:31:59.894351Z"
+    }
+  },
+  "917": {
+    "license": ["2", "КМС"],
+    "athlete": {
+      "last_name": "Малышева",
+      "first_name": "Ульяна",
+      "birth_year": "2009",
+      "club": "Самарская область",
+      "city": null,
+      "license": "2",
+      "gender": "F",
+      "id": 917,
+      "created_at": "2025-05-11T11:03:20.881864Z",
+      "updated_at": "2025-05-11T11:03:20.881864Z"
+    }
+  },
+  "102": {
+    "license": ["КМС", "1"],
+    "athlete": {
+      "last_name": "Чукина",
+      "first_name": "Дарья",
+      "birth_year": "2010",
+      "club": "Новосибирская область",
+      "city": null,
+      "license": "КМС",
+      "gender": "F",
+      "id": 102,
+      "created_at": "2025-05-11T00:33:11.319600Z",
+      "updated_at": "2025-05-11T00:33:11.319600Z"
+    }
+  },
+  "847": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Матаева",
+      "first_name": "Алиса",
+      "birth_year": "2011",
+      "club": "Новосибирская область",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 847,
+      "created_at": "2025-05-11T11:03:20.489017Z",
+      "updated_at": "2025-05-11T11:03:20.489017Z"
+    }
+  },
+  "737": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Бараулина",
+      "first_name": "Анна",
+      "birth_year": "2010",
+      "club": "Томская область",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 737,
+      "created_at": "2025-05-11T11:03:19.912760Z",
+      "updated_at": "2025-05-11T11:03:19.912760Z"
+    }
+  },
+  "181": {
+    "license": ["КМС", "1"],
+    "athlete": {
+      "last_name": "Попова",
+      "first_name": "Вероника",
+      "birth_year": "2008",
+      "club": "Новосибирская область",
+      "city": null,
+      "license": "КМС",
+      "gender": "F",
+      "id": 181,
+      "created_at": "2025-05-11T00:33:11.651546Z",
+      "updated_at": "2025-05-11T00:33:11.651546Z"
+    }
+  },
+  "108": {
+    "license": ["КМС", "1"],
+    "athlete": {
+      "last_name": "Мусатова",
+      "first_name": "Дарья",
+      "birth_year": "2008",
+      "club": "Красноярский край",
+      "city": null,
+      "license": "КМС",
+      "gender": "F",
+      "id": 108,
+      "created_at": "2025-05-11T00:33:11.269598Z",
+      "updated_at": "2025-05-11T00:33:11.269598Z"
+    }
+  },
+  "926": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Плотникова",
+      "first_name": "Виолетта",
+      "birth_year": "2009",
+      "club": "Новосибирская область",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 926,
+      "created_at": "2025-05-11T11:03:20.946507Z",
+      "updated_at": "2025-05-11T11:03:20.946507Z"
+    }
+  },
+  "1141": {
+    "club": ["Краснодарский Край", "Краснодарский край"],
+    "athlete": {
+      "last_name": "Лесина",
+      "first_name": "Елизавета",
+      "birth_year": "2010",
+      "club": "Краснодарский Край",
+      "city": null,
+      "license": "КМС",
+      "gender": "F",
+      "id": 1141,
+      "created_at": "2025-05-11T11:51:41.965232Z",
+      "updated_at": "2025-05-11T11:51:41.965232Z"
+    }
+  },
+  "921": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Гордиец",
+      "first_name": "Анна",
+      "birth_year": "2008",
+      "club": "Красноярский край",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 921,
+      "created_at": "2025-05-11T11:03:20.915516Z",
+      "updated_at": "2025-05-11T11:03:20.915516Z"
+    }
+  },
+  "947": {
+    "license": ["2", "1"],
+    "athlete": {
+      "last_name": "Кускова",
+      "first_name": "Валерия",
+      "birth_year": "2010",
+      "club": "Свердловская область",
+      "city": null,
+      "license": "2",
+      "gender": "F",
+      "id": 947,
+      "created_at": "2025-05-11T11:03:21.026625Z",
+      "updated_at": "2025-05-11T11:03:21.026625Z"
+    }
+  },
+  "1154": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Петрова",
+      "first_name": "Мария",
+      "birth_year": "2010",
+      "club": "Самарская область",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 1154,
+      "created_at": "2025-05-11T11:51:42.211639Z",
+      "updated_at": "2025-05-11T11:51:42.211639Z"
+    }
+  },
+  "1132": {
+    "club": ["Краснодарский Край", "Краснодарский край"],
+    "athlete": {
+      "last_name": "Бугунова",
+      "first_name": "Ольга",
+      "birth_year": "2009",
+      "club": "Краснодарский Край",
+      "city": null,
+      "license": "КМС",
+      "gender": "F",
+      "id": 1132,
+      "created_at": "2025-05-11T11:51:41.843695Z",
+      "updated_at": "2025-05-11T11:51:41.843695Z"
+    }
+  },
+  "180": {
+    "license": ["КМС", "1"],
+    "athlete": {
+      "last_name": "Манакова",
+      "first_name": "Ольга",
+      "birth_year": "2009",
+      "club": "Новосибирская область",
+      "city": null,
+      "license": "КМС",
+      "gender": "F",
+      "id": 180,
+      "created_at": "2025-05-11T00:33:11.646554Z",
+      "updated_at": "2025-05-11T00:33:11.646554Z"
+    }
+  },
+  "1131": {
+    "club": ["Краснодарский Край", "Краснодарский край"],
+    "athlete": {
+      "last_name": "Филькина",
+      "first_name": "Полина",
+      "birth_year": "2009",
+      "club": "Краснодарский Край",
+      "city": null,
+      "license": "КМС",
+      "gender": "F",
+      "id": 1131,
+      "created_at": "2025-05-11T11:51:41.829697Z",
+      "updated_at": "2025-05-11T11:51:41.829697Z"
+    }
+  },
+  "75": {
+    "club": ["Кемеровская область - Кузбасс", "Кемеровская область"],
+    "athlete": {
+      "last_name": "Козырина",
+      "first_name": "Дарья",
+      "birth_year": "2010",
+      "club": "Кемеровская область - Кузбасс",
+      "city": null,
+      "license": "МС",
+      "gender": "F",
+      "id": 75,
+      "created_at": "2025-05-11T00:33:11.214223Z",
+      "updated_at": "2025-05-11T00:33:11.214223Z"
+    }
+  },
+  "920": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Полетаева",
+      "first_name": "Ксения",
+      "birth_year": "2008",
+      "club": "Пермский край",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 920,
+      "created_at": "2025-05-11T11:03:20.906521Z",
+      "updated_at": "2025-05-11T11:03:20.906521Z"
+    }
+  },
+  "175": {
+    "license": ["КМС", "1"],
+    "athlete": {
+      "last_name": "Купреева",
+      "first_name": "Дарья",
+      "birth_year": "2008",
+      "club": "Красноярский край",
+      "city": null,
+      "license": "КМС",
+      "gender": "F",
+      "id": 175,
+      "created_at": "2025-05-11T00:33:11.590444Z",
+      "updated_at": "2025-05-11T00:33:11.590444Z"
+    }
+  },
+  "950": {
+    "club": ["г. Москва", "г.Москва"],
+    "athlete": {
+      "last_name": "Борисова",
+      "first_name": "Ольга",
+      "birth_year": "2009",
+      "club": "г. Москва",
+      "city": null,
+      "license": "2",
+      "gender": "F",
+      "id": 950,
+      "created_at": "2025-05-11T11:03:21.036624Z",
+      "updated_at": "2025-05-11T11:03:21.036624Z"
+    }
+  },
+  "212": {
+    "club": ["Кемеровская область - Кузбасс", "Кемеровская область"],
+    "athlete": {
+      "last_name": "Китов",
+      "first_name": "Матвей",
+      "birth_year": "2008",
+      "club": "Кемеровская область - Кузбасс",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "id": 212,
+      "created_at": "2025-05-11T00:33:11.804382Z",
+      "updated_at": "2025-05-11T00:33:11.804382Z"
+    }
+  },
+  "141": {
+    "club": ["Кемеровская область - Кузбасс", "Кемеровская область"],
+    "athlete": {
+      "last_name": "Кривкин",
+      "first_name": "Андрей",
+      "birth_year": "2008",
+      "club": "Кемеровская область - Кузбасс",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "id": 141,
+      "created_at": "2025-05-11T00:33:11.361955Z",
+      "updated_at": "2025-05-11T00:33:11.361955Z"
+    }
+  },
+  "220": {
+    "license": ["КМС", "2"],
+    "athlete": {
+      "last_name": "Каринкин",
+      "first_name": "Игорь",
+      "birth_year": "2008",
+      "club": "Пермский край",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "id": 220,
+      "created_at": "2025-05-11T00:33:11.825531Z",
+      "updated_at": "2025-05-11T00:33:11.825531Z"
+    }
+  },
+  "1163": {
+    "license": ["КМС", "МС"],
+    "athlete": {
+      "last_name": "Дудченко",
+      "first_name": "Григорий",
+      "birth_year": "2009",
+      "club": "Тульская область",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "id": 1163,
+      "created_at": "2025-05-11T11:51:42.575892Z",
+      "updated_at": "2025-05-11T11:51:42.575892Z"
+    }
+  },
+  "242": {
+    "license": ["КМС", "1"],
+    "athlete": {
+      "last_name": "Каликин",
+      "first_name": "Вячеслав",
+      "birth_year": "2008",
+      "club": "Новосибирская область",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "id": 242,
+      "created_at": "2025-05-11T00:33:11.897372Z",
+      "updated_at": "2025-05-11T00:33:11.897372Z"
+    }
+  },
+  "993": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Романов",
+      "first_name": "Тимофей",
+      "birth_year": "2008",
+      "club": "Пермский край",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 993,
+      "created_at": "2025-05-11T11:03:21.236216Z",
+      "updated_at": "2025-05-11T11:03:21.236216Z"
+    }
+  },
+  "147": {
+    "license": ["КМС", "1"],
+    "athlete": {
+      "last_name": "Останин",
+      "first_name": "Михаил",
+      "birth_year": "2008",
+      "club": "Томская область",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "id": 147,
+      "created_at": "2025-05-11T00:33:11.398600Z",
+      "updated_at": "2025-05-11T00:33:11.398600Z"
+    }
+  },
+  "998": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Бейщанов",
+      "first_name": "Владислав",
+      "birth_year": "2008",
+      "club": "Томская область",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 998,
+      "created_at": "2025-05-11T11:03:21.270068Z",
+      "updated_at": "2025-05-11T11:03:21.270068Z"
+    }
+  },
+  "1101": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Ибрагимов",
+      "first_name": "Платон",
+      "birth_year": "2010",
+      "club": "Саратовская область",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 1101,
+      "created_at": "2025-05-11T11:45:51.039393Z",
+      "updated_at": "2025-05-11T11:45:51.039393Z"
+    }
+  },
+  "994": {
+    "club": ["г. Москва", "г.Москва"],
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Архипов",
+      "first_name": "Сергей",
+      "birth_year": "2008",
+      "club": "г. Москва",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 994,
+      "created_at": "2025-05-11T11:03:21.236216Z",
+      "updated_at": "2025-05-11T11:03:21.236216Z"
+    }
+  },
+  "1167": {
+    "club": ["Краснодарский Край", "Краснодарский край"],
+    "athlete": {
+      "last_name": "Корнилов",
+      "first_name": "Максим",
+      "birth_year": "2008",
+      "club": "Краснодарский Край",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "id": 1167,
+      "created_at": "2025-05-11T11:51:42.621407Z",
+      "updated_at": "2025-05-11T11:51:42.621407Z"
+    }
+  },
+  "250": {
+    "license": ["КМС", "1"],
+    "athlete": {
+      "last_name": "Гареев",
+      "first_name": "Григорий",
+      "birth_year": "2009",
+      "club": "Новосибирская область",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "id": 250,
+      "created_at": "2025-05-11T00:33:11.913372Z",
+      "updated_at": "2025-05-11T00:33:11.913372Z"
+    }
+  },
+  "834": {
+    "license": ["3", "1"],
+    "athlete": {
+      "last_name": "Иванов",
+      "first_name": "Егор",
+      "birth_year": "2011",
+      "club": "Новосибирская область",
+      "city": null,
+      "license": "3",
+      "gender": "M",
+      "id": 834,
+      "created_at": "2025-05-11T11:03:20.413676Z",
+      "updated_at": "2025-05-11T11:03:20.413676Z"
+    }
+  },
+  "1019": {
+    "license": ["2", "1"],
+    "athlete": {
+      "last_name": "Букин",
+      "first_name": "Егор",
+      "birth_year": "2008",
+      "club": "Алтайский край",
+      "city": null,
+      "license": "2",
+      "gender": "M",
+      "id": 1019,
+      "created_at": "2025-05-11T11:03:21.417574Z",
+      "updated_at": "2025-05-11T11:03:21.417574Z"
+    }
+  },
+  "958": {
+    "license": ["2", "1"],
+    "athlete": {
+      "last_name": "Гришин",
+      "first_name": "Виктор",
+      "birth_year": "2011",
+      "club": "Самарская область",
+      "city": null,
+      "license": "2",
+      "gender": "M",
+      "id": 958,
+      "created_at": "2025-05-11T11:03:21.086214Z",
+      "updated_at": "2025-05-11T11:03:21.087197Z"
+    }
+  },
+  "1028": {
+    "license": ["2", "1"],
+    "athlete": {
+      "last_name": "Ощепков",
+      "first_name": "Егор",
+      "birth_year": "2009",
+      "club": "Республика Алтай",
+      "city": null,
+      "license": "2",
+      "gender": "M",
+      "id": 1028,
+      "created_at": "2025-05-11T11:03:21.497487Z",
+      "updated_at": "2025-05-11T11:03:21.497487Z"
+    }
+  },
+  "1007": {
+    "club": ["г. Москва", "г.Москва"],
+    "athlete": {
+      "last_name": "Аникин",
+      "first_name": "Даниил",
+      "birth_year": "2008",
+      "club": "г. Москва",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "id": 1007,
+      "created_at": "2025-05-11T11:03:21.366526Z",
+      "updated_at": "2025-05-11T19:38:09.052320Z"
+    }
+  },
+  "1068": {
+    "license": ["2", "1"],
+    "athlete": {
+      "last_name": "Кошметько",
+      "first_name": "Матвей",
+      "birth_year": "2011",
+      "club": "Свердловская область",
+      "city": null,
+      "license": "2",
+      "gender": "M",
+      "id": 1068,
+      "created_at": "2025-05-11T11:03:21.691247Z",
+      "updated_at": "2025-05-11T11:03:21.691247Z"
+    }
+  },
+  "256": {
+    "license": ["1", "2"],
+    "athlete": {
+      "last_name": "Горошенкин",
+      "first_name": "Егор",
+      "birth_year": "2010",
+      "club": "Пермский край",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 256,
+      "created_at": "2025-05-11T00:33:11.939381Z",
+      "updated_at": "2025-05-11T00:33:11.939381Z"
+    }
+  },
+  "976": {
+    "license": ["3", "2"],
+    "athlete": {
+      "last_name": "Яковлев",
+      "first_name": "Денис",
+      "birth_year": "2011",
+      "club": "Пермский край",
+      "city": null,
+      "license": "3",
+      "gender": "M",
+      "id": 976,
+      "created_at": "2025-05-11T11:03:21.144724Z",
+      "updated_at": "2025-05-11T11:03:21.144724Z"
+    }
+  },
+  "724": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Ионазенк",
+      "first_name": "Мирослава",
+      "birth_year": "2011",
+      "club": "Красноярский край",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 724,
+      "created_at": "2025-05-11T11:03:19.856763Z",
+      "updated_at": "2025-05-11T11:03:19.856763Z"
+    }
+  },
+  "1104": {
+    "club": ["Санкт-Петербург", "г.Санкт-Петербург"],
+    "athlete": {
+      "last_name": "Оболонская",
+      "first_name": "София",
+      "birth_year": "2010",
+      "club": "Санкт-Петербург",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 1104,
+      "created_at": "2025-05-11T11:45:51.054397Z",
+      "updated_at": "2025-05-11T11:45:51.054397Z"
+    }
+  },
+  "184": {
+    "license": ["КМС", "1"],
+    "athlete": {
+      "last_name": "Джалилян",
+      "first_name": "Светлана",
+      "birth_year": "2009",
+      "club": "Новосибирская область",
+      "city": null,
+      "license": "КМС",
+      "gender": "F",
+      "id": 184,
+      "created_at": "2025-05-11T00:33:11.668291Z",
+      "updated_at": "2025-05-11T00:33:11.668291Z"
+    }
+  },
+  "830": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Конева",
+      "first_name": "Антонина",
+      "birth_year": "2009",
+      "club": "Свердловская область",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 830,
+      "created_at": "2025-05-11T11:03:20.402678Z",
+      "updated_at": "2025-05-11T11:03:20.402678Z"
+    }
+  },
+  "1055": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Небера",
+      "first_name": "Олеся",
+      "birth_year": "2011",
+      "club": "Томская область",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 1055,
+      "created_at": "2025-05-11T11:03:21.609547Z",
+      "updated_at": "2025-05-11T11:03:21.609547Z"
+    }
+  },
+  "1107": {
+    "license": ["1", "2"],
+    "athlete": {
+      "last_name": "Роман",
+      "first_name": "Елизавета",
+      "birth_year": "2009",
+      "club": "Ростовская область",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 1107,
+      "created_at": "2025-05-11T11:45:51.051397Z",
+      "updated_at": "2025-05-11T11:45:51.051397Z"
+    }
+  },
+  "741": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Миниахметова",
+      "first_name": "Екатерина",
+      "birth_year": "2010",
+      "club": "Свердловская область",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 741,
+      "created_at": "2025-05-11T11:03:19.923304Z",
+      "updated_at": "2025-05-11T11:03:19.923304Z"
+    }
+  },
+  "757": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Гребенникова",
+      "first_name": "Арина",
+      "birth_year": "2010",
+      "club": "Томская область",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 757,
+      "created_at": "2025-05-11T11:03:20.026797Z",
+      "updated_at": "2025-05-11T11:03:20.026797Z"
+    }
+  },
+  "751": {
+    "license": ["2", "1"],
+    "athlete": {
+      "last_name": "Царегородцева",
+      "first_name": "Полина",
+      "birth_year": "2010",
+      "club": "Алтайский край",
+      "city": null,
+      "license": "2",
+      "gender": "F",
+      "id": 751,
+      "created_at": "2025-05-11T11:03:19.982277Z",
+      "updated_at": "2025-05-11T11:03:19.982277Z"
+    }
+  },
+  "1097": {
+    "club": ["Краснодарский Край", "Краснодарский край"],
+    "athlete": {
+      "last_name": "Резникова",
+      "first_name": "Полина",
+      "birth_year": "2008",
+      "club": "Краснодарский Край",
+      "city": null,
+      "license": "КМС",
+      "gender": "F",
+      "id": 1097,
+      "created_at": "2025-05-11T11:45:50.975735Z",
+      "updated_at": "2025-05-11T11:45:50.975735Z"
+    }
+  },
+  "802": {
+    "license": ["2", "1"],
+    "athlete": {
+      "last_name": "Намятова",
+      "first_name": "Анастасия",
+      "birth_year": "2011",
+      "club": "Свердловская область",
+      "city": null,
+      "license": "2",
+      "gender": "F",
+      "id": 802,
+      "created_at": "2025-05-11T11:03:20.260058Z",
+      "updated_at": "2025-05-11T11:03:20.260058Z"
+    }
+  },
+  "287": {
+    "club": ["Кемеровская область - Кузбасс", "Кемеровская область"],
+    "athlete": {
+      "last_name": "Акентьев",
+      "first_name": "Давид",
+      "birth_year": "2008",
+      "club": "Кемеровская область - Кузбасс",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "id": 287,
+      "created_at": "2025-05-11T00:33:12.096589Z",
+      "updated_at": "2025-05-11T00:33:12.096589Z"
+    }
+  },
+  "863": {
+    "license": ["2", "КМС"],
+    "athlete": {
+      "last_name": "Пикатов",
+      "first_name": "Данила",
+      "birth_year": "2008",
+      "club": "Самарская область",
+      "city": null,
+      "license": "2",
+      "gender": "M",
+      "id": 863,
+      "created_at": "2025-05-11T11:03:20.570538Z",
+      "updated_at": "2025-05-11T11:03:20.570538Z"
+    }
+  },
+  "762": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Егоренков",
+      "first_name": "Юрий",
+      "birth_year": "2011",
+      "club": "Томская область",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 762,
+      "created_at": "2025-05-11T11:03:20.060796Z",
+      "updated_at": "2025-05-11T11:03:20.060796Z"
+    }
+  },
+  "877": {
+    "license": ["2", "1"],
+    "athlete": {
+      "last_name": "Ходюк",
+      "first_name": "Матвей",
+      "birth_year": "2010",
+      "club": "Алтайский край",
+      "city": null,
+      "license": "2",
+      "gender": "M",
+      "id": 877,
+      "created_at": "2025-05-11T11:03:20.664937Z",
+      "updated_at": "2025-05-11T11:03:20.664937Z"
+    }
+  },
+  "2": {
+    "club": ["Кемеровская область - Кузбасс", "Кемеровская область"],
+    "athlete": {
+      "last_name": "Санников",
+      "first_name": "Артём",
+      "birth_year": "2009",
+      "club": "Кемеровская область - Кузбасс",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 2,
+      "created_at": "2025-05-11T00:31:59.843835Z",
+      "updated_at": "2025-05-11T00:31:59.843835Z"
+    }
+  },
+  "1079": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Корнюхин",
+      "first_name": "Илья",
+      "birth_year": "2010",
+      "club": "Омская область",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 1079,
+      "created_at": "2025-05-11T11:03:21.727424Z",
+      "updated_at": "2025-05-11T11:03:21.727424Z"
+    }
+  },
+  "284": {
+    "club": ["Кемеровская область - Кузбасс", "Кемеровская область"],
+    "athlete": {
+      "last_name": "Кушнарёв",
+      "first_name": "Глеб",
+      "birth_year": "2008",
+      "club": "Кемеровская область - Кузбасс",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "id": 284,
+      "created_at": "2025-05-11T00:33:12.088583Z",
+      "updated_at": "2025-05-11T00:33:12.088583Z"
+    }
+  },
+  "283": {
+    "club": ["Кемеровская область - Кузбасс", "Кемеровская область"],
+    "license": ["1", "2"],
+    "athlete": {
+      "last_name": "Редлих",
+      "first_name": "Игорь",
+      "birth_year": "2010",
+      "club": "Кемеровская область - Кузбасс",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 283,
+      "created_at": "2025-05-11T00:33:12.088583Z",
+      "updated_at": "2025-05-11T00:33:12.088583Z"
+    }
+  },
+  "767": {
+    "license": ["2", "1"],
+    "athlete": {
+      "last_name": "Зырянов",
+      "first_name": "Дмитрий",
+      "birth_year": "2011",
+      "club": "Свердловская область",
+      "city": null,
+      "license": "2",
+      "gender": "M",
+      "id": 767,
+      "created_at": "2025-05-11T11:03:20.081822Z",
+      "updated_at": "2025-05-11T11:03:20.081822Z"
+    }
+  },
+  "872": {
+    "license": ["2", "1"],
+    "athlete": {
+      "last_name": "Воронов",
+      "first_name": "Никита",
+      "birth_year": "2009",
+      "club": "Томская область",
+      "city": null,
+      "license": "2",
+      "gender": "M",
+      "id": 872,
+      "created_at": "2025-05-11T11:03:20.640935Z",
+      "updated_at": "2025-05-11T11:03:20.640935Z"
+    }
+  },
+  "1122": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Смышляев",
+      "first_name": "Илья",
+      "birth_year": "2010",
+      "club": "Саратовская область",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 1122,
+      "created_at": "2025-05-11T11:45:51.484024Z",
+      "updated_at": "2025-05-11T11:45:51.484024Z"
+    }
+  },
+  "860": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Самосудов",
+      "first_name": "Андрей",
+      "birth_year": "2010",
+      "club": "Алтайский край",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 860,
+      "created_at": "2025-05-11T11:03:20.533540Z",
+      "updated_at": "2025-05-11T11:03:20.533540Z"
+    }
+  },
+  "790": {
+    "license": ["3", "2"],
+    "athlete": {
+      "last_name": "Богданов",
+      "first_name": "Максим",
+      "birth_year": "2011",
+      "club": "Кемеровская область",
+      "city": null,
+      "license": "3",
+      "gender": "M",
+      "id": 790,
+      "created_at": "2025-05-11T11:03:20.122768Z",
+      "updated_at": "2025-05-11T11:03:20.122768Z"
+    }
+  },
+  "769": {
+    "license": ["3", "2"],
+    "athlete": {
+      "last_name": "Конради",
+      "first_name": "Сергей",
+      "birth_year": "2011",
+      "club": "Кемеровская область",
+      "city": null,
+      "license": "3",
+      "gender": "M",
+      "id": 769,
+      "created_at": "2025-05-11T11:03:20.094797Z",
+      "updated_at": "2025-05-11T11:03:20.094797Z"
+    }
+  },
+  "792": {
+    "license": ["3", "2"],
+    "athlete": {
+      "last_name": "Степанков",
+      "first_name": "Максим",
+      "birth_year": "2011",
+      "club": "Красноярский край",
+      "city": null,
+      "license": "3",
+      "gender": "M",
+      "id": 792,
+      "created_at": "2025-05-11T11:03:20.173844Z",
+      "updated_at": "2025-05-11T11:03:20.173844Z"
+    }
+  },
+  "840": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Лаптев",
+      "first_name": "Андрей",
+      "birth_year": "2009",
+      "club": "Самарская область",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 840,
+      "created_at": "2025-05-11T11:03:20.468016Z",
+      "updated_at": "2025-05-11T11:03:20.468016Z"
+    }
+  },
+  "735": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Кислицына",
+      "first_name": "Анфиса",
+      "birth_year": "2011",
+      "club": "Томская область",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "id": 735,
+      "created_at": "2025-05-11T11:03:19.901757Z",
+      "updated_at": "2025-05-11T11:03:19.901757Z"
+    }
+  },
+  "864": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Корнеев",
+      "first_name": "Макар",
+      "birth_year": "2009",
+      "club": "Томская область",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 864,
+      "created_at": "2025-05-11T11:03:20.575539Z",
+      "updated_at": "2025-05-11T11:03:20.575539Z"
+    }
+  },
+  "848": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Лоскутов",
+      "first_name": "Григорий",
+      "birth_year": "2010",
+      "club": "Томская область",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 848,
+      "created_at": "2025-05-11T11:03:20.491017Z",
+      "updated_at": "2025-05-11T11:03:20.491017Z"
+    }
+  },
+  "867": {
+    "license": ["1", "КМС"],
+    "athlete": {
+      "last_name": "Трепов",
+      "first_name": "Тарас",
+      "birth_year": "2009",
+      "club": "Томская область",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 867,
+      "created_at": "2025-05-11T11:03:20.597537Z",
+      "updated_at": "2025-05-11T11:03:20.597537Z"
+    }
+  },
+  "26": {
+    "license": ["1", "2"],
+    "athlete": {
+      "last_name": "Боровиков",
+      "first_name": "Андрей",
+      "birth_year": "2009",
+      "club": "Новосибирская область",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "id": 26,
+      "created_at": "2025-05-11T00:31:59.968937Z",
+      "updated_at": "2025-05-11T00:31:59.968937Z"
+    }
+  },
+  "875": {
+    "license": ["2", "1"],
+    "athlete": {
+      "last_name": "Воронков",
+      "first_name": "Вадим",
+      "birth_year": "2009",
+      "club": "Алтайский край",
+      "city": null,
+      "license": "2",
+      "gender": "M",
+      "id": 875,
+      "created_at": "2025-05-11T11:03:20.657935Z",
+      "updated_at": "2025-05-11T11:03:20.657935Z"
+    }
+  }
+}

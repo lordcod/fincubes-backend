@@ -1,6 +1,6 @@
 import logging
 from pathlib import Path
-from models.swim import SwimResultsParser
+from models_wfwp.swim import SwimResultsParser
 
 # Константы для ошибок
 
