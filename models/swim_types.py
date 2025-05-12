@@ -13,10 +13,9 @@ class SwimResult:
     result: str
     final: str = ""
     final_rank: str = ""
-    points: str = ""
     record: str = ""
+    points: str = ""
     dsq: bool = False
-    dsq_final: bool = False
 
 
 @dataclass

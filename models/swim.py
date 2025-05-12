@@ -29,17 +29,7 @@ class SwimResultsParser:
         self.record_re = re.compile(
             r"(рекорд Мира|Европы|России)", re.IGNORECASE)
         self.distance_header_re = re.compile(
-            r"^.*?метров.*?(Женщины|Мужчины)$", re.IGNORECASE)
-        # Настройка логирования
-        logging.basicConfig(
-            level=logging.DEBUG,
-            format="%(asctime)s - %(levelname)s - %(message)s",
-            handlers=[
-                logging.FileHandler(self.error_log_path,
-                                    mode="w", encoding='utf-8'),
-                logging.StreamHandler()  # Вывод в консоль
-            ]
-        )
+            r".+ - \d+ м.*", re.IGNORECASE)
 
     def read_input_file(self):
         with self.input_file.open(encoding="utf-8") as f:
@@ -88,6 +78,7 @@ class SwimResultsParser:
                 continue
 
             if self.state.in_relay_block:
+                continue
                 self.relay_parser.parse(line)
                 self.relay_parser.save_relay()
                 continue

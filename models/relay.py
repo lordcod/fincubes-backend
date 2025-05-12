@@ -8,7 +8,7 @@ class RelayParser:
     def __init__(self, state: State):
         self.state = state
         self.relay_start_re = re.compile(
-            r"^Плавание.*эстафета.*(\d+х\d+)\sметров.*", re.IGNORECASE)
+            r".+ - \d+.+х.+\d+.+", re.IGNORECASE)
         self.relay_swimmer_re = re.compile(r"^\d\)", re.IGNORECASE)
 
     def parse(self, line):
