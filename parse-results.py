@@ -1,6 +1,7 @@
 import logging
 from pathlib import Path
-from models_wfwp.swim import SwimResultsParser
+from models.swim import SwimResultsParser
+from models_wpnf.individual import IndividualParser
 
 # Константы для ошибок
 
@@ -24,8 +25,8 @@ def main():
         ]
     )
 
-    parser = SwimResultsParser(
-        input_file, output_file, error_log_path, file_format='json')
+    parser = SwimResultsParser(IndividualParser,
+                               input_file, output_file, error_log_path, file_format='json')
     parser.parse()
 
 

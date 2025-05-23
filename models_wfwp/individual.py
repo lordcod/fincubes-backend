@@ -1,9 +1,11 @@
 import re
 import logging
-from .state import State
-from .swim_types import *
+from models.state import State
+from models.swim_types import *
 
 ERROR_VALUES = [
+    "за нарушение ПС",
+    "a за нарушение ПС"
     "снята нар.пр.сор.",
     "снят нар.пр.сор.",
     "снята за нар.пр.сор.",
@@ -19,6 +21,7 @@ ERROR_VALUES = [
     "не допущен",
     "не явился",
     "Сошёл",
+    "сошѐл",
     "Нар. пр. сор",
     "Переныр 15м",
     "Мед отвод",
@@ -47,8 +50,8 @@ regex_normal = re.compile(r"""
     (?P<first_name>\S+)\s+
     (?P<birth_year>\d{4})\s+
     (?P<team>.+?)\s+
-    (?P<result>\d{2}:\d{2},\d{2})\s*
-    (?P<final_time>\d{2}:\d{2},\d{2})?\s*
+    (?P<result>\d{2}:\d{2}[,.]\d{2})\s*
+    (?P<final_time>\d{2}:\d{2}[,.]\d{2})?\s*
     (?P<final_rank>(?:[123]\sюн|[123]|КМС|МС|МСМК|ЗМС)?)?\s*
     (?P<points>(?:лично|\d+))?$
 """, re.VERBOSE | re.IGNORECASE)
@@ -66,10 +69,11 @@ regex_dq = re.compile(r"""
         не\sявился|
         Сошёл|
         Сошел|
+        нар.?\s*пр.?\s*сор.?\s*|
         Переныр\s?15м\.?|
         переныр 15 м.|
         Нар\.\spr\.\sсор|
-        Мед\sотвод|
+        [Мм]ед.?\s*отвод\s*|
         Переныр|
         снят\sза\sнар.пр.сор.|
         снята\sза\sнар.пр.сор.|

@@ -1,3 +1,4 @@
+import contextlib
 import json
 from xml.sax import default_parser_list
 import aiohttp
@@ -6,17 +7,29 @@ import asyncio
 # Упорядоченный список разрядов от высшего к младшему
 
 athlete_api_url = 'http://localhost:8000/athletes'
-RANK_ORDER = [
-    'МС', 'КМС', '1', '2', '3', '1 юн', '2 юн', '3 юн'
-]
+RANK_ORDER = {
+    'МС': 0,
+    'КМС': 1,
+    '1': 2,
+    '2': 3,
+    '3': 4,
+    '1 юн': 5,
+    '2 юн': 6,
+    '3 юн': 7,
+    'I': 2,
+    'II': 3,
+    'III': 4,
+    'I юн': 5,
+    'II юн': 6,
+    'III юн': 7
+}
 
 
 def is_rank_higher(new_rank: str, old_rank: str) -> bool:
-    """Сравнивает два разряда, возвращает True если новый выше"""
     try:
-        return RANK_ORDER.index(new_rank) < RANK_ORDER.index(old_rank)
-    except ValueError:
-        return False  # если какой-то разряд не найден — не обновляем
+        return RANK_ORDER[new_rank] < RANK_ORDER[old_rank]
+    except (ValueError, KeyError):
+        return False
 
 
 async def update_athlete_if_needed(session: aiohttp.ClientSession, athlete_data: dict, headers: dict):
@@ -59,7 +72,7 @@ async def process_athletes(data_list: list, headers: dict):
         return results
 
 if __name__ == '__main__':
-    token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5OTk5MjY5MDEwZGRkZEBnbWFpbC5jb20iLCJleHAiOjE3NDc2MzU3NDN9.rUg1d_O7ApTlUs4m5cj1nSkmiujLnVMxqosWM-eVyx4"
+    token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5OTk5MjY5MDEwZGRkZEBnbWFpbC5jb20iLCJleHAiOjE3NDgyODcyNDR9.a2ZkP16ehtKJJdY9dyNnRewIoxyvqD7HdKs_UwbnBQY"
     headers = {
         'Authorization': 'Bearer '+token
     }

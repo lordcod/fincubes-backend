@@ -11,3 +11,4 @@ class State:
         self.relay_rows = []
         self.relay_team_rows = []
         self.team_score_rows = []
+        self.distances = []

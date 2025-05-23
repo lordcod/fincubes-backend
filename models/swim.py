@@ -1,3 +1,5 @@
+# models/swim.py
+
 import re
 import pandas as pd
 import json
@@ -5,13 +7,19 @@ import logging
 from pathlib import Path
 from .swim_types import *
 from .state import State
-from .individual import IndividualParser
 from .relay import RelayParser
 from .score import ScoreParser
 
 
+# Подводное плавание - 200 метров Юниоры-Юниорки (14-17 лет)
+# r"^.*?метров.*?(Женщины|Мужчины)$"
+# r"^.*?метров.*?$"
+#  r"^.+\s-\s.*?метров.*?$"
+#  r"^.+-\s?\d+\s?м.*?$"
+# r"(\d\s)?\d{2,}(\sм)?.+\d{4}.+г\.р\..*"
+
 class SwimResultsParser:
-    def __init__(self, input_file: Path, output_file: Path, error_log_path: Path, file_format='excel'):
+    def __init__(self, individual_parser,  input_file: Path, output_file: Path, error_log_path: Path, file_format='excel'):
         self.input_file = input_file
         self.output_file = output_file
         self.error_log_path = error_log_path
@@ -21,15 +29,24 @@ class SwimResultsParser:
 
         # Инициализация парсеров
         self.relay_parser = RelayParser(self.state)
-        self.individual_parser = IndividualParser(self.state)
+        self.individual_parser = individual_parser(self.state)
         self.score_parser = ScoreParser(self.state)
 
         self.lines = self.read_input_file()
-
         self.record_re = re.compile(
-            r"(рекорд Мира|Европы|России)", re.IGNORECASE)
+            r"рекорд (Мира|Европы|России)", re.IGNORECASE)
         self.distance_header_re = re.compile(
-            r".+ - \d+ м.*", re.IGNORECASE)
+            r"^.*?метров.*?$", re.IGNORECASE)
+        # Настройка логирования
+        logging.basicConfig(
+            level=logging.DEBUG,
+            format="%(asctime)s - %(levelname)s - %(message)s",
+            handlers=[
+                logging.FileHandler(self.error_log_path,
+                                    mode="w", encoding='utf-8'),
+                logging.StreamHandler()  # Вывод в консоль
+            ]
+        )
 
     def read_input_file(self):
         with self.input_file.open(encoding="utf-8") as f:
@@ -50,12 +67,14 @@ class SwimResultsParser:
                 json.dump({
                     "individual_results": [result.__dict__ for result in self.state.individual_rows],
                     "relay_results": [result.__dict__ for result in self.state.relay_rows],
-                    "team_score": [result.__dict__ for result in self.state.team_score_rows]
+                    "team_score": [result.__dict__ for result in self.state.team_score_rows],
+                    "distances": self.state.distances
                 }, json_file, ensure_ascii=False, indent=4)
 
     def parse(self):
         for line in self.lines:
             if self.record_re.search(line):
+                print(line)
                 self.state.current_athlete.record = line
                 logging.info(
                     f"[RECORD_GIVEN] {self.state.current_athlete}")
@@ -73,12 +92,12 @@ class SwimResultsParser:
                 self.state.in_relay_block = True
                 continue
             elif self.distance_header_re.match(line):
+                self.state.distances.append(line.strip())
                 self.state.current_distance = line.strip()
                 self.state.in_relay_block = False
                 continue
 
             if self.state.in_relay_block:
-                continue
                 self.relay_parser.parse(line)
                 self.relay_parser.save_relay()
                 continue

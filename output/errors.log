@@ -1,35 +1,97 @@
-2025-05-12 21:49:15,591 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 1
-2025-05-12 21:49:15,592 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 2
-2025-05-12 21:49:15,593 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 3
-2025-05-12 21:49:15,594 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 4
-2025-05-12 21:49:15,595 - ERROR - [RELAY_HEADER_ERROR] Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд Очки
-2025-05-12 21:49:15,596 - ERROR - [RELAY_HEADER_ERROR] 5
-2025-05-12 21:49:15,596 - ERROR - [RELAY_HEADER_ERROR] Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд Очки
-2025-05-12 21:49:15,596 - ERROR - [RELAY_HEADER_ERROR] 6
-2025-05-12 21:49:15,596 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 7
-2025-05-12 21:49:15,598 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 8
-2025-05-12 21:49:15,599 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 9
-2025-05-12 21:49:15,600 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 10
-2025-05-12 21:49:15,601 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 11
-2025-05-12 21:49:15,602 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 12
-2025-05-12 21:49:15,603 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 13
-2025-05-12 21:49:15,603 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 14
-2025-05-12 21:49:15,603 - ERROR - [RELAY_HEADER_ERROR] Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд Очки
-2025-05-12 21:49:15,605 - ERROR - [RELAY_HEADER_ERROR] 15
-2025-05-12 21:49:15,605 - ERROR - [RELAY_HEADER_ERROR] Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд Очки
-2025-05-12 21:49:15,605 - ERROR - [RELAY_HEADER_ERROR] 16
-2025-05-12 21:49:15,605 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд Очки
-2025-05-12 21:49:15,606 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 17
-2025-05-12 21:49:15,607 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд Очки
-2025-05-12 21:49:15,607 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 18
-2025-05-12 21:49:15,608 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 19
-2025-05-12 21:49:15,609 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 20
-2025-05-12 21:49:15,610 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 21
-2025-05-12 21:49:15,611 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 22
-2025-05-12 21:49:15,612 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 23
-2025-05-12 21:49:15,613 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 24
-2025-05-12 21:49:15,613 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд Очки
-2025-05-12 21:49:15,614 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 25
-2025-05-12 21:49:15,614 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд Очки
-2025-05-12 21:49:15,615 - ERROR - [INDIVIDUAL_PARSE_ERROR] Не удалось распарсить строку: 26
-2025-05-12 21:49:15,615 - ERROR - [TEAM_SCORE_ERROR] Команда Очки Зачеты
+2025-05-23 19:22:11,715 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,717 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,717 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 1
+2025-05-23 19:22:11,718 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,719 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,720 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,720 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 2
+2025-05-23 19:22:11,726 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,727 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 3
+2025-05-23 19:22:11,728 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,729 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,729 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,729 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 4
+2025-05-23 19:22:11,733 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,733 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 5
+2025-05-23 19:22:11,736 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,738 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 6
+2025-05-23 19:22:11,738 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,739 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,741 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 7
+2025-05-23 19:22:11,743 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,743 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 8
+2025-05-23 19:22:11,745 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,747 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 9
+2025-05-23 19:22:11,747 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,747 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,748 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,748 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,749 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,749 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,749 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,749 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,750 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 10
+2025-05-23 19:22:11,750 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,751 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,753 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,753 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,753 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 11
+2025-05-23 19:22:11,754 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,755 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,756 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 12
+2025-05-23 19:22:11,757 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,757 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,758 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,759 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,759 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 13
+2025-05-23 19:22:11,759 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,760 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,760 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,761 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,761 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 14
+2025-05-23 19:22:11,763 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 15
+2025-05-23 19:22:11,765 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,765 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 16
+2025-05-23 19:22:11,767 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 17
+2025-05-23 19:22:11,769 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 18
+2025-05-23 19:22:11,771 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,772 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,772 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,772 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 19
+2025-05-23 19:22:11,773 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,773 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,774 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,774 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,775 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 20
+2025-05-23 19:22:11,775 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,775 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,777 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 21
+2025-05-23 19:22:11,779 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,779 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 22
+2025-05-23 19:22:11,781 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,781 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 23
+2025-05-23 19:22:11,782 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,783 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,783 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 24
+2025-05-23 19:22:11,785 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 25
+2025-05-23 19:22:11,787 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,787 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 26
+2025-05-23 19:22:11,790 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 27
+2025-05-23 19:22:11,790 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,792 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 28
+2025-05-23 19:22:11,795 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,796 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,796 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 29
+2025-05-23 19:22:11,799 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,799 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 30
+2025-05-23 19:22:11,801 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,802 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,802 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 31
+2025-05-23 19:22:11,804 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 32
+2025-05-23 19:22:11,805 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,806 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 33
+2025-05-23 19:22:11,809 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Место Разряд Фамилия, Имя Г.р. Команда Результат Разряд
+2025-05-23 19:22:11,809 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 34
+2025-05-23 19:22:11,809 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: Главный судья соревнований Коробов В.В.
+2025-05-23 19:22:11,809 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: СС2К подпись Ф.И.О.
+2025-05-23 19:22:11,810 - ERROR - [INDIVIDUAL_PARSE_ERROR] Line does not match expected format: 35

@@ -5,17 +5,18 @@ from dataclasses import dataclass, field
 class SwimResult:
     distance: str
     place: str
-    rank: str
     last_name: str
     first_name: str
     birth_year: str
     team: str
     result: str
+    rank: str = ""
     final: str = ""
     final_rank: str = ""
-    record: str = ""
     points: str = ""
+    record: str = ""
     dsq: bool = False
+    dsq_final: bool = False
 
 
 @dataclass

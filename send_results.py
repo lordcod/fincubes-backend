@@ -6,7 +6,7 @@ import re
 from typing import Optional
 import aiohttp
 
-token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5OTk5MjY5MDEwZGRkZEBnbWFpbC5jb20iLCJleHAiOjE3NDc2MzU3NDN9.rUg1d_O7ApTlUs4m5cj1nSkmiujLnVMxqosWM-eVyx4"
+token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5OTk5MjY5MDEwZGRkZEBnbWFpbC5jb20iLCJleHAiOjE3NDgyODcyNDR9.a2ZkP16ehtKJJdY9dyNnRewIoxyvqD7HdKs_UwbnBQY"
 headers = {
     'Authorization': 'Bearer '+token
 }
@@ -19,6 +19,7 @@ class AthleteProcessor:
         json_file: str = 'output/itogi.json',
         log_file: str = 'output/athlete_processing.log',
         requests_file: str = 'output/requests.json',
+        final_file: str = 'output/final.json',
         team_qt_city: bool = False,
         locked_request: bool = True,
     ):
@@ -28,9 +29,11 @@ class AthleteProcessor:
         self.competition_id = competition_id
         self.json_file = json_file
         self.requests_file = requests_file
+        self.final_file = final_file
         self.team_qt_city = team_qt_city
-        self.athlete_api_url = 'http://localhost:8000/athletes/'
-        self.results_api_url = f'http://localhost:8000/results/{self.competition_id}'
+        self.athlete_api_url = 'https://localhost:8000/athletes/'
+        self.results_api_url = f'https://localhost:8000/results/{self.competition_id}'
+        self.results_bulk_api_url = 'https://localhost:8000/results/bulk-create'
         self.logger = self.setup_logger(log_file)
         self.requests = {}
 
@@ -127,12 +130,24 @@ class AthleteProcessor:
         }
 
         async with session.post(f'{self.results_api_url}/{athlete_id}', json=result_data, headers=headers) as response:
+            data = await response.json()
             if not response.ok:
-                data = await response.json()
                 print(data)
             response.raise_for_status()
             self.logger.info(f"Result added for athlete {athlete_id}")
             return True
+
+    async def send_all_results(
+        self,
+        session: aiohttp.ClientSession,
+        requests: list
+    ):
+        async with session.post(self.results_bulk_api_url, json=requests, headers=headers, timeout=3600) as response:
+            data = await response.json()
+            if not response.ok:
+                print(data)
+            response.raise_for_status()
+            return data
 
     async def check_updated(self, request, data, athlete, key, key2):
         if athlete[key] != data[key2]:
@@ -176,22 +191,28 @@ class AthleteProcessor:
                 self.requests[athlete['id']] = request
 
         athlete_id = athlete['id']
+        results = []
         for result in data['results']:
-            async with self.lock:
-                await self.add_result(
-                    session,
-                    athlete_id=athlete_id,
-                    stroke=result['stroke'],
-                    distance=result['distance'],
-                    result=result.get('result'),
-                    final=result.get('final'),
-                    final_rank=result.get('final_rank'),
-                    record=result.get('record'),
-                    dsq=result.get('dsq'),
-                    dsq_final=result.get('dsq_final'),
-                    place=result.get('place'),
-                    points=result.get('points'),
-                )
+            result = dict(
+                athlete_id=athlete_id,
+                stroke=result['stroke'],
+                distance=result['distance'],
+                result=result.get('result'),
+                final=result.get('final'),
+                final_rank=result.get('final_rank'),
+                record=result.get('record'),
+                dsq=result.get('dsq'),
+                dsq_final=result.get('dsq_final'),
+                place=result.get('place'),
+                points=result.get('points'),
+            )
+            results.append(result)
+
+        return {
+            'competition_id': self.competition_id,
+            'athlete_id': athlete_id,
+            'results': results
+        }
 
     async def run(self):
         with open(self.json_file, 'rb') as f:
@@ -200,8 +221,13 @@ class AthleteProcessor:
         async with aiohttp.ClientSession() as session:
             tasks = [self.process_athlete(session, data)
                      for data in athlete_data_list]
-            await asyncio.gather(*tasks)
+            requests = await asyncio.gather(*tasks)
+            print('Parse', len(requests), 'athletes results')
+            responses = await self.send_all_results(session, requests)
 
+        with open(self.final_file, 'wb+') as file:
+            file.write(json.dumps(responses,
+                       ensure_ascii=False).encode())
         with open(self.requests_file, 'wb+') as file:
             file.write(json.dumps(self.requests,
                        ensure_ascii=False).encode())
