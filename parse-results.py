@@ -1,7 +1,7 @@
 import logging
 from pathlib import Path
 from models.swim import SwimResultsParser
-from models_wpnf.individual import IndividualParser
+from models_lenex.individual import IndividualParser
 
 # Константы для ошибок
 

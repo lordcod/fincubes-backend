@@ -63,7 +63,7 @@ class RegisterParser:
         self.results = defaultdict(list)
         self.athletes = defaultdict(list)
         self.distance_re = re.compile(
-            r"(?P<style>.+) - (?P<distance>\d+) метров\s*(?P<gender>[а-я]+)",
+            r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<style>.+) - (?P<distance>\d+) метров\s*.*",
             re.IGNORECASE,
         )
 
@@ -181,6 +181,7 @@ class RegisterParser:
         with open(self.itogi_file, 'wb+') as file:
             file.write(json.dumps(
                 itogi,
+                indent=4,
                 ensure_ascii=False
             ).encode())
 
@@ -188,6 +189,7 @@ class RegisterParser:
         with open(self.distances_file, 'wb+') as file:
             file.write(json.dumps(
                 distances,
+                indent=4,
                 ensure_ascii=False
             ).encode())
 

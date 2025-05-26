@@ -194,7 +194,6 @@ class AthleteProcessor:
         results = []
         for result in data['results']:
             result = dict(
-                athlete_id=athlete_id,
                 stroke=result['stroke'],
                 distance=result['distance'],
                 result=result.get('result'),
@@ -203,7 +202,7 @@ class AthleteProcessor:
                 record=result.get('record'),
                 dsq=result.get('dsq'),
                 dsq_final=result.get('dsq_final'),
-                place=result.get('place'),
+                place=str(result.get('place')),
                 points=result.get('points'),
             )
             results.append(result)
@@ -223,6 +222,9 @@ class AthleteProcessor:
                      for data in athlete_data_list]
             requests = await asyncio.gather(*tasks)
             print('Parse', len(requests), 'athletes results')
+            with open('req.json', 'wb+') as file:
+                file.write(json.dumps(requests,
+                                      ensure_ascii=False).encode())
             responses = await self.send_all_results(session, requests)
 
         with open(self.final_file, 'wb+') as file:

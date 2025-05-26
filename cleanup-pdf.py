@@ -4,15 +4,14 @@ import pdfplumber
 
 
 pdf_path = Path(
-    r"C:\Users\2008d\Downloads\dc.pdf")
+    r"C:\Users\2008d\TEMP\Ленекс\itogovyj-protokol-kubok-06.10.pdf")
 output_text_path = Path("output/cleaned_results.txt")
 log_path = Path("output/log_removed_lines.txt")
 trash = """
-Региональные соревнований по подводному спорту "День Подводника"
-ЦВВС "Звездный"-50м
-бассейн оснащен электронной системой фиксации времени "Swiss timing"
-ИТОГОВЫЙ ПРОТОКОЛ
-19.05-22.05.2025
+ЦСП "Северный" Электронная система регистрации времени SEIKO 06 октября 2024 г.
+Бассейн 50 метров г. Москва
+Splash Meet Manager, 
+11.78560 Registered to RSF/Moscow City Swimming Federation
 """
 
 trash_keywords = list(filter(bool, trash.split('\n')))
