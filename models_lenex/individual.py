@@ -4,14 +4,14 @@ from models.state import State
 from models.swim_types import SwimResult
 
 regex_normal = re.compile(r"""
-    (?P<place>(\d+\.\s*|DSQ|DNS|EXH)\s*)?                # Место (например: 1.)
-    (?P<last_name>[А-Яа-яЁё\-]+)\s+                      # Фамилия
-    (?P<first_name>[А-Яа-яЁё\-\.]+)\s+                   # Имя
-    ((?P<patronymic>[А-Яа-яЁё\-]+)\s*)?                     # Отчество (добавили явно)
-    (?P<birth_year>\d{2,4})\s+                           # Год рождения
-    (?P<team>[\w\s\."\'\(\)]+?)\s+                       # Команда
+    (?P<place>(\d+\.\s*|DSQ|DNS|EXH)\s*)?                
+    (?P<last_name>[А-Яа-яЁё\-]+)\s+                 
+    (?P<first_name>[А-Яа-яЁё\-\.]+)\s+                 
+    ((?P<patronymic>[А-Яа-яЁё\-]+)\s*)?                  
+    (?P<birth_year>\d{2,4})\s+                           
+    (?P<team>[\w\s\."\'\(\)]+?)\s+           
     (?P<result>(\d{1,2}[:.,])?\d{1,2}[:.,]\d{2})
-    (\s+(?P<final_rank>(?:[123]|МС|КМС|МСМК|ЗМС|[IVX]+(?:\s+юн)?)?))?\s*  # Разряд (например: I юн, II юн, МС)
+    (\s+(?P<final_rank>(?:[123]|МС|КМС|МСМК|ЗМС|[IVX]+(?:\s+юн)?)?))?\s* 
 """, re.VERBOSE | re.IGNORECASE)
 
 
@@ -35,7 +35,7 @@ class IndividualParser:
         dsq = match.group("place") in ('DSQ', 'DNS')
         swr = SwimResult(
             distance=self.state.current_distance,
-            place=not dsq and match.group("place").strip('.\s'),
+            place=not dsq and match and match.group("place").strip('.\s'),
             last_name=match.group("last_name"),
             first_name=match.group("first_name"),
             birth_year=match.group("birth_year"),

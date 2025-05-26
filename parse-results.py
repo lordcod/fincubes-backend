@@ -1,14 +1,43 @@
 import logging
 from pathlib import Path
 from models.swim import SwimResultsParser
-from models_lenex.individual import IndividualParser
 
-# Константы для ошибок
+
+# Дистанции
+# r"^.*?метров.*?(Женщины|Мужчины)$"
+# r"^.*?метров.*?$"
+#  r"^.+\s-\s.*?метров.*?$"
+#  r"^.+-\s?\d+\s?м.*?$"
+# r"(\d\s)?\d{2,}(\sм)?.+\d{4}.+г\.р\..*"
 
 
 def main():
     input_file = Path("output/cleaned_results.txt")
-    output_file = Path("output/output_results.json")  # Можно менять на .xlsx
+    output_file = Path("output/output_results.json")
+
+    parser = SwimResultsParser(
+        get_parser('lenex'),
+        distance_header_re=r"^.*?метров.*?$",
+        input_file=input_file,
+        output_file=output_file,
+    )
+    parser.parse()
+
+
+def get_parser(type: str):
+    match type.lower():
+        case 'lenex':
+            from models_lenex.individual import IndividualParser
+        case 'final':
+            from models_wfwp.individual import IndividualParser
+        case 'points':
+            from models_wpnf.individual import IndividualParser
+        case _:
+            from models_custom.individual import IndividualParser
+    return IndividualParser
+
+
+def load_logging():
     error_log_path = Path("output/errors.log")
 
     file_handler = logging.FileHandler(error_log_path,
@@ -24,10 +53,6 @@ def main():
             logging.StreamHandler()  # Вывод в консоль
         ]
     )
-
-    parser = SwimResultsParser(IndividualParser,
-                               input_file, output_file, error_log_path, file_format='json')
-    parser.parse()
 
 
 if __name__ == "__main__":

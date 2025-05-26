@@ -96,7 +96,6 @@ class RegisterParser:
             return
         if not points.isdigit():
             return
-        assert points.isdigit(), 'Not is integer'
         return int(points)
 
     def parse_point(self, points: str):
