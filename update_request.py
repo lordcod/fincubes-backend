@@ -1,27 +1,27 @@
-import contextlib
 import json
-from xml.sax import default_parser_list
 import aiohttp
 import asyncio
+from __config__ import headers
 
-# Упорядоченный список разрядов от высшего к младшему
-
-athlete_api_url = 'http://localhost:8000/athletes'
+athlete_api_url = 'https://localhost:8000/athletes'
 RANK_ORDER = {
+    'МСМК': -2,
+    'ЗМС': -1,
     'МС': 0,
     'КМС': 1,
     '1': 2,
     '2': 3,
     '3': 4,
-    '1 юн': 5,
-    '2 юн': 6,
-    '3 юн': 7,
+    '1юн': 5,
+    '2юн': 6,
+    '3юн': 7,
     'I': 2,
     'II': 3,
     'III': 4,
-    'I юн': 5,
-    'II юн': 6,
-    'III юн': 7
+    'Iюн': 5,
+    'IIюн': 6,
+    'IIIюн': 7,
+    '': 100
 }
 
 
@@ -37,9 +37,7 @@ async def update_athlete_if_needed(session: aiohttp.ClientSession, athlete_data:
     current_rank = athlete["license"]
     new_ranks = athlete_data["license"]
 
-    # Находим самый высокий из новых разрядов
-    new_rank = sorted(new_ranks, key=lambda r: RANK_ORDER.index(r))[0]
-
+    new_rank = min(new_ranks, key=lambda r: RANK_ORDER.get(r))
     if is_rank_higher(new_rank, current_rank):
         updated_data = {
             "last_name": athlete["last_name"],
@@ -58,7 +56,7 @@ async def update_athlete_if_needed(session: aiohttp.ClientSession, athlete_data:
             return data
     else:
         print(
-            f"{athlete['last_name']} {athlete['first_name']}: разряд не обновляется ({current_rank} >= {new_rank})")
+            f"{athlete['last_name']} {athlete['first_name']}: разряд НЕ обновляется ({current_rank} >= {new_rank})!")
         return None
 
 
@@ -69,14 +67,11 @@ async def process_athletes(data_list: list, headers: dict):
             for item in data_list
         ]
         results = await asyncio.gather(*tasks, return_exceptions=True)
-        return results
+        responses = list(filter(bool, results))
+        print('Responses', responses)
+        print(f'Обновилось {len(responses)} разрядов')
 
 if __name__ == '__main__':
-    token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5OTk5MjY5MDEwZGRkZEBnbWFpbC5jb20iLCJleHAiOjE3NDgyODcyNDR9.a2ZkP16ehtKJJdY9dyNnRewIoxyvqD7HdKs_UwbnBQY"
-    headers = {
-        'Authorization': 'Bearer '+token
-    }
-
     with open('output/requests.json', 'rb') as file:
         data = json.load(file)
     data_list = []

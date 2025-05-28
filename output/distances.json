@@ -14,34 +14,6 @@
         null
     ],
     [
-        "SURFACE",
-        50,
-        "F",
-        null,
-        null
-    ],
-    [
-        "SURFACE",
-        50,
-        "M",
-        null,
-        null
-    ],
-    [
-        "APNEA",
-        50,
-        "F",
-        null,
-        null
-    ],
-    [
-        "APNEA",
-        50,
-        "M",
-        null,
-        null
-    ],
-    [
         "BIFINS",
         100,
         "F",
@@ -50,20 +22,6 @@
     ],
     [
         "BIFINS",
-        100,
-        "M",
-        null,
-        null
-    ],
-    [
-        "SURFACE",
-        100,
-        "F",
-        null,
-        null
-    ],
-    [
-        "SURFACE",
         100,
         "M",
         null,
@@ -84,15 +42,43 @@
         null
     ],
     [
+        "BIFINS",
+        400,
+        "F",
+        null,
+        null
+    ],
+    [
+        "BIFINS",
+        400,
+        "M",
+        null,
+        null
+    ],
+    [
         "SURFACE",
-        200,
+        50,
         "F",
         null,
         null
     ],
     [
         "SURFACE",
-        200,
+        50,
+        "M",
+        null,
+        null
+    ],
+    [
+        "SURFACE",
+        100,
+        "F",
+        null,
+        null
+    ],
+    [
+        "SURFACE",
+        100,
         "M",
         null,
         null

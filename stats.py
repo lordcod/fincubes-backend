@@ -9,7 +9,10 @@ with open("output/output_results.json", 'rb') as file:
     output = json.load(file)
 
 stats = set()
-data = {}
+data = {
+    "СЕНИЧКИНА": "Александра",
+    "ГОЛОВКИНА": "Александра",
+}
 
 for result in output['individual_results']:
     if '.' not in result['first_name']:
@@ -18,7 +21,14 @@ for result in output['individual_results']:
 
 for result in output['individual_results']:
     if '.' in result['first_name']:
-        result['first_name'] = data.get(result['last_name'])
+        value = data.get(
+            result['last_name'])
+        if value is not None:
+            print('Found', result['last_name'],
+                  result['first_name'], ':', value)
+            result['first_name'] = value
+        else:
+            print('NOT FOUND', result['last_name'], result['first_name'])
 
 
 with open("output/output_results.json", 'wb+') as file:

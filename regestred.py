@@ -12,6 +12,8 @@ styles = {
     'классические ласты': 'BIFINS',
     'подводное плавание': 'IMMERSION',
     'bifins': 'BIFINS',
+    'плавание в ластах(моноласта)': 'SURFACE',
+    'в классических ластах': 'BIFINS'
 }
 sexs = {
     'женщины': 'F',
@@ -27,6 +29,8 @@ sexs = {
     'мужчин': 'M',
     'юниорыи': 'M',
 }
+
+
 #  ============== REGEX ==============
 # r"(?P<style>.+) - (?P<distance>\d+) метров\s*(?P<gender>[а-я]+)"
 # r"(?P<style>.+) - (?P<distance>\d+) метров\s*(?P<gender>[а-я]+)(\s*\(.+\))?"
@@ -34,6 +38,9 @@ sexs = {
 # r"(?P<style>.+)- (?P<distance>\d+) м \([0-9а-я]+\)\s*(?P<gender>[а-я]+)\s*.+"
 # r"(?P<style>.+) - (?P<distance>\d+) (метров|м)\s+(?P<gender>[а-яА-Я]+)\s*(\(.+\))?\s*"
 # r"(?P<style>.+) - (?P<distance>\d+)\s*м,\s*(?P<gender>[а-я]+)"
+# r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<style>.+) - (?P<distance>\d+) метров\s*.*"
+#  r"Дистанция\s+(?P<distance>\d+)м\s+(?P<style>.+),\s*(?P<gender>[а-я]+)\s*"
+# r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<style>.+) - (?P<distance>\d+)м.*"
 
 # WA
 # r"(?P<style>.+)\s*- (?P<distance>\d+)\s*м,\s*(?P<gender>[а-я]+)\s*(?P<min_age>\d{4})(-(?P<max_age>\d{4}))?.*"
@@ -62,13 +69,31 @@ class RegisterParser:
         self.distances_file = distances
         self.results = defaultdict(list)
         self.athletes = defaultdict(list)
+
         self.distance_re = re.compile(
-            r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<style>.+) - (?P<distance>\d+) метров\s*.*",
+            r"Дистанция\s+(?P<distance>\d+)м\s+(?P<style>.+),\s*(?P<gender>[а-я]+)\s*",
             re.IGNORECASE,
         )
 
         self.time_regex = re.compile(
             r'((\d{1,2})[:\.,])?(\d{1,2})[:\.,](\d{1,2})к?')
+
+    def normalize_rank(self, text):
+        if not text:
+            return ''
+        text = re.sub(r"(взрослый|разряд|взр|вз|спортивный|юношеский)",
+                      "", text, flags=re.IGNORECASE)
+        text = text.replace('(', '').replace(')', '')
+        text = re.sub(r"[.\s\-]", "", text)
+        text = re.sub(r"ю", "юн", text, flags=re.IGNORECASE)
+        text = re.sub(r"юнн", "юн", text, flags=re.IGNORECASE)
+        text = re.sub(r"1", "I", text)
+        text = re.sub(r"2", "II", text)
+        text = re.sub(r"3", "III", text)
+        text = re.sub(r"кмс", "КМС", text)
+        text = re.sub(r"мс", "МС", text)
+        text = text.replace("|", "I")
+        return text
 
     def parse_time(self, time_str):
         if not time_str:
@@ -99,9 +124,10 @@ class RegisterParser:
         return int(points)
 
     def parse_point(self, points: str):
-        if points == 'лично':
-            return points
-        return self.parse_integer(points)
+        if points and points.lower() == 'лично':
+            return points.lower()
+        points = self.parse_integer(points)
+        return str(points) if points else None
 
     def parse_distance(self, distance):
         res = self.distance_re.fullmatch(distance)
@@ -141,7 +167,7 @@ class RegisterParser:
             "last_name": result['last_name'].title(),
             'birth_year': str(result['birth_year']),
             'team': result['team'],
-            'rank': result['rank'],
+            'rank': self.normalize_rank(result['rank']),
             'gender': gender
         }
         return self.results[key]
@@ -160,7 +186,7 @@ class RegisterParser:
             distance=distance,
             result=self.parse_time(result.get('result')),
             final=self.parse_time(result.get('final')),
-            final_rank=result.get('final_rank'),
+            final_rank=self.normalize_rank(result.get('final_rank')),
             record=result.get('record'),
             dsq=result.get('dsq', False),
             dsq_final=result.get('dsq_final', False),

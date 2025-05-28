@@ -2,14 +2,9 @@ import asyncio
 import contextlib
 import json
 import logging
-import re
 from typing import Optional
 import aiohttp
-
-token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5OTk5MjY5MDEwZGRkZEBnbWFpbC5jb20iLCJleHAiOjE3NDgyODcyNDR9.a2ZkP16ehtKJJdY9dyNnRewIoxyvqD7HdKs_UwbnBQY"
-headers = {
-    'Authorization': 'Bearer '+token
-}
+from __config__ import headers
 
 
 class AthleteProcessor:
@@ -222,9 +217,6 @@ class AthleteProcessor:
                      for data in athlete_data_list]
             requests = await asyncio.gather(*tasks)
             print('Parse', len(requests), 'athletes results')
-            with open('req.json', 'wb+') as file:
-                file.write(json.dumps(requests,
-                                      ensure_ascii=False).encode())
             responses = await self.send_all_results(session, requests)
 
         with open(self.final_file, 'wb+') as file:

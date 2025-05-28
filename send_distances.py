@@ -1,6 +1,7 @@
 import json
 import aiohttp
 import asyncio
+from __config__ import headers
 
 
 async def create_distances(session: aiohttp.ClientSession, competition_id, distance_data, headers):
@@ -32,11 +33,6 @@ async def process_distances(data_list: list, comp_id, headers: dict):
         return results
 
 if __name__ == '__main__':
-    token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5OTk5MjY5MDEwZGRkZEBnbWFpbC5jb20iLCJleHAiOjE3NDg2MjQxNTV9.y9Mtq67gKOeRaeNOxzm5ZhEJbtcjrsTNldQvQUa6QDY"
-    headers = {
-        'Authorization': 'Bearer '+token,
-        "origin": "https://fincubes.ru"
-    }
     comp_id = int(input("Competition id: "))
 
     with open('output/distances.json', 'rb') as file:

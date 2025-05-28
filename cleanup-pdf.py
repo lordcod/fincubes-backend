@@ -4,14 +4,14 @@ import pdfplumber
 
 
 pdf_path = Path(
-    r"C:\Users\2008d\TEMP\Ленекс\itogovyj-protokol-kubok-06.10.pdf")
+    r"C:\Users\2008d\Downloads\9-Итоговый_9_финал_этап_2025г..pdf")
 output_text_path = Path("output/cleaned_results.txt")
 log_path = Path("output/log_removed_lines.txt")
 trash = """
-ЦСП "Северный" Электронная система регистрации времени SEIKO 06 октября 2024 г.
-Бассейн 50 метров г. Москва
-Splash Meet Manager, 
-11.78560 Registered to RSF/Moscow City Swimming Federation
+Итоговый протокол
+III Открытый Кубок городов Восточного Подмосковья
+по плаванию, и Подводному спорту 9 этап ФИНАЛ
+Электросталь, Т Н Покровской, 50м, 8 дор., 25.05.2025
 """
 
 trash_keywords = list(filter(bool, trash.split('\n')))

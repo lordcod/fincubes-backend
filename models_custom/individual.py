@@ -66,13 +66,12 @@ class IndividualParser:
             pattern = re.compile(r"""
                 ^\s*
                 (?P<place>\d+|в/к)?\s*
-                ((?P<rank>(?:[123]\s*юн\.?|[123]|I\s*юн|II\s*юн|III\s*юн|I|II|III|б\/?р|КМС|МСМК|МС|ЗМС)?)\s+)?
                 (?P<last_name>[А-Яа-яЁёë\-]+)\s+
                 (?P<first_name>[А-Яа-яЁёë\-]+)\s+
                 (?P<birth_year>\d{4})\s+
                 (?P<team>.+?\s*)
                 (?:\s+(?P<result>\d{1,2}[:\.,]\d{2}(?:[:\.,]\d{1,2})?к?))?
-                (?:\s+(?P<final_rank>(?:[123]\s*юн\.?|[123]|I\s*юн|II\s*юн|III\s*юн|I|II|III|б\/?р|КМС|МСМК|МС|ЗМС)))?
+                (?:\s+(?P<final_rank>(I{1,3}|I{1,3}\(ю\)|б\/?р|КМС|МСМК|МС|ЗМС)))?
                 (?:\s+(?P<points>(?:лично|\d+)))?
                 \s*$
             """, re.VERBOSE | re.IGNORECASE)

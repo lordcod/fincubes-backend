@@ -1,1 +1,988 @@
-{"1524": {"club": ["ЦСП Северный", "Монофин"], "athlete": {"created_at": "2025-05-13T17:15:33.393948Z", "updated_at": "2025-05-13T17:15:33.393948Z", "id": 1524, "last_name": "Сулейманов", "first_name": "Константин", "birth_year": "2012", "club": "ЦСП Северный", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1537": {"club": ["ЦСП Северный", "Монофин"], "athlete": {"created_at": "2025-05-13T17:15:33.397948Z", "updated_at": "2025-05-13T17:15:33.397948Z", "id": 1537, "last_name": "Яковлев", "first_name": "Павел", "birth_year": "2011", "club": "ЦСП Северный", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1590": {"club": ["Дюкпп \"Косатка\"", "ДЮКПП \"Косатка\""], "athlete": {"created_at": "2025-05-13T17:15:34.192289Z", "updated_at": "2025-05-13T17:15:34.192289Z", "id": 1590, "last_name": "Шамтов", "first_name": "Дмитрий", "birth_year": "2008", "club": "Дюкпп \"Косатка\"", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1557": {"club": ["Дюкпп \"Косатка\"", "ДЮКПП \"Косатка\""], "athlete": {"created_at": "2025-05-13T17:15:33.466102Z", "updated_at": "2025-05-13T17:15:33.466102Z", "id": 1557, "last_name": "Лебедев", "first_name": "Андрей", "birth_year": "2014", "club": "Дюкпп \"Косатка\"", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1007": {"club": ["МКСШОР \"Восток\"", "Мксшор Восток"], "license": ["КМС", ""], "athlete": {"created_at": "2025-05-11T11:03:21.366526Z", "updated_at": "2025-05-24T18:18:00.520685Z", "id": 1007, "last_name": "Аникин", "first_name": "Даниил", "birth_year": "2008", "club": "МКСШОР \"Восток\"", "city": "г. Москва", "license": "КМС", "gender": "M", "avatar_url": "https://storage.yandexcloud.net/fincubes/1007.png"}}, "1554": {"club": ["Дюкпп \"Косатка\"", "ДЮКПП \"Косатка\""], "athlete": {"created_at": "2025-05-13T17:15:33.455103Z", "updated_at": "2025-05-13T17:15:33.455103Z", "id": 1554, "last_name": "Главацкий", "first_name": "Никита", "birth_year": "2014", "club": "Дюкпп \"Косатка\"", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1553": {"club": ["Дюкпп \"Косатка\"", "ДЮКПП \"Косатка\""], "athlete": {"created_at": "2025-05-13T17:15:33.448104Z", "updated_at": "2025-05-13T17:15:33.448104Z", "id": 1553, "last_name": "Вильчевский", "first_name": "Захар", "birth_year": "2014", "club": "Дюкпп \"Косатка\"", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "934": {"club": ["г. Москва", "Команда Дерябиной"], "license": ["КМС", ""], "athlete": {"created_at": "2025-05-11T11:03:20.968506Z", "updated_at": "2025-05-11T11:03:20.968506Z", "id": 934, "last_name": "Носова", "first_name": "Варвара", "birth_year": "2007", "club": "г. Москва", "city": null, "license": "КМС", "gender": "F", "avatar_url": null}}, "1542": {"club": ["Москва", "Команда Дерябиной"], "athlete": {"created_at": "2025-05-13T17:15:33.425546Z", "updated_at": "2025-05-13T17:15:33.425546Z", "id": 1542, "last_name": "Соловьёва", "first_name": "Ирина", "birth_year": "2007", "club": "Москва", "city": null, "license": "", "gender": "F", "avatar_url": null}}, "1570": {"club": ["ЦСП Северный", "Монофин"], "athlete": {"created_at": "2025-05-13T17:15:33.777241Z", "updated_at": "2025-05-13T17:15:33.777241Z", "id": 1570, "last_name": "Шиманский", "first_name": "Артем", "birth_year": "2012", "club": "ЦСП Северный", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1159": {"club": ["г.Москва", "Мксшор Восток"], "license": ["МС", ""], "athlete": {"created_at": "2025-05-11T11:51:42.520886Z", "updated_at": "2025-05-11T11:51:42.520886Z", "id": 1159, "last_name": "Дедов", "first_name": "Рамиль", "birth_year": "2008", "club": "г.Москва", "city": null, "license": "МС", "gender": "M", "avatar_url": null}}, "1444": {"club": ["Лично", "ДЮКПП \"Косатка\""], "athlete": {"created_at": "2025-05-13T16:52:41.091051Z", "updated_at": "2025-05-13T16:52:41.091051Z", "id": 1444, "last_name": "Песков", "first_name": "Алексей", "birth_year": "2013", "club": "Лично", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1576": {"club": ["Дюкпп \"Косатка\"", "ДЮКПП \"Косатка\""], "athlete": {"created_at": "2025-05-13T17:15:33.821995Z", "updated_at": "2025-05-13T17:15:33.821995Z", "id": 1576, "last_name": "Обухов", "first_name": "Михаил", "birth_year": "2010", "club": "Дюкпп \"Косатка\"", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1578": {"club": ["ЦСП Северный", "Монофин"], "athlete": {"created_at": "2025-05-13T17:15:33.838515Z", "updated_at": "2025-05-13T17:15:33.838515Z", "id": 1578, "last_name": "Юшкова", "first_name": "Яна", "birth_year": "2010", "club": "ЦСП Северный", "city": null, "license": "", "gender": "F", "avatar_url": null}}, "1594": {"club": ["Дюкпп \"Косатка\"", "ДЮКПП \"Косатка\""], "athlete": {"created_at": "2025-05-13T17:15:34.267545Z", "updated_at": "2025-05-13T17:15:34.267545Z", "id": 1594, "last_name": "Сердюков", "first_name": "Даниил", "birth_year": "2010", "club": "Дюкпп \"Косатка\"", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1487": {"club": ["Восток", "Мксшор Восток"], "athlete": {"created_at": "2025-05-13T16:52:41.425170Z", "updated_at": "2025-05-13T16:52:41.425170Z", "id": 1487, "last_name": "Рассказов", "first_name": "Гордей", "birth_year": "2010", "club": "Восток", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "126": {"club": ["г.Москва", "Мксшор Восток"], "license": ["МС", ""], "athlete": {"created_at": "2025-05-11T00:33:11.221230Z", "updated_at": "2025-05-11T00:33:11.221230Z", "id": 126, "last_name": "Панферова", "first_name": "Анастасия", "birth_year": "2006", "club": "г.Москва", "city": null, "license": "МС", "gender": "F", "avatar_url": null}}, "1443": {"club": ["Восток", "Мксшор Восток"], "athlete": {"created_at": "2025-05-13T16:52:41.090531Z", "updated_at": "2025-05-13T16:52:41.090531Z", "id": 1443, "last_name": "Мишенин", "first_name": "Николай", "birth_year": "2009", "club": "Восток", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1593": {"club": ["Дюкпп \"Косатка\"", "ДЮКПП \"Косатка\""], "athlete": {"created_at": "2025-05-13T17:15:34.255814Z", "updated_at": "2025-05-13T17:15:34.255814Z", "id": 1593, "last_name": "Анисимов", "first_name": "Илья", "birth_year": "2009", "club": "Дюкпп \"Косатка\"", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1597": {"club": ["Дюкпп \"Косатка\"", "ДЮКПП \"Косатка\""], "athlete": {"created_at": "2025-05-13T17:15:34.305994Z", "updated_at": "2025-05-13T17:15:34.305994Z", "id": 1597, "last_name": "Синюк", "first_name": "Алексей", "birth_year": "2010", "club": "Дюкпп \"Косатка\"", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1589": {"club": ["Дюкпп \"Косатка\"", "ДЮКПП \"Косатка\""], "athlete": {"created_at": "2025-05-13T17:15:33.953365Z", "updated_at": "2025-05-13T17:15:33.953365Z", "id": 1589, "last_name": "Пыльнев", "first_name": "Максим", "birth_year": "2009", "club": "Дюкпп \"Косатка\"", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1112": {"club": ["г.Москва", "Мксшор Восток"], "license": ["1", ""], "athlete": {"created_at": "2025-05-11T11:45:51.391189Z", "updated_at": "2025-05-11T11:45:51.391189Z", "id": 1112, "last_name": "Гуреева", "first_name": "Яна", "birth_year": "2005", "club": "г.Москва", "city": null, "license": "1", "gender": "F", "avatar_url": null}}, "225": {"club": ["г.Москва", "Мксшор Восток"], "license": ["МС", ""], "athlete": {"created_at": "2025-05-11T00:33:11.844055Z", "updated_at": "2025-05-11T00:33:11.844055Z", "id": 225, "last_name": "Липатов", "first_name": "Андрей", "birth_year": "2003", "club": "г.Москва", "city": null, "license": "МС", "gender": "M", "avatar_url": null}}, "1446": {"club": ["МАП \"Медведково\"", "Шввс"], "athlete": {"created_at": "2025-05-13T16:52:41.091566Z", "updated_at": "2025-05-13T16:52:41.091566Z", "id": 1446, "last_name": "Кусков", "first_name": "Иван", "birth_year": "2002", "club": "МАП \"Медведково\"", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "2932": {"club": ["Тверская область", "Монофин"], "license": ["1", ""], "athlete": {"created_at": "2025-05-14T09:31:07.436931Z", "updated_at": "2025-05-14T09:31:07.436931Z", "id": 2932, "last_name": "Бобрик", "first_name": "Илья", "birth_year": "2006", "club": "Тверская область", "city": null, "license": "1", "gender": "M", "avatar_url": null}}, "1598": {"club": ["Дюкпп \"Косатка\"", "ДЮКПП \"Косатка\""], "athlete": {"created_at": "2025-05-13T17:15:34.308995Z", "updated_at": "2025-05-13T17:15:34.308995Z", "id": 1598, "last_name": "Скрипов", "first_name": "Сергей", "birth_year": "2010", "club": "Дюкпп \"Косатка\"", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "1237": {"club": ["г.Москва", "Монофин"], "license": ["1", ""], "athlete": {"created_at": "2025-05-12T18:59:37.050079Z", "updated_at": "2025-05-12T18:59:37.050079Z", "id": 1237, "last_name": "Звонцова", "first_name": "Виктория", "birth_year": "2011", "club": "г.Москва", "city": null, "license": "1", "gender": "F", "avatar_url": null}}, "96": {"club": ["г.Москва", "Монофин"], "license": ["МС", ""], "athlete": {"created_at": "2025-05-11T00:33:11.190162Z", "updated_at": "2025-05-11T00:33:11.190162Z", "id": 96, "last_name": "Головкина", "first_name": "Александра", "birth_year": "2007", "club": "г.Москва", "city": null, "license": "МС", "gender": "F", "avatar_url": null}}, "1565": {"club": ["Дюкпп \"Косатка\"", "ДЮКПП \"Косатка\""], "athlete": {"created_at": "2025-05-13T17:15:33.766242Z", "updated_at": "2025-05-13T17:15:33.766242Z", "id": 1565, "last_name": "Щукина", "first_name": "Анна", "birth_year": "2014", "club": "Дюкпп \"Косатка\"", "city": null, "license": "", "gender": "F", "avatar_url": null}}, "994": {"club": ["г. Москва", "Шввс"], "license": ["КМС", ""], "athlete": {"created_at": "2025-05-11T11:03:21.236216Z", "updated_at": "2025-05-12T19:22:24.507618Z", "id": 994, "last_name": "Архипов", "first_name": "Сергей", "birth_year": "2008", "club": "г. Москва", "city": null, "license": "КМС", "gender": "M", "avatar_url": null}}, "1194": {"club": ["Томская область", "МГТУ им. Н.Э. Баумана"], "license": ["МС", ""], "athlete": {"created_at": "2025-05-11T11:51:43.463816Z", "updated_at": "2025-05-11T11:51:43.463816Z", "id": 1194, "last_name": "Соболева", "first_name": "Дарья", "birth_year": "2003", "club": "Томская область", "city": null, "license": "МС", "gender": "F", "avatar_url": null}}, "1226": {"club": ["г.Москва", "Мксшор Восток"], "license": ["1", ""], "athlete": {"created_at": "2025-05-12T18:59:36.610376Z", "updated_at": "2025-05-12T18:59:36.610376Z", "id": 1226, "last_name": "Богун", "first_name": "Таисия", "birth_year": "2008", "club": "г.Москва", "city": null, "license": "1", "gender": "F", "avatar_url": null}}, "1526": {"club": ["ЦСП Северный", "Монофин"], "athlete": {"created_at": "2025-05-13T17:15:33.389948Z", "updated_at": "2025-05-13T17:15:33.389948Z", "id": 1526, "last_name": "Яковлев", "first_name": "Михаил", "birth_year": "2014", "club": "ЦСП Северный", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "248": {"club": ["г.Москва", "Мксшор Восток"], "license": ["КМС", ""], "athlete": {"created_at": "2025-05-11T00:33:11.906371Z", "updated_at": "2025-05-11T00:33:11.906371Z", "id": 248, "last_name": "Ефимов", "first_name": "Ефим", "birth_year": "2005", "club": "г.Москва", "city": null, "license": "КМС", "gender": "M", "avatar_url": null}}, "950": {"club": ["г. Москва", "Мксшор Восток"], "license": ["2", ""], "athlete": {"created_at": "2025-05-11T11:03:21.036624Z", "updated_at": "2025-05-11T11:03:21.036624Z", "id": 950, "last_name": "Борисова", "first_name": "Ольга", "birth_year": "2009", "club": "г. Москва", "city": null, "license": "2", "gender": "F", "avatar_url": null}}, "1521": {"club": ["Восток", "Мксшор Восток"], "athlete": {"created_at": "2025-05-13T16:52:41.525457Z", "updated_at": "2025-05-13T16:52:41.525457Z", "id": 1521, "last_name": "Сафронова", "first_name": "Кристина", "birth_year": "2014", "club": "Восток", "city": null, "license": "", "gender": "F", "avatar_url": null}}, "758": {"club": ["г. Москва", "Шввс"], "license": ["3", ""], "athlete": {"created_at": "2025-05-11T11:03:20.046796Z", "updated_at": "2025-05-11T11:03:20.046796Z", "id": 758, "last_name": "Савельева", "first_name": "Мария", "birth_year": "2010", "club": "г. Москва", "city": null, "license": "3", "gender": "F", "avatar_url": null}}, "1485": {"club": ["Восток", "Мксшор Восток"], "athlete": {"created_at": "2025-05-13T16:52:41.417171Z", "updated_at": "2025-05-13T16:52:41.417171Z", "id": 1485, "last_name": "Скрябина", "first_name": "Софья", "birth_year": "2014", "club": "Восток", "city": null, "license": "", "gender": "F", "avatar_url": null}}, "211": {"club": ["г.Москва", "Мксшор Восток"], "license": ["МС", ""], "athlete": {"created_at": "2025-05-11T00:33:11.799383Z", "updated_at": "2025-05-11T00:33:11.799383Z", "id": 211, "last_name": "Александров", "first_name": "Кирилл", "birth_year": "2006", "club": "г.Москва", "city": null, "license": "МС", "gender": "M", "avatar_url": null}}, "1539": {"club": ["ГБУ ДО СШОР \"Москвич\"", "СШОР Москвич"], "athlete": {"created_at": "2025-05-13T17:15:33.395947Z", "updated_at": "2025-05-13T17:15:33.395947Z", "id": 1539, "last_name": "Новодарский", "first_name": "Егор", "birth_year": "2003", "club": "ГБУ ДО СШОР \"Москвич\"", "city": null, "license": "", "gender": "M", "avatar_url": null}}, "80": {"club": ["г.Москва", "РАНХиГС"], "license": ["КМС", ""], "athlete": {"created_at": "2025-05-11T00:33:11.140975Z", "updated_at": "2025-05-11T00:33:11.140975Z", "id": 80, "last_name": "Шаркова", "first_name": "Полина", "birth_year": "2001", "club": "г.Москва", "city": null, "license": "КМС", "gender": "F", "avatar_url": null}}, "243": {"club": ["г.Москва", "Шввс"], "license": ["КМС", ""], "athlete": {"created_at": "2025-05-11T00:33:11.898379Z", "updated_at": "2025-05-11T00:33:11.898379Z", "id": 243, "last_name": "Зикеев", "first_name": "Иван", "birth_year": "2006", "club": "г.Москва", "city": null, "license": "КМС", "gender": "M", "avatar_url": null}}, "193": {"club": ["г.Москва", "Мксшор Восток"], "license": ["1", ""], "athlete": {"created_at": "2025-05-11T00:33:11.721260Z", "updated_at": "2025-05-11T00:33:11.721260Z", "id": 193, "last_name": "Минаева", "first_name": "Варвара", "birth_year": "2009", "club": "г.Москва", "city": null, "license": "1", "gender": "F", "avatar_url": null}}, "1457": {"club": ["Восток", "Мксшор Восток"], "athlete": {"created_at": "2025-05-13T16:52:41.115107Z", "updated_at": "2025-05-13T16:52:41.115107Z", "id": 1457, "last_name": "Седова", "first_name": "Софья", "birth_year": "2009", "club": "Восток", "city": null, "license": "", "gender": "F", "avatar_url": null}}}
+{
+  "2342": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["1", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:43.847977Z",
+      "updated_at": "2025-05-13T19:46:43.847977Z",
+      "id": 2342,
+      "last_name": "Сапожников",
+      "first_name": "Михаил",
+      "birth_year": "2010",
+      "club": "Московская область",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5128": {
+    "club": ["МАУ ДО \"СШ Шатура\" г. Шатура", "Шатура г. Шатура"],
+    "athlete": {
+      "created_at": "2025-05-26T14:48:03.086250Z",
+      "updated_at": "2025-05-26T14:48:03.086250Z",
+      "id": 5128,
+      "last_name": "Сиротюк",
+      "first_name": "Егор",
+      "birth_year": "2008",
+      "club": "МАУ ДО \"СШ Шатура\" г. Шатура",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "1548": {
+    "club": ["Команда Дерябиной", "Команда Дерябиной А г. Москва"],
+    "athlete": {
+      "created_at": "2025-05-13T17:15:33.438137Z",
+      "updated_at": "2025-05-13T17:15:33.438137Z",
+      "id": 1548,
+      "last_name": "Братанов",
+      "first_name": "Иван",
+      "birth_year": "2010",
+      "club": "Команда Дерябиной",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5018": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.400579Z",
+      "updated_at": "2025-05-26T14:36:15.400579Z",
+      "id": 5018,
+      "last_name": "Блинников",
+      "first_name": "Максим",
+      "birth_year": "2010",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "2993": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["3", ""],
+    "athlete": {
+      "created_at": "2025-05-14T09:37:35.696406Z",
+      "updated_at": "2025-05-14T09:37:35.696406Z",
+      "id": 2993,
+      "last_name": "Ледовой",
+      "first_name": "Антон",
+      "birth_year": "2010",
+      "club": "Московская область",
+      "city": null,
+      "license": "3",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "2271": {
+    "club": ["Московская область", "СК \"Чайка\" г. Высоковск"],
+    "license": ["2", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:42.582557Z",
+      "updated_at": "2025-05-13T19:46:42.582557Z",
+      "id": 2271,
+      "last_name": "Швейкин",
+      "first_name": "Александр",
+      "birth_year": "2008",
+      "club": "Московская область",
+      "city": null,
+      "license": "2",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "2392": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["КМС", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:44.759785Z",
+      "updated_at": "2025-05-13T19:46:44.759785Z",
+      "id": 2392,
+      "last_name": "Ткачев",
+      "first_name": "Егор",
+      "birth_year": "2009",
+      "club": "Московская область",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "2354": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["1", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:43.981218Z",
+      "updated_at": "2025-05-13T19:46:43.981218Z",
+      "id": 2354,
+      "last_name": "Николаев",
+      "first_name": "Иван",
+      "birth_year": "2010",
+      "club": "Московская область",
+      "city": null,
+      "license": "1",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5051": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.981052Z",
+      "updated_at": "2025-05-26T14:36:15.981052Z",
+      "id": 5051,
+      "last_name": "Гайнутдинов",
+      "first_name": "Руслан",
+      "birth_year": "2007",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5013": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.769327Z",
+      "updated_at": "2025-05-26T14:36:15.769327Z",
+      "id": 5013,
+      "last_name": "Кирсанова",
+      "first_name": "Виктория",
+      "birth_year": "2017",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "3899": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["3", ""],
+    "athlete": {
+      "created_at": "2025-05-15T21:56:22.134842Z",
+      "updated_at": "2025-05-15T21:56:22.134842Z",
+      "id": 3899,
+      "last_name": "Южик",
+      "first_name": "Таисия",
+      "birth_year": "2014",
+      "club": "Московская область",
+      "city": null,
+      "license": "3",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "4284": {
+    "club": ["Заречный", "МБУДО СШ \"Сатурн\" г. Раменское"],
+    "athlete": {
+      "created_at": "2025-05-16T22:02:08.520134Z",
+      "updated_at": "2025-05-16T22:02:08.520134Z",
+      "id": 4284,
+      "last_name": "Исаев",
+      "first_name": "Алексей",
+      "birth_year": "2012",
+      "club": "Заречный",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "2230": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["3", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:42.034341Z",
+      "updated_at": "2025-05-13T19:46:42.034341Z",
+      "id": 2230,
+      "last_name": "Непочатых",
+      "first_name": "Даниил",
+      "birth_year": "2012",
+      "club": "Московская область",
+      "city": null,
+      "license": "3",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5064": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:16.184914Z",
+      "updated_at": "2025-05-26T14:36:16.184914Z",
+      "id": 5064,
+      "last_name": "Воронцов",
+      "first_name": "Тимофей",
+      "birth_year": "2013",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "4992": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.149523Z",
+      "updated_at": "2025-05-26T14:36:15.149523Z",
+      "id": 4992,
+      "last_name": "Хаев",
+      "first_name": "Егор",
+      "birth_year": "2013",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "3934": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["1 юн", ""],
+    "athlete": {
+      "created_at": "2025-05-15T21:56:22.566473Z",
+      "updated_at": "2025-05-15T21:56:22.566473Z",
+      "id": 3934,
+      "last_name": "Зверев",
+      "first_name": "Семен",
+      "birth_year": "2014",
+      "club": "Московская область",
+      "city": null,
+      "license": "1 юн",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5066": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:16.197931Z",
+      "updated_at": "2025-05-26T14:36:16.197931Z",
+      "id": 5066,
+      "last_name": "Романченко",
+      "first_name": "Владимир",
+      "birth_year": "2014",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5069": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:16.280080Z",
+      "updated_at": "2025-05-26T14:36:16.280080Z",
+      "id": 5069,
+      "last_name": "Степнов",
+      "first_name": "Александр",
+      "birth_year": "2014",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5248": {
+    "club": ["Шатура г. Шатура", "ДС \"Шатура\" г. Шатура"],
+    "athlete": {
+      "created_at": "2025-05-26T16:04:47.663226Z",
+      "updated_at": "2025-05-26T16:04:47.663226Z",
+      "id": 5248,
+      "last_name": "Винокурова",
+      "first_name": "Светлана",
+      "birth_year": "2010",
+      "club": "Шатура г. Шатура",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "5062": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:16.168308Z",
+      "updated_at": "2025-05-26T14:36:16.168308Z",
+      "id": 5062,
+      "last_name": "Болдовкина",
+      "first_name": "Юлия",
+      "birth_year": "2013",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "2176": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["3", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:41.002896Z",
+      "updated_at": "2025-05-13T19:46:41.002896Z",
+      "id": 2176,
+      "last_name": "Сачко",
+      "first_name": "Полина",
+      "birth_year": "2013",
+      "club": "Московская область",
+      "city": null,
+      "license": "3",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "1562": {
+    "club": ["Команда Дерябиной", "Команда Дерябиной А г. Москва"],
+    "athlete": {
+      "created_at": "2025-05-13T17:15:33.702989Z",
+      "updated_at": "2025-05-13T17:15:33.702989Z",
+      "id": 1562,
+      "last_name": "Богданова",
+      "first_name": "Анна",
+      "birth_year": "2013",
+      "club": "Команда Дерябиной",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "1573": {
+    "club": ["Команда Дерябиной", "Команда Дерябиной А г. Москва"],
+    "athlete": {
+      "created_at": "2025-05-13T17:15:33.758242Z",
+      "updated_at": "2025-05-13T17:15:33.758242Z",
+      "id": 1573,
+      "last_name": "Головань",
+      "first_name": "Софья",
+      "birth_year": "2013",
+      "club": "Команда Дерябиной",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "1572": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "athlete": {
+      "created_at": "2025-05-13T17:15:33.768242Z",
+      "updated_at": "2025-05-13T17:15:33.768242Z",
+      "id": 1572,
+      "last_name": "Беликова",
+      "first_name": "Таисия",
+      "birth_year": "2013",
+      "club": "Московская область",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "2355": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["КМС", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:43.990258Z",
+      "updated_at": "2025-05-13T19:46:43.990258Z",
+      "id": 2355,
+      "last_name": "Морозов",
+      "first_name": "Глеб",
+      "birth_year": "2009",
+      "club": "Московская область",
+      "city": null,
+      "license": "КМС",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "2124": {
+    "club": ["Рязанская область", "\"Триумф\" ФПС Рязанской области г. Сп"],
+    "license": ["2", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:40.586924Z",
+      "updated_at": "2025-05-13T19:46:40.586924Z",
+      "id": 2124,
+      "last_name": "Качкаева",
+      "first_name": "Анастасия",
+      "birth_year": "2012",
+      "club": "Рязанская область",
+      "city": null,
+      "license": "2",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "1563": {
+    "club": ["Команда Дерябиной", "Команда Дерябиной А г. Москва"],
+    "athlete": {
+      "created_at": "2025-05-13T17:15:33.748244Z",
+      "updated_at": "2025-05-13T17:15:33.748244Z",
+      "id": 1563,
+      "last_name": "Сергеева",
+      "first_name": "София",
+      "birth_year": "2013",
+      "club": "Команда Дерябиной",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "2151": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["3", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:40.627093Z",
+      "updated_at": "2025-05-13T19:46:40.627093Z",
+      "id": 2151,
+      "last_name": "Аронская",
+      "first_name": "Кристина",
+      "birth_year": "2013",
+      "club": "Московская область",
+      "city": null,
+      "license": "3",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "5041": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.785231Z",
+      "updated_at": "2025-05-26T14:36:15.785231Z",
+      "id": 5041,
+      "last_name": "Пашкова",
+      "first_name": "Варвара",
+      "birth_year": "2013",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "2161": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["2", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:40.924636Z",
+      "updated_at": "2025-05-13T19:46:40.924636Z",
+      "id": 2161,
+      "last_name": "Сичинава",
+      "first_name": "Вера",
+      "birth_year": "2011",
+      "club": "Московская область",
+      "city": null,
+      "license": "2",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "2216": {
+    "club": ["Рязанская область", "\"Триумф\" ФПС Рязанской области г. Сп"],
+    "license": ["2", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:41.879969Z",
+      "updated_at": "2025-05-13T19:46:41.879969Z",
+      "id": 2216,
+      "last_name": "Мартынова",
+      "first_name": "Юлия",
+      "birth_year": "2011",
+      "club": "Рязанская область",
+      "city": null,
+      "license": "2",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "934": {
+    "club": ["г. Москва", "Команда Дерябиной А г. Москва"],
+    "license": ["КМС", ""],
+    "athlete": {
+      "created_at": "2025-05-11T11:03:20.968506Z",
+      "updated_at": "2025-05-11T11:03:20.968506Z",
+      "id": 934,
+      "last_name": "Носова",
+      "first_name": "Варвара",
+      "birth_year": "2007",
+      "club": "г. Москва",
+      "city": null,
+      "license": "КМС",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "2309": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["2", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:43.409440Z",
+      "updated_at": "2025-05-13T19:46:43.409440Z",
+      "id": 2309,
+      "last_name": "Антонов",
+      "first_name": "Роман",
+      "birth_year": "2011",
+      "club": "Московская область",
+      "city": null,
+      "license": "2",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5201": {
+    "license": ["II", ""],
+    "athlete": {
+      "created_at": "2025-05-26T15:47:39.817540Z",
+      "updated_at": "2025-05-27T06:26:53.048241Z",
+      "id": 5201,
+      "last_name": "Насртдинова",
+      "first_name": "Марина",
+      "birth_year": "2009",
+      "club": "МБУДО СШ \"Сатурн\" г. Раменское",
+      "city": null,
+      "license": "II",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "1550": {
+    "club": ["Команда Дерябиной", "\"Триумф\" ФПС Рязанской области г. Сп"],
+    "athlete": {
+      "created_at": "2025-05-13T17:15:33.439106Z",
+      "updated_at": "2025-05-13T17:15:33.439106Z",
+      "id": 1550,
+      "last_name": "Узлов",
+      "first_name": "Александр",
+      "birth_year": "2009",
+      "club": "Команда Дерябиной",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "2181": {
+    "club": ["Рязанская область", "\"Триумф\" ФПС Рязанской области г. Сп"],
+    "license": ["1", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:40.997895Z",
+      "updated_at": "2025-05-13T19:46:40.997895Z",
+      "id": 2181,
+      "last_name": "Романова",
+      "first_name": "Владислава",
+      "birth_year": "2010",
+      "club": "Рязанская область",
+      "city": null,
+      "license": "1",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "5067": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:16.197931Z",
+      "updated_at": "2025-05-26T14:36:16.197931Z",
+      "id": 5067,
+      "last_name": "Кобычкин",
+      "first_name": "Матвей",
+      "birth_year": "2015",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5036": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.680089Z",
+      "updated_at": "2025-05-26T14:36:15.680089Z",
+      "id": 5036,
+      "last_name": "Мальков",
+      "first_name": "Семен",
+      "birth_year": "2017",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5038": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.715822Z",
+      "updated_at": "2025-05-26T14:36:15.715822Z",
+      "id": 5038,
+      "last_name": "Столбов",
+      "first_name": "Семен",
+      "birth_year": "2017",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5044": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:16.070567Z",
+      "updated_at": "2025-05-26T14:36:16.070567Z",
+      "id": 5044,
+      "last_name": "Добржанский",
+      "first_name": "Есений",
+      "birth_year": "2018",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "2112": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["3", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:40.530919Z",
+      "updated_at": "2025-05-13T19:46:40.530919Z",
+      "id": 2112,
+      "last_name": "Горбачева",
+      "first_name": "Александра",
+      "birth_year": "2012",
+      "club": "Московская область",
+      "city": null,
+      "license": "3",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "5007": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.324003Z",
+      "updated_at": "2025-05-26T14:36:15.324003Z",
+      "id": 5007,
+      "last_name": "Рубан",
+      "first_name": "Алина",
+      "birth_year": "2012",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "5049": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:16.179914Z",
+      "updated_at": "2025-05-26T14:36:16.179914Z",
+      "id": 5049,
+      "last_name": "Рубан",
+      "first_name": "Анастасия",
+      "birth_year": "2014",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "2114": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["3", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:40.540933Z",
+      "updated_at": "2025-05-13T19:46:40.540933Z",
+      "id": 2114,
+      "last_name": "Щербаченко",
+      "first_name": "Анна",
+      "birth_year": "2012",
+      "club": "Московская область",
+      "city": null,
+      "license": "3",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "2313": {
+    "club": ["Рязанская область", "\"Триумф\" ФПС Рязанской области г. Сп"],
+    "license": ["2", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:43.454440Z",
+      "updated_at": "2025-05-13T19:46:43.454440Z",
+      "id": 2313,
+      "last_name": "Соловьев",
+      "first_name": "Артем",
+      "birth_year": "2009",
+      "club": "Рязанская область",
+      "city": null,
+      "license": "2",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5032": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.981052Z",
+      "updated_at": "2025-05-26T14:36:15.981052Z",
+      "id": 5032,
+      "last_name": "Устюгова",
+      "first_name": "Кристина",
+      "birth_year": "2016",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "2244": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["3", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:42.112234Z",
+      "updated_at": "2025-05-13T19:46:42.112234Z",
+      "id": 2244,
+      "last_name": "Павлов",
+      "first_name": "Александр",
+      "birth_year": "2012",
+      "club": "Московская область",
+      "city": null,
+      "license": "3",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "4980": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.516850Z",
+      "updated_at": "2025-05-26T14:36:15.516850Z",
+      "id": 4980,
+      "last_name": "Москал",
+      "first_name": "Дмитрий",
+      "birth_year": "2015",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5033": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.666429Z",
+      "updated_at": "2025-05-26T14:36:15.666429Z",
+      "id": 5033,
+      "last_name": "Исаев",
+      "first_name": "Степан",
+      "birth_year": "2016",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5059": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:16.071569Z",
+      "updated_at": "2025-05-26T14:36:16.071569Z",
+      "id": 5059,
+      "last_name": "Соловьева",
+      "first_name": "Ирина",
+      "birth_year": "2007",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "5053": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.982051Z",
+      "updated_at": "2025-05-26T14:36:15.982051Z",
+      "id": 5053,
+      "last_name": "Второва",
+      "first_name": "Алена",
+      "birth_year": "2014",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "F",
+      "avatar_url": null
+    }
+  },
+  "2236": {
+    "club": ["Рязанская область", "\"Триумф\" ФПС Рязанской области г. Сп"],
+    "license": ["3", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:42.062342Z",
+      "updated_at": "2025-05-13T19:46:42.062342Z",
+      "id": 2236,
+      "last_name": "Бибиков",
+      "first_name": "Максим",
+      "birth_year": "2012",
+      "club": "Рязанская область",
+      "city": null,
+      "license": "3",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "4962": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T14:36:15.210100Z",
+      "updated_at": "2025-05-26T14:36:15.210100Z",
+      "id": 4962,
+      "last_name": "Павлов",
+      "first_name": "Дмитрий",
+      "birth_year": "2007",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "2362": {
+    "club": ["Московская область", "МАУ ДО ДОО ПЦ \"Нептун\" г. Щелково"],
+    "license": ["3", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:43.911669Z",
+      "updated_at": "2025-05-13T19:46:43.911669Z",
+      "id": 2362,
+      "last_name": "Фирстов",
+      "first_name": "Наум",
+      "birth_year": "2013",
+      "club": "Московская область",
+      "city": null,
+      "license": "3",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "5153": {
+    "club": [
+      "\"Триумф\" ФПС Рязанской области г. Спа",
+      "\"Триумф\" ФПС Рязанской области г. Сп"
+    ],
+    "athlete": {
+      "created_at": "2025-05-26T15:28:51.040354Z",
+      "updated_at": "2025-05-26T15:28:51.040354Z",
+      "id": 5153,
+      "last_name": "Пак",
+      "first_name": "Максим",
+      "birth_year": "2015",
+      "club": "\"Триумф\" ФПС Рязанской области г. Спа",
+      "city": null,
+      "license": "",
+      "gender": "M",
+      "avatar_url": null
+    }
+  },
+  "2146": {
+    "club": ["Рязанская область", "\"Триумф\" ФПС Рязанской области г. Сп"],
+    "license": ["2", ""],
+    "athlete": {
+      "created_at": "2025-05-13T19:46:40.620092Z",
+      "updated_at": "2025-05-13T19:46:40.620092Z",
+      "id": 2146,
+      "last_name": "Савостина",
+      "first_name": "Мария",
+      "birth_year": "2013",
+      "club": "Рязанская область",
+      "city": null,
+      "license": "2",
+      "gender": "F",
+      "avatar_url": null
+    }
+  }
+}

@@ -9,6 +9,7 @@ from models.swim import SwimResultsParser
 #  r"^.+\s-\s.*?метров.*?$"
 #  r"^.+-\s?\d+\s?м.*?$"
 # r"(\d\s)?\d{2,}(\sм)?.+\d{4}.+г\.р\..*"
+# r"Дистанция\s\d+.+"
 
 
 def main():
@@ -17,7 +18,7 @@ def main():
 
     parser = SwimResultsParser(
         get_parser('lenex'),
-        distance_header_re=r"^.*?метров.*?$",
+        distance_header_re=r"Дистанция\s\d+.+",
         input_file=input_file,
         output_file=output_file,
     )
@@ -56,4 +57,5 @@ def load_logging():
 
 
 if __name__ == "__main__":
+    load_logging()
     main()
