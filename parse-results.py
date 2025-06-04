@@ -13,12 +13,13 @@ from models.swim import SwimResultsParser
 
 
 def main():
-    input_file = Path("output/cleaned_results.txt")
-    output_file = Path("output/output_results.json")
+    input_file = Path("output/0_cleaned_results.txt")
+    output_file = Path("output/1_output_results.json")
 
+    type = 'beswimmer'
     parser = SwimResultsParser(
-        get_parser('lenex'),
-        distance_header_re=r"Дистанция\s\d+.+",
+        get_parser(type),
+        distance_header_re=r"Дистанция\s\d+\s+.+",
         input_file=input_file,
         output_file=output_file,
     )
@@ -26,20 +27,14 @@ def main():
 
 
 def get_parser(type: str):
-    match type.lower():
-        case 'lenex':
-            from models_lenex.individual import IndividualParser
-        case 'final':
-            from models_wfwp.individual import IndividualParser
-        case 'points':
-            from models_wpnf.individual import IndividualParser
-        case _:
-            from models_custom.individual import IndividualParser
-    return IndividualParser
+    from parsers import load_dir
+    dir = Path('./parsers')
+    data = load_dir(dir)
+    return data[type.lower()]
 
 
 def load_logging():
-    error_log_path = Path("output/errors.log")
+    error_log_path = Path("output/1_errors.log")
 
     file_handler = logging.FileHandler(error_log_path,
                                        mode="w",

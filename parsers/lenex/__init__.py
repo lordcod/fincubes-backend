@@ -1,0 +1,4 @@
+from parsers.lenex.beswimmer import BeswimmerIndividualModel
+from parsers.lenex.expanded_splits import ExpandedSplitIndividualModel
+from parsers.lenex.prerank import PrerankIndividualModel
+from parsers.lenex.with_patronymic import WithPatronymicIndividualModel

@@ -3,7 +3,7 @@ import aiohttp
 import asyncio
 from __config__ import headers
 
-athlete_api_url = 'https://localhost:8000/athletes'
+athlete_api_url = 'https://api.fincubes.ru/athletes'
 RANK_ORDER = {
     'МСМК': -2,
     'ЗМС': -1,

@@ -1,41 +1,67 @@
-import os
-from pathlib import Path
 import pdfplumber
+import pytesseract
+from pathlib import Path
+
+pytesseract.pytesseract.tesseract_cmd = r"C:\Users\2008d\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
 
 
+# Путь к PDF
 pdf_path = Path(
-    r"C:\Users\2008d\Downloads\9-Итоговый_9_финал_этап_2025г..pdf")
-output_text_path = Path("output/cleaned_results.txt")
-log_path = Path("output/log_removed_lines.txt")
+    r"C:\Users\2008d\Downloads\Полный итоговый FINNA CUP.pdf"
+)
+
+# Мусорные ключевые фразы
 trash = """
-Итоговый протокол
-III Открытый Кубок городов Восточного Подмосковья
-по плаванию, и Подводному спорту 9 этап ФИНАЛ
-Электросталь, Т Н Покровской, 50м, 8 дор., 25.05.2025
+Соревнование по Классическому двоеборью "FINNA CUP"
+Симферополь, 25.5.2025
+Год рождения
+Норматив
 """
+trash_keywords = [t.strip().lower()
+                  for t in trash.strip().split('\n') if t.strip()]
 
-trash_keywords = list(filter(bool, trash.split('\n')))
-
+# Результаты
 cleaned_lines = []
-log_lines = []
+seen_logs = set()  # Для уникальных логов
+
+
+def fix_ocr_errors(text: str) -> str:
+    return (
+        text.replace("|", "I")
+            .replace("]", "I")
+    )
+
+
+def clean_line(line: str):
+    stripped = line.strip()
+    lowered = stripped.lower()
+
+    if not stripped:
+        log_msg = "[EMPTY]"
+    elif any(k in lowered for k in trash_keywords):
+        log_msg = stripped
+    else:
+        cleaned_lines.append(stripped)
+        return
+
+    if log_msg not in seen_logs:
+        print(f"REMOVED: {log_msg}")
+        seen_logs.add(log_msg)
 
 
 def parse_pdf(pdf_path):
     with pdfplumber.open(pdf_path) as pdf:
-        for page in pdf.pages:
+        for i, page in enumerate(pdf.pages):
             text = page.extract_text()
-            if not text:
-                continue
-            for line in text.split("\n"):
-                if 'дайвинг' in line:
-                    print('Found diving style')
-                stripped = line.strip()
-                if not stripped:
-                    log_lines.append("[EMPTY]")
-                elif any(keyword.lower() in stripped.lower() for keyword in trash_keywords):
-                    log_lines.append(stripped)
-                else:
-                    cleaned_lines.append(stripped)
+            if text:
+                for line in text.split('\n'):
+                    clean_line(line)
+            else:
+                print(f"OCR: page {i+1}")
+                image = page.to_image(resolution=300).original
+                ocr_text = pytesseract.image_to_string(image, lang="rus+eng")
+                for line in ocr_text.split('\n'):
+                    clean_line(fix_ocr_errors(line))
 
 
 if pdf_path.is_dir():
@@ -46,6 +72,6 @@ if pdf_path.is_dir():
 else:
     parse_pdf(pdf_path)
 
-
+output_text_path = Path(
+    "output/0_cleaned_results.txt")
 output_text_path.write_text("\n".join(cleaned_lines), encoding="utf-8")
-log_path.write_text("\n".join(log_lines), encoding="utf-8")

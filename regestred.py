@@ -21,6 +21,8 @@ sexs = {
     'девушки': 'F',
     'юниорки': 'F',
     'женщин':  'F',
+    'f':  'F',
+
 
     'мужчины': 'M',
     'мальчики': 'M',
@@ -28,6 +30,7 @@ sexs = {
     'юниоры': 'M',
     'мужчин': 'M',
     'юниорыи': 'M',
+    'm': 'M',
 }
 
 
@@ -45,6 +48,8 @@ sexs = {
 # WA
 # r"(?P<style>.+)\s*- (?P<distance>\d+)\s*м,\s*(?P<gender>[а-я]+)\s*(?P<min_age>\d{4})(-(?P<max_age>\d{4}))?.*"
 # r"(9\s)?(?P<distance>\d+)(\s*м)?\s+(?P<style>.+?)\s+(?P<gender>[а-яё]+)\s+(?P<min_age>\d{4})(\-(?P<max_age>\d{4}))?.*"
+#
+# r"(?P<style>.+);(?P<distance>.+);(?P<gender>.+)"
 
 invalid = {}
 
@@ -59,9 +64,9 @@ def invalid_distance(distance):
 class RegisterParser:
     def __init__(
         self,
-        results: str = "output/output_results.json",
-        itogi: str = 'output/itogi.json',
-        distances: str = 'output/distances.json',
+        results: str = "output/1_output_results.json",
+        itogi: str = 'output/2_itogi.json',
+        distances: str = 'output/2_distances.json',
     ):
         with open(results, 'rb') as file:
             self.output = json.load(file)
@@ -71,7 +76,7 @@ class RegisterParser:
         self.athletes = defaultdict(list)
 
         self.distance_re = re.compile(
-            r"Дистанция\s+(?P<distance>\d+)м\s+(?P<style>.+),\s*(?P<gender>[а-я]+)\s*",
+            r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<distance>\d+)m\s(?P<style>[a-zа-я]+).*",
             re.IGNORECASE,
         )
 
@@ -153,7 +158,8 @@ class RegisterParser:
         return stroke, distance, sex, mna, mxa
 
     def parse_athlete(self, result, gender):
-        if not isinstance(result['birth_year'], int) and not result['birth_year'].isdigit():
+        result['birth_year'] = str(result['birth_year'])
+        if not result['birth_year'].isdigit():
             raise TypeError('birth_year is not int')
         if len(result['birth_year']) == 2:
             result['birth_year'] = '20'+result['birth_year']

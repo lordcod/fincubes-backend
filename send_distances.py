@@ -5,7 +5,7 @@ from __config__ import headers
 
 
 async def create_distances(session: aiohttp.ClientSession, competition_id, distance_data, headers):
-    url = f'https://localhost:8000/competitions/{competition_id}/distances'
+    url = f'https://api.fincubes.ru/competitions/{competition_id}/distances/'
     async with session.post(url, json=distance_data, headers=headers) as response:
         data = await response.json()
         if not response.ok:
@@ -35,8 +35,9 @@ async def process_distances(data_list: list, comp_id, headers: dict):
 if __name__ == '__main__':
     comp_id = int(input("Competition id: "))
 
-    with open('output/distances.json', 'rb') as file:
+    with open('output/2_distances.json', 'rb') as file:
         data = json.load(file)
 
     print('Start create', len(data), 'distances')
-    asyncio.run(process_distances(data, comp_id, headers))
+    res = asyncio.run(process_distances(data, comp_id, headers))
+    print('Response:', res)

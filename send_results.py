@@ -11,10 +11,10 @@ class AthleteProcessor:
     def __init__(
         self,
         competition_id: int,
-        json_file: str = 'output/itogi.json',
-        log_file: str = 'output/athlete_processing.log',
-        requests_file: str = 'output/requests.json',
-        final_file: str = 'output/final.json',
+        json_file: str = 'output/2_itogi.json',
+        log_file: str = 'output/3_athlete_processing.log',
+        requests_file: str = 'output/3_requests.json',
+        final_file: str = 'output/3_final.json',
         team_qt_city: bool = False,
         locked_request: bool = True,
     ):
@@ -26,9 +26,9 @@ class AthleteProcessor:
         self.requests_file = requests_file
         self.final_file = final_file
         self.team_qt_city = team_qt_city
-        self.athlete_api_url = 'https://localhost:8000/athletes/'
-        self.results_api_url = f'https://localhost:8000/results/{self.competition_id}'
-        self.results_bulk_api_url = 'https://localhost:8000/results/bulk-create'
+        self.athlete_api_url = 'https://api.fincubes.ru/athletes/'
+        self.results_api_url = f'https://api.fincubes.ru/results/{self.competition_id}'
+        self.results_bulk_api_url = 'https://api.fincubes.ru/results/bulk-create'
         self.logger = self.setup_logger(log_file)
         self.requests = {}
 

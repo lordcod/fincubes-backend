@@ -8,10 +8,11 @@ from .swim_types import *
 from .state import State
 from .relay import RelayParser
 from .score import ScoreParser
+from parsers.base import IndividualModelBase
 
 
 class SwimResultsParser:
-    def __init__(self, individual_parser, *, distance_header_re: str, input_file: Path, output_file: Path):
+    def __init__(self, individual_parser: type[IndividualModelBase], *, distance_header_re: str, input_file: Path, output_file: Path):
         self.input_file = input_file
         self.output_file = output_file
 
@@ -35,7 +36,7 @@ class SwimResultsParser:
     def save_results(self):
         with open(self.output_file, "w", encoding="utf-8") as json_file:
             json.dump({
-                "individual_results": [result.__dict__ for result in self.state.individual_rows],
+                "individual_results": [result.__dict__ for result in self.state.individual_rows if result is not None],
                 "relay_results": [result.__dict__ for result in self.state.relay_rows],
                 "team_score": [result.__dict__ for result in self.state.team_score_rows],
                 "distances": self.state.distances
@@ -73,6 +74,8 @@ class SwimResultsParser:
                 continue
 
             # if re.match(r"^\d+[^)]", line):
-            self.individual_parser.parse_individual_result(line)
+            swr = self.individual_parser.parse(line)
+            self.state.current_athlete = swr
+            self.state.individual_rows.append(swr)
 
         self.save_results()
