@@ -44,19 +44,10 @@ class SwimResultsParser:
 
     def parse(self):
         for line in self.lines:
-            if self.record_re.search(line):
-                print(line)
+            if self.record_re.search(line) and not self.state.in_relay_block:
                 self.state.current_athlete.record = line
                 logging.info(
                     f"[RECORD_GIVEN] {self.state.current_athlete}")
-                continue
-
-            if re.match(r"^КОМАНДНЫЙ ЗАЧЕТ$", line):
-                self.state.in_team_score_block = True
-                continue
-
-            if self.state.in_team_score_block:
-                self.score_parser.parse_team_score(line)
                 continue
 
             if self.relay_parser.get_relay_start(line):
@@ -67,6 +58,9 @@ class SwimResultsParser:
                 self.state.current_distance = line.strip()
                 self.state.in_relay_block = False
                 continue
+
+            if 'Категория' in line:
+                self.state.current_distance += ' '+line.strip()
 
             if self.state.in_relay_block:
                 self.relay_parser.parse(line)

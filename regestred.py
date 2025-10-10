@@ -2,6 +2,7 @@ from collections import defaultdict
 import json
 import logging
 import re
+from _reserved_team import locations
 
 
 styles = {
@@ -13,7 +14,8 @@ styles = {
     'подводное плавание': 'IMMERSION',
     'bifins': 'BIFINS',
     'плавание в ластах(моноласта)': 'SURFACE',
-    'в классических ластах': 'BIFINS'
+    'в классических ластах': 'BIFINS',
+    'моноласта': 'SURFACE',
 }
 sexs = {
     'женщины': 'F',
@@ -44,14 +46,20 @@ sexs = {
 # r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<style>.+) - (?P<distance>\d+) метров\s*.*"
 #  r"Дистанция\s+(?P<distance>\d+)м\s+(?P<style>.+),\s*(?P<gender>[а-я]+)\s*"
 # r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<style>.+) - (?P<distance>\d+)м.*"
-
+# r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<distance>\d+)m\s(?P<style>[a-zа-я]+).*"
+# r"\s*(?P<style>.+) - (?P<distance>\d+) м,\s*(?P<gender>[а-я]+)\s*.+"
 # WA
 # r"(?P<style>.+)\s*- (?P<distance>\d+)\s*м,\s*(?P<gender>[а-я]+)\s*(?P<min_age>\d{4})(-(?P<max_age>\d{4}))?.*"
 # r"(9\s)?(?P<distance>\d+)(\s*м)?\s+(?P<style>.+?)\s+(?P<gender>[а-яё]+)\s+(?P<min_age>\d{4})(\-(?P<max_age>\d{4}))?.*"
 #
 # r"(?P<style>.+);(?P<distance>.+);(?P<gender>.+)"
+# r"Дистанция\s+\d+\s+(?P<gender>[А-Яа-я]+),\s+(?P<distance>\d+)[мm]?\s+(?P<style>[а-яё\s]+?)(год|\d{4}).*$"
+# r"Дистанция\s+(?P<distance>\d+)м\s+(?P<style>[а-яА-ЯёЁ\s]+),\s*(?P<gender>[а-яА-ЯёЁ]+)"
+#  r"Дистанция\s+\d+,?\s*(?P<gender>[А-Яа-яё]+),?\s*(?P<distance>\d+)\s*м?\s*(?P<style>[А-Яа-яё\s]+?)(?:,?\s*(?:год\s+рождения\s+)?(?P<ages>\d{4}\s*-\s*\d{4}|\d{4}\s*и\s*моложе|\d{4}))?$"
+# r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<style>.+)\s*-\s*(?P<distance>\d+)м.*"
 
 invalid = {}
+places = {}
 
 
 def invalid_distance(distance):
@@ -75,11 +83,12 @@ class RegisterParser:
         self.results = defaultdict(list)
         self.athletes = defaultdict(list)
 
+        # Дистанция 50м в классических ластах, девушки
+        # Плавание в классических ластах - 50 метров Юниорки (2008-2011)
         self.distance_re = re.compile(
-            r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<distance>\d+)m\s(?P<style>[a-zа-я]+).*",
-            re.IGNORECASE,
+            r"(?P<style>.+)\s*-\s*(?P<distance>\d+)\s*м,?\s*(?P<gender>[а-я]+)",
+            re.VERBOSE | re.IGNORECASE
         )
-
         self.time_regex = re.compile(
             r'((\d{1,2})[:\.,])?(\d{1,2})[:\.,](\d{1,2})к?')
 
@@ -129,10 +138,10 @@ class RegisterParser:
         return int(points)
 
     def parse_point(self, points: str):
-        if points and points.lower() == 'лично':
+        if points and str(points).lower() == 'лично':
             return points.lower()
         points = self.parse_integer(points)
-        return str(points) if points else None
+        return str(points) if points else ''
 
     def parse_distance(self, distance):
         res = self.distance_re.fullmatch(distance)
@@ -163,6 +172,12 @@ class RegisterParser:
             raise TypeError('birth_year is not int')
         if len(result['birth_year']) == 2:
             result['birth_year'] = '20'+result['birth_year']
+
+        loc = locations[result.pop('team')]
+        # loc = locations.get(result.get('team'), {
+        #                     'city': None, 'club': result.get('team')})
+        result['city'], result['team'] = loc['city'], loc['club']
+
         key = (
             result['last_name'],
             result['first_name'],
@@ -172,19 +187,33 @@ class RegisterParser:
             "first_name": result['first_name'].title(),
             "last_name": result['last_name'].title(),
             'birth_year': str(result['birth_year']),
-            'team': result['team'],
+            'team': result.get('team'),
+            'city': result['city'],
             'rank': self.normalize_rank(result['rank']),
             'gender': gender
         }
         return self.results[key]
 
     def parse_result(self, data, stroke, distance, result):
-        if result.get('dsq'):
+        if result.get('status') == 'COMPLETED' and not result.get('result'):
+            print('Invalid result', result)
+        if result.get('status') == 'DSQ':
             result['result'] = ''
-        if result.get('dsq_final'):
+        if result.get('status') == 'DSQ_FINAL':
             result['final'] = ''
 
-        if not result['dsq'] and not result['result']:
+        time_key = self.parse_time(result.get('result'))
+        key = (stroke, distance, time_key)
+        if not result.get('place'):
+            if result.get('status') == 'COMPLETED':
+                place = places.get(key)
+                print('Not found place', result, 'prepare place', place)
+                if place:
+                    result['place'] = place
+        else:
+            places[key] = result.get('place')
+
+        if result['status'] == "COMPLETED" and not result['result']:
             logging.warning('Found not dsq and not rsl: %s', result)
 
         data.append(dict(
@@ -194,11 +223,10 @@ class RegisterParser:
             final=self.parse_time(result.get('final')),
             final_rank=self.normalize_rank(result.get('final_rank')),
             record=result.get('record'),
-            dsq=result.get('dsq', False),
-            dsq_final=result.get('dsq_final', False),
-            place=self.parse_integer(result.get(
+            status=result['status'],
+            place=str(self.parse_integer(result.get(
                 'place') and result.get(
-                'place').replace('.', '').strip()),
+                'place').replace('.', '').strip())),
             points=self.parse_point(result.get('points')),
         ))
 

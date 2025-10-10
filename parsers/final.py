@@ -47,7 +47,7 @@ regex_normal = re.compile(r"""
     (?P<birth_year>\d{4})\s+
     (?P<team>.+?)\s+
     (?P<result>\d{2}:\d{2}[,.]\d{2})\s*
-    (?P<final_time>\d{2}:\d{2}[,.]\d{2})?\s*
+    (?P<final>\d{2}:\d{2}[,.]\d{2})?\s*
     (?P<final_rank>(?:[123]\s*юн|[123]|КМС|МС|МСМК|ЗМС)?)?\s*
     (?P<points>(?:лично|\d+))?$
 """, re.VERBOSE | re.IGNORECASE)
@@ -67,6 +67,7 @@ regex_dq = re.compile(r"""
         Сошел|
         нар\.?\s*пр\.?\s*сор\.?\s*|
         Переныр\s?15м\.?|
+        переныр\s*15\s*м.?|
         переныр 15 м.|
         Нар\.\spr\.\sсор|
         [Мм]ед.?\s*отвод\s*|W
@@ -119,3 +120,12 @@ class FinalIndividualModel(IndividualModelBase, name='final'):
             regexes=[regex_normal, regex_dq, regex_dq_final],
             error_values=ERROR_VALUES
         )
+
+    def prerender(self, data):
+        data['status'] = 'COMPLETED'
+        if data.pop('dsq', None):
+            data['status'] = 'DSQ'
+        if data.pop('dsq_final', None):
+            data['status'] = 'DSQ_FINAL'
+
+        return super().prerender(data)

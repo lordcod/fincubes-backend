@@ -4,19 +4,21 @@ from dataclasses import dataclass, field
 @dataclass
 class SwimResult:
     distance: str
-    place: str
     last_name: str
     first_name: str
     birth_year: str
     team: str
-    result: str
+    status: str
+    city: str = ""
+    coach: str = ""
+    place: str = ""
+    result: str = ""
     rank: str = ""
     final: str = ""
     final_rank: str = ""
     points: str = ""
     record: str = ""
-    dsq: bool = False
-    dsq_final: bool = False
+    patronymic: str = ""
 
 
 @dataclass

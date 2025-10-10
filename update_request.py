@@ -1,10 +1,11 @@
+from collections import defaultdict
 import json
 import aiohttp
 import asyncio
 from __config__ import headers
 
 athlete_api_url = 'https://api.fincubes.ru/athletes'
-RANK_ORDER = {
+RANK_ORDER = defaultdict(lambda: 100, {
     'МСМК': -2,
     'ЗМС': -1,
     'МС': 0,
@@ -20,25 +21,28 @@ RANK_ORDER = {
     'III': 4,
     'Iюн': 5,
     'IIюн': 6,
-    'IIIюн': 7,
-    '': 100
-}
+    'IIIюн': 7
+})
 
 
 def is_rank_higher(new_rank: str, old_rank: str) -> bool:
     try:
         return RANK_ORDER[new_rank] < RANK_ORDER[old_rank]
-    except (ValueError, KeyError):
+    except ValueError:
         return False
 
 
 async def update_athlete_if_needed(session: aiohttp.ClientSession, athlete_data: dict, headers: dict):
     athlete = athlete_data["athlete"]
-    current_rank = athlete["license"]
-    new_ranks = athlete_data["license"]
+    current_rank = athlete["license"].replace(
+        ' ', '')
+    new_ranks = map(lambda item: item.replace(
+        ' ', ''), athlete_data["license"])
 
-    new_rank = min(new_ranks, key=lambda r: RANK_ORDER.get(r))
+    new_rank = min(new_ranks, key=lambda r: RANK_ORDER[r])
     if is_rank_higher(new_rank, current_rank):
+        print(
+            f"{athlete['last_name']} {athlete['first_name']}: STANDARD UP ({current_rank} -> {new_rank})!")
         updated_data = {
             "last_name": athlete["last_name"],
             "first_name": athlete["first_name"],
@@ -67,12 +71,13 @@ async def process_athletes(data_list: list, headers: dict):
             for item in data_list
         ]
         results = await asyncio.gather(*tasks, return_exceptions=True)
-        responses = list(filter(bool, results))
+        responses = list(
+            filter(bool, filter(lambda item: not isinstance(item, Exception), results)))
         print('Responses', responses)
         print(f'Обновилось {len(responses)} разрядов')
 
 if __name__ == '__main__':
-    with open('output/requests.json', 'rb') as file:
+    with open('output/3_requests.json', 'rb') as file:
         data = json.load(file)
     data_list = []
     for req in data.values():

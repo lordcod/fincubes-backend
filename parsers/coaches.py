@@ -59,39 +59,40 @@ ERROR_VALUES = [
     "мед. отвод",
     "фальсатрт",
     "н/я",
-    "снят"
+    "снят",
+    "дискв."
 ]
 ERROR_VALUES.sort(key=len, reverse=True)
 
 pattern = re.compile(r"""
     ^\s*
-    (?P<place>\d+.?|в/к|д/к)?\s*
-    ((?P<rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?р|КМС|МСМК|МС|ЗМС)?)\s+)?
-    (?P<last_name>[А-Яа-яЁёë\-]+),?\s+
-    (?P<first_name>[А-Яа-яЁёë\-]+)\s+
-    (?P<birth_year>\d{4})\s+
-    (?P<team>.+?\s*)
+    (?P<place>\d+|в/к)?\s*
+    (?P<last_name>[А-Яа-яЁёë\-]+)\s+
+    (?P<first_name>[А-Яа-яЁёë\-]+)\s*
+    (?P<birth_year>\d{4})\s*
+    ((?P<rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?р|КМС|МСМК|МС|ЗМС)?)\s*)?
+    (?P<team>(.+?)?\s*)
     (?:\s+(?P<result>\d{1,2}[:\.,]\d{2}(?:[:\.,]\d{1,2})?к?))?
     (?:\s+(?P<final_rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?р|КМС|МСМК|МС|ЗМС)))?
-    (?:\s+(?P<points>(?:лично|\d+)))?
+    (\s*[А-ЯЁ][а-яё\-]+\s[А-ЯЁ]\.[А-ЯЁ]\.\,?\s*)*
     \s*$
 """, re.VERBOSE | re.IGNORECASE)
 
 
-class PointsIndividualModel(IndividualModelBase, name='points'):
+class CoachesIndividualModel(IndividualModelBase, name='coaches'):
     ERROR_VALUES = ERROR_VALUES
 
     def __init__(self, state: State):
         super().__init__(
-            name='points',
+            name='coaches',
             state=state,
             regexes=[pattern],
             error_values=ERROR_VALUES
         )
 
     def prerender(self, data):
-        team = data['team']
         data['status'] = 'COMPLETED'
+        team = data['team']
         for error in ERROR_VALUES:
             if error in team:
                 logging.debug('Found dsq in team %s: %s', team, error)
@@ -106,12 +107,5 @@ class PointsIndividualModel(IndividualModelBase, name='points'):
                     data["rank"] = data['place']
                     data['place'] = ''
         data['team'] = team
-
-        if data['place'] == 'в/к':
-            data['status'] = 'EXH'
-            data['place'] = None
-        if data['place'] == 'д/к':
-            data['status'] = 'DSQ'
-            data['place'] = None
 
         return data

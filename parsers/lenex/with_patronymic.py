@@ -29,10 +29,14 @@ class WithPatronymicIndividualModel(IndividualModelBase, name='with_patronymic')
         )
 
     def prerender(self, data: dict) -> dict:
-        dsq = data.get("place", '').strip() in ('DSQ', 'DNS')
-        if not dsq:
-            data['place'] = data.get(
-                "place") and data.get("place").strip('. ')
-        else:
+        place = data.get("place", '').strip()
+        if place in ('DSQ', 'DNS', 'DNF'):
             data['place'] = None
+            data['status'] = 'DSQ'
+        elif place == 'EXH':
+            data['place'] = None
+            data['status'] = 'EXH'
+        else:
+            data['place'] = place and place.strip('. ')
+            data['status'] = 'COMPLETED'
         return data

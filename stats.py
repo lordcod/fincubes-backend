@@ -2,6 +2,7 @@ from collections import defaultdict
 import json
 import logging
 import re
+from sys import orig_argv
 import uuid
 
 
@@ -30,9 +31,14 @@ for result in output['individual_results']:
         else:
             print('NOT FOUND', result['last_name'], result['first_name'])
 
+records = 0
+for result in output['individual_results']:
+    if result['record']:
+        records += 1
+print('Records count:', records)
 
-with open("output/output_results.json", 'wb+') as file:
+with open("output/1_output_results.json", 'wb+') as file:
     file.write(json.dumps(output, indent=4, ensure_ascii=False).encode())
 
-with open('stats.json', 'wb+') as file:
+with open('output/2_stats.json', 'wb+') as file:
     file.write(json.dumps(list(stats), indent=4, ensure_ascii=False).encode())

@@ -1,3 +1,4 @@
+import re
 import pdfplumber
 import pytesseract
 from pathlib import Path
@@ -7,15 +8,21 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Users\2008d\AppData\Local\Programs\
 
 # Путь к PDF
 pdf_path = Path(
-    r"C:\Users\2008d\Downloads\Полный итоговый FINNA CUP.pdf"
+    r"C:\Users\2008d\TEMP\ОС\🤿итоговый🇷🇺КТО 11-12.12.24.pdf"
 )
 
 # Мусорные ключевые фразы
 trash = """
-Соревнование по Классическому двоеборью "FINNA CUP"
-Симферополь, 25.5.2025
-Год рождения
-Норматив
+Первенство ГБУ РО «СШОР № 13»
+по подводному спорту (плавание в ластах)
+6 февраля .2025 г.
+
+№ Фамилия имя
+Место Фамилия Имя
+Место Год рождения
+Splash Meet Manager
+Главный судья
+Главный секретарь
 """
 trash_keywords = [t.strip().lower()
                   for t in trash.strip().split('\n') if t.strip()]
@@ -58,14 +65,29 @@ def parse_pdf(pdf_path):
                     clean_line(line)
             else:
                 print(f"OCR: page {i+1}")
+                continue
                 image = page.to_image(resolution=300).original
                 ocr_text = pytesseract.image_to_string(image, lang="rus+eng")
                 for line in ocr_text.split('\n'):
                     clean_line(fix_ocr_errors(line))
 
 
+def extract_number(filename):
+    """Извлекает первое число из имени файла, если есть, иначе возвращает None."""
+    match = re.search(r'\d+', filename)
+    if match:
+        return int(match.group())
+    return None
+
+
 if pdf_path.is_dir():
-    for file in pdf_path.iterdir():
+    files = sorted(
+        (f for f in pdf_path.iterdir() if f.suffix == '.pdf'),
+        key=lambda f: (extract_number(f.stem) is None,
+                       extract_number(f.stem) or 0, f.name)
+    )
+
+    for file in files:
         if file.suffix != '.pdf':
             continue
         parse_pdf(file)

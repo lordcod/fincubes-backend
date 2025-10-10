@@ -6,20 +6,21 @@ from models.swim import SwimResultsParser
 # Дистанции
 # r"^.*?метров.*?(Женщины|Мужчины)$"
 # r"^.*?метров.*?$"
-#  r"^.+\s-\s.*?метров.*?$"
+# r"^.+\s-\s?.*?метров.*?$"
+#
 #  r"^.+-\s?\d+\s?м.*?$"
 # r"(\d\s)?\d{2,}(\sм)?.+\d{4}.+г\.р\..*"
 # r"Дистанция\s\d+.+"
-
+# r"Дистанция\s+\d+\s+(?P<gender>[А-Яа-я]+),\s+(?P<distance>\d+)[мm]?\s+(?P<style>[а-яё\s]+?)(год|\d{4}).*$"
 
 def main():
     input_file = Path("output/0_cleaned_results.txt")
     output_file = Path("output/1_output_results.json")
 
-    type = 'beswimmer'
+    type = 'points'
     parser = SwimResultsParser(
         get_parser(type),
-        distance_header_re=r"Дистанция\s\d+\s+.+",
+        distance_header_re=r"^.+-\s?\d+\s?м.*?$",
         input_file=input_file,
         output_file=output_file,
     )

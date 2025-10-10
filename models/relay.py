@@ -6,13 +6,14 @@ from .swim_types import *
 # r".+ - \d+ х \d+ .+"
 # r".+Эстафета.+"
 # r".*Эстафетное плавание.*"
+# r"Дистанция\s+\d+,?.+4 х.+"
 
 
 class RelayParser:
     def __init__(self, state: State):
         self.state = state
         self.relay_start_re = re.compile(
-            r".+Эстафета.+", re.IGNORECASE)
+            r".*Эстафета.*", re.IGNORECASE)
         self.relay_swimmer_re = re.compile(r"^\d\)", re.IGNORECASE)
 
     def parse(self, line):

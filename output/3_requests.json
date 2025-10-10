@@ -1,1 +1,1267 @@
-{"356": {"club": ["МАУ ДО СШ УСЦ ВВС ИМЕНИ В.А. ШЕВЕЛЕВА", "КЕРЧЬ \"СШ ВВС\""], "license": ["1 юн", ""], "athlete": {"created_at": "2025-05-11T01:08:31.242169Z", "updated_at": "2025-05-11T01:08:31.242169Z", "id": 356, "last_name": "Иванов", "first_name": "Артем", "birth_year": "2013", "club": "МАУ ДО СШ УСЦ ВВС ИМЕНИ В.А. ШЕВЕЛЕВА", "city": null, "license": "1 юн", "gender": "M", "avatar_url": null}}}
+{
+  "2999": {
+    "license": ["III", ""],
+    "athlete": {
+      "created_at": "2025-05-14T09:37:36.070252Z",
+      "updated_at": "2025-05-14T09:37:36.070252Z",
+      "id": 2999,
+      "last_name": "Шарпилов",
+      "first_name": "Артём",
+      "birth_year": "2011",
+      "club": null,
+      "city": "Ростовская область",
+      "license": "III",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6284": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["III", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.642621Z",
+      "updated_at": "2025-07-13T13:43:06.642621Z",
+      "id": 6284,
+      "last_name": "Жидиков",
+      "first_name": "Владислав",
+      "birth_year": "2012",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "III",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6256": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["Iюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.449955Z",
+      "updated_at": "2025-07-13T13:43:06.449955Z",
+      "id": 6256,
+      "last_name": "Шорохов",
+      "first_name": "Андрей",
+      "birth_year": "2011",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "Iюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7428": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.454644Z",
+      "updated_at": "2025-10-08T16:34:36.454656Z",
+      "id": 7428,
+      "last_name": "Прищепа",
+      "first_name": "Максим",
+      "birth_year": "2014",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6270": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["IIIюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.533203Z",
+      "updated_at": "2025-07-13T13:43:06.533203Z",
+      "id": 6270,
+      "last_name": "Леус",
+      "first_name": "Никита",
+      "birth_year": "2013",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "IIIюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6351": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["IIIюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:07.608910Z",
+      "updated_at": "2025-07-13T13:43:07.608910Z",
+      "id": 6351,
+      "last_name": "Стрикица",
+      "first_name": "Вероника",
+      "birth_year": "2013",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "IIIюн",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6176": {
+    "club": ["ГБУ ДО РО СШОР № 13", null],
+    "license": ["Iюн", ""],
+    "athlete": {
+      "created_at": "2025-06-05T09:51:25.199439Z",
+      "updated_at": "2025-06-05T09:51:25.199447Z",
+      "id": 6176,
+      "last_name": "Золотухина",
+      "first_name": "Злата",
+      "birth_year": "2012",
+      "club": "ГБУ ДО РО СШОР № 13",
+      "city": "Таганрог",
+      "license": "Iюн",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7448": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.749689Z",
+      "updated_at": "2025-10-08T16:34:36.749704Z",
+      "id": 7448,
+      "last_name": "Попова",
+      "first_name": "Анна",
+      "birth_year": "2013",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7474": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:53:35.207080Z",
+      "updated_at": "2025-10-08T16:53:35.207089Z",
+      "id": 7474,
+      "last_name": "Филиппов",
+      "first_name": "Александр",
+      "birth_year": "2017",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6160": {
+    "club": ["ГБУ ДО РО СШОР № 13", null],
+    "license": ["Iюн", ""],
+    "athlete": {
+      "created_at": "2025-06-05T09:51:24.883713Z",
+      "updated_at": "2025-06-05T09:51:24.883719Z",
+      "id": 6160,
+      "last_name": "Павлюк",
+      "first_name": "Полина",
+      "birth_year": "2012",
+      "club": "ГБУ ДО РО СШОР № 13",
+      "city": "Таганрог",
+      "license": "Iюн",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7438": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.473988Z",
+      "updated_at": "2025-10-08T16:34:36.474001Z",
+      "id": 7438,
+      "last_name": "Дмитриев",
+      "first_name": "Егор",
+      "birth_year": "2015",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7447": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.727767Z",
+      "updated_at": "2025-10-08T16:34:36.727783Z",
+      "id": 7447,
+      "last_name": "Савенко",
+      "first_name": "Степан",
+      "birth_year": "2012",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6275": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["IIюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.582626Z",
+      "updated_at": "2025-07-13T13:43:06.582626Z",
+      "id": 6275,
+      "last_name": "Гурьев",
+      "first_name": "Роман",
+      "birth_year": "2013",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "IIюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "2829": {
+    "license": ["II", ""],
+    "athlete": {
+      "created_at": "2025-05-14T09:31:04.849536Z",
+      "updated_at": "2025-05-27T06:06:00.903356Z",
+      "id": 2829,
+      "last_name": "Гринченко",
+      "first_name": "Мария",
+      "birth_year": "2011",
+      "club": null,
+      "city": "Ростовская область",
+      "license": "II",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7485": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:53:35.392912Z",
+      "updated_at": "2025-10-08T16:53:35.392924Z",
+      "id": 7485,
+      "last_name": "Шаповалов",
+      "first_name": "Лев",
+      "birth_year": "2013",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7426": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.444996Z",
+      "updated_at": "2025-10-08T16:34:36.445008Z",
+      "id": 7426,
+      "last_name": "Жуков",
+      "first_name": "Тимофей",
+      "birth_year": "2014",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7433": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.463454Z",
+      "updated_at": "2025-10-08T16:34:36.463466Z",
+      "id": 7433,
+      "last_name": "Бойко",
+      "first_name": "Никита",
+      "birth_year": "2015",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6253": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["IIIюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.407395Z",
+      "updated_at": "2025-07-13T13:43:06.407395Z",
+      "id": 6253,
+      "last_name": "Илиади",
+      "first_name": "Ульяна",
+      "birth_year": "2013",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "IIIюн",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6156": {
+    "club": ["ГБУ ДО РО СШОР № 13", null],
+    "license": ["IIюн", ""],
+    "athlete": {
+      "created_at": "2025-06-05T09:51:24.865397Z",
+      "updated_at": "2025-06-05T09:51:24.865408Z",
+      "id": 6156,
+      "last_name": "Малый",
+      "first_name": "Никита",
+      "birth_year": "2012",
+      "club": "ГБУ ДО РО СШОР № 13",
+      "city": "Таганрог",
+      "license": "IIюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "3970": {
+    "license": ["III", ""],
+    "athlete": {
+      "created_at": "2025-05-16T20:02:02.238123Z",
+      "updated_at": "2025-05-16T20:02:02.238123Z",
+      "id": 3970,
+      "last_name": "Гордеева",
+      "first_name": "Софья",
+      "birth_year": "2012",
+      "club": null,
+      "city": "Ростовская область",
+      "license": "III",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7472": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:53:35.197374Z",
+      "updated_at": "2025-10-08T16:53:35.197386Z",
+      "id": 7472,
+      "last_name": "Редько",
+      "first_name": "Степан",
+      "birth_year": "2015",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7424": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.443305Z",
+      "updated_at": "2025-10-08T16:34:36.443317Z",
+      "id": 7424,
+      "last_name": "Кулешов",
+      "first_name": "Петр",
+      "birth_year": "2014",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7458": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:53:35.208710Z",
+      "updated_at": "2025-10-08T16:53:35.208724Z",
+      "id": 7458,
+      "last_name": "Стадник",
+      "first_name": "Алексей",
+      "birth_year": "2015",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6173": {
+    "club": ["ГБУ ДО РО СШОР № 13", null],
+    "license": ["IIюн", ""],
+    "athlete": {
+      "created_at": "2025-06-05T09:51:25.075909Z",
+      "updated_at": "2025-07-13T13:43:21.509847Z",
+      "id": 6173,
+      "last_name": "Бухов",
+      "first_name": "Александр",
+      "birth_year": "2014",
+      "club": "ГБУ ДО РО СШОР № 13",
+      "city": null,
+      "license": "IIюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6329": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["Iюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:07.430843Z",
+      "updated_at": "2025-07-13T13:43:07.430843Z",
+      "id": 6329,
+      "last_name": "Выхрист",
+      "first_name": "Артём",
+      "birth_year": "2010",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "Iюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6296": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["III", "4"],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.840280Z",
+      "updated_at": "2025-07-13T13:43:06.840280Z",
+      "id": 6296,
+      "last_name": "Аникеенко",
+      "first_name": "Анна",
+      "birth_year": "2010",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "III",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6305": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["IIIюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.609864Z",
+      "updated_at": "2025-07-13T13:43:06.609864Z",
+      "id": 6305,
+      "last_name": "Старшинин",
+      "first_name": "Максим",
+      "birth_year": "2014",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "IIIюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7419": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.455901Z",
+      "updated_at": "2025-10-08T16:34:36.455913Z",
+      "id": 7419,
+      "last_name": "Губанов",
+      "first_name": "Матвей",
+      "birth_year": "2014",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "4545": {
+    "license": ["III", ""],
+    "athlete": {
+      "created_at": "2025-05-18T12:28:48.160938Z",
+      "updated_at": "2025-05-18T12:28:48.160938Z",
+      "id": 4545,
+      "last_name": "Морозов",
+      "first_name": "Егор",
+      "birth_year": "2010",
+      "club": null,
+      "city": "Ростовская область",
+      "license": "III",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7420": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.464646Z",
+      "updated_at": "2025-10-08T16:34:36.464659Z",
+      "id": 7420,
+      "last_name": "Кривенко",
+      "first_name": "Мирон",
+      "birth_year": "2016",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7425": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.444159Z",
+      "updated_at": "2025-10-08T16:34:36.444172Z",
+      "id": 7425,
+      "last_name": "Качкаев",
+      "first_name": "Арсений",
+      "birth_year": "2014",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7444": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.499399Z",
+      "updated_at": "2025-10-08T16:34:36.499414Z",
+      "id": 7444,
+      "last_name": "Мединский",
+      "first_name": "Герман",
+      "birth_year": "2017",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6301": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["IIIюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.909676Z",
+      "updated_at": "2025-07-13T13:43:06.909676Z",
+      "id": 6301,
+      "last_name": "Зиненко",
+      "first_name": "Мирон",
+      "birth_year": "2014",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "IIIюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7421": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.437662Z",
+      "updated_at": "2025-10-08T16:34:36.437674Z",
+      "id": 7421,
+      "last_name": "Сидорова",
+      "first_name": "Полина",
+      "birth_year": "2015",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6269": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["IIюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.531147Z",
+      "updated_at": "2025-07-13T13:43:06.531147Z",
+      "id": 6269,
+      "last_name": "Куренной",
+      "first_name": "Иван",
+      "birth_year": "2012",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "IIюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6289": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["IIIюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.766261Z",
+      "updated_at": "2025-07-13T13:43:06.766261Z",
+      "id": 6289,
+      "last_name": "Тамо",
+      "first_name": "Матвей",
+      "birth_year": "2014",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "IIIюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "240": {
+    "license": ["КМС", ""],
+    "athlete": {
+      "created_at": "2025-05-11T00:33:11.890372Z",
+      "updated_at": "2025-05-11T00:33:11.890372Z",
+      "id": 240,
+      "last_name": "Овчаров",
+      "first_name": "Станислав",
+      "birth_year": "2007",
+      "club": null,
+      "city": "Ростовская область",
+      "license": "КМС",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7480": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:53:35.261414Z",
+      "updated_at": "2025-10-08T16:53:35.261447Z",
+      "id": 7480,
+      "last_name": "Якунин",
+      "first_name": "Сергей",
+      "birth_year": "2014",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6321": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["II", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:07.282361Z",
+      "updated_at": "2025-07-13T13:43:07.282361Z",
+      "id": 6321,
+      "last_name": "Гадилов",
+      "first_name": "Максим",
+      "birth_year": "2009",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "II",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "2825": {
+    "license": ["I", ""],
+    "athlete": {
+      "created_at": "2025-05-14T09:31:04.831537Z",
+      "updated_at": "2025-05-27T06:06:00.903356Z",
+      "id": 2825,
+      "last_name": "Живтило",
+      "first_name": "Мария",
+      "birth_year": "2011",
+      "club": null,
+      "city": "Ростовская область",
+      "license": "I",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7435": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.465787Z",
+      "updated_at": "2025-10-08T16:34:36.465804Z",
+      "id": 7435,
+      "last_name": "Едомский",
+      "first_name": "Дмитрий",
+      "birth_year": "2009",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6315": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["IIюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:07.114629Z",
+      "updated_at": "2025-07-13T13:43:07.114629Z",
+      "id": 6315,
+      "last_name": "Коваль-Волков",
+      "first_name": "Ярослав",
+      "birth_year": "2012",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "IIюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "5530": {
+    "license": ["II", ""],
+    "athlete": {
+      "created_at": "2025-05-27T05:51:42.161706Z",
+      "updated_at": "2025-07-13T13:43:21.489754Z",
+      "id": 5530,
+      "last_name": "Порохня",
+      "first_name": "Всеволод",
+      "birth_year": "2011",
+      "club": null,
+      "city": null,
+      "license": "II",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "5527": {
+    "license": ["II", ""],
+    "athlete": {
+      "created_at": "2025-05-27T05:51:42.152306Z",
+      "updated_at": "2025-07-13T13:43:21.931870Z",
+      "id": 5527,
+      "last_name": "Ахмадеев",
+      "first_name": "Радмир",
+      "birth_year": "2011",
+      "club": null,
+      "city": null,
+      "license": "II",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6139": {
+    "club": ["ГБУ ДО РО СШОР № 13", null],
+    "license": ["IIIюн", ""],
+    "athlete": {
+      "created_at": "2025-06-05T09:51:24.803661Z",
+      "updated_at": "2025-06-05T09:51:24.803668Z",
+      "id": 6139,
+      "last_name": "Николаенко",
+      "first_name": "Максим",
+      "birth_year": "2015",
+      "club": "ГБУ ДО РО СШОР № 13",
+      "city": "Таганрог",
+      "license": "IIIюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6294": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["III", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.819775Z",
+      "updated_at": "2025-07-13T13:43:06.819775Z",
+      "id": 6294,
+      "last_name": "Ковтун",
+      "first_name": "Дарья",
+      "birth_year": "2011",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "III",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "3966": {
+    "license": ["II", ""],
+    "athlete": {
+      "created_at": "2025-05-16T20:02:02.198473Z",
+      "updated_at": "2025-05-16T20:02:02.198473Z",
+      "id": 3966,
+      "last_name": "Каламбет",
+      "first_name": "Пелагея",
+      "birth_year": "2013",
+      "club": null,
+      "city": "Ростовская область",
+      "license": "II",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7486": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:53:35.423155Z",
+      "updated_at": "2025-10-08T16:53:35.423164Z",
+      "id": 7486,
+      "last_name": "Аддулин",
+      "first_name": "Тимур",
+      "birth_year": "2015",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7434": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.429915Z",
+      "updated_at": "2025-10-08T16:34:36.429936Z",
+      "id": 7434,
+      "last_name": "Арутюнян",
+      "first_name": "Эллина",
+      "birth_year": "2015",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7445": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.531979Z",
+      "updated_at": "2025-10-08T16:34:36.531991Z",
+      "id": 7445,
+      "last_name": "Тимошов",
+      "first_name": "Александр",
+      "birth_year": "2017",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6293": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["III", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.800575Z",
+      "updated_at": "2025-07-13T13:43:06.800575Z",
+      "id": 6293,
+      "last_name": "Потькало",
+      "first_name": "Софья",
+      "birth_year": "2011",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "III",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "1338": {
+    "license": ["I", ""],
+    "athlete": {
+      "created_at": "2025-05-12T18:59:40.363812Z",
+      "updated_at": "2025-05-12T18:59:40.363812Z",
+      "id": 1338,
+      "last_name": "Роман",
+      "first_name": "Виктория",
+      "birth_year": "2009",
+      "club": null,
+      "city": "Ростовская область",
+      "license": "I",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7475": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:53:35.204679Z",
+      "updated_at": "2025-10-08T16:53:35.204688Z",
+      "id": 7475,
+      "last_name": "Жаров",
+      "first_name": "Кирилл",
+      "birth_year": "2015",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7430": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.460328Z",
+      "updated_at": "2025-10-08T16:34:36.460348Z",
+      "id": 7430,
+      "last_name": "Борискин",
+      "first_name": "Ярослав",
+      "birth_year": "2015",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7457": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:53:35.207829Z",
+      "updated_at": "2025-10-08T16:53:35.207838Z",
+      "id": 7457,
+      "last_name": "Геер",
+      "first_name": "Михаил",
+      "birth_year": "2016",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "5518": {
+    "license": ["II", ""],
+    "athlete": {
+      "created_at": "2025-05-27T05:51:41.751298Z",
+      "updated_at": "2025-07-13T13:43:21.475516Z",
+      "id": 5518,
+      "last_name": "Миленина",
+      "first_name": "Дарья",
+      "birth_year": "2011",
+      "club": null,
+      "city": null,
+      "license": "II",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6163": {
+    "club": ["ГБУ ДО РО СШОР № 13", null],
+    "license": ["Iюн", ""],
+    "athlete": {
+      "created_at": "2025-06-05T09:51:25.033653Z",
+      "updated_at": "2025-06-05T09:51:25.033660Z",
+      "id": 6163,
+      "last_name": "Радкевич",
+      "first_name": "Валерия",
+      "birth_year": "2012",
+      "club": "ГБУ ДО РО СШОР № 13",
+      "city": "Таганрог",
+      "license": "Iюн",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7411": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.355731Z",
+      "updated_at": "2025-10-08T16:34:36.355744Z",
+      "id": 7411,
+      "last_name": "Гриенко",
+      "first_name": "Лилия",
+      "birth_year": "2011",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "1289": {
+    "license": ["КМС", ""],
+    "athlete": {
+      "created_at": "2025-05-12T18:59:38.719156Z",
+      "updated_at": "2025-05-12T18:59:38.719156Z",
+      "id": 1289,
+      "last_name": "Шаповалова",
+      "first_name": "Юлия",
+      "birth_year": "2011",
+      "club": null,
+      "city": "Ростовская область",
+      "license": "КМС",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7487": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:53:35.415094Z",
+      "updated_at": "2025-10-08T16:53:35.415121Z",
+      "id": 7487,
+      "last_name": "Подпалько",
+      "first_name": "Ярослав",
+      "birth_year": "2015",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "1340": {
+    "license": ["I", ""],
+    "athlete": {
+      "created_at": "2025-05-12T18:59:40.424095Z",
+      "updated_at": "2025-07-13T13:43:21.947852Z",
+      "id": 1340,
+      "last_name": "Мухин",
+      "first_name": "Андрей",
+      "birth_year": "2011",
+      "club": null,
+      "city": null,
+      "license": "I",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7414": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.435548Z",
+      "updated_at": "2025-10-08T16:34:36.435561Z",
+      "id": 7414,
+      "last_name": "Костюк",
+      "first_name": "Кирилл",
+      "birth_year": "2012",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7431": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.462334Z",
+      "updated_at": "2025-10-08T16:34:36.462347Z",
+      "id": 7431,
+      "last_name": "Новак",
+      "first_name": "Марк",
+      "birth_year": "2016",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6248": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["IIIюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:05.931976Z",
+      "updated_at": "2025-07-13T13:43:05.931976Z",
+      "id": 6248,
+      "last_name": "Лоскутова",
+      "first_name": "Дарья",
+      "birth_year": "2014",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "IIIюн",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "6258": {
+    "club": ["ГБУ ДО РО СШОР 13", null],
+    "license": ["Iюн", ""],
+    "athlete": {
+      "created_at": "2025-07-13T13:43:06.453982Z",
+      "updated_at": "2025-07-13T13:43:06.453982Z",
+      "id": 6258,
+      "last_name": "Кудрявцев",
+      "first_name": "Максим",
+      "birth_year": "2011",
+      "club": "ГБУ ДО РО СШОР 13",
+      "city": null,
+      "license": "Iюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "3901": {
+    "license": ["III", ""],
+    "athlete": {
+      "created_at": "2025-05-15T21:56:22.152490Z",
+      "updated_at": "2025-05-15T21:56:22.152490Z",
+      "id": 3901,
+      "last_name": "Сапрыкина",
+      "first_name": "Мария",
+      "birth_year": "2014",
+      "club": null,
+      "city": "Ростовская область",
+      "license": "III",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "3956": {
+    "license": ["II", ""],
+    "athlete": {
+      "created_at": "2025-05-16T20:02:01.998552Z",
+      "updated_at": "2025-05-16T20:02:01.998552Z",
+      "id": 3956,
+      "last_name": "Тюшнякова",
+      "first_name": "Олеся",
+      "birth_year": "2013",
+      "club": null,
+      "city": "Ростовская область",
+      "license": "II",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7443": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.491602Z",
+      "updated_at": "2025-10-08T16:34:36.491610Z",
+      "id": 7443,
+      "last_name": "Мезенцев",
+      "first_name": "Александр",
+      "birth_year": "2015",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "3980": {
+    "license": ["II", ""],
+    "athlete": {
+      "created_at": "2025-05-16T20:02:01.846703Z",
+      "updated_at": "2025-07-13T13:43:22.082743Z",
+      "id": 3980,
+      "last_name": "Назарова",
+      "first_name": "Дарья",
+      "birth_year": "2012",
+      "club": null,
+      "city": null,
+      "license": "II",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7479": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:53:35.268895Z",
+      "updated_at": "2025-10-08T16:53:35.268917Z",
+      "id": 7479,
+      "last_name": "Рягузов",
+      "first_name": "Кирилл",
+      "birth_year": "2016",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "4044": {
+    "license": ["III", ""],
+    "athlete": {
+      "created_at": "2025-05-16T20:02:15.759637Z",
+      "updated_at": "2025-05-16T20:02:15.759637Z",
+      "id": 4044,
+      "last_name": "Григорьев",
+      "first_name": "Макар",
+      "birth_year": "2012",
+      "club": null,
+      "city": "Ростовская область",
+      "license": "III",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7427": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.453062Z",
+      "updated_at": "2025-10-08T16:34:36.453077Z",
+      "id": 7427,
+      "last_name": "Руденко",
+      "first_name": "Роман",
+      "birth_year": "2015",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  },
+  "7422": {
+    "club": ["СШОР-13", null],
+    "athlete": {
+      "created_at": "2025-10-08T16:34:36.442080Z",
+      "updated_at": "2025-10-08T16:34:36.442093Z",
+      "id": 7422,
+      "last_name": "Котелевец",
+      "first_name": "Мирон",
+      "birth_year": "2014",
+      "club": "СШОР-13",
+      "city": "Таганрог",
+      "license": "",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    }
+  }
+}

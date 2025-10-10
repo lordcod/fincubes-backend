@@ -5,8 +5,12 @@ from __config__ import headers
 
 
 async def create_distances(session: aiohttp.ClientSession, competition_id, distance_data, headers):
-    url = f'https://api.fincubes.ru/competitions/{competition_id}/distances/'
-    async with session.post(url, json=distance_data, headers=headers) as response:
+    url = f'https://api.fincubes.ru/admin/distance/'
+    data = {
+        'distance': distance_data,
+        'competition_id': competition_id
+    }
+    async with session.post(url, json=data, headers=headers) as response:
         data = await response.json()
         if not response.ok:
             print("Ошибка обновления:", data)

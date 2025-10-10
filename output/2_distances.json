@@ -1,6 +1,13 @@
 [
     [
-        "BIFINS",
+        "SURFACE",
+        50,
+        "F",
+        null,
+        null
+    ],
+    [
+        "SURFACE",
         50,
         "M",
         null,
@@ -15,29 +22,8 @@
     ],
     [
         "BIFINS",
-        100,
+        50,
         "M",
-        null,
-        null
-    ],
-    [
-        "BIFINS",
-        100,
-        "F",
-        null,
-        null
-    ],
-    [
-        "BIFINS",
-        200,
-        "M",
-        null,
-        null
-    ],
-    [
-        "BIFINS",
-        200,
-        "F",
         null,
         null
     ]
