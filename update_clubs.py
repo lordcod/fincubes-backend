@@ -4,6 +4,17 @@ import aiohttp
 from __config__ import headers
 
 BASE_URL = "https://api.fincubes.ru/admin"
+allowed_fields = {
+    "last_name",
+    "first_name",
+    "birth_year",
+    "club",
+    "city",
+    "license",
+    "gender",
+    "avatar_url",
+    "is_top",
+}
 
 
 async def get_athlete(session, last, first, year):
@@ -20,7 +31,7 @@ async def get_athlete(session, last, first, year):
 
 
 async def update_athlete(session, athlete_id, data):
-    clean_data = {k: v for k, v in data.items() if v}
+    clean_data = {k: v for k, v in data.items() if k in allowed_fields}
     async with session.put(f"{BASE_URL}/athlete/{athlete_id}/", json=clean_data, headers=headers) as r:
         try:
             res = await r.json()

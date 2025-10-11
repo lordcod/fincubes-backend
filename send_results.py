@@ -50,6 +50,14 @@ class AthleteProcessor:
             if len(data) > 2:
                 print(
                     f"⚠️ Found {len(data)} athletes with same name/year: {last} {first} ({year})")
+                for a in data:
+                    print((
+                        f"   • ID {a.get('id')}: "
+                        f"city='{a.get('city') or '-'}', "
+                        f"club='{a.get('club') or '-'}', "
+                        f"license='{a.get('license') or '-'}', "
+                        f"gender='{a.get('gender') or '-'}'"
+                    ))
 
             return data[0]
 
@@ -112,6 +120,7 @@ class AthleteProcessor:
             if updates:
                 self.requests.append({
                     "id": athlete["id"],
+                    "data": athlete,
                     "athlete": f"{athlete.get('last_name', '')} {athlete.get('first_name', '')}".strip(),
                     "changes": updates,
                 })
