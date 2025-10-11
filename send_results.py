@@ -30,7 +30,7 @@ class AthleteProcessor:
         self.input_file = input_file
         self.requests_file = requests_file
         self.final_file = final_file
-        self.requests = {}
+        self.requests = []
 
     async def get_athlete(self, session, last, first, year) -> dict | None:
         params = {"last_name": last, "first_name": first, "birth_year": year}
@@ -39,10 +39,19 @@ class AthleteProcessor:
                 data = await r.json()
             except Exception:
                 data = None
+
             if r.status != 200:
                 print(f"GET athlete error ({r.status}):", data)
                 return None
-            return data[0] if data else None
+
+            if not data:
+                return None
+
+            if len(data) > 2:
+                print(
+                    f"⚠️ Found {len(data)} athletes with same name/year: {last} {first} ({year})")
+
+            return data[0]
 
     async def create_athlete(self, session, data) -> None | dict:
         payload = {
@@ -54,28 +63,22 @@ class AthleteProcessor:
             "club": data.get("team") or "",
             "city": data.get("city") or "",
         }
+
+        print(
+            f"🟢 Creating new athlete: {payload['last_name']} {payload['first_name']} ({payload['birth_year']})")
+
         async with session.post(f"{self.BASE_URL}/athlete/", json=payload, headers=headers) as r:
             try:
                 res = await r.json()
             except Exception:
                 res = None
-            if r.status not in (200, 201):
-                print(f"CREATE athlete error ({r.status}):", res)
-                return None
-            return res
 
-    async def update_athlete(self, session, athlete_id, data: dict):
-        clean_data = {k: v for k, v in data.items()
-                      if k in allowed_athlete_fields and v is not None}
-
-        async with session.put(f"{self.BASE_URL}/athlete/{athlete_id}/", json=clean_data, headers=headers) as r:
-            try:
-                res = await r.json()
-            except Exception:
-                res = None
             if r.status not in (200, 201):
-                print(f"UPDATE athlete {athlete_id} error ({r.status}):", res)
+                print(f"❌ CREATE athlete error ({r.status}):", res)
                 return None
+
+            print(
+                f"✅ Athlete created: ID {res.get('id')} - {payload['last_name']} {payload['first_name']}")
             return res
 
     def check_updates(self, athlete, data):
@@ -107,10 +110,11 @@ class AthleteProcessor:
         else:
             updates = self.check_updates(athlete, data)
             if updates:
-                self.requests[athlete["id"]] = {
+                self.requests.append({
+                    "id": athlete["id"],
                     "athlete": f"{athlete.get('last_name', '')} {athlete.get('first_name', '')}".strip(),
                     "changes": updates,
-                }
+                })
 
         return {
             "competition_id": self.competition_id,
@@ -119,6 +123,8 @@ class AthleteProcessor:
         }
 
     async def send_all_results(self, session, results):
+        print(f"🔵 Starting bulk results upload ({len(results)} entries)...")
+
         async with session.post(
             f"{self.BASE_URL}/result/bulk-create/",
             json=results,
@@ -129,8 +135,12 @@ class AthleteProcessor:
                 res = await r.json()
             except Exception:
                 res = None
+
             if r.status not in (200, 201):
-                print(f"BULK create error ({r.status}):", res)
+                print(f"❌ BULK create error ({r.status}):", res)
+            else:
+                print(f"✅ Bulk upload completed successfully ({r.status})")
+
             return res
 
     async def run(self):
@@ -141,7 +151,8 @@ class AthleteProcessor:
             tasks = [self.process_athlete(session, a) for a in athletes]
             processed = [r for r in await asyncio.gather(*tasks) if r]
 
-            print(f"✅ Parsed {len(processed)} athletes, sending results...")
+            print(
+                f"✅ Parsed {len(processed)} athletes, preparing to send results...")
             response = await self.send_all_results(session, processed)
 
         with open(self.final_file, "w", encoding="utf-8") as f:
