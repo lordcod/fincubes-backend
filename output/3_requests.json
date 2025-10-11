@@ -1,1814 +1,605 @@
 {
-  "3846": {
-    "license": ["IIюн", "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:43.810030Z",
-      "updated_at": "2025-05-14T16:44:43.810030Z",
-      "id": 3846,
-      "last_name": "Дмитриев",
-      "first_name": "Салават",
-      "birth_year": "2011",
-      "club": "Дианема",
-      "city": "Красноярск",
-      "license": "IIюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3405": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.334464Z",
-      "updated_at": "2025-06-10T11:23:36.238930Z",
-      "id": 3405,
-      "last_name": "Храпова",
-      "first_name": "Маргарита",
-      "birth_year": "2012",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "II",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3415": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["I", "II"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.488476Z",
-      "updated_at": "2025-06-10T11:23:36.179062Z",
-      "id": 3415,
-      "last_name": "Рогачёва",
-      "first_name": "Евгения",
-      "birth_year": "2012",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "I",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
+  "3423": {
+    "athlete": "Мартынова Веста",
+    "changes": {
+      "license": {
+        "old": "Iюн",
+        "new": "IIюн"
+      }
     }
   },
   "3739": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["II", "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:40.271877Z",
-      "updated_at": "2025-05-14T16:44:40.271877Z",
-      "id": 3739,
-      "last_name": "Артюшина",
-      "first_name": "Варвара",
-      "birth_year": "2012",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "II",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3636": {
-    "license": [null, "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:28.083870Z",
-      "updated_at": "2025-05-14T15:59:28.083870Z",
-      "id": 3636,
-      "last_name": "Бензик",
-      "first_name": "Семен",
-      "birth_year": "2011",
-      "club": "Катран",
-      "city": "Красноярск",
-      "license": null,
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3717": {
-    "club": ["МАУ ДО \"СШ\"", "МАУ ДО СШ"],
-    "athlete": {
-      "created_at": "2025-05-14T16:22:17.696312Z",
-      "updated_at": "2025-05-14T16:22:17.696312Z",
-      "id": 3717,
-      "last_name": "Ильюхина",
-      "first_name": "Виктория",
-      "birth_year": "2012",
-      "club": "МАУ ДО \"СШ\"",
-      "city": "Сосновоборск",
-      "license": "Iюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3785": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["IIюн", "Iюн"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:41.764559Z",
-      "updated_at": "2025-05-14T16:44:41.764559Z",
-      "id": 3785,
-      "last_name": "Трапезников",
-      "first_name": "Олег",
-      "birth_year": "2011",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "IIюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "962": {
-    "city": ["Красноярский край", "Красноярск"],
-    "license": ["I", "II"],
-    "athlete": {
-      "created_at": "2025-05-11T11:03:21.103235Z",
-      "updated_at": "2025-08-26T14:57:15.328603Z",
-      "id": 962,
-      "last_name": "Мальков",
-      "first_name": "Михаил",
-      "birth_year": "2012",
-      "club": "ДВС СибГУ",
-      "city": "Красноярский край",
-      "license": "I",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3649": {
-    "license": [null, "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:28.167324Z",
-      "updated_at": "2025-05-14T15:59:28.167324Z",
-      "id": 3649,
-      "last_name": "Анфимов",
-      "first_name": "Артем",
-      "birth_year": "2011",
-      "club": "Катран",
-      "city": "Красноярск",
-      "license": null,
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3594": {
-    "club": ["ДВС", "СибГУ"],
-    "license": ["IIюн", "Iюн"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:26.707149Z",
-      "updated_at": "2025-05-14T15:59:26.707149Z",
-      "id": 3594,
-      "last_name": "Чуринова",
-      "first_name": "Вероника",
-      "birth_year": "2012",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "IIюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3381": {
-    "club": ["ДВС", "ДВС СибГУ"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:04.902314Z",
-      "updated_at": "2025-05-14T12:48:04.902314Z",
-      "id": 3381,
-      "last_name": "Мамонтов",
-      "first_name": "Евгений",
-      "birth_year": "2012",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "III",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3740": {
-    "club": ["СК ДВС СибГУ", "СибГУ"],
-    "city": ["Красноярский край", "Красноярск"],
-    "license": ["III", "IIюн"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:40.271877Z",
-      "updated_at": "2025-06-10T11:23:35.916176Z",
-      "id": 3740,
-      "last_name": "Журавель",
-      "first_name": "Софья",
-      "birth_year": "2012",
-      "club": "СК ДВС СибГУ",
-      "city": "Красноярский край",
-      "license": "III",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3411": {
-    "club": ["ДВС", "ДВС СибГУ"],
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.406351Z",
-      "updated_at": "2025-06-10T11:23:37.080851Z",
-      "id": 3411,
-      "last_name": "Маракова",
-      "first_name": "Амелия",
-      "birth_year": "2012",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3433": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["Iюн", "IIюн"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.704924Z",
-      "updated_at": "2025-05-14T12:48:05.704924Z",
-      "id": 3433,
-      "last_name": "Курчатова",
-      "first_name": "Полина",
-      "birth_year": "2012",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "Iюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "4512": {
-    "club": ["СШ Сосновоборск", "МАУ ДО СШ"],
-    "athlete": {
-      "created_at": "2025-05-17T22:48:53.117793Z",
-      "updated_at": "2025-05-17T22:48:53.117793Z",
-      "id": 4512,
-      "last_name": "Гапонов",
-      "first_name": "Тимофей",
-      "birth_year": "2012",
-      "club": "СШ Сосновоборск",
-      "city": "Сосновоборск",
-      "license": "Iюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3724": {
-    "license": ["Iюн", "IIюн"],
-    "athlete": {
-      "created_at": "2025-05-14T16:22:17.693313Z",
-      "updated_at": "2025-05-14T16:22:17.693313Z",
-      "id": 3724,
-      "last_name": "Завгородняя",
-      "first_name": "Ирина",
-      "birth_year": "2012",
-      "club": "Дианема",
-      "city": "Красноярск",
-      "license": "Iюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3445": {
-    "club": ["ДВС", "ДВС СибГУ"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.656929Z",
-      "updated_at": "2025-05-14T12:48:05.656929Z",
-      "id": 3445,
-      "last_name": "Никитин",
-      "first_name": "Никита",
-      "birth_year": "2010",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "I",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3512": {
-    "club": ["ДВС СибГУ", "СибГУ"],
-    "city": ["Новосибирск", "Красноярск"],
-    "license": ["I", "II"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:06.927025Z",
-      "updated_at": "2025-06-10T11:23:36.190715Z",
-      "id": 3512,
-      "last_name": "Гаппель",
-      "first_name": "Вадим",
-      "birth_year": "2010",
-      "club": "ДВС СибГУ",
-      "city": "Новосибирск",
-      "license": "I",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3638": {
-    "license": [null, "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:28.210319Z",
-      "updated_at": "2025-05-14T15:59:28.210319Z",
-      "id": 3638,
-      "last_name": "Терских",
-      "first_name": "Максим",
-      "birth_year": "2011",
-      "club": "Катран",
-      "city": "Красноярск",
-      "license": null,
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "4370": {
-    "club": ["ДВС", "ДВС СибГУ"],
-    "athlete": {
-      "created_at": "2025-05-17T12:39:55.212748Z",
-      "updated_at": "2025-06-10T11:23:36.684832Z",
-      "id": 4370,
-      "last_name": "Статейнов",
-      "first_name": "Максим",
-      "birth_year": "2012",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "Iюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3711": {
-    "club": ["МАУ ДО \"СШ\"", "МАУ ДО СШ"],
-    "license": ["Iюн", "IIюн"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:29.457795Z",
-      "updated_at": "2025-06-10T11:23:36.684475Z",
-      "id": 3711,
-      "last_name": "Лялин",
-      "first_name": "Богдан",
-      "birth_year": "2012",
-      "club": "МАУ ДО \"СШ\"",
-      "city": "Сосновоборск",
-      "license": "Iюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3763": {
-    "license": ["III", "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:40.398403Z",
-      "updated_at": "2025-06-10T11:23:37.096244Z",
-      "id": 3763,
-      "last_name": "Сафарян",
-      "first_name": "Алина",
-      "birth_year": "2012",
-      "club": "Дианема",
-      "city": "Красноярск",
-      "license": "III",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3609": {
-    "club": ["МАУ ДО \"СШ\"", "МАУ ДО СШ"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:27.052792Z",
-      "updated_at": "2025-05-14T15:59:27.052792Z",
-      "id": 3609,
-      "last_name": "Ветошкин",
-      "first_name": "Вячеслав",
-      "birth_year": "2010",
-      "club": "МАУ ДО \"СШ\"",
-      "city": "Сосновоборск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "4428": {
-    "club": ["СКПС \"РИФ\"", "РИФ"],
-    "athlete": {
-      "created_at": "2025-05-17T13:49:10.712946Z",
-      "updated_at": "2025-05-17T13:49:10.712946Z",
-      "id": 4428,
-      "last_name": "Килин",
-      "first_name": "Никита",
-      "birth_year": "2010",
-      "club": "СКПС \"РИФ\"",
-      "city": "Назарово",
-      "license": "III",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3515": {
-    "club": ["ДВС СибГУ", "СибГУ"],
-    "city": ["Новосибирск", "Красноярск"],
-    "license": ["III", "Iюн"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:06.941707Z",
-      "updated_at": "2025-05-14T12:48:06.941707Z",
-      "id": 3515,
-      "last_name": "Хамозин",
-      "first_name": "Никита",
-      "birth_year": "2010",
-      "club": "ДВС СибГУ",
-      "city": "Новосибирск",
-      "license": "III",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3448": {
-    "club": ["ДВС", "ДВС СибГУ"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:06.072589Z",
-      "updated_at": "2025-05-14T12:48:06.072589Z",
-      "id": 3448,
-      "last_name": "Гутник",
-      "first_name": "Максим",
-      "birth_year": "2010",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "4391": {
-    "club": ["ДВС", "ДВС СибГУ"],
-    "athlete": {
-      "created_at": "2025-05-17T12:39:56.172780Z",
-      "updated_at": "2025-05-17T12:39:56.172780Z",
-      "id": 4391,
-      "last_name": "Вещиков",
-      "first_name": "Владимир",
-      "birth_year": "2012",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "IIюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3798": {
-    "license": ["IIIюн", "II"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:42.106180Z",
-      "updated_at": "2025-05-14T16:44:42.106180Z",
-      "id": 3798,
-      "last_name": "Казанцев",
-      "first_name": "Семён",
-      "birth_year": "2012",
-      "club": "Дианема",
-      "city": "Красноярск",
-      "license": "IIIюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "4655": {
-    "license": ["Iюн", "IIюн"],
-    "athlete": {
-      "created_at": "2025-05-20T07:41:39.204163Z",
-      "updated_at": "2025-05-20T07:41:39.204163Z",
-      "id": 4655,
-      "last_name": "Мишина",
-      "first_name": "Анастасия",
-      "birth_year": "2011",
-      "club": "ДВС СибГУ",
-      "city": "Красноярск",
-      "license": "Iюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3447": {
-    "club": ["ДВС", "ДВС СибГУ"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.986438Z",
-      "updated_at": "2025-05-14T12:48:05.986438Z",
-      "id": 3447,
-      "last_name": "Кулаков",
-      "first_name": "Глеб",
-      "birth_year": "2010",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3471": {
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:06.402432Z",
-      "updated_at": "2025-06-10T11:23:35.129837Z",
-      "id": 3471,
-      "last_name": "Латнюк",
-      "first_name": "Даниил",
-      "birth_year": "2010",
-      "club": "Катран",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "4366": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["IIюн", "II"],
-    "athlete": {
-      "created_at": "2025-05-17T12:39:54.726539Z",
-      "updated_at": "2025-05-17T12:39:54.726539Z",
-      "id": 4366,
-      "last_name": "Ковригин",
-      "first_name": "Иван",
-      "birth_year": "2012",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "IIюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "4429": {
-    "club": ["СКПС \"РИФ\"", "РИФ"],
-    "license": ["Iюн", "II"],
-    "athlete": {
-      "created_at": "2025-05-17T13:49:10.800644Z",
-      "updated_at": "2025-05-17T13:49:10.800644Z",
-      "id": 4429,
-      "last_name": "Осипов",
-      "first_name": "Владислав",
-      "birth_year": "2010",
-      "club": "СКПС \"РИФ\"",
-      "city": "Назарово",
-      "license": "Iюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3781": {
-    "club": ["СКПС Катран", "Катран"],
-    "license": [null, "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:41.584734Z",
-      "updated_at": "2025-05-14T16:44:41.584734Z",
-      "id": 3781,
-      "last_name": "Замятин",
-      "first_name": "Эрик",
-      "birth_year": "2011",
-      "club": "СКПС Катран",
-      "city": "Красноярск",
-      "license": null,
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3498": {
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:06.654639Z",
-      "updated_at": "2025-06-10T11:23:36.102610Z",
-      "id": 3498,
-      "last_name": "Евсеев",
-      "first_name": "Ярослав",
-      "birth_year": "2010",
-      "club": "Дианема",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+    "athlete": "Артюшина Варвара",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "б/р"
+      }
     }
   },
   "3580": {
-    "club": ["ДВС", "СибГУ"],
-    "license": ["Iюн", "IIюн"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:26.659525Z",
-      "updated_at": "2025-06-10T11:23:36.063512Z",
-      "id": 3580,
-      "last_name": "Кряжева",
-      "first_name": "Маргарита",
-      "birth_year": "2011",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "Iюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3691": {
-    "club": ["МАУ ДО \"СШ\"", "МАУ ДО СШ"],
-    "license": ["I", "II"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:29.159179Z",
-      "updated_at": "2025-06-10T11:23:36.245728Z",
-      "id": 3691,
-      "last_name": "Шубарова",
-      "first_name": "Софья",
-      "birth_year": "2010",
-      "club": "МАУ ДО \"СШ\"",
-      "city": "Сосновоборск",
-      "license": "I",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "4453": {
-    "license": [null, "б/р"],
-    "athlete": {
-      "created_at": "2025-05-17T13:49:12.399375Z",
-      "updated_at": "2025-05-17T13:49:12.399375Z",
-      "id": 4453,
-      "last_name": "Сакович",
-      "first_name": "Макар",
-      "birth_year": "2011",
-      "club": "Катран",
-      "city": "Красноярск",
-      "license": null,
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "4403": {
-    "club": ["ДВС", "СибГУ"],
-    "license": ["IIюн", "Iюн"],
-    "athlete": {
-      "created_at": "2025-05-17T12:39:56.667659Z",
-      "updated_at": "2025-05-17T12:39:56.667659Z",
-      "id": 4403,
-      "last_name": "Кумохина",
-      "first_name": "Варвара",
-      "birth_year": "2011",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "IIюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3786": {
-    "club": ["СКПС Катран", "Катран"],
-    "license": [null, "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:41.601732Z",
-      "updated_at": "2025-05-14T16:44:41.601732Z",
-      "id": 3786,
-      "last_name": "Сорокин",
-      "first_name": "Егор",
-      "birth_year": "2010",
-      "club": "СКПС Катран",
-      "city": "Красноярск",
-      "license": null,
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3643": {
-    "club": ["ДВС", "СибГУ"],
-    "license": ["Iюн", "IIюн"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:28.276886Z",
-      "updated_at": "2025-06-10T11:23:36.111242Z",
-      "id": 3643,
-      "last_name": "Король",
-      "first_name": "Артем",
-      "birth_year": "2012",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "Iюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3029": {
-    "club": [null, "Катран"],
-    "city": ["Красноярский край", "Красноярск"],
-    "license": ["I", "II"],
-    "athlete": {
-      "created_at": "2025-05-14T09:37:37.286023Z",
-      "updated_at": "2025-06-10T11:23:37.065027Z",
-      "id": 3029,
-      "last_name": "Огарков",
-      "first_name": "Михаил",
-      "birth_year": "2010",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "I",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+    "athlete": "Кряжева Маргарита",
+    "changes": {
+      "license": {
+        "old": "Iюн",
+        "new": "IIюн"
+      }
     }
   },
   "3780": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["Iюн", "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:41.653429Z",
-      "updated_at": "2025-06-10T11:23:36.674313Z",
-      "id": 3780,
-      "last_name": "Головко",
-      "first_name": "Семен",
-      "birth_year": "2011",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "Iюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+    "athlete": "Головко Семен",
+    "changes": {
+      "license": {
+        "old": "Iюн",
+        "new": "б/р"
+      }
     }
   },
-  "3371": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:04.858039Z",
-      "updated_at": "2025-05-14T12:48:04.858039Z",
-      "id": 3371,
-      "last_name": "Азиатцева",
-      "first_name": "Юлия",
-      "birth_year": "2010",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "III",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
+  "3415": {
+    "athlete": "Рогачёва Евгения",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": "II"
+      }
     }
   },
-  "4665": {
-    "club": ["СКПС Катран", "Катран"],
-    "athlete": {
-      "created_at": "2025-05-20T07:41:39.173176Z",
-      "updated_at": "2025-05-20T07:41:39.173176Z",
-      "id": 4665,
-      "last_name": "Воробьева",
-      "first_name": "Василина",
-      "birth_year": "2010",
-      "club": "СКПС Катран",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
+  "4453": {
+    "athlete": "Сакович Макар",
+    "changes": {
+      "license": {
+        "old": "",
+        "new": "б/р"
+      }
     }
   },
-  "3782": {
-    "club": ["СКПС Катран", "Катран"],
-    "license": [null, "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:41.697353Z",
-      "updated_at": "2025-05-14T16:44:41.697353Z",
-      "id": 3782,
-      "last_name": "Миляков",
-      "first_name": "Владимир",
-      "birth_year": "2010",
-      "club": "СКПС Катран",
-      "city": "Красноярск",
-      "license": null,
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+  "4655": {
+    "athlete": "Мишина Анастасия",
+    "changes": {
+      "license": {
+        "old": "Iюн",
+        "new": "IIюн"
+      }
     }
   },
-  "765": {
-    "club": [null, "Дианема"],
-    "city": ["Красноярский край", "Красноярск"],
-    "license": ["I", "II"],
-    "athlete": {
-      "created_at": "2025-05-11T11:03:20.074796Z",
-      "updated_at": "2025-06-10T11:23:36.204131Z",
-      "id": 765,
-      "last_name": "Кисляк",
-      "first_name": "Антон",
-      "birth_year": "2011",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "I",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+  "3433": {
+    "athlete": "Курчатова Полина",
+    "changes": {
+      "license": {
+        "old": "Iюн",
+        "new": "IIюн"
+      }
     }
   },
-  "3581": {
-    "club": ["МАУ ДО \"СШ\"", "МАУ ДО СШ"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:26.672543Z",
-      "updated_at": "2025-05-14T15:59:26.672543Z",
-      "id": 3581,
-      "last_name": "Стрижнева",
-      "first_name": "Анастасия",
-      "birth_year": "2012",
-      "club": "МАУ ДО \"СШ\"",
-      "city": "Сосновоборск",
-      "license": "III",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
+  "3405": {
+    "athlete": "Храпова Маргарита",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
     }
   },
-  "3380": {
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:04.902314Z",
-      "updated_at": "2025-06-10T11:23:35.158581Z",
-      "id": 3380,
-      "last_name": "Андрущак",
-      "first_name": "Андрей",
-      "birth_year": "2011",
-      "club": "Катран",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+  "3636": {
+    "athlete": "Бензик Семен",
+    "changes": {
+      "license": {
+        "old": "",
+        "new": "б/р"
+      }
     }
   },
-  "3579": {
-    "club": ["ДВС", "СибГУ"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:26.651011Z",
-      "updated_at": "2025-05-14T15:59:26.651011Z",
-      "id": 3579,
-      "last_name": "Живаева",
-      "first_name": "Александра",
-      "birth_year": "2010",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "Iюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
+  "3763": {
+    "athlete": "Сафарян Алина",
+    "changes": {
+      "license": {
+        "old": "III",
+        "new": "б/р"
+      }
     }
   },
-  "724": {
-    "club": [null, "Дианема"],
-    "city": ["Красноярский край", "Красноярск"],
-    "license": ["КМС", "I"],
-    "athlete": {
-      "created_at": "2025-05-11T11:03:19.856763Z",
-      "updated_at": "2025-05-12T19:22:24.508618Z",
-      "id": 724,
-      "last_name": "Ионазенк",
-      "first_name": "Мирослава",
-      "birth_year": "2011",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "КМС",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
+  "3740": {
+    "athlete": "Журавель Софья",
+    "changes": {
+      "license": {
+        "old": "III",
+        "new": "IIюн"
+      }
     }
   },
-  "3484": {
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:06.376280Z",
-      "updated_at": "2025-06-10T11:23:36.299034Z",
-      "id": 3484,
-      "last_name": "Шлома",
-      "first_name": "Иван",
-      "birth_year": "2010",
-      "club": "Катран",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+  "3649": {
+    "athlete": "Анфимов Артем",
+    "changes": {
+      "license": {
+        "old": "",
+        "new": "б/р"
+      }
     }
   },
-  "826": {
-    "club": [null, "Спутник-Авангард"],
-    "city": ["Красноярский край", "Красноярск"],
-    "athlete": {
-      "created_at": "2025-05-11T11:03:20.382671Z",
-      "updated_at": "2025-05-11T11:03:20.382671Z",
-      "id": 826,
-      "last_name": "Першина",
-      "first_name": "Полина",
-      "birth_year": "2011",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "КМС",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
+  "3638": {
+    "athlete": "Терских Максим",
+    "changes": {
+      "license": {
+        "old": "",
+        "new": "б/р"
+      }
     }
   },
-  "3726": {
-    "club": ["МАУ ДО \"СШ\"", "МАУ ДО СШ"],
-    "athlete": {
-      "created_at": "2025-05-14T16:22:18.014873Z",
-      "updated_at": "2025-05-14T16:22:18.014873Z",
-      "id": 3726,
-      "last_name": "Цвинтарная",
-      "first_name": "София",
-      "birth_year": "2011",
-      "club": "МАУ ДО \"СШ\"",
-      "city": "Сосновоборск",
-      "license": "II",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
+  "962": {
+    "athlete": "Мальков Михаил",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": "II"
+      }
     }
   },
-  "908": {
-    "club": [null, "Дианема"],
-    "city": ["Красноярский край", "Красноярск"],
-    "license": ["I", "II"],
-    "athlete": {
-      "created_at": "2025-05-11T11:03:20.782863Z",
-      "updated_at": "2025-05-11T11:03:20.782863Z",
-      "id": 908,
-      "last_name": "Высоцкая",
-      "first_name": "Рада",
-      "birth_year": "2011",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "I",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
+  "3846": {
+    "athlete": "Дмитриев Салават",
+    "changes": {
+      "license": {
+        "old": "IIюн",
+        "new": "б/р"
+      }
     }
   },
-  "3400": {
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:04.955032Z",
-      "updated_at": "2025-06-10T11:23:36.109825Z",
-      "id": 3400,
-      "last_name": "Скачков",
-      "first_name": "Артем",
-      "birth_year": "2011",
-      "club": "Катран",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+  "3411": {
+    "athlete": "Маракова Амелия",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
     }
   },
-  "900": {
-    "club": [null, "ДВС СибГУ"],
-    "city": ["Красноярский край", "Красноярск"],
-    "athlete": {
-      "created_at": "2025-05-11T11:03:20.750459Z",
-      "updated_at": "2025-05-11T11:03:20.750459Z",
-      "id": 900,
-      "last_name": "Ратенко",
-      "first_name": "Софья",
-      "birth_year": "2011",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "I",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
+  "3724": {
+    "athlete": "Завгородняя Ирина",
+    "changes": {
+      "license": {
+        "old": "Iюн",
+        "new": "IIюн"
+      }
     }
   },
-  "4662": {
-    "license": ["II", "б/р"],
-    "athlete": {
-      "created_at": "2025-05-20T07:41:39.041794Z",
-      "updated_at": "2025-05-20T07:41:39.041794Z",
-      "id": 4662,
-      "last_name": "Байкова",
-      "first_name": "Эвелина",
-      "birth_year": "2010",
-      "club": "ДВС СибГУ",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3426": {
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.516476Z",
-      "updated_at": "2025-06-10T11:23:35.323256Z",
-      "id": 3426,
-      "last_name": "Евсеева",
-      "first_name": "Джулия",
-      "birth_year": "2012",
-      "club": "Дианема",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3382": {
-    "club": ["ДВС", "ДВС СибГУ"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:04.911761Z",
-      "updated_at": "2025-05-14T12:48:04.911761Z",
-      "id": 3382,
-      "last_name": "Терсков",
-      "first_name": "Богдан",
-      "birth_year": "2011",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "Iюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3624": {
-    "license": ["II", ""],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:27.871977Z",
-      "updated_at": "2025-05-14T15:59:27.871977Z",
-      "id": 3624,
-      "last_name": "Беляев",
-      "first_name": "Иван",
-      "birth_year": "2011",
-      "club": "Катран",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3421": {
-    "club": ["ДВС", "ДВС СибГУ"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.471908Z",
-      "updated_at": "2025-05-14T12:48:05.471908Z",
-      "id": 3421,
-      "last_name": "Антонова",
-      "first_name": "Кристина",
-      "birth_year": "2011",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "III",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3504": {
-    "club": ["ДВС", "ДВС СибГУ"],
-    "license": ["I", "II"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:06.811178Z",
-      "updated_at": "2025-06-10T11:23:36.110339Z",
-      "id": 3504,
-      "last_name": "Мирончик",
-      "first_name": "Елизавета",
-      "birth_year": "2010",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "I",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3485": {
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:06.468815Z",
-      "updated_at": "2025-06-10T11:23:35.088501Z",
-      "id": 3485,
-      "last_name": "Деревянных",
-      "first_name": "Никита",
-      "birth_year": "2010",
-      "club": "Катран",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3802": {
-    "license": ["III", "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:42.137702Z",
-      "updated_at": "2025-06-10T11:23:37.107541Z",
-      "id": 3802,
-      "last_name": "Корощенко",
-      "first_name": "Матвей",
-      "birth_year": "2012",
-      "club": "Дианема",
-      "city": "Красноярск",
-      "license": "III",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "4648": {
-    "license": ["III", "б/р"],
-    "athlete": {
-      "created_at": "2025-05-20T07:41:39.119345Z",
-      "updated_at": "2025-05-20T07:41:39.119345Z",
-      "id": 4648,
-      "last_name": "Шаповалова",
-      "first_name": "Ульяна",
-      "birth_year": "2011",
-      "club": "ДВС СибГУ",
-      "city": "Красноярск",
-      "license": "III",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3403": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["Iюн", "IIюн"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.297884Z",
-      "updated_at": "2025-05-14T12:48:05.297884Z",
-      "id": 3403,
-      "last_name": "Леонтьева",
-      "first_name": "Виктория",
-      "birth_year": "2011",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "Iюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3734": {
-    "club": ["МАУ ДО \"СШ\"", "МАУ ДО СШ"],
-    "athlete": {
-      "created_at": "2025-05-14T16:22:18.421932Z",
-      "updated_at": "2025-05-14T16:22:18.421932Z",
-      "id": 3734,
-      "last_name": "Огурцов",
-      "first_name": "Роман",
-      "birth_year": "2011",
-      "club": "МАУ ДО \"СШ\"",
-      "city": "Сосновоборск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3788": {
-    "club": ["СКПС Катран", "Катран"],
-    "license": [null, "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:41.665433Z",
-      "updated_at": "2025-05-14T16:44:41.665433Z",
-      "id": 3788,
-      "last_name": "Тарасов",
-      "first_name": "Всеволод",
-      "birth_year": "2011",
-      "club": "СКПС Катран",
-      "city": "Красноярск",
-      "license": null,
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "4430": {
-    "club": ["СКПС \"РИФ\"", "РИФ"],
-    "athlete": {
-      "created_at": "2025-05-17T13:49:10.863861Z",
-      "updated_at": "2025-05-17T13:49:10.863861Z",
-      "id": 4430,
-      "last_name": "Масловский",
-      "first_name": "Ярослав",
-      "birth_year": "2010",
-      "club": "СКПС \"РИФ\"",
-      "city": "Назарово",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3806": {
-    "license": ["IIIюн", "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:42.237784Z",
-      "updated_at": "2025-05-14T16:44:42.237784Z",
-      "id": 3806,
-      "last_name": "Мут",
-      "first_name": "Фёдор",
-      "birth_year": "2012",
-      "club": "Дианема",
-      "city": "Красноярск",
-      "license": "IIIюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3790": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["Iюн", "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:41.911081Z",
-      "updated_at": "2025-05-14T16:44:41.911081Z",
-      "id": 3790,
-      "last_name": "Степанов",
-      "first_name": "Глеб",
-      "birth_year": "2010",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "Iюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3423": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["Iюн", "IIюн"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.562307Z",
-      "updated_at": "2025-06-10T11:23:35.259952Z",
-      "id": 3423,
-      "last_name": "Мартынова",
-      "first_name": "Веста",
-      "birth_year": "2011",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "Iюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3631": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["IIIюн", "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:28.069868Z",
-      "updated_at": "2025-05-14T15:59:28.069868Z",
-      "id": 3631,
-      "last_name": "Самсонов",
-      "first_name": "Семён",
-      "birth_year": "2012",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "IIIюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3635": {
-    "license": [null, "IIIюн"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:28.068868Z",
-      "updated_at": "2025-05-14T15:59:28.068868Z",
-      "id": 3635,
-      "last_name": "Фёдоров",
-      "first_name": "Владислав",
-      "birth_year": "2012",
-      "club": "Дианема",
-      "city": "Красноярск",
-      "license": null,
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3797": {
-    "club": ["СКПС Катран", "Катран"],
-    "license": ["IIIюн", "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:42.089175Z",
-      "updated_at": "2025-06-10T11:23:36.102863Z",
-      "id": 3797,
-      "last_name": "Мылко",
-      "first_name": "Александр",
-      "birth_year": "2012",
-      "club": "СКПС Катран",
-      "city": "Красноярск",
-      "license": "IIIюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "271": {
-    "club": [null, "ДВС СибГУ"],
-    "city": ["Красноярский край", "Красноярск"],
-    "license": ["I", "II"],
-    "athlete": {
-      "created_at": "2025-05-11T00:33:12.051037Z",
-      "updated_at": "2025-05-11T00:33:12.051037Z",
-      "id": 271,
-      "last_name": "Зайцева",
-      "first_name": "Анастасия",
-      "birth_year": "2010",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "I",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "87": {
-    "club": [null, "Спутник-Авангард"],
-    "city": ["Красноярский край", "Красноярск"],
-    "athlete": {
-      "created_at": "2025-05-11T00:33:11.030831Z",
-      "updated_at": "2025-05-11T00:33:11.030831Z",
-      "id": 87,
-      "last_name": "Чеботарева",
-      "first_name": "Анастасия",
-      "birth_year": "2010",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "КМС",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
+  "3643": {
+    "athlete": "Король Артем",
+    "changes": {
+      "license": {
+        "old": "Iюн",
+        "new": "IIюн"
+      }
     }
   },
   "3791": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["IIюн", "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:41.759161Z",
-      "updated_at": "2025-05-14T16:44:41.759161Z",
-      "id": 3791,
-      "last_name": "Пермяков",
-      "first_name": "Вячеслав",
-      "birth_year": "2010",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "IIюн",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+    "athlete": "Пермяков Вячеслав",
+    "changes": {
+      "license": {
+        "old": "IIюн",
+        "new": "б/р"
+      }
     }
   },
-  "1056": {
-    "club": [null, "Спутник-Авангард"],
-    "city": ["Красноярский край", "Красноярск"],
-    "athlete": {
-      "created_at": "2025-05-11T11:03:21.610583Z",
-      "updated_at": "2025-05-11T11:03:21.610583Z",
-      "id": 1056,
-      "last_name": "Горохова",
-      "first_name": "Мария",
-      "birth_year": "2011",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "КМС",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3370": {
-    "club": ["ПК \"Авангард\"", "ПК Авангард"],
-    "city": ["Санкт-Петербург", "Красноярск"],
-    "license": ["II", "IIюн"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:04.858039Z",
-      "updated_at": "2025-06-10T11:23:37.078314Z",
-      "id": 3370,
-      "last_name": "Комарова",
-      "first_name": "Анастасия",
-      "birth_year": "2010",
-      "club": "ПК \"Авангард\"",
-      "city": "Санкт-Петербург",
-      "license": "II",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "738": {
-    "club": [null, "Дианема"],
-    "city": ["Красноярский край", "Красноярск"],
-    "license": ["КМС", "I"],
-    "athlete": {
-      "created_at": "2025-05-11T11:03:19.916267Z",
-      "updated_at": "2025-06-10T11:23:36.087865Z",
-      "id": 738,
-      "last_name": "Сечкина",
-      "first_name": "Ксения",
-      "birth_year": "2011",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "КМС",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3584": {
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:26.685420Z",
-      "updated_at": "2025-06-10T11:23:37.076667Z",
-      "id": 3584,
-      "last_name": "Бобкова",
-      "first_name": "Елизавета",
-      "birth_year": "2011",
-      "club": "Дианема",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "4442": {
-    "club": ["ДВС СибГУ", "СибГУ"],
-    "athlete": {
-      "created_at": "2025-05-17T13:49:11.679824Z",
-      "updated_at": "2025-05-17T13:49:11.679824Z",
-      "id": 4442,
-      "last_name": "Братилова",
-      "first_name": "Ульяна",
-      "birth_year": "2010",
-      "club": "ДВС СибГУ",
-      "city": "Красноярск",
-      "license": "IIюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "1282": {
-    "club": [null, "Дианема"],
-    "city": ["Красноярский край", "Красноярск"],
-    "license": ["I", "II"],
-    "athlete": {
-      "created_at": "2025-05-12T18:59:38.112608Z",
-      "updated_at": "2025-05-12T18:59:38.112608Z",
-      "id": 1282,
-      "last_name": "Трофимчик",
-      "first_name": "Егор",
-      "birth_year": "2010",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "I",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3410": {
-    "license": ["IIIюн", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.399350Z",
-      "updated_at": "2025-05-14T12:48:05.399350Z",
-      "id": 3410,
-      "last_name": "Евдокимова",
-      "first_name": "Валерия",
-      "birth_year": "2011",
-      "club": "Катран",
-      "city": "Красноярск",
-      "license": "IIIюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3435": {
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.643923Z",
-      "updated_at": "2025-06-10T11:23:36.078335Z",
-      "id": 3435,
-      "last_name": "Тимофеева",
-      "first_name": "Диана",
-      "birth_year": "2011",
-      "club": "Дианема",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "1080": {
-    "club": [null, "Спутник-Авангард"],
-    "city": ["Красноярский край", "Красноярск"],
-    "license": ["I", "II"],
-    "athlete": {
-      "created_at": "2025-05-11T11:03:21.732424Z",
-      "updated_at": "2025-05-11T11:03:21.732424Z",
-      "id": 1080,
-      "last_name": "Сарин",
-      "first_name": "Алексей",
-      "birth_year": "2010",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "I",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3578": {
-    "club": ["МАУ ДО \"СШ\"", "МАУ ДО СШ"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:26.653013Z",
-      "updated_at": "2025-05-14T15:59:26.653013Z",
-      "id": 3578,
-      "last_name": "Зиборова",
-      "first_name": "Ева",
-      "birth_year": "2011",
-      "club": "МАУ ДО \"СШ\"",
-      "city": "Сосновоборск",
-      "license": "II",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "785": {
-    "club": [null, "Спутник-Авангард"],
-    "city": ["Красноярский край", "Красноярск"],
-    "license": ["I", "II"],
-    "athlete": {
-      "created_at": "2025-05-11T11:03:20.151327Z",
-      "updated_at": "2025-06-10T11:23:36.104858Z",
-      "id": 785,
-      "last_name": "Данилов",
-      "first_name": "Захар",
-      "birth_year": "2011",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "I",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3417": {
-    "license": ["IIюн", "II"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:05.428358Z",
-      "updated_at": "2025-05-14T12:48:05.428358Z",
-      "id": 3417,
-      "last_name": "Фархутдинова",
-      "first_name": "София",
-      "birth_year": "2011",
-      "club": "Катран",
-      "city": "Красноярск",
-      "license": "IIюн",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "800": {
-    "club": [null, "Дианема"],
-    "city": ["Красноярский край", "Красноярск"],
-    "athlete": {
-      "created_at": "2025-05-11T11:03:20.236082Z",
-      "updated_at": "2025-05-11T11:03:20.236082Z",
-      "id": 800,
-      "last_name": "Трегубович",
-      "first_name": "Денис",
-      "birth_year": "2012",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "III",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+  "3504": {
+    "athlete": "Мирончик Елизавета",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": "II"
+      }
     }
   },
   "3503": {
-    "club": ["ДВС", "ДВС СибГУ"],
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:06.719642Z",
-      "updated_at": "2025-06-10T11:23:35.131001Z",
-      "id": 3503,
-      "last_name": "Никифоров",
-      "first_name": "Дмитрий",
-      "birth_year": "2011",
-      "club": "ДВС",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3507": {
-    "license": ["III", "Iюн"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:06.797172Z",
-      "updated_at": "2025-06-10T11:23:36.148410Z",
-      "id": 3507,
-      "last_name": "Подольский",
-      "first_name": "Даниил",
-      "birth_year": "2011",
-      "club": "Дианема",
-      "city": "Красноярск",
-      "license": "III",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+    "athlete": "Никифоров Дмитрий",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
     }
   },
   "3511": {
-    "club": ["ДВС СибГУ", "СибГУ"],
-    "city": ["Новосибирск", "Красноярск"],
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:06.916231Z",
-      "updated_at": "2025-05-14T12:48:06.916231Z",
-      "id": 3511,
-      "last_name": "Работько",
-      "first_name": "Марина",
-      "birth_year": "2010",
-      "club": "ДВС СибГУ",
-      "city": "Новосибирск",
-      "license": "II",
-      "gender": "F",
-      "avatar_url": null,
-      "is_top": false
+    "athlete": "Работько Марина",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
     }
   },
-  "3787": {
-    "club": ["СКПС Катран", "Катран"],
-    "license": [null, "б/р"],
-    "athlete": {
-      "created_at": "2025-05-14T16:44:41.811973Z",
-      "updated_at": "2025-05-14T16:44:41.811973Z",
-      "id": 3787,
-      "last_name": "Сухой",
-      "first_name": "Марк",
-      "birth_year": "2011",
-      "club": "СКПС Катран",
-      "city": "Красноярск",
-      "license": null,
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "794": {
-    "club": [null, "Дианема"],
-    "city": ["Красноярский край", "Красноярск"],
-    "athlete": {
-      "created_at": "2025-05-11T11:03:20.176825Z",
-      "updated_at": "2025-05-11T11:03:20.176825Z",
-      "id": 794,
-      "last_name": "Петрушков",
-      "first_name": "Матвей",
-      "birth_year": "2011",
-      "club": null,
-      "city": "Красноярский край",
-      "license": "III",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3384": {
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:04.917762Z",
-      "updated_at": "2025-06-10T11:23:35.144079Z",
-      "id": 3384,
-      "last_name": "Якубовский",
-      "first_name": "Дмитрий",
-      "birth_year": "2011",
-      "club": "Спутник-Авангард",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3716": {
-    "club": ["МАУ ДО \"СШ\"", "МАУ ДО СШ"],
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T15:59:29.503705Z",
-      "updated_at": "2025-06-10T11:23:36.103483Z",
-      "id": 3716,
-      "last_name": "Балбаров",
-      "first_name": "Михаил",
-      "birth_year": "2012",
-      "club": "МАУ ДО \"СШ\"",
-      "city": "Сосновоборск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3483": {
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:06.531345Z",
-      "updated_at": "2025-06-10T11:23:37.128962Z",
-      "id": 3483,
-      "last_name": "Энгель",
-      "first_name": "Дмитрий",
-      "birth_year": "2010",
-      "club": "Спутник-Авангард",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
-    }
-  },
-  "3385": {
-    "license": ["II", "III"],
-    "athlete": {
-      "created_at": "2025-05-14T12:48:04.921763Z",
-      "updated_at": "2025-06-10T11:23:35.154338Z",
-      "id": 3385,
-      "last_name": "Тимофеев",
-      "first_name": "Федор",
-      "birth_year": "2011",
-      "club": "Спутник-Авангард",
-      "city": "Красноярск",
-      "license": "II",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+  "3802": {
+    "athlete": "Корощенко Матвей",
+    "changes": {
+      "license": {
+        "old": "III",
+        "new": "б/р"
+      }
     }
   },
   "3733": {
-    "club": ["МАУ ДО \"СШ\"", "МАУ ДО СШ"],
-    "license": ["III", "Iюн"],
-    "athlete": {
-      "created_at": "2025-05-14T16:22:18.386811Z",
-      "updated_at": "2025-05-14T16:22:18.386811Z",
-      "id": 3733,
-      "last_name": "Татленко",
-      "first_name": "Вадим",
-      "birth_year": "2011",
-      "club": "МАУ ДО \"СШ\"",
-      "city": "Сосновоборск",
-      "license": "III",
-      "gender": "M",
-      "avatar_url": null,
-      "is_top": false
+    "athlete": "Татленко Вадим",
+    "changes": {
+      "license": {
+        "old": "III",
+        "new": "Iюн"
+      }
+    }
+  },
+  "3782": {
+    "athlete": "Миляков Владимир",
+    "changes": {
+      "license": {
+        "old": "",
+        "new": "б/р"
+      }
+    }
+  },
+  "3781": {
+    "athlete": "Замятин Эрик",
+    "changes": {
+      "license": {
+        "old": "",
+        "new": "б/р"
+      }
+    }
+  },
+  "4648": {
+    "athlete": "Шаповалова Ульяна",
+    "changes": {
+      "license": {
+        "old": "III",
+        "new": "б/р"
+      }
+    }
+  },
+  "3403": {
+    "athlete": "Леонтьева Виктория",
+    "changes": {
+      "license": {
+        "old": "Iюн",
+        "new": "IIюн"
+      }
+    }
+  },
+  "3400": {
+    "athlete": "Скачков Артем",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "3484": {
+    "athlete": "Шлома Иван",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "3788": {
+    "athlete": "Тарасов Всеволод",
+    "changes": {
+      "license": {
+        "old": "",
+        "new": "б/р"
+      }
+    }
+  },
+  "3786": {
+    "athlete": "Сорокин Егор",
+    "changes": {
+      "license": {
+        "old": "",
+        "new": "б/р"
+      }
+    }
+  },
+  "3711": {
+    "athlete": "Лялин Богдан",
+    "changes": {
+      "license": {
+        "old": "Iюн",
+        "new": "IIюн"
+      }
+    }
+  },
+  "3384": {
+    "athlete": "Якубовский Дмитрий",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "3426": {
+    "athlete": "Евсеева Джулия",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "4662": {
+    "athlete": "Байкова Эвелина",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "б/р"
+      }
+    }
+  },
+  "3624": {
+    "athlete": "Беляев Иван",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": ""
+      }
+    }
+  },
+  "3471": {
+    "athlete": "Латнюк Даниил",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "3485": {
+    "athlete": "Деревянных Никита",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "3380": {
+    "athlete": "Андрущак Андрей",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "3498": {
+    "athlete": "Евсеев Ярослав",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "3691": {
+    "athlete": "Шубарова Софья",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": "II"
+      }
+    }
+  },
+  "3631": {
+    "athlete": "Самсонов Семён",
+    "changes": {
+      "license": {
+        "old": "IIIюн",
+        "new": "б/р"
+      }
+    }
+  },
+  "3635": {
+    "athlete": "Фёдоров Владислав",
+    "changes": {
+      "license": {
+        "old": "",
+        "new": "IIIюн"
+      }
+    }
+  },
+  "3806": {
+    "athlete": "Мут Фёдор",
+    "changes": {
+      "license": {
+        "old": "IIIюн",
+        "new": "б/р"
+      }
+    }
+  },
+  "3515": {
+    "athlete": "Хамозин Никита",
+    "changes": {
+      "license": {
+        "old": "III",
+        "new": "Iюн"
+      }
+    }
+  },
+  "3512": {
+    "athlete": "Гаппель Вадим",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": "II"
+      }
+    }
+  },
+  "3584": {
+    "athlete": "Бобкова Елизавета",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "3797": {
+    "athlete": "Мылко Александр",
+    "changes": {
+      "license": {
+        "old": "IIIюн",
+        "new": "б/р"
+      }
+    }
+  },
+  "3435": {
+    "athlete": "Тимофеева Диана",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "3507": {
+    "athlete": "Подольский Даниил",
+    "changes": {
+      "license": {
+        "old": "III",
+        "new": "Iюн"
+      }
+    }
+  },
+  "3790": {
+    "athlete": "Степанов Глеб",
+    "changes": {
+      "license": {
+        "old": "Iюн",
+        "new": "б/р"
+      }
+    }
+  },
+  "3370": {
+    "athlete": "Комарова Анастасия",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "IIюн"
+      }
+    }
+  },
+  "3385": {
+    "athlete": "Тимофеев Федор",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "3787": {
+    "athlete": "Сухой Марк",
+    "changes": {
+      "license": {
+        "old": "",
+        "new": "б/р"
+      }
+    }
+  },
+  "3716": {
+    "athlete": "Балбаров Михаил",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "3483": {
+    "athlete": "Энгель Дмитрий",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": "III"
+      }
+    }
+  },
+  "3029": {
+    "athlete": "Огарков Михаил",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": "II"
+      }
+    }
+  },
+  "785": {
+    "athlete": "Данилов Захар",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": "II"
+      }
+    }
+  },
+  "765": {
+    "athlete": "Кисляк Антон",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": "II"
+      }
+    }
+  },
+  "908": {
+    "athlete": "Высоцкая Рада",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": "II"
+      }
+    }
+  },
+  "1282": {
+    "athlete": "Трофимчик Егор",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": "II"
+      }
+    }
+  },
+  "271": {
+    "athlete": "Зайцева Анастасия",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": "II"
+      }
+    }
+  },
+  "738": {
+    "athlete": "Сечкина Ксения",
+    "changes": {
+      "license": {
+        "old": "КМС",
+        "new": "I"
+      }
+    }
+  },
+  "1080": {
+    "athlete": "Сарин Алексей",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": "II"
+      }
+    }
+  },
+  "724": {
+    "athlete": "Ионазенк Мирослава",
+    "changes": {
+      "license": {
+        "old": "КМС",
+        "new": "I"
+      }
     }
   }
 }

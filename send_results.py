@@ -35,12 +35,11 @@ class AthleteProcessor:
     async def get_athlete(self, session, last, first, year) -> dict | None:
         params = {"last_name": last, "first_name": first, "birth_year": year}
         async with session.get(f"{self.BASE_URL}/athlete/", params=params, headers=headers) as r:
-            # Если сервер вернул не-json — безопасно прочитаем текст
             try:
                 data = await r.json()
             except Exception:
                 data = None
-            if r.status not in (200,):
+            if r.status != 200:
                 print(f"GET athlete error ({r.status}):", data)
                 return None
             return data[0] if data else None
@@ -66,12 +65,8 @@ class AthleteProcessor:
             return res
 
     async def update_athlete(self, session, athlete_id, data: dict):
-        """
-        Делает PUT /athlete/{id}/ с переданными полями (updates).
-        Возвращает обновлённый объект спортсмена или None.
-        """
-        clean_data = {k: v for k, v in data.items(
-        ) if k in allowed_athlete_fields and v is not None}
+        clean_data = {k: v for k, v in data.items()
+                      if k in allowed_athlete_fields and v is not None}
 
         async with session.put(f"{self.BASE_URL}/athlete/{athlete_id}/", json=clean_data, headers=headers) as r:
             try:
@@ -86,7 +81,7 @@ class AthleteProcessor:
     def check_updates(self, athlete, data):
         """
         Возвращает словарь отличий между athlete (из API) и data (вход).
-        Формат: { 'club': {'old': ..., 'new': ...}, ... }
+        Формат: { 'license': {'old': ..., 'new': ...}, ... }
         """
         mapping = {
             "license": "rank",
@@ -100,39 +95,16 @@ class AthleteProcessor:
                 changes[field] = {"old": old, "new": new}
         return changes
 
-    def prepare_patch_payload_for_missing(self, athlete, data):
-        """
-        Если у athlete пустые club/city, а в data они есть — соберём payload для PUT.
-        Только те поля, которые заполнены в data и пусты у athlete.
-        """
-        payload = {}
-        if not (athlete.get("club")) and data.get("team"):
-            payload["club"] = data["team"]
-        if not (athlete.get("city")) and data.get("city"):
-            payload["city"] = data["city"]
-        return payload
-
     async def process_athlete(self, session, data):
         athlete = await self.get_athlete(session, data["last_name"], data["first_name"], data["birth_year"])
 
         if not athlete:
             athlete = await self.create_athlete(session, data)
             if not athlete:
-                print("❌ Failed to create athlete:", data.get(
-                    "last_name"), data.get("first_name"))
+                print(
+                    f"❌ Failed to create athlete: {data['last_name']} {data['first_name']}")
                 return None
         else:
-            patch_payload = self.prepare_patch_payload_for_missing(
-                athlete, data)
-            if patch_payload:
-                new_athlete = {**athlete, **patch_payload}
-                updated = await self.update_athlete(session, athlete["id"], new_athlete)
-                if updated:
-                    athlete = updated
-                else:
-                    print(
-                        f"⚠️ Failed to patch athlete {athlete['id']} with {patch_payload}")
-
             updates = self.check_updates(athlete, data)
             if updates:
                 self.requests[athlete["id"]] = {
@@ -172,7 +144,6 @@ class AthleteProcessor:
             print(f"✅ Parsed {len(processed)} athletes, sending results...")
             response = await self.send_all_results(session, processed)
 
-        # сохраняем итоги
         with open(self.final_file, "w", encoding="utf-8") as f:
             json.dump(response, f, ensure_ascii=False, indent=2)
 
