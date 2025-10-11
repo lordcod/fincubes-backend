@@ -1,209 +1,188 @@
 import asyncio
-import contextlib
 import json
-import logging
-from typing import Optional
 import aiohttp
 from __config__ import headers
 
+allowed_athlete_fields = {
+    "last_name",
+    "first_name",
+    "birth_year",
+    "club",
+    "city",
+    "license",
+    "gender",
+    "avatar_url",
+    "is_top",
+}
+
 
 class AthleteProcessor:
+    BASE_URL = "https://api.fincubes.ru/admin"
+
     def __init__(
         self,
         competition_id: int,
-        json_file: str = 'output/2_itogi.json',
-        log_file: str = 'output/3_athlete_processing.log',
-        requests_file: str = 'output/3_requests.json',
-        final_file: str = 'output/3_final.json',
-        team_qt_city: bool = False,
-        locked_request: bool = True,
+        input_file: str = "output/2_itogi.json",
+        requests_file: str = "output/3_requests.json",
+        final_file: str = "output/3_final.json",
     ):
-        self.lock = (asyncio.Lock()
-                     if locked_request
-                     else contextlib.nullcontext())
         self.competition_id = competition_id
-        self.json_file = json_file
+        self.input_file = input_file
         self.requests_file = requests_file
         self.final_file = final_file
-        self.team_qt_city = team_qt_city
-        self.athlete_api_url = 'https://api.fincubes.ru/admin/athlete/'
-        self.results_api_url = 'https://api.fincubes.ru/admin/result/'
-        self.results_bulk_api_url = 'https://api.fincubes.ru/admin/result/bulk-create/'
-        self.logger = self.setup_logger(log_file)
         self.requests = {}
 
-    @staticmethod
-    def setup_logger(log_file):
-        logger = logging.getLogger('athlete_processing')
-        logger.setLevel(logging.DEBUG)
-        formatter = logging.Formatter(
-            '%(asctime)s - %(levelname)s - %(message)s')
+    async def get_athlete(self, session, last, first, year) -> dict | None:
+        params = {"last_name": last, "first_name": first, "birth_year": year}
+        async with session.get(f"{self.BASE_URL}/athlete/", params=params, headers=headers) as r:
+            # Если сервер вернул не-json — безопасно прочитаем текст
+            try:
+                data = await r.json()
+            except Exception:
+                data = None
+            if r.status not in (200,):
+                print(f"GET athlete error ({r.status}):", data)
+                return None
+            return data[0] if data else None
 
-        file_handler = logging.FileHandler(log_file, mode='w')
-        file_handler.setLevel(logging.WARN)
-        file_handler.setFormatter(formatter)
-        logger.addHandler(file_handler)
-
-        console_handler = logging.StreamHandler()
-        console_handler.setFormatter(formatter)
-        logger.addHandler(console_handler)
-
-        return logger
-
-    async def get_athlete(
-        self,
-        session: aiohttp.ClientSession,
-        last_name: str,
-        first_name: str,
-        birth_year: str,
-        city: str
-    ):
-        params = {
-            'last_name': last_name,
-            'first_name': first_name,
-            'birth_year': birth_year
+    async def create_athlete(self, session, data) -> None | dict:
+        payload = {
+            "last_name": data["last_name"],
+            "first_name": data["first_name"],
+            "birth_year": data["birth_year"],
+            "license": data.get("rank") or "",
+            "gender": data.get("gender") or "",
+            "club": data.get("team") or "",
+            "city": data.get("city") or "",
         }
-        async with session.get(self.athlete_api_url, params=params, headers=headers) as response:
-            athletes = await response.json()
-            response.raise_for_status()
-            if len(athletes) > 1:
-                self.logger.warning(
-                    'Found 2, more athletes %s %s %s', last_name, first_name, birth_year)
-            athl = athletes[0] if athletes else None
-            if athl and athl['city'] != city:
-                self.logger.warning(
-                    'Error city athlete %s %s %s: send %s, received %s', last_name, first_name, birth_year, city, athl['city'])
-            return athl
+        async with session.post(f"{self.BASE_URL}/athlete/", json=payload, headers=headers) as r:
+            try:
+                res = await r.json()
+            except Exception:
+                res = None
+            if r.status not in (200, 201):
+                print(f"CREATE athlete error ({r.status}):", res)
+                return None
+            return res
 
-    async def create_athlete(
-        self,
-        session: aiohttp.ClientSession,
-        last_name: str,
-        first_name: str,
-        birth_year: str,
-        team: str,
-        city: str,
-        rank: str,
-        gender: str
-    ):
-        athlete_data = {
-            'last_name': last_name,
-            'first_name': first_name,
-            'birth_year': birth_year,
-            'license': rank,
-            'gender': gender,
-            'club': team or '',
-            'city': city or ''
+    async def update_athlete(self, session, athlete_id, data: dict):
+        """
+        Делает PUT /athlete/{id}/ с переданными полями (updates).
+        Возвращает обновлённый объект спортсмена или None.
+        """
+        clean_data = {k: v for k, v in data.items(
+        ) if k in allowed_athlete_fields and v is not None}
+
+        async with session.put(f"{self.BASE_URL}/athlete/{athlete_id}/", json=clean_data, headers=headers) as r:
+            try:
+                res = await r.json()
+            except Exception:
+                res = None
+            if r.status not in (200, 201):
+                print(f"UPDATE athlete {athlete_id} error ({r.status}):", res)
+                return None
+            return res
+
+    def check_updates(self, athlete, data):
+        """
+        Возвращает словарь отличий между athlete (из API) и data (вход).
+        Формат: { 'club': {'old': ..., 'new': ...}, ... }
+        """
+        mapping = {
+            "license": "rank",
+            "gender": "gender",
         }
+        changes = {}
+        for field, src in mapping.items():
+            old = (athlete.get(field) or "").strip()
+            new = (data.get(src) or "").strip()
+            if old != new:
+                changes[field] = {"old": old, "new": new}
+        return changes
 
-        async with session.post(self.athlete_api_url, json=athlete_data, headers=headers) as response:
-            data = await response.json()
-            if not response.ok:
-                print(data)
-            response.raise_for_status()
-            return data
-
-    async def add_result(
-        self,
-        session: aiohttp.ClientSession,
-        athlete_id: int,
-        result_data
-    ):
-        async with session.post(f'{self.results_api_url}', json=result_data, headers=headers) as response:
-            data = await response.json()
-            if not response.ok:
-                print(data)
-            response.raise_for_status()
-            self.logger.info(f"Result added for athlete {athlete_id}")
-            return True
-
-    async def send_all_results(
-        self,
-        session: aiohttp.ClientSession,
-        requests: list
-    ):
-        async with session.post(self.results_bulk_api_url, json=requests, headers=headers, timeout=3600) as response:
-            data = await response.read()
-            print(data)
-            if not response.ok:
-                print(data)
-            response.raise_for_status()
-            return data
-
-    async def check_updated(self, request, data, athlete, key, key2):
-        if athlete[key] != data[key2]:
-            request[key] = [athlete[key], data[key2]]
-            self.logger.debug(
-                'Send request %s change %s %s %s: %s %s',
-                key,
-                athlete['id'],
-                athlete['first_name'],
-                athlete['last_name'],
-                *request[key]
-            )
+    def prepare_patch_payload_for_missing(self, athlete, data):
+        """
+        Если у athlete пустые club/city, а в data они есть — соберём payload для PUT.
+        Только те поля, которые заполнены в data и пусты у athlete.
+        """
+        payload = {}
+        if not (athlete.get("club")) and data.get("team"):
+            payload["club"] = data["team"]
+        if not (athlete.get("city")) and data.get("city"):
+            payload["city"] = data["city"]
+        return payload
 
     async def process_athlete(self, session, data):
-        athlete = await self.get_athlete(session, data['last_name'], data['first_name'], data['birth_year'], data['city'])
+        athlete = await self.get_athlete(session, data["last_name"], data["first_name"], data["birth_year"])
+
         if not athlete:
-            athlete = await self.create_athlete(session,
-                                                data['last_name'],
-                                                data['first_name'],
-                                                data['birth_year'],
-                                                data['team'],
-                                                data['city'],
-                                                data['rank'],
-                                                data['gender'])
+            athlete = await self.create_athlete(session, data)
             if not athlete:
-                self.logger.error("Failed to create athlete.")
-                return
-
+                print("❌ Failed to create athlete:", data.get(
+                    "last_name"), data.get("first_name"))
+                return None
         else:
-            request = {}
-            sender = [
-                ('club', 'team'),
-                ('license', 'rank'),
-                ('gender', 'gender')
-            ]
-            for key, key2 in sender:
-                await self.check_updated(request, data, athlete,
-                                         key, key2)
+            patch_payload = self.prepare_patch_payload_for_missing(
+                athlete, data)
+            if patch_payload:
+                new_athlete = {**athlete, **patch_payload}
+                updated = await self.update_athlete(session, athlete["id"], new_athlete)
+                if updated:
+                    athlete = updated
+                else:
+                    print(
+                        f"⚠️ Failed to patch athlete {athlete['id']} with {patch_payload}")
 
-            if request:
-                request['athlete'] = athlete
-                self.requests[athlete['id']] = request
+            updates = self.check_updates(athlete, data)
+            if updates:
+                self.requests[athlete["id"]] = {
+                    "athlete": f"{athlete.get('last_name', '')} {athlete.get('first_name', '')}".strip(),
+                    "changes": updates,
+                }
 
-        athlete_id = athlete['id']
-        results = data['results']
         return {
-            'competition_id': self.competition_id,
-            'athlete_id': athlete_id,
-            'results': results
+            "competition_id": self.competition_id,
+            "athlete_id": athlete["id"],
+            "results": data["results"],
         }
 
+    async def send_all_results(self, session, results):
+        async with session.post(
+            f"{self.BASE_URL}/result/bulk-create/",
+            json=results,
+            headers=headers,
+            timeout=3600,
+        ) as r:
+            try:
+                res = await r.json()
+            except Exception:
+                res = None
+            if r.status not in (200, 201):
+                print(f"BULK create error ({r.status}):", res)
+            return res
+
     async def run(self):
-        with open(self.json_file, 'rb') as f:
-            athlete_data_list = json.load(f)
+        with open(self.input_file, "r", encoding="utf-8") as f:
+            athletes = json.load(f)
 
-        with contextlib.suppress(Exception):
-            async with aiohttp.ClientSession() as session:
-                tasks = [self.process_athlete(session, data)
-                         for data in athlete_data_list]
-                requests = await asyncio.gather(*tasks)
-                print(requests)
-                print('Parse', len(requests), 'athletes results')
-                responses = await self.send_all_results(session, requests)
+        async with aiohttp.ClientSession() as session:
+            tasks = [self.process_athlete(session, a) for a in athletes]
+            processed = [r for r in await asyncio.gather(*tasks) if r]
 
-        with contextlib.suppress(Exception):
-            with open(self.final_file, 'wb+') as file:
-                file.write(json.dumps(responses,
-                                      ensure_ascii=False).encode())
-        with contextlib.suppress(Exception):
-            with open(self.requests_file, 'wb+') as file:
-                file.write(json.dumps(self.requests,
-                                      ensure_ascii=False).encode())
+            print(f"✅ Parsed {len(processed)} athletes, sending results...")
+            response = await self.send_all_results(session, processed)
+
+        # сохраняем итоги
+        with open(self.final_file, "w", encoding="utf-8") as f:
+            json.dump(response, f, ensure_ascii=False, indent=2)
+
+        with open(self.requests_file, "w", encoding="utf-8") as f:
+            json.dump(self.requests, f, ensure_ascii=False, indent=2)
+
+        print(f"💾 Results saved to {self.final_file}")
+        print(f"📝 Update requests saved to {self.requests_file}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     comp_id = int(input("Competition ID: "))
-    processor = AthleteProcessor(comp_id, locked_request=False)
-    asyncio.run(processor.run())
+    asyncio.run(AthleteProcessor(comp_id).run())

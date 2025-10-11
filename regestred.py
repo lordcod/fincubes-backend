@@ -16,6 +16,7 @@ styles = {
     'плавание в ластах(моноласта)': 'SURFACE',
     'в классических ластах': 'BIFINS',
     'моноласта': 'SURFACE',
+    'плавание в  ластах': 'SURFACE',
 }
 sexs = {
     'женщины': 'F',
@@ -84,11 +85,12 @@ class RegisterParser:
         self.athletes = defaultdict(list)
 
         # Дистанция 50м в классических ластах, девушки
-        # Плавание в классических ластах - 50 метров Юниорки (2008-2011)
+        # Плавание в классических ластах - 50 м,  девушки 2010 г.р.
         self.distance_re = re.compile(
-            r"(?P<style>.+)\s*-\s*(?P<distance>\d+)\s*м,?\s*(?P<gender>[а-я]+)",
-            re.VERBOSE | re.IGNORECASE
+            r"(?P<style>.+) - (?P<distance>\d+) м,\s*(?P<gender>[а-я]+)\s+.+",
+            re.IGNORECASE
         )
+
         self.time_regex = re.compile(
             r'((\d{1,2})[:\.,])?(\d{1,2})[:\.,](\d{1,2})к?')
 
@@ -253,6 +255,7 @@ class RegisterParser:
             ).encode())
 
     def run(self):
+        print(len(self.output['individual_results']))
         for result in self.output['individual_results']:
             style, distance, gender, am, ax = self.parse_distance(
                 result['distance'])

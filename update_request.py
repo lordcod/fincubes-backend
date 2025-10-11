@@ -4,7 +4,7 @@ import aiohttp
 import asyncio
 from __config__ import headers
 
-athlete_api_url = 'https://api.fincubes.ru/athletes'
+athlete_api_url = 'https://api.fincubes.ru/admin/athlete'
 RANK_ORDER = defaultdict(lambda: 100, {
     'МСМК': -2,
     'ЗМС': -1,

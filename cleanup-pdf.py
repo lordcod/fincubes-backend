@@ -3,19 +3,18 @@ import pdfplumber
 import pytesseract
 from pathlib import Path
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Users\2008d\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
 
-
-# Путь к PDF
+# Путь к PDF6
 pdf_path = Path(
-    r"C:\Users\2008d\TEMP\ОС\🤿итоговый🇷🇺КТО 11-12.12.24.pdf"
+    r"C:\Users\2008d\TEMP\ВС\ЛЕНЕКС 🤿Итоговый_🇷🇺ВС_протокол_результатов_ВРВС_черновик.pdf"
 )
 
 # Мусорные ключевые фразы
 trash = """
-Первенство ГБУ РО «СШОР № 13»
-по подводному спорту (плавание в ластах)
-6 февраля .2025 г.
+Главный судья соревнований, судья ССВК Е.В. Кулик
+Главный секретарь соревнований, судья ССВК А.И. Подгорный
+Норматив А
+04.2023 Результаты
 
 № Фамилия имя
 Место Фамилия Имя

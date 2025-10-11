@@ -1,5 +1,19 @@
 [
     [
+        "BIFINS",
+        50,
+        "F",
+        null,
+        null
+    ],
+    [
+        "BIFINS",
+        50,
+        "M",
+        null,
+        null
+    ],
+    [
         "SURFACE",
         50,
         "F",
@@ -15,14 +29,28 @@
     ],
     [
         "BIFINS",
-        50,
+        100,
         "F",
         null,
         null
     ],
     [
         "BIFINS",
-        50,
+        100,
+        "M",
+        null,
+        null
+    ],
+    [
+        "SURFACE",
+        100,
+        "F",
+        null,
+        null
+    ],
+    [
+        "SURFACE",
+        100,
         "M",
         null,
         null

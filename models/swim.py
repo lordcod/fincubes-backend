@@ -59,9 +59,6 @@ class SwimResultsParser:
                 self.state.in_relay_block = False
                 continue
 
-            if 'Категория' in line:
-                self.state.current_distance += ' '+line.strip()
-
             if self.state.in_relay_block:
                 self.relay_parser.parse(line)
                 self.relay_parser.save_relay()

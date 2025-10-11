@@ -6,7 +6,7 @@ from parsers.base import IndividualModelBase
 # DSQ ПАТАПОВА, Полина Игоревна 2011 МКСШОР Восток II -
 pattern = re.compile(r"""
     ^\s*
-    (?P<place>\d+\.|DSQ|DNS|EXH)?\s*
+    (?P<place>\d+\.|DSQ|DNS|EXH|DNF)?\s*
     (?P<last_name>[А-Яа-яЁё\-]+),?\s+
     (?P<first_name>[А-Яа-яЁё\-\.]+)\s+
     ((?P<patronymic>[А-Яа-яЁё\-]+)\s+)?

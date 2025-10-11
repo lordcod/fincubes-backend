@@ -4,19 +4,16 @@ from models.state import State
 from models.swim_types import *
 from parsers.base import IndividualModelBase
 #
-# 6. ДАРЧИЕВА Моника Алана 12 Бодуроv_Team "СШ ВВС" 27.99 III
+# 1. ЕДАЛОВА Евгения 08 КМС МБУ ДО СШ 2 Таганрог 20.31 I
 pattern = re.compile(r"""
-    (?P<place>(\d+.?|DSQ|DNS|EXH)\s*)?
+    (?P<place>(\d+.?|DSQ|DNS|EXH|DNF)\s*)?
     (?P<last_name>[А-Яа-яЁё\-]+),?\s+
     (?P<first_name>[А-Яа-яЁё\-\.]+)\s+
     (?P<birth_year>\d{2,4})\s+
-    
-    (?:\s+(?P<rank>(?:МСМК|ЗМС|КМС|МС|[123I]{1,3}(?:\s*ю[н]?|ю[н]?|юн)?\.?))?)?
-    
+    (?P<rank>(?:МСМК|ЗМС|КМС|МС|I{1,3}|1|2|3)(?:\s*(?:\(?юн\)?|юн|ю))?\.?\s+)?
     (?P<team>.+?)
-    
     (?:\s+(?P<result>(\d{1,2}[:\.,])?\d{1,2}[:\s.,]\d{2}))?
-    (?:\s+(?P<final_rank>(I{1,3}(?:\(ю\))?|I{1,3}(?:\s*юн)?|[123](?:юн)?|б\/?р|КМС|МСМК|МС|ЗМС)))?
+    (?:\s+(?P<final_rank>(?:МСМК|ЗМС|КМС|МС|I{1,3}|1|2|3)(?:\s*(?:\(?юн\)?|юн|ю))?)?)?
     (?:\s+(лично|\d+))?
     \s*$
 """, re.VERBOSE | re.IGNORECASE)

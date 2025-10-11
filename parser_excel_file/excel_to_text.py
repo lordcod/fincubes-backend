@@ -1,7 +1,6 @@
 import logging
 from pathlib import Path
 from datetime import datetime, date, time
-from numpy import isin
 import openpyxl
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -56,7 +55,7 @@ class ExcelToTextConverter:
         return ' '.join(result_cells)
 
     def convert(self):
-        wb = openpyxl.load_workbook(self.input_file)
+        wb = openpyxl.load_workbook(self.input_file, data_only=True)
         sheet = wb.active
 
         with open(self.output_file, 'w', encoding='utf-8') as f:
@@ -70,7 +69,7 @@ class ExcelToTextConverter:
 
 if __name__ == '__main__':
     input_path = Path(
-        r"C:\Users\2008d\Downloads\PR_tomsk_2025.xlsx")
+        r"C:\Users\2008d\Downloads\ITOGOVYJ_Pervenstvo_shkoly_3.xlsx")
     output_path = "output/0_cleaned_results.txt"
     config = {
         'convert_fields': {
