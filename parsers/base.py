@@ -2,7 +2,7 @@ import re
 import logging
 from typing import List, Optional
 from models.state import State
-from models.swim_types import *
+from models.swim_types import SwimResult
 
 
 class IndividualModelBase:
@@ -22,10 +22,13 @@ class IndividualModelBase:
         self.regexes = regexes
         self.error_values = error_values
 
-    def parse(self, line: str) -> SwimResult:
+    def parse(self, line: str) -> Optional[SwimResult]:
         for regex in self.regexes:
             match = regex.match(line)
             if match:
+                data = self.prerender(self.extract_result(match))
+                if data is None:
+                    return None
                 return SwimResult(distance=self.state.current_distance,
                                   **self.prerender(self.extract_result(match)))
 

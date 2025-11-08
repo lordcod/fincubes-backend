@@ -1,0 +1,731 @@
+
+    <span id="top-anchor"></span>
+     
+    
+    
+    <div id="loader" class="st-info" style="display: none;"></div>
+    <script type="text/javascript">
+        const loader = $('#loader');
+    </script>
+
+    
+
+    <div id="page" class="hideHeader  st-info iframe">
+        <div class="sticky-content" style="position: relative; height: 0px; top: 886px;">
+            
+
+<div class="liveSportSelector x--sport-count-0">
+    
+
+<div class="sport-wrapper">
+
+
+    </div>
+
+
+<script type="text/javascript">
+    if (typeof ($) === 'function') {
+        $(document).ready(function () {
+            if('true' === 'true'){
+                if (typeof (ReloadLiveSport.AutoReload) != 'undefined') ReloadLiveSport.AutoReload = true;
+                if (typeof (ReloadLiveSport.ReloadInformation) != 'undefined') ReloadLiveSport.ReloadInformation = {"$types":{"WIS.Common.Entities.ReloadInformation, WIS.Common, Version=0.0.6.0, Culture=neutral, PublicKeyToken=null":"1"},"__type":"1","ReloadTime":10};
+            }
+            else
+            if (typeof (ReloadLiveSport.AutoReload) != 'undefined') ReloadLiveSport.AutoReload = false;
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    function openSelector(e) {
+        var p = $(this).parent();
+        if (p.hasClass('selected'))
+            p.removeClass('selected');
+        else {
+            $('.sport').removeClass('selected');
+            p.addClass('selected');
+        }
+    }
+    function closeSelector(e) {
+        var p = $(this).parent();
+        p.removeClass('selected');
+    }
+    $(document).ready(function () {
+        $('.sport .sporticon').unbind('click').bind('click', openSelector);
+        if (!is_Mobile())
+            $('.sport .sporticon').unbind('mouseenter').bind('mouseenter', openSelector);
+        $('.sport .competitionItems').unbind('mouseleave').bind('mouseleave', closeSelector);
+        $('.liveSportSelector').removeClass('x--sport-count-1')
+
+        $(".liveSportSelector").removeClass(function (index, className) {
+            return (className.match(/(^|\s)x--sport-count-\S+/g) || []).join(' ');
+        });
+        $(".liveSportSelector").addClass('x--sport-count-0');
+    });
+
+</script>
+</div>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            ReloadLiveSport.ReloadInformation = {"$types":{"WIS.Common.Entities.ReloadInformation, WIS.Common, Version=0.0.6.0, Culture=neutral, PublicKeyToken=null":"1"},"__type":"1","ReloadTime":10};
+            ReloadLiveSport.SetUpdateTimeOut('.liveSportSelector', '/hide/en/Root/LiveSportSelectorContentPartial?', UpdateLiveSelectorSuccess);
+        });
+        function UpdateLiveSelectorSuccess(html) {
+            if (html.length > 0) { var $s = $('.liveSportSelector');
+                if (!$s.children('.sport').hasClass('selected')) $s.html(html);
+            }
+        }
+    </script>
+    
+            <div class="topArrow" id="topArrow" title="Scroll to top" onclick="document.getElementById('top-anchor').scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })" style="display: block;"></div>
+        </div>
+        <div id="headerContainer">
+        
+        
+                <div class="sponsorTop">
+                    <a href="https://www.tissotwatches.com" target="_blank">
+                        <img src="/skins/SWOG2025/images/event/sponsor_header.png" alt="Sponsor">
+                    </a>
+                </div>
+            
+            <div id="browserNavi">
+                
+                    <div class="printBtn" onclick="window.print()" title="Print"></div>
+                
+                    <div class="reloadBtn" onclick="window.location.href=window.location.href" title="Reload"></div>
+                
+            </div>
+        </div>
+
+        
+
+        <div id="nav">
+
+            <div id="navitemcurrent">Schedule &amp; Results</div>
+
+            <div id="navitems" class="" style="">
+            
+                    <div class="navitemactive">
+                        <a href="/hide">Schedule &amp; Results</a>
+                    </div>
+            
+                    <div class="navitem">
+                        <a href="/hide/en/MedalTally?sport=---&amp;medalKind=DefaultSports">Medals</a>
+                    </div>
+            
+                    <div class="navitem">
+                        <a href="/hide/en/Participant/List">Entries</a>
+                    </div>
+            
+                    <div class="navitem">
+                        <a href="/hide/en/Record/Records?sportCode=---">Records</a>
+                    </div>
+            
+                    <div class="navitem">
+                        <a href="/hide/en/Pdf/PdfList">Reports</a>
+                    </div>
+            
+                    <div class="navitem">
+                        <a href="/hide/en/Image/PhotoFinishList">Photo Finish</a>
+                    </div>
+            
+                    <div class="navitem">
+                        <a href="/hide/en/Pdf/Resultbook">Results Book</a>
+                    </div>
+            
+            </div>
+
+        </div>
+        <div id="navitems_lang">
+            
+            <div class="navitem_lang selected">
+                <a href="/hide/en/Info/ResultList/FSWW50MAP-------------FNL-000100--">
+                    <img src="/skins/base/images/languages/icon_ENG.png" alt="EN">
+                    EN
+                </a>
+            </div>
+            
+            <div class="navitem_lang ">
+                <a href="/hide/zh/Info/ResultList/FSWW50MAP-------------FNL-000100--">
+                    <img src="/skins/base/images/languages/icon_CHN.png" alt="中">
+                    中
+                </a>
+            </div>
+            
+           </div>
+        <div id="content" class="Schedule">
+            
+            <div class="clientTimeSelector">
+                <div class="btn clientTime">My time</div>|
+                <div class="btn localTime selected">Chengdu - CHN time</div>
+            </div>
+            
+
+            <div class="mainContent">
+                
+
+
+        <div class="sportevents FSW">
+            <div class="left">
+                <a href="/hide/en/Comp/DetailedScheduleByEvent?sportCode=FSWW50MAP-------------FNL---------"><img class="sporticon" alt="FSW" height="80" width="80" src="/skins/SWOG2025/images/sport_icons/FSW.png"></a>
+            </div>
+            
+            <div class="right"><div class="subline">
+	Finswimming:&nbsp;<span class="sortValue">Women's Apnoea 50m Final</span>
+</div><div class="SublineInfos">
+	<span class="Title">Status: </span><span class="textStatus">Finished</span>
+</div><span class="SublineInfos"><span class="Title">Start time:&nbsp;</span><span data-format="dddd d MMMM yyyy" class="time-value" data-time-ticks="1754814600000" data-time="Sunday 10 August 2025">Sunday 10 August 2025</span>&nbsp;at&nbsp;<span class="time-value" data-time-ticks="1754814600000" data-time="16:30">16:30</span></span><span class="SublineInfos"><div>
+	<span class="Title">Finish time:&nbsp;</span><span data-format="dddd d MMMM yyyy" class="time-value" data-time-ticks="1754814960000" data-time="Sunday 10 August 2025">Sunday 10 August 2025</span>&nbsp;at&nbsp;<span class="time-value" data-time-ticks="1754814960000" data-time="16:36">16:36</span>
+</div></span><div class="SublineInfos">
+	<span class="Title">Venue:&nbsp;</span>Chengdu Sport University Sancha Lake Campus Natatorium
+</div></div>
+        </div>
+    
+        <div class="unitSelector FSW ResultList noPrint" style="display: none;"><div class="leftScroll noSelect inactive">
+
+</div><div id="unitSelectorContainer" style="">
+	<div class="wrapper" style="position: relative; left: 0px;"><div class="unit current" style="">
+		<a partial-url="/hide/en/Comp/ListPartial?pageType=ResultList&amp;rsc=FSWW50MAP-------------FNL-000100--" class="partial-link" href="/hide/en/Info/ResultList/FSWW50MAP-------------FNL-000100--"><span class="medalWrapper gold"><div class="names">
+			<span class="sortValue">Final</span>
+		</div><div class="unitRelated">
+			<div class="status ">
+				<span class="textStatus">Finished</span>
+			</div><div class="date">
+				<span data-format="d MMM" class="time-value" data-time-ticks="1754814600000" data-time="10 Aug">10 Aug</span>
+			</div><div class="time">
+				<span class="time-value" data-time-ticks="1754814600000" data-time="16:30">16:30</span>
+			</div>
+		</div></span></a>
+	</div></div>
+</div><div class="rightScroll noSelect">
+
+</div></div>
+        
+        <div class="relatedInformations noPrint top">
+        <div class="RelatedInfoSelector">
+	<div title="Schedule" class="RelatedInfoItem relSchedule ">
+		<a href="/hide/en/Comp/DetailedScheduleByEvent?sportCode=FSWW50MAP-------------FNL---------"><div class="icon icon--schedule">
+
+		</div><div>
+			Schedule
+		</div></a>
+	</div><div title="Start List" class="RelatedInfoItem relStartList ">
+		<a href="/hide/en/Info/StartList/FSWW50MAP-------------FNL-000100--" partial-url="/hide/en/Comp/ListPartial?pagetype=StartList&amp;rsc=FSWW50MAP-------------FNL-000100--" class="partial-link"><div class="icon icon--start">
+
+		</div><div>
+			Start List
+		</div></a>
+	</div><div title="Results" class="RelatedInfoItem relResultList selected">
+		<a href="/hide/en/Info/ResultList/FSWW50MAP-------------FNL-000100--" partial-url="/hide/en/Comp/ListPartial?pagetype=ResultList&amp;rsc=FSWW50MAP-------------FNL-000100--" class="partial-link"><div class="icon icon--result selected">
+
+		</div><div>
+			Results
+		</div></a>
+	</div><div title="Medallists" class="RelatedInfoItem relMedalList ">
+		<a href="/hide/en/Info/MedalList/FSWW50MAP-------------------------" partial-url="/hide/en/Comp/ListPartial?pagetype=MedalList&amp;rsc=FSWW50MAP-------------------------" class="partial-link"><div class="icon icon--medal">
+
+		</div><div>
+			Medallists
+		</div></a>
+	</div><div title="Athletes" class="RelatedInfoItem relParticipantsList ">
+		<a href="/hide/en/Participant/List?disciplineId=231441f7-6c77-490e-8c2f-58e56cb3b402&amp;eventId=a1f77051-fbba-4968-8366-0942653d7134"><div class="icon icon--athlete">
+
+		</div><div>
+			Athletes
+		</div></a>
+	</div><div title="Event Summary" class="RelatedInfoItem relEventSummary ">
+		<a href="/hide/en/Info/EventSummary/FSWW50MAP-------------------------" partial-url="/hide/en/Comp/ListPartial?pagetype=EventSummary&amp;rsc=FSWW50MAP-------------------------" class="partial-link"><div class="icon icon--event-summary">
+
+		</div><div>
+			Event Summary
+		</div></a>
+	</div>
+</div>
+        </div>
+        <div class="sportmessage"></div>
+        <div class="competitionMedals"><table>
+	<tbody><tr>
+		<td>&nbsp;</td><td class="last"><div class="medal icon icon--medal gold">
+
+		</div><span class="flag"><a href="/hide/en/Participant/CountryInfo/AIN"><span title="AIN"><img title="AIN" src="/skins/flags/smallflags/AIN.png"></span>AIN</a>&nbsp;-&nbsp;</span><a class="athleteLink" href="/hide/en/Participant/ParticipantInfo/2048a35e-f4c4-4b62-8e3c-5aa1c22dad8f"><span class="h65">SLISEVA Diana</span><span class="h65_visible">SLISEVA</span></a></td><td>&nbsp;</td>
+	</tr><tr>
+		<td class="last"><div class="medal icon icon--medal silver">
+
+		</div><span class="flag"><a href="/hide/en/Participant/CountryInfo/KOR"><span title="Republic of Korea"><img title="Republic of Korea" src="/skins/flags/smallflags/KOR.png"></span>KOR</a>&nbsp;-&nbsp;</span><a class="athleteLink" href="/hide/en/Participant/ParticipantInfo/6cc48bc5-5691-4dac-befb-61b26d58a0c6"><span class="h65">SEO Uijin</span><span class="h65_visible">SEO</span></a></td><td class="place leftBorder rightBorder">1</td><td>&nbsp;</td>
+	</tr><tr>
+		<td class="place">2</td><td class="rightBorder"></td><td class="last"><div class="medal icon icon--medal bronze">
+
+		</div><span class="flag"><a href="/hide/en/Participant/CountryInfo/KOR"><span title="Republic of Korea"><img title="Republic of Korea" src="/skins/flags/smallflags/KOR.png"></span>KOR</a>&nbsp;-&nbsp;</span><a class="athleteLink" href="/hide/en/Participant/ParticipantInfo/b0020d3a-9882-4475-8093-1fdf2740a28c"><span class="h65">YOON Miri</span><span class="h65_visible">YOON</span></a></td>
+	</tr><tr>
+		<td></td><td></td><td class="place">3</td>
+	</tr>
+</tbody></table></div>
+
+        <div class="competitionRecords"><div class="headline">
+	Records
+</div><table class="sortable ">
+	<thead>
+		<tr>
+			<th class="left sortable" style="cursor: pointer;"><div class="sort-wrapper">
+				<span>Type</span>
+			<span class="sortIcon sortNoSort"></span></div></th><th class="noc sortable" style="cursor: pointer;"><div class="sort-wrapper">
+				<span><abbr title="National Olympic Committee Code">
+					NOC
+				</abbr></span>
+			<span class="sortIcon sortNoSort"></span></div></th><th class="left sortable" style="cursor: pointer;"><div class="sort-wrapper">
+				<span>Athlete</span>
+			<span class="sortIcon sortNoSort"></span></div></th><th class="center sortable" style="cursor: pointer;"><div class="sort-wrapper">
+				<span>Date</span>
+			<span class="sortIcon sortNoSort"></span></div></th><th class="left sortable" style="cursor: pointer;"><div class="sort-wrapper">
+				<span>Location</span>
+			<span class="sortIcon sortNoSort"></span></div></th><th class="center sortable" style="cursor: pointer;"><div class="sort-wrapper">
+				<span>Record</span>
+			<span class="sortIcon sortNoSort"></span></div></th>
+		</tr>
+	</thead><tfoot>
+
+	</tfoot><tbody>
+		<tr class="False">
+			<td class="left"><span><abbr title="World Record">
+				WR
+			</abbr>&nbsp;</span></td><td class="noc"><span><span class="flag"><img src="/skins/flags/smallflags/CHN.png" class="flag" width="20" height="13"></span> CHN</span></td><td class="left"><span>ZHU Bao Zhen</span></td><td class="center"><span><span data-format="d MMM yyyy" class="time-value" data-time-ticks="1248278400000" data-time="23 Jul 2009">23 Jul 2009</span></span></td><td class="left"><span>Kaohsiung (TPE)</span></td><td class="center"><span>15.10</span></td>
+		</tr><tr class="True">
+			<td class="left"><span><abbr title="World Games Record">
+				WG
+			</abbr>&nbsp;</span></td><td class="noc"><span><span class="flag"><img src="/skins/flags/smallflags/CHN.png" class="flag" width="20" height="13"></span> CHN</span></td><td class="left"><span>ZHU Bao Zhen</span></td><td class="center"><span><span data-format="d MMM yyyy" class="time-value" data-time-ticks="1248278400000" data-time="23 Jul 2009">23 Jul 2009</span></span></td><td class="left"><span>Kaohsiung (TPE)</span></td><td class="center"><span>15.10</span></td>
+		</tr>
+	</tbody>
+</table></div><div class="List headline">Official Results</div>
+
+    <div id="listContainer">
+    <div>
+	<span class="ResultList_FSW ResultList"><table class="sortable ">
+	<thead>
+		<tr>
+			<th class="rankColumn centerRightAligned sortable" style="cursor: pointer;"><div class="sort-wrapper">
+				<span>Rank</span>
+			<span class="sortIcon sortNoSort"></span></div></th><th class="startPosColumn centerRightAligned sortable" style="cursor: pointer;"><div class="sort-wrapper">
+				<span>Lane</span>
+			<span class="sortIcon sortNoSort"></span></div></th><th class="athleteName sortable" style="cursor: pointer;"><div class="sort-wrapper">
+				<span>Name</span>
+			<span class="sortIcon sortNoSort"></span></div></th><th class="noc sortable" style="cursor: pointer;"><div class="sort-wrapper">
+				<span><span class="h5"><abbr title="National Olympic Committee Code">
+					NOC
+				</abbr></span></span>
+			<span class="sortIcon sortNoSort"></span></div></th><th class="rightPadding hideColumnCompactSwitch sortable" style="cursor: pointer;"><div class="sort-wrapper">
+				<span><abbr title="Reaction Time">
+					RT
+				</abbr>&nbsp;<abbr title="Seconds">
+					(s)
+				</abbr></span>
+			<span class="sortIcon sortNoSort"></span></div></th><th class="intermediate hideColumnCompactSwitch columnSlider sortable" rowspan="1" style="cursor: pointer;"><div class="sort-wrapper">
+				50&nbsp;m
+			<span class="sortIcon sortNoSort"></span></div></th><th class="rightPadding All_result sortable" style="cursor: pointer;"><div class="sort-wrapper">
+				<span>Time</span>
+			<span class="sortIcon sortNoSort"></span></div></th>
+		</tr>
+	</thead><tfoot>
+		<tr>
+
+		</tr>
+	</tfoot><tbody>
+		<tr class="False" ovrcode="202837">
+			<td class="rankColumn centerRightAligned"><span>1<span class="sortValue hidden">1</span></span></td><td class="startPosColumn centerRightAligned"><span>2</span></td><td class="athleteName"><a class="athleteLink" href="/hide/en/Participant/ParticipantInfo/2048a35e-f4c4-4b62-8e3c-5aa1c22dad8f"><span class="sortValue">SLISEVA Diana</span></a></td><td class="noc"><span title="AIN"><a href="/hide/en/Participant/CountryInfo/AIN"><span class="flag"><img src="/skins/flags/smallflags/AIN.png" class="flag" width="20" height="13"></span>&nbsp;AIN</a></span></td><td class="rightPadding hideColumnCompactSwitch">0.83</td><td class="intermediate hideColumnCompactSwitch columnSlider" rowspan="1"><div class="content">
+				<div class="performance" style="width: 50px; float:left;">
+					15.74
+				</div><div class="rank" style="width: 25px; float:left;">
+					&nbsp;(<span class="sortValue hidden">1</span>1)
+				</div><br><div class="performance" style="width: 50px; height: 15px;">
+
+				</div><div class="rank" style="width: 25px;">
+
+				</div>
+			</div><div style="clear">
+
+			</div></td><td class="rightPadding All_result"><span class="sortValue">15.74</span></td>
+		</tr><tr class="True" ovrcode="202835">
+			<td class="rankColumn centerRightAligned"><span>2<span class="sortValue hidden">2</span></span></td><td class="startPosColumn centerRightAligned"><span>5</span></td><td class="athleteName"><a class="athleteLink" href="/hide/en/Participant/ParticipantInfo/6cc48bc5-5691-4dac-befb-61b26d58a0c6"><span class="sortValue">SEO Uijin</span></a></td><td class="noc"><span title="Republic of Korea"><a href="/hide/en/Participant/CountryInfo/KOR"><span class="flag"><img src="/skins/flags/smallflags/KOR.png" class="flag" width="20" height="13"></span>&nbsp;KOR</a></span></td><td class="rightPadding hideColumnCompactSwitch">0.77</td><td class="intermediate hideColumnCompactSwitch columnSlider" rowspan="1"><div class="content">
+				<div class="performance" style="width: 50px; float:left;">
+					15.79
+				</div><div class="rank" style="width: 25px; float:left;">
+					&nbsp;(<span class="sortValue hidden">2</span>2)
+				</div><br><div class="performance" style="width: 50px; height: 15px;">
+					0.05
+				</div><div class="rank" style="width: 25px;">
+
+				</div>
+			</div><div style="clear">
+
+			</div></td><td class="rightPadding All_result"><span class="sortValue">15.79</span><br>0.05</td>
+		</tr><tr class="False" ovrcode="202833">
+			<td class="rankColumn centerRightAligned"><span>3<span class="sortValue hidden">3</span></span></td><td class="startPosColumn centerRightAligned"><span>6</span></td><td class="athleteName"><a class="athleteLink" href="/hide/en/Participant/ParticipantInfo/b0020d3a-9882-4475-8093-1fdf2740a28c"><span class="sortValue">YOON Miri</span></a></td><td class="noc"><span title="Republic of Korea"><a href="/hide/en/Participant/CountryInfo/KOR"><span class="flag"><img src="/skins/flags/smallflags/KOR.png" class="flag" width="20" height="13"></span>&nbsp;KOR</a></span></td><td class="rightPadding hideColumnCompactSwitch">0.86</td><td class="intermediate hideColumnCompactSwitch columnSlider" rowspan="1"><div class="content">
+				<div class="performance" style="width: 50px; float:left;">
+					16.07
+				</div><div class="rank" style="width: 25px; float:left;">
+					&nbsp;(<span class="sortValue hidden">3</span>3)
+				</div><br><div class="performance" style="width: 50px; height: 15px;">
+					0.33
+				</div><div class="rank" style="width: 25px;">
+
+				</div>
+			</div><div style="clear">
+
+			</div></td><td class="rightPadding All_result"><span class="sortValue">16.07</span><br>0.33</td>
+		</tr><tr class="True" ovrcode="202825">
+			<td class="rankColumn centerRightAligned"><span>4<span class="sortValue hidden">4</span></span></td><td class="startPosColumn centerRightAligned"><span>4</span></td><td class="athleteName"><a class="athleteLink" href="/hide/en/Participant/ParticipantInfo/ea513842-be57-4244-b59e-2f4134c8ff42"><span class="sortValue">HU Yaoyao</span></a></td><td class="noc"><span title="People's Republic of China"><a href="/hide/en/Participant/CountryInfo/CHN"><span class="flag"><img src="/skins/flags/smallflags/CHN.png" class="flag" width="20" height="13"></span>&nbsp;CHN</a></span></td><td class="rightPadding hideColumnCompactSwitch">0.87</td><td class="intermediate hideColumnCompactSwitch columnSlider" rowspan="1"><div class="content">
+				<div class="performance" style="width: 50px; float:left;">
+					16.38
+				</div><div class="rank" style="width: 25px; float:left;">
+					&nbsp;(<span class="sortValue hidden">4</span>4)
+				</div><br><div class="performance" style="width: 50px; height: 15px;">
+					0.64
+				</div><div class="rank" style="width: 25px;">
+
+				</div>
+			</div><div style="clear">
+
+			</div></td><td class="rightPadding All_result"><span class="sortValue">16.38</span><br>0.64</td>
+		</tr><tr class="False" ovrcode="202827">
+			<td class="rankColumn centerRightAligned"><span>5<span class="sortValue hidden">5</span></span></td><td class="startPosColumn centerRightAligned"><span>3</span></td><td class="athleteName"><a class="athleteLink" href="/hide/en/Participant/ParticipantInfo/ba04f4d6-60ff-423e-b3d4-7e46361bb829"><span class="sortValue">SHU Chengjing</span></a></td><td class="noc"><span title="People's Republic of China"><a href="/hide/en/Participant/CountryInfo/CHN"><span class="flag"><img src="/skins/flags/smallflags/CHN.png" class="flag" width="20" height="13"></span>&nbsp;CHN</a></span></td><td class="rightPadding hideColumnCompactSwitch">0.88</td><td class="intermediate hideColumnCompactSwitch columnSlider" rowspan="1"><div class="content">
+				<div class="performance" style="width: 50px; float:left;">
+					16.51
+				</div><div class="rank" style="width: 25px; float:left;">
+					&nbsp;(<span class="sortValue hidden">5</span>5)
+				</div><br><div class="performance" style="width: 50px; height: 15px;">
+					0.77
+				</div><div class="rank" style="width: 25px;">
+
+				</div>
+			</div><div style="clear">
+
+			</div></td><td class="rightPadding All_result"><span class="sortValue">16.51</span><br>0.77</td>
+		</tr><tr class="True" ovrcode="202831">
+			<td class="rankColumn centerRightAligned"><span>6<span class="sortValue hidden">6</span></span></td><td class="startPosColumn centerRightAligned"><span>1</span></td><td class="athleteName"><a class="athleteLink" href="/hide/en/Participant/ParticipantInfo/3d764caf-6408-4819-b6ca-74f3cf2ae548"><span class="sortValue">UVAROVA Viktoriia</span></a></td><td class="noc"><span title="Ukraine"><a href="/hide/en/Participant/CountryInfo/UKR"><span class="flag"><img src="/skins/flags/smallflags/UKR.png" class="flag" width="20" height="13"></span>&nbsp;UKR</a></span></td><td class="rightPadding hideColumnCompactSwitch">0.94</td><td class="intermediate hideColumnCompactSwitch columnSlider" rowspan="1"><div class="content">
+				<div class="performance" style="width: 50px; float:left;">
+					16.57
+				</div><div class="rank" style="width: 25px; float:left;">
+					&nbsp;(<span class="sortValue hidden">6</span>6)
+				</div><br><div class="performance" style="width: 50px; height: 15px;">
+					0.83
+				</div><div class="rank" style="width: 25px;">
+
+				</div>
+			</div><div style="clear">
+
+			</div></td><td class="rightPadding All_result"><span class="sortValue">16.57</span><br>0.83</td>
+		</tr><tr class="False" ovrcode="202829">
+			<td class="rankColumn centerRightAligned"><span>7<span class="sortValue hidden">7</span></span></td><td class="startPosColumn centerRightAligned"><span>7</span></td><td class="athleteName"><a class="athleteLink" href="/hide/en/Participant/ParticipantInfo/e5784ec8-2727-40c0-b769-d1996afb8b8d"><span class="sortValue">AGUIRRE JOYA Paula Alejandra</span></a></td><td class="noc"><span title="Colombia"><a href="/hide/en/Participant/CountryInfo/COL"><span class="flag"><img src="/skins/flags/smallflags/COL.png" class="flag" width="20" height="13"></span>&nbsp;COL</a></span></td><td class="rightPadding hideColumnCompactSwitch">0.88</td><td class="intermediate hideColumnCompactSwitch columnSlider" rowspan="1"><div class="content">
+				<div class="performance" style="width: 50px; float:left;">
+					16.70
+				</div><div class="rank" style="width: 25px; float:left;">
+					&nbsp;(<span class="sortValue hidden">7</span>7)
+				</div><br><div class="performance" style="width: 50px; height: 15px;">
+					0.96
+				</div><div class="rank" style="width: 25px;">
+
+				</div>
+			</div><div style="clear">
+
+			</div></td><td class="rightPadding All_result"><span class="sortValue">16.70</span><br>0.96</td>
+		</tr><tr class="True" ovrcode="202839">
+			<td class="rankColumn centerRightAligned"><span>8<span class="sortValue hidden">8</span></span></td><td class="startPosColumn centerRightAligned"><span>8</span></td><td class="athleteName"><a class="athleteLink" href="/hide/en/Participant/ParticipantInfo/3d53e64f-3af7-4627-a469-0d551ad5d7c1"><span class="sortValue">HAMON Maiwenn</span></a></td><td class="noc"><span title="France"><a href="/hide/en/Participant/CountryInfo/FRA"><span class="flag"><img src="/skins/flags/smallflags/FRA.png" class="flag" width="20" height="13"></span>&nbsp;FRA</a></span></td><td class="rightPadding hideColumnCompactSwitch">0.88</td><td class="intermediate hideColumnCompactSwitch columnSlider" rowspan="1"><div class="content">
+				<div class="performance" style="width: 50px; float:left;">
+					16.88
+				</div><div class="rank" style="width: 25px; float:left;">
+					&nbsp;(<span class="sortValue hidden">8</span>8)
+				</div><br><div class="performance" style="width: 50px; height: 15px;">
+					1.14
+				</div><div class="rank" style="width: 25px;">
+
+				</div>
+			</div><div style="clear">
+
+			</div></td><td class="rightPadding All_result"><span class="sortValue">16.88</span><br>1.14</td>
+		</tr>
+	</tbody>
+</table></span>
+            
+</div>
+    </div>
+    
+            <br>
+            <div class="related reports"><div class="headline">
+	Reports
+</div><div id="acdb6d0c-83e1-42db-aa5e-31600774a9b0" class="reportInfo" rsccode="FSWW50MAP-------------FNL-000100--">
+	<br>
+		<div class="reportContainer">
+			<div class="reportGroup">
+				<div class="reportGroupTitle">
+					Event Related
+				</div><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSWW50MAP-------------------------_C32C1_1.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSWW50MAP-------------------------_C32C1_1.0.pdf?intern=False">Entry List by Event</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSWW50MAP-------------FNL---------_C51A3_1.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSWW50MAP-------------FNL---------_C51A3_1.0.pdf?intern=False">Start List</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSWW50MAP-------------FNL-000100--_C73A1_1.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSWW50MAP-------------FNL-000100--_C73A1_1.0.pdf?intern=False">Results</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSWW50MAP-------------------------_C92A_1.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSWW50MAP-------------------------_C92A_1.0.pdf?intern=False">Medallists</a>
+			</div><div class="reportGroup">
+				<div class="reportGroupTitle">
+					Sport Related
+				</div><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSW-------------------------------_C08A_1.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSW-------------------------------_C08A_1.0.pdf?intern=False">Competition Schedule</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSWW------------------------------_C24A_1.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSWW------------------------------_C24A_1.0.pdf?intern=False">Current Records Women</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSW-------------------------------_C32A_1.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSW-------------------------------_C32A_1.0.pdf?intern=False">Entry List by NOC</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSWW------------------------------_C32A_1.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSWW------------------------------_C32A_1.0.pdf?intern=False">Entry List by NOC Women</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSW-------------------------------_C52_FSW01_1.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSW-------------------------------_C52_FSW01_1.0.pdf?intern=False">Start List by Session - Session FSW01</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSW-------------------------------_C81A_8.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSW-------------------------------_C81A_8.0.pdf?intern=False">Records Set by Event</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSW-------------------------------_C81B_7.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSW-------------------------------_C81B_7.0.pdf?intern=False">Records Set by Record Type</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSW-------------------------------_C81C_7.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSW-------------------------------_C81C_7.0.pdf?intern=False">Records Set by Date</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSW-------------------------------_C93_10.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSW-------------------------------_C93_10.0.pdf?intern=False">Medallists by Event</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSW-------------------------------_C95_10.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSW-------------------------------_C95_10.0.pdf?intern=False">Medal Standings</a><a class="reportFile icon icon--pdf" value="/hide/en/Root/ViewPdf/FSW-------------------------------_C99_2.0.pdf?intern=False" onclick="loadPdfFile()" href="/hide/en/Root/ViewPdf/FSW-------------------------------_C99_2.0.pdf?intern=False">Multi-Medallists at these Games</a>
+			</div>
+		</div>
+	<br></div></div>
+        <script type="text/javascript" defer="defer">
+            
+                function SetPartialLinks() {
+                    $('.partial-link').unbind('click').click(function (e) {
+                        if (location.pathname !== $(e.currentTarget).attr('href'))
+                            Reload.UpdateContainer('#listContainer', $(e.currentTarget).attr('partial-url'), LoadListSuccess, $(e.currentTarget).attr('href'));
+                        return false;
+                });
+            }
+            
+            function UpdateListSuccess(html) {
+                if ($('#listContainer').find(':animated').length === 0 && $('#overlay').length === 0) {
+                    var dSwitch = $('.detailSwitch > .tabitem.selected');
+                    var switches = new Array();
+                    for (var i = 0; i < dSwitch.length; i++) {
+                        var expanded = new Array();
+                        var isCompact = $(dSwitch)[i].id === 'compactTab';
+                        var table = $('table.' + $(dSwitch[i]).parent()[0].id + ' .expanded').parent();
+                        var table;
+                        if (isCompact)
+                            table = $('table.' + $(dSwitch[i]).parent()[0].id + ' .expanded').parent();
+                        else
+                            table = $('table.' + $(dSwitch[i]).parent()[0].id + ' .expandableColumn').not('.expanded').parent();
+                        for (var j = 0; j < table.length; j++) {
+                            expanded.push($(table[j]).attr('ovrcode'));
+                        }
+                        switches.push({ isCompact: isCompact, expanded: expanded });
+                    }
+                    var groupPanels = $('.group');
+                    var sortedTables = SortTable.getSortedTables();
+                    selectedUiTab = $('.ui-tabs > .selected').attr('value');
+                    $('#listContainer').html(html);
+                    if (typeof (Bracket) === 'object') {
+                        const brackets = $('.BracketTables, .bracketThumbContainer');
+                        for (let i = 0; i < brackets.length; i++) {
+                                const $bracket = $(brackets[i])
+                                .UnitSlider({
+                                    initPosition: bracketList[i].position,
+                                    elementsToTake: $('.bracketRound').length > 0 ? 1 : 2,
+                                    itemsToMove: 2,
+                                    fixedIndexOffset: true
+                                });
+                            $($bracket).bind('UnitSlider_BeforeMove', function (e, p) {
+                                bracketList[i].position = p.oldPosition;
+                            });
+                            $($bracket).bind('UnitSlider_AfterMove', function (e, p) {
+                                bracketList[i].position = p.newPosition;
+                            });
+                            $bracket.position = bracketList[i].position;
+                            $bracket.index = i;
+                            bracketList[i] = $bracket;
+                            Bracket.Init($bracket);
+                        }
+                    }
+                    setElements();
+                    
+                    InitUnitSelector();
+                    
+                    InitializeDetailSwitch();
+                    dSwitch = $('.detailSwitch');
+                    for (var i = 0; i < dSwitch.length; i++) {
+                        if (dSwitch[i].id && switches[i])
+                            SetDetailSwitch(dSwitch[i].id, !switches[i].isCompact, switches[i].expanded);
+                    }
+                    if (typeof (SetThumNails) === 'function')
+                        SetThumNails();
+                    if (typeof (ClientTime) === 'object')
+                        ClientTime.setTimes();
+                    if (typeof (SortTable) === 'function')
+                        SortTable.init();
+                    if (typeof (alignSlider) === 'function')
+                        alignSlider();
+                    if (typeof (SetPartialLinks) === 'function')
+                        SetPartialLinks();
+                    for (var i = 0; i < sortedTables.length; i++) {
+                        SortTable.applySorting(sortedTables[i]);
+                    }
+                    if (groupPanels.length > 0) {
+                        for (var i = 0; i < groupPanels.length; i++) {
+                            $('.group[name=' + $(groupPanels[i]).attr('name') + ']').attr('class', $(groupPanels[i]).attr('class'));
+                        }
+                    }
+                    $('.groupPanel').groupPanelSetDeInitialised();
+                    $('.groupPanel').groupPanel();
+                    $('.reportInfo').ReportInfo();
+                    setSportLink();
+                }
+            }
+            function UpdateUnitSelectorSuccess(html){
+                if ($('.unitSelector').not('.dontUpdate').find(':animated').length === 0) {
+                    $('.unitSelector').not('.dontUpdate').html(html);
+                    
+                    if (typeof (SetPartialLinks) === 'function')
+                        SetPartialLinks();
+                }
+            }
+            function LoadListSuccess(html) {
+                window.scrollTo(0, 0);
+                Bracket.sliderPosition = 0;
+                Bracket.wrapperPosition = 0;
+                $('#listContainer').html(html);
+                InitList();
+                $('.groupPanel').groupPanelSetDeInitialised();
+                $('.groupPanel').groupPanel();
+            }
+            function setElements() {
+                $('.legendPlaceholder').html(Reload.ReloadInformation.Legend || "");
+                $('.List.headline').html(Reload.ReloadInformation.Title || "");
+                $('.sportevents').find('.right').html(Reload.ReloadInformation.PageTitle || "");
+                $('.unitSelector').not('.dontUpdate').html(Reload.ReloadInformation.UnitSelector || "");
+                $('.reports').html(Reload.ReloadInformation.PdfDocuments);
+                $('.competitionMedals').html(Reload.ReloadInformation.CompetitionMedals || "");
+                $('.competitionRecords').html(Reload.ReloadInformation.CompetitionRecords || "");
+                $('.relatedInformations').html(Reload.ReloadInformation.RelatedInformation);
+                $('.sportmessage').html(Reload.ReloadInformation.SportMessage || "");
+            }
+            function InitReload() {
+                if(Reload.AutoReload)
+                    Reload.SetUpdateTimeOut(Reload.IsUnitSelector ? '.unitSelector' : '#listContainer', Reload.url, Reload.IsUnitSelector ? UpdateUnitSelectorSuccess : UpdateListSuccess);
+            }
+            function InitList() {
+                SetDetailSwitch(undefined, false);
+                InitializeDetailSwitch();
+                if (Reload.ReloadInformation != null)
+                    setElements();
+                $('.reportInfo').ReportInfo();
+                if (typeof (InitUnitSelector) === 'function')
+                    InitUnitSelector();
+                if (typeof (ClientTime) === 'object')
+                    ClientTime.setTimes();
+                if (typeof (SortTable) === 'function')
+                    SortTable.init();
+                if (typeof (alignSlider) === 'function')
+                    alignSlider();
+                if (typeof (InitReload) === 'function')
+                    InitReload();
+                if (typeof (SetPartialLinks) === 'function')
+                    SetPartialLinks();
+                if (typeof (Bracket) === 'object') {
+                    const brackets = $('.BracketTables, .bracketThumbContainer');
+                    for (let i = 0; i < brackets.length; i++) {
+                        const $bracket = $(brackets[i])
+                            .UnitSlider({
+                                initPosition: 0,
+                                elementsToTake: $('.bracketRound').length > 0 ? 1 : 2,
+                                itemsToMove: 2,
+                                fixedIndexOffset: true
+                            });
+                        $($bracket).bind('UnitSlider_BeforeMove', function (e, p) {
+                            bracketList[i].position = p.oldPosition;
+                        });
+                        $($bracket).bind('UnitSlider_AfterMove', function (e, p) {
+                            bracketList[i].position = p.newPosition;
+                        });
+                        $bracket.index = i;
+                        $bracket.position = 0;
+                        bracketList.push($bracket)
+                        Bracket.Init($bracket);
+                    }
+                }
+                if (typeof (SetThumNails) === 'function')
+                    SetThumNails();
+            }
+        </script>
+        
+            <script type="text/javascript" defer="defer">
+                $(document).ready(function () {
+                    window.onpopstate = function(event) {
+                        Reload.UpdateContainer('#listContainer', event.state, LoadListSuccess);
+                    };
+                    
+                });
+            </script>
+        
+            </div>
+            
+
+            <div class="legendPlaceholder"><span><span class="tableTitle">Legend</span><table>
+	<thead>
+		<tr>
+			<th class="left" style="width: 50%;">Abbreviation</th><th class="right" style="width: 50%;">Definition</th>
+		</tr>
+	</thead><tfoot>
+
+	</tfoot><tbody>
+		<tr>
+			<td class="left" style="width: 50%;">(s)</td><td class="right" style="width: 50%;">Seconds</td>
+		</tr><tr>
+			<td class="left" style="width: 50%;">m</td><td class="right" style="width: 50%;">The displayed intermediates refer to meters</td>
+		</tr><tr>
+			<td class="left h5" style="width: 50%;">NOC</td><td class="right h5" style="width: 50%;">National Olympic Committee Code</td>
+		</tr><tr>
+			<td class="left" style="width: 50%;">RT</td><td class="right" style="width: 50%;">Reaction Time</td>
+		</tr><tr>
+			<td class="left" style="width: 50%;">WG</td><td class="right" style="width: 50%;">World Games Record</td>
+		</tr><tr>
+			<td class="left" style="width: 50%;">WR</td><td class="right" style="width: 50%;">World Record</td>
+		</tr>
+	</tbody>
+</table></span></div>
+
+            
+            
+
+            <div class="sponsors">
+                
+                        <div class="sponsorText">Official timing and results provided by Tissot</div>
+                    <img alt="Sponsors" class="sponsorImage" src="/skins/SWOG2025/images/event/Sponsor.png" style="border: none;">
+                
+            </div>
+        </div>
+
+        <div id="footerContainer">
+     
+            <div class="footertextbold">
+                <a href="https://www.theworldgames2025.com/en" target="_blank">
+                    The World Games 2025 | Chengdu - CHN | Official Website
+                </a>
+            </div>
+            <div class="footertext">
+                
+                <a href="https://www.swisstiming.com" target="_blank">
+                    Copyright © 2025. All rights reserved. Optimized for Google Chrome.
+                </a>
+                
+                <br>
+                Presented results data are not official. Only PDF files contain official results.
+            </div>
+    
+        </div>
+    </div>
+
+    
+    
+    <script type="text/javascript">
+        const bracketList = [];
+        var unitSlider;
+        var unitSliderPosition = null;
+        var pageInfo;
+        var oldUnitItem;
+        const h2hCompetitor = {}; 
+
+        function InitUnitSelector() {
+            unitSlider = $('.unitSelector').not('.dontUpdate').find('#unitSelectorContainer').UnitSlider({ $btnBwd:$('.unitSelector').not('.dontUpdate').children('.leftScroll'), $btnFwd:$('.unitSelector').not('.dontUpdate').children('.rightScroll'), initPosition: unitSliderPosition });
+            $(unitSlider).bind('UnitSlider_AfterMove', function(e, p) {
+                unitSliderPosition = p.newPosition;
+            });
+        }
+
+        $(document).ready(function() {
+            
+            $('.reportInfo').ReportInfo();
+            
+                photoFinishImageUrl = '/hide/en/Image/ShowFinishImage';
+            
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        
+</script>
+

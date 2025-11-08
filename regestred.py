@@ -1,11 +1,15 @@
-from collections import defaultdict
+from datetime import datetime
 import json
 import logging
 import re
+from collections import defaultdict
+from typing import Any, Optional, Tuple
+
 from _reserved_team import locations
 
+# ================== CONSTANTS ==================
 
-styles = {
+STROKES = {
     'ныряние': 'APNEA',
     'ныряние в ластах в длину': 'APNEA',
     'плавание в ластах': 'SURFACE',
@@ -17,263 +21,214 @@ styles = {
     'в классических ластах': 'BIFINS',
     'моноласта': 'SURFACE',
     'плавание в  ластах': 'SURFACE',
-}
-sexs = {
-    'женщины': 'F',
-    'девочки': 'F',
-    'девушки': 'F',
-    'юниорки': 'F',
-    'женщин':  'F',
-    'f':  'F',
-
-
-    'мужчины': 'M',
-    'мальчики': 'M',
-    'юноши': 'M',
-    'юниоры': 'M',
-    'мужчин': 'M',
-    'юниорыи': 'M',
-    'm': 'M',
+    'плавание в класичесских ластах': 'BIFINS',
+    'плавание в классических':  'BIFINS',
+    'ap': 'APNEA',
+    'sf': 'SURFACE',
+    'bf': 'BIFINS',
+    'im': 'IMMERSION',
 }
 
+SEXES = {
+    'женщины': 'F', 'девочки': 'F', 'девушки': 'F', 'юниорки': 'F', 'женщин': 'F', 'f': 'F', 'жещины': 'F', 'women':  'F', 'w':  'F',
+    'мужчины': 'M', 'мальчики': 'M', 'юноши': 'M', 'юниоры': 'M', 'мужчин': 'M', 'm': 'M', 'men':  'M',
+}
 
-#  ============== REGEX ==============
-# r"(?P<style>.+) - (?P<distance>\d+) метров\s*(?P<gender>[а-я]+)"
-# r"(?P<style>.+) - (?P<distance>\d+) метров\s*(?P<gender>[а-я]+)(\s*\(.+\))?"
-# r"(?P<style>.+) – (?P<distance>\d+) м,\s*(?P<gender>[а-я]+)\s*(\(.+\))?"
-# r"(?P<style>.+)- (?P<distance>\d+) м \([0-9а-я]+\)\s*(?P<gender>[а-я]+)\s*.+"
-# r"(?P<style>.+) - (?P<distance>\d+) (метров|м)\s+(?P<gender>[а-яА-Я]+)\s*(\(.+\))?\s*"
-# r"(?P<style>.+) - (?P<distance>\d+)\s*м,\s*(?P<gender>[а-я]+)"
-# r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<style>.+) - (?P<distance>\d+) метров\s*.*"
-#  r"Дистанция\s+(?P<distance>\d+)м\s+(?P<style>.+),\s*(?P<gender>[а-я]+)\s*"
-# r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<style>.+) - (?P<distance>\d+)м.*"
-# r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<distance>\d+)m\s(?P<style>[a-zа-я]+).*"
-# r"\s*(?P<style>.+) - (?P<distance>\d+) м,\s*(?P<gender>[а-я]+)\s*.+"
-# WA
-# r"(?P<style>.+)\s*- (?P<distance>\d+)\s*м,\s*(?P<gender>[а-я]+)\s*(?P<min_age>\d{4})(-(?P<max_age>\d{4}))?.*"
-# r"(9\s)?(?P<distance>\d+)(\s*м)?\s+(?P<style>.+?)\s+(?P<gender>[а-яё]+)\s+(?P<min_age>\d{4})(\-(?P<max_age>\d{4}))?.*"
-#
-# r"(?P<style>.+);(?P<distance>.+);(?P<gender>.+)"
-# r"Дистанция\s+\d+\s+(?P<gender>[А-Яа-я]+),\s+(?P<distance>\d+)[мm]?\s+(?P<style>[а-яё\s]+?)(год|\d{4}).*$"
-# r"Дистанция\s+(?P<distance>\d+)м\s+(?P<style>[а-яА-ЯёЁ\s]+),\s*(?P<gender>[а-яА-ЯёЁ]+)"
-#  r"Дистанция\s+\d+,?\s*(?P<gender>[А-Яа-яё]+),?\s*(?P<distance>\d+)\s*м?\s*(?P<style>[А-Яа-яё\s]+?)(?:,?\s*(?:год\s+рождения\s+)?(?P<ages>\d{4}\s*-\s*\d{4}|\d{4}\s*и\s*моложе|\d{4}))?$"
-# r"Дистанция\s+\d+,?\s+(?P<gender>[а-я]+),\s+(?P<style>.+)\s*-\s*(?P<distance>\d+)м.*"
+INVALID_DISTANCES = {}
+PLACES = {}
 
-invalid = {}
-places = {}
+# ================== HELPERS ==================
 
 
-def invalid_distance(distance):
-    if distance not in invalid:
-        print(distance)
-        invalid[distance] = input("> ").split(';')
-    return invalid[distance]
+def normalize_rank(text: Optional[str]) -> Optional[str]:
+    """Normalize a rank string to standard format."""
+    if not text:
+        return None
+
+    text = text.lower().replace('i', 'I')
+    text = re.sub(r"(взрослый|разряд|взр|вз|спортивный|юношеский)", "", text)
+    text = text.replace('(', '').replace(')', '').replace("|", "I")
+    text = re.sub(r"[.\s\-]", "", text)
+    text = re.sub(r"ю", "юн", text)
+    text = re.sub(r"юнн", "юн", text)
+    text = text.replace('1', 'I').replace('2', 'II').replace('3', 'III')
+    text = text.upper().replace('ЮН', 'юн')
+
+    ranks = ["III", "МС", "I", "МСМК", "Iюн",
+             "II", "IIIюн", "IIюн", "ЗМС", "КМС"]
+    return text if text in ranks else None
+
+
+def parse_time(time_str: Optional[str]) -> Optional[str]:
+    """Parse time strings like '1:23.45' or '12,34,56'."""
+    if not time_str:
+        return None
+    match = re.fullmatch(
+        r'((\d{1,2})[:\.,])?(\d{1,2})[:\.,](\d{1,2})к?', time_str)
+    if not match:
+        logging.warning('Unexpected time format: %s', time_str)
+        return None
+    _, minutes, seconds, millis = match.groups()
+    minutes = int(minutes) if minutes else 0
+    seconds = int(seconds)
+    millis = int(millis)
+    return f"{minutes:02}:{seconds:02}.{millis:02}"
+
+
+def parse_integer(value: Optional[str]) -> Optional[int]:
+    if value == 'EXH':
+        return value
+    if isinstance(value, int):
+        return value
+    if value and value.isdigit():
+        return int(value)
+    return None
+
+
+def parse_point(points: Optional[str]) -> str:
+    if points and str(points).lower() == 'лично':
+        return 'лично'
+    val = parse_integer(points)
+    return str(val) if val else ''
+
+
+def handle_invalid_distance(distance: str) -> Tuple[str, int, str]:
+    if distance not in INVALID_DISTANCES:
+        print(f"Invalid distance format detected: {distance}")
+        INVALID_DISTANCES[distance] = input("> ").split(';')
+    return tuple(INVALID_DISTANCES[distance])
+
+
+# ================== PARSER CLASS ==================
 
 
 class RegisterParser:
     def __init__(
         self,
-        results: str = "output/1_output_results.json",
-        itogi: str = 'output/2_itogi.json',
-        distances: str = 'output/2_distances.json',
+        results_file: str = "output/1_output_results.json",
+        itogi_file: str = "output/2_itogi.json",
+        distances_file: str = "output/2_distances.json",
     ):
-        with open(results, 'rb') as file:
-            self.output = json.load(file)
-        self.itogi_file = itogi
-        self.distances_file = distances
-        self.results = defaultdict(list)
-        self.athletes = defaultdict(list)
+        with open(results_file, 'r', encoding='utf-8') as f:
+            self.output = json.load(f)
 
-        # Дистанция 50м в классических ластах, девушки
-        # Плавание в классических ластах - 50 м,  девушки 2010 г.р.
-        self.distance_re = re.compile(
-            r"(?P<style>.+) - (?P<distance>\d+) м,\s*(?P<gender>[а-я]+)\s+.+",
+        self.itogi_file = itogi_file
+        self.distances_file = distances_file
+
+        self.results: defaultdict[Tuple[str,
+                                        str, str], list] = defaultdict(list)
+        self.athletes: dict = {}
+
+        self.distance_regex = re.compile(
+            r"^(FSW)(?P<gender>[MW])(?P<distance>\d+)M(?P<style>[A-Z]+)-+(FNL-\d+-+)$",
             re.IGNORECASE
         )
 
-        self.time_regex = re.compile(
-            r'((\d{1,2})[:\.,])?(\d{1,2})[:\.,](\d{1,2})к?')
-
-    def normalize_rank(self, text):
-        if not text:
-            return ''
-        text = re.sub(r"(взрослый|разряд|взр|вз|спортивный|юношеский)",
-                      "", text, flags=re.IGNORECASE)
-        text = text.replace('(', '').replace(')', '')
-        text = re.sub(r"[.\s\-]", "", text)
-        text = re.sub(r"ю", "юн", text, flags=re.IGNORECASE)
-        text = re.sub(r"юнн", "юн", text, flags=re.IGNORECASE)
-        text = re.sub(r"1", "I", text)
-        text = re.sub(r"2", "II", text)
-        text = re.sub(r"3", "III", text)
-        text = re.sub(r"кмс", "КМС", text)
-        text = re.sub(r"мс", "МС", text)
-        text = text.replace("|", "I")
-        return text
-
-    def parse_time(self, time_str):
-        if not time_str:
-            return
-        try:
-            match = self.time_regex.fullmatch(time_str)
-            if not match:
-                logging.warning(
-                    'Expected time format, received: %s', time_str)
-                return
-            _, minutes, seconds, millis = match.groups()
-            if not minutes:
-                return f'00:{int(seconds):02}.{int(millis):02}'
-            return f'{int(minutes):02}:{int(seconds):02}.{int(millis):02}'
-        except Exception as e:
-            logging.error("Failed to parse time: %s", e)
-            raise
-
-    def parse_integer(self, points: str):
-        if points == 'EXH':
-            return points
-        if isinstance(points, int):
-            return points
-        if not points:
-            return
-        if not points.isdigit():
-            return
-        return int(points)
-
-    def parse_point(self, points: str):
-        if points and str(points).lower() == 'лично':
-            return points.lower()
-        points = self.parse_integer(points)
-        return str(points) if points else ''
-
-    def parse_distance(self, distance):
-        res = self.distance_re.fullmatch(distance)
-        if not res:
-            style, distance, sex = invalid_distance(distance)
-            mna, mxa, age = None, None, None
+    def parse_distance(self, distance: str) -> Tuple[str, int, str, Optional[int], Optional[int]]:
+        match = self.distance_regex.fullmatch(distance)
+        if match:
+            data = match.groupdict()
+            style, dist, gender = data['style'], int(
+                data['distance']), data['gender']
+            min_age = max_age = None
         else:
-            data = res.groupdict()
-            style, distance, sex, mna, mxa, age = data['style'], data['distance'], data['gender'], data.get(
-                'min_age'), data.get('max_age'), data.get('age')
-        stroke, distance, sex, mna, mxa, age = styles[style.lower().strip()], int(
-            distance), sexs[sex.lower().strip()], int(mna) if mna else None, int(mxa) if mxa else None, int(age) if age else None
-        if age:
-            if mna or mxa:
-                logging.warning(
-                    'Found mna and mxa in age %s %s %s', age, mna, mxa)
-            mna = mxa = age
-        else:
-            if mna and not mxa:
-                pass
-                # mxa = mna
-                # mna = None
-        return stroke, distance, sex, mna, mxa
+            style, dist, gender = handle_invalid_distance(distance)
+            min_age = max_age = None
 
-    def parse_athlete(self, result, gender):
-        result['birth_year'] = str(result['birth_year'])
-        if not result['birth_year'].isdigit():
-            raise TypeError('birth_year is not int')
-        if len(result['birth_year']) == 2:
-            result['birth_year'] = '20'+result['birth_year']
+        stroke = STROKES[style.lower().strip()]
+        sex = SEXES[gender.lower().strip()]
+        return stroke, int(dist), sex, min_age, max_age
 
-        loc = locations[result.pop('team')]
-        # loc = locations.get(result.get('team'), {
-        #                     'city': None, 'club': result.get('team')})
-        result['city'], result['team'] = loc['city'], loc['club']
+    def parse_athlete(self, result: dict, gender: str) -> list:
+        birth_year = str(result['birth_year'])
+        if len(birth_year) == 2:
+            if int(birth_year) >= datetime.now().year:
+                birth_year = '19' + birth_year
+            else:
+                birth_year = '20' + birth_year
+        result['birth_year'] = birth_year
 
-        key = (
-            result['last_name'],
-            result['first_name'],
-            result['birth_year'],
-        )
+        # loc = locations.get(
+        #     result['team'], {'city': None, 'club': result.get('team')})
+        if not result.get('city'):
+            loc = locations[result['team']]
+            result['city'], result['team'] = loc['city'], loc['club']
+
+        key = (result['last_name'], result['first_name'], result['birth_year'])
         self.athletes[key] = {
             "first_name": result['first_name'].title(),
             "last_name": result['last_name'].title(),
-            'birth_year': str(result['birth_year']),
-            'team': result.get('team'),
+            'birth_year': birth_year,
+            'team': result['team'],
             'city': result['city'],
-            'rank': self.normalize_rank(result['rank']),
-            'gender': gender
+            'rank': normalize_rank(result.get('rank')),
+            'gender': gender,
+            'athlete_id': result.get('athlete_id')
         }
         return self.results[key]
 
-    def parse_result(self, data, stroke, distance, result):
-        if result.get('status') == 'COMPLETED' and not result.get('result'):
-            print('Invalid result', result)
+    def parse_result(self, data: list, stroke: str, distance: int, result: dict):
         if result.get('status') == 'DSQ':
             result['result'] = ''
         if result.get('status') == 'DSQ_FINAL':
             result['final'] = ''
 
-        time_key = self.parse_time(result.get('result'))
+        time_key = parse_time(result.get('result'))
         key = (stroke, distance, time_key)
-        if not result.get('place'):
-            if result.get('status') == 'COMPLETED':
-                place = places.get(key)
-                print('Not found place', result, 'prepare place', place)
-                if place:
-                    result['place'] = place
-        else:
-            places[key] = result.get('place')
+        if not result.get('place') and result.get('status') == 'COMPLETED':
+            place = PLACES.get(key)
+            if place:
+                result['place'] = place
+        elif result.get('place'):
+            PLACES[key] = result.get('place')
 
-        if result['status'] == "COMPLETED" and not result['result']:
-            logging.warning('Found not dsq and not rsl: %s', result)
-
-        data.append(dict(
-            stroke=stroke,
-            distance=distance,
-            result=self.parse_time(result.get('result')),
-            final=self.parse_time(result.get('final')),
-            final_rank=self.normalize_rank(result.get('final_rank')),
-            record=result.get('record'),
-            status=result['status'],
-            place=str(self.parse_integer(result.get(
-                'place') and result.get(
-                'place').replace('.', '').strip())),
-            points=self.parse_point(result.get('points')),
-        ))
+        place = parse_integer(result.get('place') and result.get(
+            'place').replace('.', '').strip())
+        data.append({
+            'stroke': stroke,
+            'distance': distance,
+            'result': parse_time(result.get('result')),
+            'final': parse_time(result.get('final')),
+            'final_rank': normalize_rank(result.get('final_rank')),
+            'record': result.get('record'),
+            'status': result['status'],
+            'place': place and str(place),
+            'points': parse_point(result.get('points')),
+        })
 
     def save_itogi(self):
         itogi = []
-        for sm, results in self.results.items():
-            res = self.athletes[sm]
-            res['results'] = results
-            itogi.append(res)
+        for key, results in self.results.items():
+            athlete_data = self.athletes[key]
+            athlete_data['results'] = results
+            itogi.append(athlete_data)
+        with open(self.itogi_file, 'w', encoding='utf-8') as f:
+            json.dump(itogi, f, indent=4, ensure_ascii=False)
 
-        with open(self.itogi_file, 'wb+') as file:
-            file.write(json.dumps(
-                itogi,
-                indent=4,
-                ensure_ascii=False
-            ).encode())
-
-    def save_distances(self, distances):
-        with open(self.distances_file, 'wb+') as file:
-            file.write(json.dumps(
-                distances,
-                indent=4,
-                ensure_ascii=False
-            ).encode())
+    def save_distances(self, distances: list):
+        with open(self.distances_file, 'w', encoding='utf-8') as f:
+            json.dump(distances, f, indent=4, ensure_ascii=False)
 
     def run(self):
-        print(len(self.output['individual_results']))
-        for result in self.output['individual_results']:
-            style, distance, gender, am, ax = self.parse_distance(
+        logging.info("Processing %d individual results...",
+                     len(self.output.get('individual_results', [])))
+        for result in self.output.get('individual_results', []):
+            stroke, distance, gender, _, _ = self.parse_distance(
                 result['distance'])
             data = self.parse_athlete(result, gender)
-            self.parse_result(data, style, distance, result)
+            self.parse_result(data, stroke, distance, result)
 
         self.save_itogi()
 
         distances = []
-        for dist in self.output['distances']:
+        for dist in self.output.get('distances', []):
             key = self.parse_distance(dist)
             if key not in distances:
                 distances.append(key)
-
         self.save_distances(distances)
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG)
-    reg = RegisterParser()
-    reg.run()
+    logging.basicConfig(level=logging.INFO)
+    parser = RegisterParser()
+    parser.run()

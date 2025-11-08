@@ -19,6 +19,7 @@ class SwimResult:
     points: str = ""
     record: str = ""
     patronymic: str = ""
+    prelim: str = ""
 
 
 @dataclass

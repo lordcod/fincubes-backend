@@ -3,6 +3,13 @@ from pathlib import Path
 import importlib.util
 from parsers.base import IndividualModelBase
 
+current_dir = Path('./parsers')
+
+
+def get_parser(type: str):
+    data = load_dir(current_dir)
+    return data[type.lower()]
+
 
 def load_dir(dir: Path):
     parsers = {}

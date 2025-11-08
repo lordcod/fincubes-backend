@@ -59,23 +59,33 @@ ERROR_VALUES = [
     "мед. отвод",
     "фальсатрт",
     "н/я",
+    r"\s*переныр 15\s*м\s*",
     "снят",
-    "дискв."
+    "дискв.",
+    "дискв:"
 ]
 ERROR_VALUES.sort(key=len, reverse=True)
 
+#  30 49 3 Бердников Доминик 2015 Барнаул 01.12,00 01:18.31 Гудз О.В.
+#  9 94 3 Коробейников Савелий 2011 III Бийск МБУ ДО "СШ "Дельфин" 03.55,00 04:12.15 I юн Рылова Н.А.,Черепанова О.В.
+# 3 96 2 Кожевникова Вероника 2009 II Бийск МБУ ДО "СШ "Дельфин" 03.50,00 04:14.69 III Рылова Н.А.,Черепанова О.В.
 pattern = re.compile(r"""
     ^\s*
-    (?P<place>\d+|в/к)?\s*
-    (?P<last_name>[А-Яа-яЁёë\-]+)\s+
-    (?P<first_name>[А-Яа-яЁёë\-]+)\s*
-    (?P<birth_year>\d{4})\s*
-    ((?P<rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?р|КМС|МСМК|МС|ЗМС)?)\s*)?
-    (?P<team>(.+?)?\s*)
-    (?:\s+(?P<result>\d{1,2}[:\.,]\d{2}(?:[:\.,]\d{1,2})?к?))?
-    (?:\s+(?P<final_rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?р|КМС|МСМК|МС|ЗМС)))?
-    (\s*[А-ЯЁ][а-яё\-]+\s[А-ЯЁ]\.[А-ЯЁ]\.\,?\s*)*
+    (?P<place>\d+|в/?к\s+)?(\d+\s+\d+\s+)?
+    (?P<last_name>[А-ЯЁа-яё\-]+)\s+
+    (?P<first_name>[А-ЯЁа-яё\-]+)\s+
+    (?P<birth_year>\d{4})\s+
+    ((?P<rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?р|КМС|МСМК|МС|ЗМС)?)\s+)?
+    (?P<team>[А-ЯЁа-яё0-9\s\"\/\-\']+?)\s*
+    ((?P<prelim>\d{1,2}[:\.,]\d{1,2}(?:[:\.,]\d{1,2})?к?\s+))?
+    ((?P<result>\d{1,2}[:\.,]\d{1,2}(?:[:\.,]\d{1,2})?к?\s+))?
+    (?P<final_rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?р|КМС|МСМК|МС|ЗМС))?
+    \s*
+    (?P<coach>[А-ЯЁа-яё\-\s\.,:]+)?
     \s*$
+""", re.VERBOSE | re.IGNORECASE)
+pattern3 = re.compile(r"""
+    ^\s*(?P<place>(?:\d+\s+){0,3})?(?P<last_name>[А-ЯЁа-яё\-]+)\s+(?P<first_name>[А-ЯЁа-яё\-]+)\s+(?P<birth_year>\d{4})\s+((?P<rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?р|КМС|МСМК|МС|ЗМС)?)\s+)?(?P<team>[А-ЯЁа-яё0-9\s\"\/\-\']+?)\s+(?P<prelim>\d{1,2}(?:[:\.,]\d{1,2}){1,2})?\s*(?P<result>\d{1,2}(?:[:\.,]\d{1,2}){1,2})?\s*(?P<final_rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?р|КМС|МСМК|МС|ЗМС))?\s*(?P<coach>[А-ЯЁа-яё\-\s\.,]+)?\s*$
 """, re.VERBOSE | re.IGNORECASE)
 
 
@@ -86,26 +96,44 @@ class CoachesIndividualModel(IndividualModelBase, name='coaches'):
         super().__init__(
             name='coaches',
             state=state,
-            regexes=[pattern],
+            regexes=[pattern, pattern3],
             error_values=ERROR_VALUES
         )
 
     def prerender(self, data):
         data['status'] = 'COMPLETED'
-        team = data['team']
+
+        place = data['place']
+        if place:
+            args = place.split()
+            if len(args) == 2:
+                data['place'] = None
+            if len(args) in {3, 1}:
+                data['place'] = args[0]
+
+        data['place'] = data.get('place') and data['place'].lower()
+        if data['place'] == 'в/к' or data['place'] == 'вк':
+            data['status'] = 'EXH'
+            data['place'] = None
+        if data['place'] == 'д/к':
+            data['status'] = 'DSQ'
+            data['place'] = None
+
+        coaches = data.get('coach', '')
         for error in ERROR_VALUES:
-            if error in team:
-                logging.debug('Found dsq in team %s: %s', team, error)
+            if error in coaches:
+                logging.debug('Found dsq in coaches %s: %s', coaches, error)
 
                 data['status'] = 'DSQ'
                 data['result'] = None
-                team = team.replace(error, '').replace('.', '').strip()
+                coaches = coaches.replace(error, '').replace('.', '').strip()
 
-                if data['place'] and not data["rank"]:
-                    logging.debug(
-                        'Transfer place to rank in dsq %s %s', data['place'], data["rank"])
-                    data["rank"] = data['place']
-                    data['place'] = ''
-        data['team'] = team
+                # if data['place'] and not data["rank"]:
+                #     logging.debug(
+                #         'Transfer place to rank in dsq %s %s', data['place'], data["rank"])
+                #     data["rank"] = data['place']
+                #     data['place'] = ''
+        data['coach'] = coaches.strip()
+        # data['team'] = data['coach']
 
         return data

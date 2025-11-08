@@ -32,8 +32,9 @@ class AthleteProcessor:
         self.final_file = final_file
         self.requests = []
 
-    async def get_athlete(self, session, last, first, year) -> dict | None:
-        params = {"last_name": last, "first_name": first, "birth_year": year}
+    async def get_athlete(self, session, last, first, year, gender) -> dict | None:
+        params = {"last_name": last, "first_name": first,
+                  "birth_year": year, "gender": gender}
         async with session.get(f"{self.BASE_URL}/athlete/", params=params, headers=headers) as r:
             try:
                 data = await r.json()
@@ -107,7 +108,10 @@ class AthleteProcessor:
         return changes
 
     async def process_athlete(self, session, data):
-        athlete = await self.get_athlete(session, data["last_name"], data["first_name"], data["birth_year"])
+        if athl_id := data.get('athlete_id'):
+            athlete = {'id': athl_id}
+        else:
+            athlete = await self.get_athlete(session, data["last_name"], data["first_name"], data["birth_year"], data['gender'])
 
         if not athlete:
             athlete = await self.create_athlete(session, data)

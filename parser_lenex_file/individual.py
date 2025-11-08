@@ -47,14 +47,14 @@ class SwimResultsParser:
         standards = defaultdict(lambda: defaultdict(dict))
         for standard_list in self.lenex.timeStandardLists:
             for standard in standard_list.timeStandards:
-                key = (standard_list.gender, standard.swimstyle.stroke,
+                key = (standard_list.gender, standard.swimstyle.name,
                        standard.swimstyle.distance)
                 standards[key][standard_list.code] = standard.swimtime.as_duration()
 
-        # Сортировка по значению времени
         for key, stl in standards.items():
             standards[key] = dict(
                 sorted(stl.items(), key=lambda item: item[1]))
+        print(standards)
         return standards
 
     def _process_athletes(
@@ -66,7 +66,7 @@ class SwimResultsParser:
         individual = []
 
         for club in self.lenex.meet.clubs:
-            for athl in club.athletes:
+            for athl in club.athletes or []:
                 if not athl.results:
                     continue
 
@@ -97,7 +97,7 @@ class SwimResultsParser:
         standards
     ) -> Dict:
         stroke, distance, name, gender = events[res.eventid]
-        standard_key = (athl.gender, stroke, distance)
+        standard_key = (athl.gender, name, distance)
 
         data = {
             'distance': ';'.join(map(str, events[res.eventid])),
@@ -141,6 +141,6 @@ class SwimResultsParser:
 
 
 if __name__ == '__main__':
-    input_file = r"C:\Users\2008d\Downloads\20250531_PL2.lef"
+    input_file = r"C:\Users\2008d\OneDrive\Документы\Соревнования\Подводное плавание\26.10.2025 Люблино\results.lef"
     output_file = Path("output/1_output_results.json")
     SwimResultsParser(input_file, output_file).parse()

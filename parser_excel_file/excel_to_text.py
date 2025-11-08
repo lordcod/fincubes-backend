@@ -35,10 +35,20 @@ class ExcelToTextConverter:
                     f"Converting numeric {cell} to formatted time string {val}")
                 return val
             elif isinstance(cell, (int, float)):
-                val = f"{float(cell):.2f}"
-                logging.info(
-                    f"Converting numeric {cell} to formatted time string {val}")
-                return val
+                val = float(cell)
+                if 0 < val < 1:
+                    total_seconds = val * 24 * 3600
+                else:
+                    total_seconds = val
+
+                if total_seconds > 36000:
+                    return str(cell)
+
+                minutes = int(total_seconds // 60)
+                seconds = int(total_seconds % 60)
+                hundredths = int(
+                    round((total_seconds - int(total_seconds)) * 100))
+                return f"{minutes}:{seconds:02}.{hundredths:02}"
             else:
                 return str(cell)
 
@@ -60,8 +70,6 @@ class ExcelToTextConverter:
 
         with open(self.output_file, 'w', encoding='utf-8') as f:
             for row_idx, row in enumerate(sheet.iter_rows(values_only=True), start=1):
-                if row_idx == 14:
-                    print(row)
                 row_str = self.process_row(row)
                 if row_str:
                     f.write(row_str + '\n')
@@ -69,13 +77,14 @@ class ExcelToTextConverter:
 
 if __name__ == '__main__':
     input_path = Path(
-        r"C:\Users\2008d\Downloads\ITOGOVYJ_Pervenstvo_shkoly_3.xlsx")
+        r"C:\Users\2008d\Downloads\Telegram Desktop\2025_11_07_Первенство_СДЮШОР_Спутник_Итоговый_протокол.xlsx")
     output_path = "output/0_cleaned_results.txt"
     config = {
         'convert_fields': {
-            # 4: 'year',
-            5: 'time_str',
-            6: 'time_str',
+            4: 'year',
+            # 5: 'year',
+            8: 'time_str',
+            # 9: 'time_str',
         }
     }
 

@@ -1,0 +1,660 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1">
+        <base href="/" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=Edge" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1" /><meta name="mobile-web-app-capable" content="yes" />
+    <link rel="SHORTCUT ICON" href="/skins/SWOG2025/images/favicon.ico" />
+    <title>
+	
+        The World Games 2025
+        
+    
+</title>
+
+    <link href="/skins/SWOG2025/SWOG2025.min.css" rel="stylesheet" type="text/css" />
+    
+    <!--<link href="/skins/SWOG2025/skin_lang_1.min.css"
+        rel="stylesheet" type="text/css" />-->
+    <!--<link href="/skins/base/jquery-ui-1.8.13.custom.min.css" rel="stylesheet" type="text/css" />-->
+
+    <script type="text/javascript" src="/Content/scripts/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="/Content/scripts/jquery.st-plugins.min.js"></script>
+
+    
+        <link href="/skins/SWOG2025/iframe.min.css" rel="stylesheet" type="text/css" />
+	    <script type="text/javascript" src="/Content/scripts/WIS.Iframe.min.js"></script>
+	
+	    <script type="text/javascript" src="/Content/scripts/date-format.min.js"></script>
+	
+
+    <script type="text/javascript" >
+        const imageBasePath = '/skins/base/images/';
+        const imagePath = '/skins/SWOG2025/images/';
+        const flagPath = '/skins/flags/';
+        const flagExt = 'png';
+        const PdfViewingMode = {
+            target: '_blank',
+            useInternal: false
+        };
+
+        $(document).ready(function () {
+            $('#navitemcurrent').html($('.navitemactive > a').text());
+            $('#tabitemcurrent').html($('.tabitem.selected > a').text());
+            checkNavigation();
+            ModifyColumns(undefined, false);
+            InitializeDetailSwitch();
+
+            if (!isIOSDevice()) {
+                const $arrow = $('#topArrow');
+                if (is_Mobile() || typeof (IFrame) === 'object')
+                    $arrow.show();
+                else {
+                    window.addEventListener("scroll", () => {
+                        if (window.scrollY > 300) {
+                            if ($arrow.is(":hidden"))
+                                $arrow.show();
+                        }
+                        else if (!$arrow.is(":hidden")) {
+                            $arrow.hide();
+                        }
+                    });
+                }
+            }
+
+            
+            if (typeof (ClientTime) === 'object') {
+                ClientTime.Init({
+                    timeFormat: 'H:mm',
+                    serverTimeZone: 480,
+                    localization: 'en-us'
+                });
+            }
+            
+                const resizeObserver = new ResizeObserver(entries => {
+                    if (typeof (IFrame) === 'object') {
+                        // trigger size changes
+                        IFrame.SetFrame();
+                    }
+                });
+                if (typeof (IFrame) === 'object') {
+                    IFrame.Init({
+                        useDelay: false,
+                        delay: 300,
+                        offset: 20,
+                        name: 'iframe_st',
+                        isSameOrigin: false,
+                        animationDuration: 300,
+                        redirectUrl: '',
+                    }).then(() => {
+                        IFrame.SetLocation();
+                        resizeObserver.observe(document.querySelector('body'));
+
+                        IFrame.MakeItSticky('.sticky-content', IFrame.StickyAlignment.Bottom);
+
+                        window.addEventListener('origin-received', () => {
+                            '.theworldgames2025.com;app-test-article.oceanpika.com;app-article.theworldgames2025.com'.split(';').forEach(function (item) {
+                                if (IFrame.Options.origin.indexOf(item) !== -1) {
+                                    PdfViewingMode.target = '_self';
+                                    PdfViewingMode.useInternal = true;
+                                    document.getElementById('page').classList.add('isApp');
+
+                                    resizeObserver.disconnect();
+                                    IFrame.UndoSticky('.sticky-content');
+                                    IFrame.Disconnect();
+                                }
+                            });
+                        });
+                    });
+                }
+            
+        });
+
+        function checkSize() {
+            const isBroken = $('#navitems').height() > 55 && $(window).width() < 1024;
+            $('#page').toggleClass('mobile', isBroken);
+            return isBroken;
+        }
+        function checkTabSize() {
+            const isBroken = $(window).width() < 600 || ($('.tabswitcher').height() > 40);
+            $('#tabs,.mainContent').toggleClass('mobile', isBroken);
+            return isBroken;
+        }
+        function checkHeader() {
+            var scrollPosition = scrollY;
+            var headerHeight = $('#header').height();
+            if (scrollPosition >= headerHeight)
+                $('#page').addClass('stickyHeader');
+            else
+                $('#page').removeClass('stickyHeader');
+        }
+        function checkNavigation() {
+            if (checkSize()) {
+                $('#navitemcurrent').unbind('click').bind('click', function () { $('#tabs').removeClass('isopen'); $('#nav').toggleClass('isopen'); });
+            }
+            else {
+                $('#navitemcurrent').unbind('click');
+                $('#nav').removeClass('isopen');
+            }
+            if (checkTabSize()) {
+                $('#tabitemcurrent').unbind('click').bind('click', function () { $('#nav').removeClass('isopen'); $('#tabs').toggleClass('isopen'); });
+            }
+            else {
+                $('#tabitemcurrent').unbind('click');
+                $('#tabs').removeClass('isopen');
+            }
+            
+            $('#navitems').removeClass('hidden');
+        }
+        $(window).resize(checkNavigation);
+        $(window).scroll(checkHeader);
+    </script>
+
+     <script type="text/javascript" src="/Content/scripts/sort_table.min.js" defer="defer" ></script> 
+    <script type="text/javascript" defer="defer">var photoActionUrl = '/hide/en/Image/GetAthleteThumbNail';</script>
+    <script type="text/javascript" src="/Content/scripts/WIS.AthlThumbNail.min.js" defer="defer"></script>
+    
+    <script type="text/javascript" src="/Content/scripts/WIS.Top3.min.js" defer="defer"></script>
+    <script type="text/javascript" defer="defer">
+        var showTop3 = 'True'; var resultTop3Url = '/hide/en/Comp/GetTop3';
+    </script>
+    
+    <script type="text/javascript" src="/Content/scripts/Common_Comp.min.js" defer="defer"></script>
+
+    <script type="text/javascript" src="/Content/scripts/jquery.mobile.custom.min.js" defer="defer"></script>
+    <script type="text/javascript" src="/Content/scripts/bracket.min.js"></script>
+    <script type="text/javascript" src="/Content/scripts/WIS.UnitSelector.min.js" defer="defer"></script>
+    
+    <script type="text/javascript" src="/Content/scripts/jquery-ui-1.8.13.custom.min.js" defer="defer"></script>
+    <script type="text/javascript" src="/Content/scripts/WIS.ColumnSlider.min.js" defer="defer"></script>
+    
+        <script type="text/javascript" src="/Content/scripts/WIS.ImageRotator.min.js" defer="defer"></script>
+    </head>
+<body instance="Info Web">
+    <span id="top-anchor"></span>
+     
+    
+    
+    <div id="loader" class="st-info" style="display:none;"></div>
+    <script type="text/javascript">
+        const loader = $('#loader');
+    </script>
+
+    
+
+    <div id="page" class="hideHeader  st-info iframe">
+        <div class="sticky-content">
+            
+
+<div class="liveSportSelector">
+    
+
+<div class="sport-wrapper">
+
+
+    </div>
+
+
+<script type="text/javascript">
+    if (typeof ($) === 'function') {
+        $(document).ready(function () {
+            if('true' === 'true'){
+                if (typeof (ReloadLiveSport.AutoReload) != 'undefined') ReloadLiveSport.AutoReload = true;
+                if (typeof (ReloadLiveSport.ReloadInformation) != 'undefined') ReloadLiveSport.ReloadInformation = {"$types":{"WIS.Common.Entities.ReloadInformation, WIS.Common, Version=0.0.6.0, Culture=neutral, PublicKeyToken=null":"1"},"__type":"1","ReloadTime":10};
+            }
+            else
+            if (typeof (ReloadLiveSport.AutoReload) != 'undefined') ReloadLiveSport.AutoReload = false;
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    function openSelector(e) {
+        var p = $(this).parent();
+        if (p.hasClass('selected'))
+            p.removeClass('selected');
+        else {
+            $('.sport').removeClass('selected');
+            p.addClass('selected');
+        }
+    }
+    function closeSelector(e) {
+        var p = $(this).parent();
+        p.removeClass('selected');
+    }
+    $(document).ready(function () {
+        $('.sport .sporticon').unbind('click').bind('click', openSelector);
+        if (!is_Mobile())
+            $('.sport .sporticon').unbind('mouseenter').bind('mouseenter', openSelector);
+        $('.sport .competitionItems').unbind('mouseleave').bind('mouseleave', closeSelector);
+        $('.liveSportSelector').removeClass('x--sport-count-1')
+
+        $(".liveSportSelector").removeClass(function (index, className) {
+            return (className.match(/(^|\s)x--sport-count-\S+/g) || []).join(' ');
+        });
+        $(".liveSportSelector").addClass('x--sport-count-0');
+    });
+
+</script>
+</div>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            ReloadLiveSport.ReloadInformation = {"$types":{"WIS.Common.Entities.ReloadInformation, WIS.Common, Version=0.0.6.0, Culture=neutral, PublicKeyToken=null":"1"},"__type":"1","ReloadTime":10};
+            ReloadLiveSport.SetUpdateTimeOut('.liveSportSelector', '/hide/en/Root/LiveSportSelectorContentPartial?', UpdateLiveSelectorSuccess);
+        });
+        function UpdateLiveSelectorSuccess(html) {
+            if (html.length > 0) { var $s = $('.liveSportSelector');
+                if (!$s.children('.sport').hasClass('selected')) $s.html(html);
+            }
+        }
+    </script>
+    
+            <div class="topArrow" id="topArrow" title="Scroll to top" onclick="document.getElementById('top-anchor').scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })"></div>
+        </div>
+        <div id="headerContainer">
+        
+        
+                <div class="sponsorTop">
+                    <a href="https://www.tissotwatches.com" target="_blank">
+                        <img src="/skins/SWOG2025/images/event/sponsor_header.png" alt="Sponsor" />
+                    </a>
+                </div>
+            
+            <div id="browserNavi">
+                
+                    <div class="printBtn" onclick="window.print()" title="Print"></div>
+                
+                    <div class="reloadBtn" onclick="window.location.href=window.location.href" title="Reload"></div>
+                
+            </div>
+        </div>
+
+        
+
+        <div id="nav">
+
+            <div id="navitemcurrent">
+
+            </div>
+
+            <div id="navitems" class="hidden">
+            
+                    <div class="navitemactive">
+                        <a href="/hide">Schedule &amp; Results</a>
+                    </div>
+            
+                    <div class="navitem">
+                        <a href="/hide/en/MedalTally?sport=---&medalKind=DefaultSports">Medals</a>
+                    </div>
+            
+                    <div class="navitem">
+                        <a href="/hide/en/Participant/List">Entries</a>
+                    </div>
+            
+                    <div class="navitem">
+                        <a href="/hide/en/Record/Records?sportCode=---">Records</a>
+                    </div>
+            
+                    <div class="navitem">
+                        <a href="/hide/en/Pdf/PdfList">Reports</a>
+                    </div>
+            
+                    <div class="navitem">
+                        <a href="/hide/en/Image/PhotoFinishList">Photo Finish</a>
+                    </div>
+            
+                    <div class="navitem">
+                        <a href="/hide/en/Pdf/Resultbook">Results Book</a>
+                    </div>
+            
+            </div>
+
+        </div>
+        <div id="navitems_lang">
+            
+            <div class="navitem_lang selected">
+                <a href="/hide/en/Info/ResultList/FSWM50MBF-------------FNL-000100--">
+                    <img src="/skins/base/images/languages/icon_ENG.png"
+                        alt="EN" />
+                    EN
+                </a>
+            </div>
+            
+            <div class="navitem_lang ">
+                <a href="/hide/zh/Info/ResultList/FSWM50MBF-------------FNL-000100--">
+                    <img src="/skins/base/images/languages/icon_CHN.png"
+                        alt="中" />
+                    中
+                </a>
+            </div>
+            
+           </div>
+        <div id="content" class="Schedule">
+            
+            <div class="clientTimeSelector hide">
+                <div class="btn clientTime">My time</div>|
+                <div class="btn localTime selected">Chengdu - CHN time</div>
+            </div>
+            
+
+            <div class="mainContent">
+                
+
+
+        <div class="sportevents FSW">
+            <div class="left">
+                <img class="sporticon" alt="FSW" height="80" width="80"
+                    src="/skins/SWOG2025/images/sport_icons/FSW.png"/>
+            </div>
+            
+            <div class="right">
+            </div>
+        </div>
+    
+        <div class="unitSelector FSW ResultList noPrint">
+        
+        </div>
+        
+        <div class="relatedInformations noPrint top">
+        <div class="RelatedInfoSelector">
+	<div title="Schedule" class="RelatedInfoItem relSchedule ">
+		<a href="/hide/en/Comp/DetailedScheduleByEvent?sportCode=FSWM50MBF-------------FNL---------"><div class="icon icon--schedule">
+
+		</div><div>
+			Schedule
+		</div></a>
+	</div><div title="Start List" class="RelatedInfoItem relStartList ">
+		<a href="/hide/en/Info/StartList/FSWM50MBF-------------FNL-000100--" partial-url="/hide/en/Comp/ListPartial?pagetype=StartList&amp;rsc=FSWM50MBF-------------FNL-000100--" class="partial-link"><div class="icon icon--start">
+
+		</div><div>
+			Start List
+		</div></a>
+	</div><div title="Results" class="RelatedInfoItem relResultList selected">
+		<a href="/hide/en/Info/ResultList/FSWM50MBF-------------FNL-000100--" partial-url="/hide/en/Comp/ListPartial?pagetype=ResultList&amp;rsc=FSWM50MBF-------------FNL-000100--" class="partial-link"><div class="icon icon--result selected">
+
+		</div><div>
+			Results
+		</div></a>
+	</div><div title="Medallists" class="RelatedInfoItem relMedalList ">
+		<a href="/hide/en/Info/MedalList/FSWM50MBF-------------------------" partial-url="/hide/en/Comp/ListPartial?pagetype=MedalList&amp;rsc=FSWM50MBF-------------------------" class="partial-link"><div class="icon icon--medal">
+
+		</div><div>
+			Medallists
+		</div></a>
+	</div><div title="Athletes" class="RelatedInfoItem relParticipantsList ">
+		<a href="/hide/en/Participant/List?disciplineId=231441f7-6c77-490e-8c2f-58e56cb3b402&amp;eventId=b5aa9c0e-60c4-4eff-9029-efbe818a2e7c"><div class="icon icon--athlete">
+
+		</div><div>
+			Athletes
+		</div></a>
+	</div><div title="Event Summary" class="RelatedInfoItem relEventSummary ">
+		<a href="/hide/en/Info/EventSummary/FSWM50MBF-------------------------" partial-url="/hide/en/Comp/ListPartial?pagetype=EventSummary&amp;rsc=FSWM50MBF-------------------------" class="partial-link"><div class="icon icon--event-summary">
+
+		</div><div>
+			Event Summary
+		</div></a>
+	</div>
+</div>
+        </div>
+        <div class="sportmessage"></div>
+        <div class="competitionMedals">
+        </div>
+
+        <div class="competitionRecords"></div><div class="List headline">OFFICIAL RESULTS</div>
+
+    <div id="listContainer">
+    <div>
+	<div id="902d2adc-dd28-4e79-b377-a7bd39008db9">
+
+	</div><script id="902d2adc-dd28-4e79-b377-a7bd39008db9Script" type="text/javascript">
+		$.ajax({beforeSend:function (){loaderStart(true)},complete:function (){loaderStop(true)},url:'/hide/en/Comp/ListPartial',type:'GET',async:true,data:{pageType:'ResultList',rsc:'FSWM50MBF-------------FNL-000100--',isInit:'True'},success:function(r){if(typeof(r)=='string'&& r.length>0){$(r).replaceAll('#902d2adc-dd28-4e79-b377-a7bd39008db9');$('#902d2adc-dd28-4e79-b377-a7bd39008db9Script').remove();}else {$('#902d2adc-dd28-4e79-b377-a7bd39008db9').parent().remove();}  if (typeof (ClientTime) === 'object') ClientTime.setTimes();},error:function(r){$('#902d2adc-dd28-4e79-b377-a7bd39008db9').parent().remove();$('#902d2adc-dd28-4e79-b377-a7bd39008db9Script').remove();loaderStop();}});
+	</script>
+</div>
+    </div>
+    
+            <br />
+            <div class="related reports"></div>
+        <script type="text/javascript" defer="defer">
+            
+                function SetPartialLinks() {
+                    $('.partial-link').unbind('click').click(function (e) {
+                        if (location.pathname !== $(e.currentTarget).attr('href'))
+                            Reload.UpdateContainer('#listContainer', $(e.currentTarget).attr('partial-url'), LoadListSuccess, $(e.currentTarget).attr('href'));
+                        return false;
+                });
+            }
+            
+            function UpdateListSuccess(html) {
+                if ($('#listContainer').find(':animated').length === 0 && $('#overlay').length === 0) {
+                    var dSwitch = $('.detailSwitch > .tabitem.selected');
+                    var switches = new Array();
+                    for (var i = 0; i < dSwitch.length; i++) {
+                        var expanded = new Array();
+                        var isCompact = $(dSwitch)[i].id === 'compactTab';
+                        var table = $('table.' + $(dSwitch[i]).parent()[0].id + ' .expanded').parent();
+                        var table;
+                        if (isCompact)
+                            table = $('table.' + $(dSwitch[i]).parent()[0].id + ' .expanded').parent();
+                        else
+                            table = $('table.' + $(dSwitch[i]).parent()[0].id + ' .expandableColumn').not('.expanded').parent();
+                        for (var j = 0; j < table.length; j++) {
+                            expanded.push($(table[j]).attr('ovrcode'));
+                        }
+                        switches.push({ isCompact: isCompact, expanded: expanded });
+                    }
+                    var groupPanels = $('.group');
+                    var sortedTables = SortTable.getSortedTables();
+                    selectedUiTab = $('.ui-tabs > .selected').attr('value');
+                    $('#listContainer').html(html);
+                    if (typeof (Bracket) === 'object') {
+                        const brackets = $('.BracketTables, .bracketThumbContainer');
+                        for (let i = 0; i < brackets.length; i++) {
+                                const $bracket = $(brackets[i])
+                                .UnitSlider({
+                                    initPosition: bracketList[i].position,
+                                    elementsToTake: $('.bracketRound').length > 0 ? 1 : 2,
+                                    itemsToMove: 2,
+                                    fixedIndexOffset: true
+                                });
+                            $($bracket).bind('UnitSlider_BeforeMove', function (e, p) {
+                                bracketList[i].position = p.oldPosition;
+                            });
+                            $($bracket).bind('UnitSlider_AfterMove', function (e, p) {
+                                bracketList[i].position = p.newPosition;
+                            });
+                            $bracket.position = bracketList[i].position;
+                            $bracket.index = i;
+                            bracketList[i] = $bracket;
+                            Bracket.Init($bracket);
+                        }
+                    }
+                    setElements();
+                    
+                    InitUnitSelector();
+                    
+                    InitializeDetailSwitch();
+                    dSwitch = $('.detailSwitch');
+                    for (var i = 0; i < dSwitch.length; i++) {
+                        if (dSwitch[i].id && switches[i])
+                            SetDetailSwitch(dSwitch[i].id, !switches[i].isCompact, switches[i].expanded);
+                    }
+                    if (typeof (SetThumNails) === 'function')
+                        SetThumNails();
+                    if (typeof (ClientTime) === 'object')
+                        ClientTime.setTimes();
+                    if (typeof (SortTable) === 'function')
+                        SortTable.init();
+                    if (typeof (alignSlider) === 'function')
+                        alignSlider();
+                    if (typeof (SetPartialLinks) === 'function')
+                        SetPartialLinks();
+                    for (var i = 0; i < sortedTables.length; i++) {
+                        SortTable.applySorting(sortedTables[i]);
+                    }
+                    if (groupPanels.length > 0) {
+                        for (var i = 0; i < groupPanels.length; i++) {
+                            $('.group[name=' + $(groupPanels[i]).attr('name') + ']').attr('class', $(groupPanels[i]).attr('class'));
+                        }
+                    }
+                    $('.groupPanel').groupPanelSetDeInitialised();
+                    $('.groupPanel').groupPanel();
+                    $('.reportInfo').ReportInfo();
+                    setSportLink();
+                }
+            }
+            function UpdateUnitSelectorSuccess(html){
+                if ($('.unitSelector').not('.dontUpdate').find(':animated').length === 0) {
+                    $('.unitSelector').not('.dontUpdate').html(html);
+                    
+                    if (typeof (SetPartialLinks) === 'function')
+                        SetPartialLinks();
+                }
+            }
+            function LoadListSuccess(html) {
+                window.scrollTo(0, 0);
+                Bracket.sliderPosition = 0;
+                Bracket.wrapperPosition = 0;
+                $('#listContainer').html(html);
+                InitList();
+                $('.groupPanel').groupPanelSetDeInitialised();
+                $('.groupPanel').groupPanel();
+            }
+            function setElements() {
+                $('.legendPlaceholder').html(Reload.ReloadInformation.Legend || "");
+                $('.List.headline').html(Reload.ReloadInformation.Title || "");
+                $('.sportevents').find('.right').html(Reload.ReloadInformation.PageTitle || "");
+                $('.unitSelector').not('.dontUpdate').html(Reload.ReloadInformation.UnitSelector || "");
+                $('.reports').html(Reload.ReloadInformation.PdfDocuments);
+                $('.competitionMedals').html(Reload.ReloadInformation.CompetitionMedals || "");
+                $('.competitionRecords').html(Reload.ReloadInformation.CompetitionRecords || "");
+                $('.relatedInformations').html(Reload.ReloadInformation.RelatedInformation);
+                $('.sportmessage').html(Reload.ReloadInformation.SportMessage || "");
+            }
+            function InitReload() {
+                if(Reload.AutoReload)
+                    Reload.SetUpdateTimeOut(Reload.IsUnitSelector ? '.unitSelector' : '#listContainer', Reload.url, Reload.IsUnitSelector ? UpdateUnitSelectorSuccess : UpdateListSuccess);
+            }
+            function InitList() {
+                SetDetailSwitch(undefined, false);
+                InitializeDetailSwitch();
+                if (Reload.ReloadInformation != null)
+                    setElements();
+                $('.reportInfo').ReportInfo();
+                if (typeof (InitUnitSelector) === 'function')
+                    InitUnitSelector();
+                if (typeof (ClientTime) === 'object')
+                    ClientTime.setTimes();
+                if (typeof (SortTable) === 'function')
+                    SortTable.init();
+                if (typeof (alignSlider) === 'function')
+                    alignSlider();
+                if (typeof (InitReload) === 'function')
+                    InitReload();
+                if (typeof (SetPartialLinks) === 'function')
+                    SetPartialLinks();
+                if (typeof (Bracket) === 'object') {
+                    const brackets = $('.BracketTables, .bracketThumbContainer');
+                    for (let i = 0; i < brackets.length; i++) {
+                        const $bracket = $(brackets[i])
+                            .UnitSlider({
+                                initPosition: 0,
+                                elementsToTake: $('.bracketRound').length > 0 ? 1 : 2,
+                                itemsToMove: 2,
+                                fixedIndexOffset: true
+                            });
+                        $($bracket).bind('UnitSlider_BeforeMove', function (e, p) {
+                            bracketList[i].position = p.oldPosition;
+                        });
+                        $($bracket).bind('UnitSlider_AfterMove', function (e, p) {
+                            bracketList[i].position = p.newPosition;
+                        });
+                        $bracket.index = i;
+                        $bracket.position = 0;
+                        bracketList.push($bracket)
+                        Bracket.Init($bracket);
+                    }
+                }
+                if (typeof (SetThumNails) === 'function')
+                    SetThumNails();
+            }
+        </script>
+        
+            <script type="text/javascript" defer="defer">
+                $(document).ready(function () {
+                    window.onpopstate = function(event) {
+                        Reload.UpdateContainer('#listContainer', event.state, LoadListSuccess);
+                    };
+                    
+                });
+            </script>
+        
+            </div>
+            
+
+            <div class="legendPlaceholder">
+                            
+            </div>
+
+            
+            
+
+            <div class="sponsors">
+                
+                        <div class="sponsorText">Official timing and results provided by Tissot</div>
+                    <img alt="Sponsors" class="sponsorImage" src="/skins/SWOG2025/images/event/Sponsor.png" style="border: none;" />
+                
+            </div>
+        </div>
+
+        <div id="footerContainer" >
+     
+            <div class="footertextbold">
+                <a href="https://www.theworldgames2025.com/en" target="_blank">
+                    The World Games 2025 | Chengdu - CHN | Official Website
+                </a>
+            </div>
+            <div class="footertext">
+                
+                <a href="https://www.swisstiming.com" target="_blank">
+                    Copyright © 2025. All rights reserved. Optimized for Google Chrome.
+                </a>
+                
+                <br />
+                Presented results data are not official. Only PDF files contain official results.
+            </div>
+    
+        </div>
+    </div>
+
+    
+    
+    <script type="text/javascript">
+        const bracketList = [];
+        var unitSlider;
+        var unitSliderPosition = null;
+        var pageInfo;
+        var oldUnitItem;
+        const h2hCompetitor = {}; 
+
+        function InitUnitSelector() {
+            unitSlider = $('.unitSelector').not('.dontUpdate').find('#unitSelectorContainer').UnitSlider({ $btnBwd:$('.unitSelector').not('.dontUpdate').children('.leftScroll'), $btnFwd:$('.unitSelector').not('.dontUpdate').children('.rightScroll'), initPosition: unitSliderPosition });
+            $(unitSlider).bind('UnitSlider_AfterMove', function(e, p) {
+                unitSliderPosition = p.newPosition;
+            });
+        }
+
+        $(document).ready(function() {
+            
+            $('.reportInfo').ReportInfo();
+            
+                photoFinishImageUrl = '/hide/en/Image/ShowFinishImage';
+            
+        });
+    </script>
+
+</body>
+    <script type="text/javascript">
+        
+</script>
+</html>

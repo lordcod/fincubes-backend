@@ -4,99 +4,147 @@ import logging
 from models.state import State
 from models.swim_types import *
 
-ERROR_VALUES = [
-    'нар. пр. сор.',
-    'не стартовала',
-    'сошёл',
-    'мед.отвод',
-    'переныр 15 м',
-    "не старт",
-    "не старт.",
-    "снята нар.пр.сор.",
-    "снят нар.пр.сор.",
-    "снята за нар.пр.сор.",
-    "снят за нар.пр.сор.",
-    "а нар.пр. сор.",
-    "за нар.пр.сор",
-    "за нар.пр.сор.",
-    "а за нар.пр.сор.",
-    "нар. Пр.сор",
-    "нар.пр.сор.",
-    "DSQ",
-    "DNS",
-    "Фальстарт",
-    "не допущен",
-    "не явился",
-    "Сошёл",
-    "Нар. пр. сор",
-    "Переныр 15м",
-    "Мед отвод",
-    "Переныр",
-    "н/я",
-    "DSQ",
-    "ня",
-    "снята за нар пр. сор.",
-    "снят за нар пр. сор.",
-    "снят",
-    "DSQ", "Фальстарт", "не допущен", "не явился", "Сошёл",
-    "Нар. пр. сор", "Переныр 15м", "Переныр 15м.", "Мед отвод", "Переныр",
-    "Фальстарт лично", "Сошёл лично", "Нар. пр. сор лично",
-    "сошла",
-    "сошел",
-    "ф/с",
-    'DNF',
-    "переныр 15м",
-    "фальстарт",
-    "DQ",
-    "неявка",
-    "д/к",
-    "н\\я",
-    "переныр",
-    "н/кас поворота",
-    "ст за нар пр сор",
-    "ста за нар пр сор",
-    "фальстар",
-    "мед. отвод",
-    "фальсатрт",
-    "н/я",
-    "снят"
-]
-ERROR_VALUES.sort(key=len, reverse=True)
+ERROR_MAP = {
+    # ==========================
+    # 🟥 DSQ — Disqualified (дисквалификация)
+    # ==========================
+    "нар. пр. сор.": "DSQ",
+    "нар. пр. сор": "DSQ",
+    "нар. Пр.сор": "DSQ",
+    "нар.пр.сор.": "DSQ",
+    "а нар.пр. сор.": "DSQ",
+    "за нар.пр.сор": "DSQ",
+    "за нар.пр.сор.": "DSQ",
+    "а за нар.пр.сор.": "DSQ",
+    "снята нар.пр.сор.": "DSQ",
+    "снят нар.пр.сор.": "DSQ",
+    "снята за нар.пр.сор.": "DSQ",
+    "снят за нар.пр.сор.": "DSQ",
+    "снята за нар пр. сор.": "DSQ",
+    "снят за нар пр. сор.": "DSQ",
+    "снят": "DSQ",
+    "снята": "DSQ",
+    "ст за нар пр сор": "DSQ",
+    "ста за нар пр сор": "DSQ",
+    "н/кас поворота": "DSQ",
+    "фальстарт": "DSQ",
+    "Фальстарт": "DSQ",
+    "фальстар": "DSQ",
+    "фальсатрт": "DSQ",
+    "ф/с": "DSQ",
+    "DQ": "DSQ",
+    "DSQ": "DSQ",
+    "д/к": "DSQ",
+    "д\\к": "DSQ",
+    "переныр": "DSQ",
+    "переныр 15 м": "DSQ",
+    "переныр 15м": "DSQ",
+    "Переныр": "DSQ",
+    "Переныр 15м": "DSQ",
+    "Переныр 15м.": "DSQ",
+    "Фальстарт лично": "DSQ",
+    "Нар. пр. сор лично": "DSQ",
+    "Фальстарт лично": "DSQ",  # продублировано, чтобы не потерять
+    "Нар. пр. сор": "DSQ",
+    "Снят": "DSQ",
+
+    # ==========================
+    # 🟦 DNS — Did Not Start (не стартовал)
+    # ==========================
+    "не стартовала": "DNS",
+    "не стартовал": "DNS",
+    "не старт": "DNS",
+    "не старт.": "DNS",
+    "не явился": "DNS",
+    "неявка": "DNS",
+    "DNS": "DNS",
+    "н/я": "DNS",
+    "н\\я": "DNS",
+    "ня": "DNS",
+    "Н/я": "DNS",
+
+    # ==========================
+    # 🟧 DNF — Did Not Finish (не финишировал / сошёл)
+    # ==========================
+    "сошёл": "DNF",
+    "Сошёл": "DNF",
+    "сошел": "DNF",
+    "сошла": "DNF",
+    "Сошёл лично": "DNF",
+    "DNF": "DNF",
+
+    # ==========================
+    # 🟩 WDR — Withdrawn (мед. отвод / отказ)
+    # ==========================
+    "мед.отвод": "WDR",
+    "мед. отвод": "WDR",
+    "Мед отвод": "WDR",
+    "медотвод": "WDR",
+    "WDR": "WDR",
+
+    # ==========================
+    # 🟨 EXH — Exhibition / вне конкурса
+    # ==========================
+    "в/к": "EXH",
+    "вк": "EXH",
+    "в\\к": "EXH",
+    "EXH": "EXH",
+
+    # ==========================
+    # 🟪 RJC — Rejected / не допущен
+    # ==========================
+    "не допущен": "RJC",
+    "REJ": "RJC",
+    "REJECTED": "RJC",
+}
+ERROR_MAP = dict(
+    sorted(ERROR_MAP.items(), key=lambda item: len(item[0]), reverse=True)
+)
 
 pattern = re.compile(r"""
     ^\s*
-    (?P<place>\d+.?|в/к|д/к)?\s*
+    (?P<place>\d+.?|в/?к|д/к)?\s*
     ((?P<rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?р|КМС|МСМК|МС|ЗМС)?)\s+)?
-    (?P<last_name>[А-Яа-яЁёë\-]+),?\s+
-    (?P<first_name>[А-Яа-яЁёë\-]+)\s+
-    (?P<birth_year>\d{4})\s+
-    (?P<team>.+?\s*)
+    (?P<last_name>[А-Яа-яЁёë\-]+),?\s*
+    (?P<first_name>[А-Яа-яЁёë\-]+)\s*
+    ((?P<patronymic>[А-Яа-яЁё\-]+)\s*)?
+    (\d{2}\.?\s*\d{2}\.?\s*)?(?P<birth_year>\d{4})\s+
+    (?P<team>.+?\s*)[1234]?
     (?:\s+(?P<result>\d{1,2}[:\.,]\d{1,2}(?:[:\.,]\d{1,2})?к?))?
-    (?:\s+(?P<final_rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?р|КМС|МСМК|МС|ЗМС)))?
-    (?:\s+(?P<points>(?:лично|\d+)))?
+    (?:\s+(?P<final_rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?\\?р|КМС|МСМК|МС|ЗМС)))?
+    (?:\s+(?P<points>(?:лично|\d+|в\/к|д\\к|д\к|Д\\\\К)))?
     \s*$
 """, re.VERBOSE | re.IGNORECASE)
 
 
 class PointsIndividualModel(IndividualModelBase, name='points'):
-    ERROR_VALUES = ERROR_VALUES
-
     def __init__(self, state: State):
         super().__init__(
             name='points',
             state=state,
             regexes=[pattern],
-            error_values=ERROR_VALUES
+            error_values=[]
         )
 
     def prerender(self, data):
-        team = data['team']
         data['status'] = 'COMPLETED'
-        for error in ERROR_VALUES:
-            if error in team:
-                logging.debug('Found dsq in team %s: %s', team, error)
+        points = data['place'] and data['place'].lower()
+        if points == 'в/к' or points == 'вк':
+            data['status'] = 'EXH'
+            data['place'] = None
+            data['points'] = None
+        if points == 'д/к' or points == 'д\\к':
+            data['status'] = 'DSQ'
+            data['place'] = None
+            data['points'] = None
 
-                data['status'] = 'DSQ'
+        team = data['team']
+        for error, status in ERROR_MAP.items():
+            if error in team:
+                logging.debug('Found dsq (%s) in team %s: %s',
+                              status, team, error)
+
+                data['status'] = status
                 data['result'] = None
                 team = team.replace(error, '').replace('.', '').strip()
 
@@ -106,12 +154,5 @@ class PointsIndividualModel(IndividualModelBase, name='points'):
                     data["rank"] = data['place']
                     data['place'] = ''
         data['team'] = team
-
-        if data['place'] == 'в/к':
-            data['status'] = 'EXH'
-            data['place'] = None
-        if data['place'] == 'д/к':
-            data['status'] = 'DSQ'
-            data['place'] = None
 
         return data

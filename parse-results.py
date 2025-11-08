@@ -1,6 +1,7 @@
 import logging
 from pathlib import Path
 from models.swim import SwimResultsParser
+from parsers import get_parser
 
 
 # Дистанции
@@ -20,18 +21,11 @@ def main():
     type = 'points'
     parser = SwimResultsParser(
         get_parser(type),
-        distance_header_re=r"^.+-\s?\d+\s?м.*?$",
+        distance_header_re='\\s*(?P<style>.+) - (?P<distance>\\d+) м,\\s*(?P<gender>[а-я]+)\\s*.+',
         input_file=input_file,
         output_file=output_file,
     )
     parser.parse()
-
-
-def get_parser(type: str):
-    from parsers import load_dir
-    dir = Path('./parsers')
-    data = load_dir(dir)
-    return data[type.lower()]
 
 
 def load_logging():

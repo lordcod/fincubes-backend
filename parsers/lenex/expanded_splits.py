@@ -3,19 +3,18 @@ import logging
 from models.state import State
 from models.swim_types import *
 from parsers.base import IndividualModelBase
-# DSQ ПАТАПОВА, Полина Игоревна 2011 МКСШОР Восток II -
+
 pattern = re.compile(r"""
     ^\s*
-    (?P<place>\d+\.|DSQ|DNS|EXH|DNF)?\s*
+    (?P<place>\d+\.?|DSQ|DNS|EXH|DNF)?\s*
     (?P<last_name>[А-Яа-яЁё\-]+),?\s+
     (?P<first_name>[А-Яа-яЁё\-\.]+)\s+
-    ((?P<patronymic>[А-Яа-яЁё\-]+)\s+)?
+    ((?P<patronymic>[А-Яа-яЁё\-]+)\s*)?
     (?P<birth_year>\d{2,4})\s+
     (?P<team>.+?)?
-    (?=\s*\d{1,2}[:\.,]\d{2})
+    (?:\s+(?P<result>\d{1,2}[:\.,]\d{2}(?:[:\.,]\d{1,2})?))?
     \s*
-    (?P<result>\d{1,2}[:\.,]\d{2}(?:[:\.,]\d{1,2})?)\s*
-    (?P<final_rank>(?:МСМК|ЗМС|КМС|МС|[123I]{1,3}(?:\s*ю[н]?)?))?
+    (?:\s+(?P<final_rank>(?:МСМК|ЗМС|КМС|МС|I{1,3}|1|2|3)(?:\s*(?:\(?юн\)?|юн|ю)\.?)?)?)?
     (?P<points>(?:\s*\d+)\,?\d+)?
     \s*-?
     (((\d{1,2}[:\.,]\d{2}(?:[:\.,]\d{1,2})?)\s*){2,})?
