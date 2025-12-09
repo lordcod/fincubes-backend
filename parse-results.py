@@ -21,7 +21,7 @@ def main():
     type = 'points'
     parser = SwimResultsParser(
         get_parser(type),
-        distance_header_re='\\s*(?P<style>.+) - (?P<distance>\\d+) м,\\s*(?P<gender>[а-я]+)\\s*.+',
+        distance_header_re='(?P<style>.+)\\s*-\\s*(?P<distance>\\d+)\\s*м(\\s*\\(.+\\))?,\\s*(?P<gender>[а-я]+)\\s*.+',
         input_file=input_file,
         output_file=output_file,
     )

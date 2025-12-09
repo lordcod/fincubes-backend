@@ -1,7 +1,7 @@
 import asyncio
 import json
 import aiohttp
-from __config__ import headers
+from __config__ import headers, BASE_URL
 
 allowed_athlete_fields = {
     "last_name",
@@ -17,7 +17,7 @@ allowed_athlete_fields = {
 
 
 class AthleteProcessor:
-    BASE_URL = "https://api.fincubes.ru/admin"
+    BASE_URL = f"{BASE_URL}/admin"
 
     def __init__(
         self,

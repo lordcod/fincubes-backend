@@ -66,12 +66,12 @@ class SwimResultsParser:
                         f"[RECORD_GIVEN] {self.state.current_athlete}")
                 continue
 
-            # line in ('МУЖЧИНЫ', 'ЖЕНЩИНЫ')
-            accept = re.fullmatch(r'\s*[а-я]+\s*\d{4}.*г\.р\..*', line)
-            if accept and not self.state.in_relay_block:
-                self.state.current_distance = self.state.distances[-1] + ' ' + line
-                # self.state.distances.append(self.state.current_distance)
-                continue
+            # accept = re.fullmatch(
+            #     r'(Мужчины|Женщины|\s*[а-я]+\s*\d{4}.*г\.р\..*)', line, re.IGNORECASE)
+            # if accept and not self.state.in_relay_block:
+            #     self.state.current_distance = self.state.distances[-1] + ' ' + line
+            #     # self.state.distances.append(self.state.current_distance)
+            #     continue
 
             if self.relay_parser.get_relay_start(line):
                 self.state.in_relay_block = True

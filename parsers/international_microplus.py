@@ -1,41 +1,49 @@
+import logging
 import re
 from models.state import State
 from models.swim_types import *
 from parsers.base import IndividualModelBase
 
 
-# Пример строки:
-# 4 4 TIMCHENKO Ekaterina CM1 09 JAN 2008 0.90 17.18 0.56 q
-# 5 5 SAPRYKINA Kseniia CM1 16 JUN 2008 0.98 17.44 0.47
-# 1 4 4 SHTARK Matvey CM1 18 JUL 2008 0.83 20.87 43.39 q
-# 6 4 4 TIMCHENKO Ekaterina CM1 09 JAN 2008 0.90 17.18 0.56 q
-# 9 4 5 DOROGAVTSEVA Sofia CM1 07 JUL 2008 0.87 24.27 50.25 1.90 R1
-# 1 4 4 IVANUSHKINA Polina CM1 05 MAR 2008 0.95 23.94 50.82 1:19.41 1:48.71 q
+# Более простая, но железобетонная регулярка:
+# — матчит ВСЕ строки
+# — собирает ВСЕ времена в одну группу times
 pattern_international = re.compile(
     r"""
     ^\s*
-    (?P<rank>\d+)?\s+                          # место
-    (\d+)\s+                                  # заплыв
-    (\d+)\s+                                  # дорожка
+    (?P<place>\d+)?\s+                     # место
+    (\d+)\s+                      # заплыв
+    (\d+)\s+                      # дорожка
     (?P<last_name>[A-Za-z\'\-]+)\s+
     (?P<first_name>[A-Za-z\'\-]+)\s+
     (?P<team>[A-Z0-9]+)\s+
     (?P<birth_date>\d{2}\s+[A-Z]{3}\s+\d{4})\s+
-    ((?:\d{1,2}(?::|,|\.)\d{1,2}\s+)+)?
-    (?P<result>\d{1,2}(?:[:.,]\d{1,2}){1,2})   # результат (время)
-    (?:\s+\d{1,2}(?:[:.,]\d{1,2}){1,2})?                           # реакция или доп. время
-    (?:\s+(q|R1|R2|Bronze|Silver|Gold))?             # q, R1 и т.п.
+    (?P<times>(?:\d{1,2}(?:[:.,]\d{1,2}){1,2}\s*)+)   # ВСЕ времена подряд
+    (q|R1|R2|Bronze|Silver|Gold)?\s*(=?WJ)?         # пометка
     \s*$
     """,
     re.VERBOSE | re.IGNORECASE
 )
 
 
+def parse_time(time_str):
+    """Parse time strings like '1:23.45' or '12,34'."""
+    if not time_str:
+        return None
+    match = re.fullmatch(
+        r'\s*((\d{1,2})[:\.,])?(\d{1,2})[:\.,](\d{1,2})к?\s*', time_str
+    )
+    if not match:
+        return None
+    _, minutes, seconds, millis = match.groups()
+    minutes = int(minutes) if minutes else 0
+    seconds = int(seconds)
+    millis = int(millis)
+    return minutes * 60 + seconds + millis / 100
+
+
 class InternationalMicroplusModel(IndividualModelBase, name='international_microplus'):
-    """
-    Парсер международных PDF-протоколов (Microplus / CMAS).
-    Извлекает фамилию, имя, команду, дату рождения, год и результат старта.
-    """
+    """Парсер международных PDF-протоколов (Microplus / CMAS)."""
 
     def __init__(self, state: State):
         super().__init__(
@@ -47,9 +55,9 @@ class InternationalMicroplusModel(IndividualModelBase, name='international_micro
 
     def prerender(self, data: dict) -> dict:
         """Обработка и нормализация данных после regex-сопоставления."""
+
         team = data.get("team", "").strip()
         birth_date = data.pop("birth_date")
-        result = data.get("result")
 
         # год рождения
         if birth_date:
@@ -59,14 +67,37 @@ class InternationalMicroplusModel(IndividualModelBase, name='international_micro
         else:
             data["birth_year"] = None
 
-        # статус
+        # DNS/DSQ/etc
+        result = data.get("result")
         if result in ("DNS", "DSQ", "DNF"):
             data["status"] = result
             data["result"] = None
         else:
             data["status"] = "COMPLETED"
 
+        # Фильтрация по команде
         if team != "CM1":
             return None
+
+        # Собираем ВСЕ времена
+        times_raw = data.pop("times", "")
+        times = re.findall(r"\d{1,2}(?:[:.,]\d{1,2}){1,2}", times_raw)
+
+        # Применяем твою логику: берём максимальное время
+        result_value = None
+        parsed = []
+        for t in times:
+            p = parse_time(t)
+            if p is not None:
+                parsed.append((t, p))
+
+        if parsed:
+            best, _ = max(parsed, key=lambda x: x[1])
+            result_value = best
+
+        data["result"] = result_value
+
+        if times and not result_value:
+            logging.error("CRITICAL ERRRRR %s", data)
 
         return data

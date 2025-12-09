@@ -20,6 +20,7 @@ class SwimResult:
     record: str = ""
     patronymic: str = ""
     prelim: str = ""
+    attempts: list[str] = field(default_factory=list)
 
 
 @dataclass

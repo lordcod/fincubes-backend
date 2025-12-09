@@ -4,9 +4,6 @@ import re
 
 from parsers import load_dir
 
-# ---------------------------------------------
-# State для хранения текущей дистанции (можно расширять)
-
 
 class State:
     current_distance: str = 'none'

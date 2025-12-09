@@ -7,10 +7,10 @@ from parsers.base import IndividualModelBase
 pattern = re.compile(r"""
     ^\s*
     (?P<place>\d+\.|DSQ|DNS|EXH|DNF)?\s*
+    (?P<rank>(?:МСМК|ЗМС|КМС|МС|[123I]{1,3}(?:\s*ю[н]?|ю[н]?|юн)?\.?))?\s*
     (?P<last_name>[А-Яа-яЁё\-\.]+),?\s+
     (?P<first_name>[А-Яа-яЁё\-\.]+)\s+
     (?P<birth_year>\d{2,4})\s*
-    (?P<rank>(?:МСМК|ЗМС|КМС|МС|[123I]{1,3}(?:\s*ю[н]?|ю[н]?|юн)?\.?))?\s*
     (?P<team>.+?)\s*
     (?:(?P<result>\d{1,2}[:\.,]\d{2}(?:[:\.,]\d{1,2})?))?\s*
     (?:(?P<final_rank>(?:МСМК|ЗМС|КМС|МС|[123I]{1,3}(?:\s*ю[н]?|ю[н]?|юн)?.?)))?

@@ -103,30 +103,47 @@ ERROR_MAP = {
 ERROR_MAP = dict(
     sorted(ERROR_MAP.items(), key=lambda item: len(item[0]), reverse=True)
 )
-print(ERROR_MAP)
-# 1	KMC	ЗАХАРОВА Елизавета	2012	Ярославская область	04:06,86	KMC	50
-# 1 КМС ДВОЙНИШНИКОВА Мария 2012 Ярославская область 00:23,35 КМС 50
-# (\d{2}\.?\s*\d{2}\.?\s*)? с датой
+
+
+def parse_time(time_str):
+    """Parse time strings like '1:23.45' or '12,34'."""
+    if not time_str:
+        return None
+    match = re.fullmatch(
+        r'\s*((\d{1,2})[:\.,])?(\d{1,2})[:\.,](\d{1,2})к?\s*', time_str
+    )
+    if not match:
+        return None
+    _, minutes, seconds, millis = match.groups()
+    minutes = int(minutes) if minutes else 0
+    seconds = int(seconds)
+    millis = int(millis)
+    return minutes * 60 + seconds + millis / 100
+
+
+RESULT_RE = re.compile(
+    r'\d{1,2}:\d{1,2},\d{1,2}'
+)
 pattern = re.compile(r"""
     ^\s*
-    (?P<place>\d+.?|в/?к|д/к\s+)?
-    ((?P<rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?.?)?|б\\?\/?р|КМС|МСМК|МС|ЗМС)?)\s+)?
+    (?P<place>\d+.?|в/?к|д/к)?\s*
+    ((?P<rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?р|КМС|МСМК|МС|ЗМС)?)\s+)?
     (?P<last_name>[А-Яа-яЁёë\-]+),?\s*
     (?P<first_name>[А-Яа-яЁёë\-]+)\s*
     ((?P<patronymic>[А-Яа-яЁё\-]+)\s*)?
-    (\d{2}\.\d{2}\.)?(?P<birth_year>\d{4})\s+
-    (?P<team>.+?)[1234]?
-    (?:\s+(?P<result>\d{1,2}[:\.,]\d{1,2}(?:[:\.,]\d{1,2})?))?
-    (?:\s*(?P<final_rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?\\?р|КМС|МСМК|МС|ЗМС)))?
-    (?:\s*(?P<points>(?:лично|\d+|в/?к|дк)))?
+    (\d{2}\.?\s*\d{2}\.?\s*)?(?P<birth_year>\d{4})
+    \s+(?P<team>.+?\s*)[1234]?
+    (?:(?P<result>(\s*\d{1,2}[:\.,]\d{1,2}(?:[:\.,]\d{1,2})?к?)*))?
+    (?:\s+(?P<final_rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?\\?р|КМС|МСМК|МС|ЗМС)))?
+    (?:\s+(?P<points>(?:лично|\d+|в\/к|д\\к|д\к|Д\\\\К)))?
     \s*$
 """, re.VERBOSE | re.IGNORECASE)
 
 
-class PointsIndividualModel(IndividualModelBase, name='points'):
+class PointsIndividualModel(IndividualModelBase, name='points_with_attempts'):
     def __init__(self, state: State):
         super().__init__(
-            name='points',
+            name='points_with_attempts',
             state=state,
             regexes=[pattern],
             error_values=[]
@@ -135,14 +152,14 @@ class PointsIndividualModel(IndividualModelBase, name='points'):
     def prerender(self, data):
         data['status'] = 'COMPLETED'
         points = data['place'] and data['place'].lower()
-        for error, status in ERROR_MAP.items():
-            if not points:
-                break
-            if error in points:
-                logging.debug('Found dsq (%s) in points %s: %s',
-                              status, points, error)
-                data['status'] = status
-                data['points'] = None
+        if points == 'в/к' or points == 'вк':
+            data['status'] = 'EXH'
+            data['place'] = None
+            data['points'] = None
+        if points == 'д/к' or points == 'д\\к':
+            data['status'] = 'DSQ'
+            data['place'] = None
+            data['points'] = None
 
         team = data['team']
         for error, status in ERROR_MAP.items():
@@ -160,4 +177,18 @@ class PointsIndividualModel(IndividualModelBase, name='points'):
                     data["rank"] = data['place']
                     data['place'] = ''
         data['team'] = team
+        attempts = RESULT_RE.findall(data['result'] or '')
+        data['attempts'] = attempts
+
+        if len(attempts) > 1:
+            best = min(attempts, key=parse_time)
+            result_value = best
+            final_value = attempts[-1]
+        else:
+            result_value = attempts[0] if attempts else None
+            final_value = None
+
+        data['result'] = result_value
+        data['final'] = final_value
+
         return data

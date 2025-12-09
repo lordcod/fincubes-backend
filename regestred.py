@@ -1,3 +1,4 @@
+
 from datetime import datetime
 import json
 import logging
@@ -23,6 +24,12 @@ STROKES = {
     'плавание в  ластах': 'SURFACE',
     'плавание в класичесских ластах': 'BIFINS',
     'плавание в классических':  'BIFINS',
+    'плавяние в ластах': 'SURFACE',
+    'плавание в  классических ластах': 'BIFINS',
+    'пл\\л': 'SURFACE',
+    'пл/л': 'SURFACE',
+    'кл\\л': 'BIFINS',
+    'кл/л': 'BIFINS',
     'ap': 'APNEA',
     'sf': 'SURFACE',
     'bf': 'BIFINS',
@@ -31,7 +38,7 @@ STROKES = {
 
 SEXES = {
     'женщины': 'F', 'девочки': 'F', 'девушки': 'F', 'юниорки': 'F', 'женщин': 'F', 'f': 'F', 'жещины': 'F', 'women':  'F', 'w':  'F',
-    'мужчины': 'M', 'мальчики': 'M', 'юноши': 'M', 'юниоры': 'M', 'мужчин': 'M', 'm': 'M', 'men':  'M',
+    'мужчины': 'M', 'мальчики': 'M', 'юноши': 'M', 'юниоры': 'M', 'мужчин': 'M', 'm': 'M', 'men':  'M', 'мужчинны':  'M',
 }
 
 INVALID_DISTANCES = {}
@@ -64,7 +71,7 @@ def parse_time(time_str: Optional[str]) -> Optional[str]:
     if not time_str:
         return None
     match = re.fullmatch(
-        r'((\d{1,2})[:\.,])?(\d{1,2})[:\.,](\d{1,2})к?', time_str)
+        r'\s*((\d{1,2})[:\.,])?(\d{1,2})[:\.,](\d{1,2})к?\s*', time_str)
     if not match:
         logging.warning('Unexpected time format: %s', time_str)
         return None
@@ -73,6 +80,27 @@ def parse_time(time_str: Optional[str]) -> Optional[str]:
     seconds = int(seconds)
     millis = int(millis)
     return f"{minutes:02}:{seconds:02}.{millis:02}"
+
+
+def parse_time_offer_figna(time_str: Optional[str]) -> Optional[str]:
+    if time_str.isdigit():
+        if int(time_str) < 10:
+            return f"{int(time_str):02}:00.00"
+        return f"00:{int(time_str):02}.00"
+    match = re.fullmatch(
+        r'\s*((?P<minutes>\d{1,2}):)?((?P<seconds>\d{1,2}),)?((?P<mili>\d{1,2}))?\s*', time_str)
+    if not match:
+        return None
+    minutes = match.group('minutes')
+    seconds = match.group('seconds')
+    mili = match.group('mili')
+    minutes = int(minutes) if minutes else 0
+    seconds = int(seconds)
+    mili = int(mili) if mili else 0
+    if minutes == 0 and seconds < 10:
+        print('request error', time_str, f"{seconds:02}:{mili:02}.00")
+        return f"{seconds:02}:{mili:02}.00"
+    return f"{minutes:02}:{seconds:02}.{mili:02}"
 
 
 def parse_integer(value: Optional[str]) -> Optional[int]:
@@ -120,7 +148,7 @@ class RegisterParser:
         self.athletes: dict = {}
 
         self.distance_regex = re.compile(
-            r"^(FSW)(?P<gender>[MW])(?P<distance>\d+)M(?P<style>[A-Z]+)-+(FNL-\d+-+)$",
+            '(?P<style>.+)\\s*-\\s*(?P<distance>\\d+)\\s*м(\\s*\\(.+\\))?,\\s*(?P<gender>[а-я]+)\\s*.+',
             re.IGNORECASE
         )
 
@@ -148,18 +176,21 @@ class RegisterParser:
                 birth_year = '20' + birth_year
         result['birth_year'] = birth_year
 
-        # loc = locations.get(
-        #     result['team'], {'city': None, 'club': result.get('team')})
+        loc = locations.get(
+            result.get('team', None), {'city': None, 'club': result.get('team')})
         if not result.get('city'):
             loc = locations[result['team']]
             result['city'], result['team'] = loc['city'], loc['club']
+        # # !!! FATAL !!!
+        # result['city'] = result['team'].strip()
+        # result['team'] = None
 
         key = (result['last_name'], result['first_name'], result['birth_year'])
         self.athletes[key] = {
             "first_name": result['first_name'].title(),
             "last_name": result['last_name'].title(),
             'birth_year': birth_year,
-            'team': result['team'],
+            'team': result.get('team'),
             'city': result['city'],
             'rank': normalize_rank(result.get('rank')),
             'gender': gender,
@@ -172,6 +203,8 @@ class RegisterParser:
             result['result'] = ''
         if result.get('status') == 'DSQ_FINAL':
             result['final'] = ''
+        if result.get('status') == 'COMPLETED' and not result['result']:
+            print('Not found result in:', result)
 
         time_key = parse_time(result.get('result'))
         key = (stroke, distance, time_key)
@@ -184,6 +217,10 @@ class RegisterParser:
 
         place = parse_integer(result.get('place') and result.get(
             'place').replace('.', '').strip())
+        metadata = {}
+        if attempts := result.get('attempts'):
+            metadata['attempts'] = attempts
+
         data.append({
             'stroke': stroke,
             'distance': distance,
@@ -194,6 +231,7 @@ class RegisterParser:
             'status': result['status'],
             'place': place and str(place),
             'points': parse_point(result.get('points')),
+            'metadata': metadata if metadata else None
         })
 
     def save_itogi(self):

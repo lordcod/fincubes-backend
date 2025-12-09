@@ -77,14 +77,14 @@ class ExcelToTextConverter:
 
 if __name__ == '__main__':
     input_path = Path(
-        r"C:\Users\2008d\Downloads\Telegram Desktop\2025_11_07_Первенство_СДЮШОР_Спутник_Итоговый_протокол.xlsx")
+        r"C:\Users\2008d\Downloads\2025-11-22__results_kraevye_sorevnovaniya_po_podvodnomu_sportu (1).xlsx")
     output_path = "output/0_cleaned_results.txt"
     config = {
         'convert_fields': {
+            # 3: 'year',
             4: 'year',
-            # 5: 'year',
+            # 5: 'time_str',
             8: 'time_str',
-            # 9: 'time_str',
         }
     }
 

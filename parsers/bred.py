@@ -48,6 +48,7 @@ ERROR_MAP = {
     "Нар. пр. сор": "DSQ",
     "Снят": "DSQ",
     "снят за нар.прав.сор.": "DSQ",
+    "дк": "DSQ",
 
     # ==========================
     # 🟦 DNS — Did Not Start (не стартовал)
@@ -110,23 +111,27 @@ print(ERROR_MAP)
 pattern = re.compile(r"""
     ^\s*
     (?P<place>\d+.?|в/?к|д/к\s+)?
-    ((?P<rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?.?)?|б\\?\/?р|КМС|МСМК|МС|ЗМС)?)\s+)?
     (?P<last_name>[А-Яа-яЁёë\-]+),?\s*
     (?P<first_name>[А-Яа-яЁёë\-]+)\s*
-    ((?P<patronymic>[А-Яа-яЁё\-]+)\s*)?
-    (\d{2}\.\d{2}\.)?(?P<birth_year>\d{4})\s+
-    (?P<team>.+?)[1234]?
-    (?:\s+(?P<result>\d{1,2}[:\.,]\d{1,2}(?:[:\.,]\d{1,2})?))?
-    (?:\s*(?P<final_rank>(?:[123](\s*юн?\.?)?|I{1,3}(\s*юн?)?|б\/?\\?р|КМС|МСМК|МС|ЗМС)))?
-    (?:\s*(?P<points>(?:лично|\d+|в/?к|дк)))?
+    (?P<birth_year>\d{4})\s+
+    (?P<team>.+?)
+    (?:\s+(?P<result>\d{1,2}(?:[:,\.]\d{1,2})?(?:[:,\.]\d{1,2})?))?
     \s*$
 """, re.VERBOSE | re.IGNORECASE)
 
 
-class PointsIndividualModel(IndividualModelBase, name='points'):
+def find_coach_in_team(text: str):
+    match = re.fullmatch(
+        r'(?P<coach>([А-ЯЁ][а-яё]+(\s*|\.)[А-ЯЁ]\.[А-ЯЁ]\.?(?:\s*[,/]\s*[А-ЯЁ][а-яё]+ [А-ЯЁ]\.[А-ЯЁ]\.?)*))(?P<team>([а-яА-Я\d\s\."-A-Za-zVolkovSharksинностар дайвинг]+))', text)
+    if match:
+        return match.group('coach').strip(), match.group('team').strip()
+    return None
+
+
+class PointsIndividualModel(IndividualModelBase, name='bred'):
     def __init__(self, state: State):
         super().__init__(
-            name='points',
+            name='bred',
             state=state,
             regexes=[pattern],
             error_values=[]
@@ -134,15 +139,8 @@ class PointsIndividualModel(IndividualModelBase, name='points'):
 
     def prerender(self, data):
         data['status'] = 'COMPLETED'
-        points = data['place'] and data['place'].lower()
-        for error, status in ERROR_MAP.items():
-            if not points:
-                break
-            if error in points:
-                logging.debug('Found dsq (%s) in points %s: %s',
-                              status, points, error)
-                data['status'] = status
-                data['points'] = None
+        team = find_coach_in_team(data['team'].strip())
+        data['team'] = team[1] if team else input(f'{data['team']} >>> ')
 
         team = data['team']
         for error, status in ERROR_MAP.items():
@@ -153,11 +151,5 @@ class PointsIndividualModel(IndividualModelBase, name='points'):
                 data['status'] = status
                 data['result'] = None
                 team = team.replace(error, '').replace('.', '').strip()
-
-                if data['place'] and not data["rank"]:
-                    logging.debug(
-                        'Transfer place to rank in dsq %s %s', data['place'], data["rank"])
-                    data["rank"] = data['place']
-                    data['place'] = ''
         data['team'] = team
         return data

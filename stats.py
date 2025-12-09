@@ -15,7 +15,7 @@ not_found_teams = set()
 not_found_names = []
 
 for result in output['individual_results']:
-    if result['prelim'] and not result['result'] and result['status'] == 'COMPLETED':
+    if result.get('prelim') and not result['result'] and result['status'] == 'COMPLETED':
         result['result'] = result['prelim']
     team = result['team']
     stats.add(team)

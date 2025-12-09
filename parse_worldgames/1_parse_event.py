@@ -52,9 +52,9 @@ def parse_event_results(html_path):
             name_el = row.select_one("td.athleteName a span.sortValue")
             noc_el = row.select_one("td.noc a")
             time_el = row.select_one("td.All_result span.sortValue")
-
+            place = rank_el.get_text(strip=True) if rank_el else None
             data = {
-                "place": rank_el.get_text(strip=True) if rank_el else None,
+                "place": place and place[:len(place)//2],
                 "name": name_el.get_text(strip=True) if name_el else None,
                 "team": noc_el.get_text(strip=True) if noc_el else None,
                 "result": time_el.get_text(strip=True) if time_el else None,

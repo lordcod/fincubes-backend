@@ -54,7 +54,6 @@ class SwimResultsParser:
         for key, stl in standards.items():
             standards[key] = dict(
                 sorted(stl.items(), key=lambda item: item[1]))
-        print(standards)
         return standards
 
     def _process_athletes(
@@ -71,9 +70,6 @@ class SwimResultsParser:
                     continue
 
                 for res in athl.results:
-                    if res.status == 'DNS' or res.swimTime.as_duration() == 0:
-                        print('Skip DNS', res.resultid)
-                        continue
                     if res.eventid not in events:
                         print('Skip event', res.eventid)
                         continue
@@ -98,7 +94,6 @@ class SwimResultsParser:
     ) -> Dict:
         stroke, distance, name, gender = events[res.eventid]
         standard_key = (athl.gender, name, distance)
-
         data = {
             'distance': ';'.join(map(str, events[res.eventid])),
             'last_name': athl.lastname,
@@ -109,20 +104,30 @@ class SwimResultsParser:
             'final': None,
             'points': '',
             'record': '',
-            'status': 'DSQ' if res.status in ('DSQ', 'DNF') else 'COMPLETED',
-            'result': str(res.swimTime),
-            'final_rank': self.get_license(res.swimTime.as_duration(), standards.get(standard_key, {}))
+            'status': res.status or 'COMPLETED',
+            'result': res.swimTime and str(res.swimTime),
+            'final_rank': res.swimTime and self.get_license(res.swimTime.as_duration(), standards.get(standard_key, {}))
         }
 
+        if not res.swimTime.as_duration():
+            data['result'] = None
         place = rankings.get(res.resultid)
-        if place is None:
-            place = '' if data['status'] == 'DSQ' else 'EXH'
-            print(place, res.resultid)
-        data['place'] = str(place)
+        if not place and data['status'] == 'COMPLETED':
+            if not data['result']:
+                print('No swim time for result with no place:', data)
+            else:
+                data['status'] = 'EXH'
+                print('No place found, marking as EXH for result:', data)
+        if data['status'] != 'COMPLETED':
+            print('Status is not completed for result', data['status'])
+        if place:
+            data['place'] = str(place)
 
         return data
 
     def get_license(self, result: float, standards: Dict[str, float]) -> Optional[str]:
+        if not result:
+            return None
         for code, standard_result in standards.items():
             if result < standard_result:
                 return code
@@ -141,6 +146,6 @@ class SwimResultsParser:
 
 
 if __name__ == '__main__':
-    input_file = r"C:\Users\2008d\OneDrive\Документы\Соревнования\Подводное плавание\26.10.2025 Люблино\results.lef"
+    input_file = r"C:\Users\2008d\Downloads\results.lxf"
     output_file = Path("output/1_output_results.json")
     SwimResultsParser(input_file, output_file).parse()

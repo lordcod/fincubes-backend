@@ -9,6 +9,7 @@ REGEX_LIST = [
     r"(?P<style>.+) - (?P<distance>\d+) (метров|м)\s+(?P<gender>[а-яА-Я]+)\s*(\(.+\))?\s*",
     r"(?P<style>.+) - (?P<distance>\d+)\s*м,\s*(?P<gender>[а-я]+)",
     r"(?P<style>.+) - (?P<distance>\d+)\s*м\s*(?P<gender>[а-я]+)\s+.+",
+    r"(?P<style>.+)\s+(?P<distance>\d+)\s*(метров|м),\s+(?P<gender>[а-яА-Я]+)\s+.+\s*",
 
     r"\s*(?P<style>.+)\s*(?P<distance>\d+)\s*М\s*(?P<gender>[а-я]+)\s*",
     r"^[^;]+;\d+;(?P<style>[^-]+)-\s*(?P<distance>\d+)м;(?P<gender>[MF])$",
@@ -37,6 +38,7 @@ REGEX_LIST = [
 
     r"(?P<style>.+)\s*-\s*(?P<distance>\d+)\s*м\s*-\s*(?P<gender>[а-я]+)\s*.+",
 
+    r"(?P<distance>\d+)\s+(?P<style>.+)\s*+(?P<gender>девочки|мальчики)",
     r"(?P<distance>\d+)\s*м\s*(?P<style>.+)\s*(?P<gender>[а-я]+)",
     r'(?:9\s)?(?P<distance>\d+)\s*м?\s+(?P<style>.+?)\s+(?P<gender>[а-яё]+)\s+(?P<min_ages>\d{4})(?:-(?P<max_ages>\d{4})|\s*и\s*старше)?\s*г\.р\.?.*',
     r"(?P<style>.+?)-\s*(?P<distance>\d+)\s*м\s*(?P<special_code>\(\d+\w?\))\s*(?P<gender>[а-яА-ЯёЁ]+)\s*(?P<min_age>\d{4})(-(?P<max_age>\d{4})|(\s*и\s*старше))?\s*г\.р\.",

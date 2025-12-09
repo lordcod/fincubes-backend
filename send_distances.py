@@ -1,11 +1,11 @@
 import json
 import aiohttp
 import asyncio
-from __config__ import headers
+from __config__ import headers, BASE_URL
 
 
 async def create_distances(session: aiohttp.ClientSession, competition_id, distance_data, headers):
-    url = f'https://api.fincubes.ru/admin/distance/'
+    url = f'{BASE_URL}/admin/distance/'
     data = {
         'distance': distance_data,
         'competition_id': competition_id

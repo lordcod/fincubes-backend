@@ -5,13 +5,6 @@ from models.swim_types import *
 from parsers.base import IndividualModelBase
 
 
-# Пример строки:
-# 4 4 TIMCHENKO Ekaterina CM1 09 JAN 2008 0.90 17.18 0.56 q
-# 5 5 SAPRYKINA Kseniia CM1 16 JUN 2008 0.98 17.44 0.47
-# 1 4 4 SHTARK Matvey CM1 18 JUL 2008 0.83 20.87 43.39 q
-# 6 4 4 TIMCHENKO Ekaterina CM1 09 JAN 2008 0.90 17.18 0.56 q
-# 9 4 5 DOROGAVTSEVA Sofia CM1 07 JUL 2008 0.87 24.27 50.25 1.90 R1
-# 1 4 4 IVANUSHKINA Polina CM1 05 MAR 2008 0.95 23.94 50.82 1:19.41 1:48.71 q
 pattern_international = re.compile(
     r"""
     ^\s*

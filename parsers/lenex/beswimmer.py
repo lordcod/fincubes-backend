@@ -12,7 +12,7 @@ pattern = re.compile(r"""
     (?P<birth_year>\d{2,4})\s+
     (?P<rank>(?:МСМК|ЗМС|КМС|МС|I{1,3}|1|2|3)(?:\s*(?:\(?юн\)?|юн|ю))?\.?\s+)?
     (?P<team>.+?)
-    (?:\s+(?P<result>(\d{1,2}[:\.,])?\d{1,2}[:.,]\d{2}))?
+    (?:\s*(?P<result>(\d{1,2}[:\.,])?\d{1,2}[:.,]\d{2}))?
     (?:\s+(?P<final_rank>(?:МСМК|ЗМС|КМС|МС|I{1,3}|1|2|3)(?:\s*(?:\(?юн?\)?|юн|ю))?)?)?
     (?:\s+(лично|\d+))?
     \s*$
@@ -31,12 +31,9 @@ class BeswimmerIndividualModel(IndividualModelBase, name='beswimmer'):
     def prerender(self, data: dict) -> dict:
         place = data.get("place") and data.get(
             "place").strip()
-        if place in ('DSQ', 'DNS', 'DNF'):
+        if place in ('DSQ', 'DNS', 'DNF', 'EXH'):
             data['place'] = None
-            data['status'] = 'DSQ'
-        elif place == 'EXH':
-            data['place'] = None
-            data['status'] = 'EXH'
+            data['status'] = place
         else:
             data['place'] = place
             data['status'] = 'COMPLETED'
