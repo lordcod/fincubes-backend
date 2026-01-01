@@ -6,6 +6,7 @@ class State:
         self.in_team_score_block = False
         self.current_relay_info = None
         self.current_athlete = None
+        self.current_category = None
         self.relay_swimmers = []
         self.individual_rows = []
         self.relay_rows = []

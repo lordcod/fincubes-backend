@@ -1,0 +1,770 @@
+[
+    {
+        "first_name": "Милана",
+        "last_name": "Морозова",
+        "birth_year": "2009",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:15.77",
+                "final": null,
+                "final_rank": "I",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "1",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Мария",
+        "last_name": "Лукаш",
+        "birth_year": "2011",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:17.91",
+                "final": null,
+                "final_rank": "I",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "2",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Полина",
+        "last_name": "Козак",
+        "birth_year": "2009",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:22.69",
+                "final": null,
+                "final_rank": "I",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "3",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Алина",
+        "last_name": "Бестолкова",
+        "birth_year": "2010",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:46.70",
+                "final": null,
+                "final_rank": "III",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "4",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Мария",
+        "last_name": "Двойнишникова",
+        "birth_year": "2012",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:10.10",
+                "final": null,
+                "final_rank": "КМС",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "1",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Анастасия",
+        "last_name": "Смирнова",
+        "birth_year": "2012",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:23.44",
+                "final": null,
+                "final_rank": "I",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "2",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Полина",
+        "last_name": "Чесночкова",
+        "birth_year": "2012",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:38.12",
+                "final": null,
+                "final_rank": "II",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "3",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Адельна",
+        "last_name": "Федорова",
+        "birth_year": "2012",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:56.87",
+                "final": null,
+                "final_rank": "III",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "4",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Анастасия",
+        "last_name": "Гущина",
+        "birth_year": "2013",
+        "team": "СШОР №4",
+        "city": "Ярославль",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:42.01",
+                "final": null,
+                "final_rank": "II",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "1",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Алина",
+        "last_name": "Залялдинова",
+        "birth_year": "2013",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:47.02",
+                "final": null,
+                "final_rank": "III",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "2",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Арина",
+        "last_name": "Захарченко",
+        "birth_year": "2013",
+        "team": "СШОР №4",
+        "city": "Ярославль",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "05:01.31",
+                "final": null,
+                "final_rank": "III",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "3",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Анастасия",
+        "last_name": "Судакова",
+        "birth_year": "2013",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "05:05.94",
+                "final": null,
+                "final_rank": "III",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "4",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Карина",
+        "last_name": "Галстян",
+        "birth_year": "2013",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "05:19.63",
+                "final": null,
+                "final_rank": "Iюн",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "5",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Мария",
+        "last_name": "Щетинина",
+        "birth_year": "2013",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "05:23.27",
+                "final": null,
+                "final_rank": "Iюн",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "6",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Варвара",
+        "last_name": "Матасова",
+        "birth_year": "2012",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "F",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "05:30.84",
+                "final": null,
+                "final_rank": "IIюн",
+                "record": "",
+                "status": "EXH",
+                "place": null,
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Захар",
+        "last_name": "Копытов",
+        "birth_year": "2010",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "03:50.70",
+                "final": null,
+                "final_rank": "КМС",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "1",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Иван",
+        "last_name": "Кудричев",
+        "birth_year": "2010",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "03:58.10",
+                "final": null,
+                "final_rank": "I",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "2",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Дмитрий",
+        "last_name": "Леонтьев",
+        "birth_year": "2011",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:03.35",
+                "final": null,
+                "final_rank": "I",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "3",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Арсений",
+        "last_name": "Тихомиров",
+        "birth_year": "2010",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:08.81",
+                "final": null,
+                "final_rank": "II",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "4",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Матвей",
+        "last_name": "Смирнов",
+        "birth_year": "2011",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "05:08.19",
+                "final": null,
+                "final_rank": "IIюн",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "5",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Денис",
+        "last_name": "Леонтьев",
+        "birth_year": "2012",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:28.81",
+                "final": null,
+                "final_rank": "III",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "1",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Леонид",
+        "last_name": "Михайлов",
+        "birth_year": "2012",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:32.51",
+                "final": null,
+                "final_rank": "III",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "2",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Кирилл",
+        "last_name": "Федоренко",
+        "birth_year": "2012",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "05:02.36",
+                "final": null,
+                "final_rank": "Iюн",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "3",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Александр",
+        "last_name": "Коетцер",
+        "birth_year": "2013",
+        "team": "СШОР №4",
+        "city": "Ярославль",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:48.46",
+                "final": null,
+                "final_rank": "Iюн",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "1",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Даян",
+        "last_name": "Иманов",
+        "birth_year": "2013",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "05:06.90",
+                "final": null,
+                "final_rank": "Iюн",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "2",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Георгий",
+        "last_name": "Королев",
+        "birth_year": "2013",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "05:16.04",
+                "final": null,
+                "final_rank": "IIюн",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "3",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Григорий",
+        "last_name": "Голубинский",
+        "birth_year": "2015",
+        "team": "СШОР №4",
+        "city": "Ярославль",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "05:30.25",
+                "final": null,
+                "final_rank": "IIюн",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "1",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Артем",
+        "last_name": "Ярчук",
+        "birth_year": "2015",
+        "team": "СШОР №4",
+        "city": "Ярославль",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "05:52.46",
+                "final": null,
+                "final_rank": "IIIюн",
+                "record": "",
+                "status": "COMPLETED",
+                "place": "2",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Лев",
+        "last_name": "Куратов",
+        "birth_year": "2016",
+        "team": "СШОР №4",
+        "city": "Ярославль",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "06:01.09",
+                "final": null,
+                "final_rank": null,
+                "record": "",
+                "status": "COMPLETED",
+                "place": "3",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Платон",
+        "last_name": "Сушков",
+        "birth_year": "2015",
+        "team": "СШОР №4",
+        "city": "Ярославль",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "06:23.72",
+                "final": null,
+                "final_rank": null,
+                "record": "",
+                "status": "COMPLETED",
+                "place": "4",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Михаил",
+        "last_name": "Малыгин",
+        "birth_year": "2015",
+        "team": "СШОР №4",
+        "city": "Ярославль",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "06:43.08",
+                "final": null,
+                "final_rank": null,
+                "record": "",
+                "status": "COMPLETED",
+                "place": "5",
+                "points": "",
+                "metadata": null
+            }
+        ]
+    },
+    {
+        "first_name": "Сергей",
+        "last_name": "Теселкин",
+        "birth_year": "2009",
+        "team": "МУДО СШ№1",
+        "city": "Тутаев",
+        "rank": null,
+        "gender": "M",
+        "athlete_id": null,
+        "results": [
+            {
+                "stroke": "BIFINS",
+                "distance": 400,
+                "result": "04:26.79",
+                "final": null,
+                "final_rank": "III",
+                "record": "",
+                "status": "EXH",
+                "place": null,
+                "points": "",
+                "metadata": null
+            }
+        ]
+    }
+]

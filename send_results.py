@@ -120,6 +120,9 @@ class AthleteProcessor:
                     f"❌ Failed to create athlete: {data['last_name']} {data['first_name']}")
                 return None
         else:
+            if athlete['city'] != data['city']:
+                print('Error invalid city',
+                      athlete['city'], ' != ', data['city'], ':', data['last_name'], data['first_name'])
             updates = self.check_updates(athlete, data)
             if updates:
                 self.requests.append({

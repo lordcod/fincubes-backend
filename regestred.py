@@ -13,6 +13,7 @@ from _reserved_team import locations
 STROKES = {
     'ныряние': 'APNEA',
     'ныряние в ластах в длину': 'APNEA',
+    'ныряние в длину': 'APNEA',
     'плавание в ластах': 'SURFACE',
     'плавание в классических ластах': 'BIFINS',
     'классические ласты': 'BIFINS',
@@ -37,14 +38,22 @@ STROKES = {
 }
 
 SEXES = {
-    'женщины': 'F', 'девочки': 'F', 'девушки': 'F', 'юниорки': 'F', 'женщин': 'F', 'f': 'F', 'жещины': 'F', 'women':  'F', 'w':  'F',
+    'женщины': 'F', 'девочки': 'F', 'девушки': 'F', 'юниорки': 'F', 'женщин': 'F', 'f': 'F', 'жещины': 'F', 'women':  'F', 'w':  'F', 'юниорк': 'F',
     'мужчины': 'M', 'мальчики': 'M', 'юноши': 'M', 'юниоры': 'M', 'мужчин': 'M', 'm': 'M', 'men':  'M', 'мужчинны':  'M',
 }
+
+ranks = ["III", "МС", "I", "МСМК", "Iюн",
+         "II", "IIIюн", "IIюн", "ЗМС", "КМС"]
+
 
 INVALID_DISTANCES = {}
 PLACES = {}
 
 # ================== HELPERS ==================
+
+
+def squeeze_spaces(text: str) -> str:
+    return re.sub(r'\s{2,}', ' ', text)
 
 
 def normalize_rank(text: Optional[str]) -> Optional[str]:
@@ -53,7 +62,8 @@ def normalize_rank(text: Optional[str]) -> Optional[str]:
         return None
 
     text = text.lower().replace('i', 'I')
-    text = re.sub(r"(взрослый|разряд|взр|вз|спортивный|юношеский)", "", text)
+    text = re.sub(
+        r"(взрослый|разряд|взр|вз|спортивный|юношеский|б/?\\?р|р)", "", text)
     text = text.replace('(', '').replace(')', '').replace("|", "I")
     text = re.sub(r"[.\s\-]", "", text)
     text = re.sub(r"ю", "юн", text)
@@ -61,8 +71,10 @@ def normalize_rank(text: Optional[str]) -> Optional[str]:
     text = text.replace('1', 'I').replace('2', 'II').replace('3', 'III')
     text = text.upper().replace('ЮН', 'юн')
 
-    ranks = ["III", "МС", "I", "МСМК", "Iюн",
-             "II", "IIIюн", "IIюн", "ЗМС", "КМС"]
+    if not text:
+        return None
+    if text not in ranks:
+        print('Not found rank in:', text)
     return text if text in ranks else None
 
 
@@ -148,7 +160,7 @@ class RegisterParser:
         self.athletes: dict = {}
 
         self.distance_regex = re.compile(
-            '(?P<style>.+)\\s*-\\s*(?P<distance>\\d+)\\s*м(\\s*\\(.+\\))?,\\s*(?P<gender>[а-я]+)\\s*.+',
+            'Дистанция\\s+\\d+,?\\s*(?P<gender>[А-Яа-яё]+),?\\s*(?P<distance>\\d+)\\s*м?\\s*(?P<style>[А-Яа-яё\\s]+?)(?:,?\\s*(?:год\\s+рождения\\s+)?(?P<ages>\\d{4}\\s*-\\s*\\d{4}|\\d{4}\\s*и\\s*моложе|\\d{4})?(Открытые)?)?$',
             re.IGNORECASE
         )
 
@@ -156,8 +168,8 @@ class RegisterParser:
         match = self.distance_regex.fullmatch(distance)
         if match:
             data = match.groupdict()
-            style, dist, gender = data['style'], int(
-                data['distance']), data['gender']
+            style, dist, gender = squeeze_spaces(data['style']), int(
+                data['distance']), squeeze_spaces(data['gender'])
             min_age = max_age = None
         else:
             style, dist, gender = handle_invalid_distance(distance)

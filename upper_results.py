@@ -14,7 +14,7 @@ current_dir = Path('./parsers')
 
 
 def parse_results_input():
-    text = input("Enter distance description: ").strip()
+    text = input("Enter results description: ").strip()
     matchers = load_dir(current_dir)
 
     results = []

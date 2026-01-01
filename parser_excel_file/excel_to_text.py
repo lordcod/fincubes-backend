@@ -77,7 +77,7 @@ class ExcelToTextConverter:
 
 if __name__ == '__main__':
     input_path = Path(
-        r"C:\Users\2008d\Downloads\2025-11-22__results_kraevye_sorevnovaniya_po_podvodnomu_sportu (1).xlsx")
+        r"C:\Users\2008d\Downloads\Telegram Desktop\ИТОГОВЫЙ_Новогодние_старты_2025_—_копия.xlsx")
     output_path = "output/0_cleaned_results.txt"
     config = {
         'convert_fields': {

@@ -25,8 +25,10 @@ def parse_time(time_str):
 
 
 count = 0
+cities = set()
 for athl in athletes:
     results = athl['results']
+    cities.add(athl['city'])
     reserved = set()
     for res in results:
         key = (res['stroke'], res['distance'], athl['gender'])
@@ -36,8 +38,8 @@ for athl in athletes:
             count += 1
         else:
             reserved.add(key)
-        if parse_time(res['result']) and (parse_time(res['result']) < 10 or parse_time(res['result']) > 300):
-            print('Result error', res)
+
+print(f"Всего уникальных городов: {len(cities)}")
 
 if count == 0:
     print("Дубликатов не найдено")

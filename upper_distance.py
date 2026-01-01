@@ -37,6 +37,7 @@ REGEX_LIST = [
     r"(?P<style>.+)\s*-\s*(?P<distance>\d+)\s*м\s*\(.+\),\s*(?P<gender>[а-я]+)\s*.+",
 
     r"(?P<style>.+)\s*-\s*(?P<distance>\d+)\s*м\s*-\s*(?P<gender>[а-я]+)\s*.+",
+    r"^Дистанция\s+\d+,?\s*(?P<gender>[А-Яа-яЁё]+),?\s*(?P<distance>\d+)m\s+(?P<style>[А-Яа-яёЁ\s]+)(\s.*)?$",
 
     r"(?P<distance>\d+)\s+(?P<style>.+)\s*+(?P<gender>девочки|мальчики)",
     r"(?P<distance>\d+)\s*м\s*(?P<style>.+)\s*(?P<gender>[а-я]+)",

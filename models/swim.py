@@ -1,5 +1,6 @@
 # models/swim.py
 
+from math import dist
 import re
 import json
 import logging
@@ -66,12 +67,18 @@ class SwimResultsParser:
                         f"[RECORD_GIVEN] {self.state.current_athlete}")
                 continue
 
-            # accept = re.fullmatch(
-            #     r'(Мужчины|Женщины|\s*[а-я]+\s*\d{4}.*г\.р\..*)', line, re.IGNORECASE)
-            # if accept and not self.state.in_relay_block:
-            #     self.state.current_distance = self.state.distances[-1] + ' ' + line
-            #     # self.state.distances.append(self.state.current_distance)
-            #     continue
+            accept = re.fullmatch(
+                r'(Мужчины|Женщины|Юниорки|Юниоры|Девушки|Юноши|девочки|мальчики)\s*\d{2}.+', line, re.IGNORECASE)
+            if accept and not self.state.in_relay_block:
+                distance = self.state.distances[-1]
+                if self.state.current_category:
+                    distance = distance.replace(
+                        self.state.current_category, '').replace(',', '').strip()
+
+                self.state.current_category = line
+                self.state.current_distance = distance + ', ' + line
+                self.state.distances.append(self.state.current_distance)
+                continue
 
             if self.relay_parser.get_relay_start(line):
                 self.state.in_relay_block = True

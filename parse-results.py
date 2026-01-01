@@ -18,10 +18,10 @@ def main():
     input_file = Path("output/0_cleaned_results.txt")
     output_file = Path("output/1_output_results.json")
 
-    type = 'points'
+    type = 'beswimmer'
     parser = SwimResultsParser(
         get_parser(type),
-        distance_header_re='(?P<style>.+)\\s*-\\s*(?P<distance>\\d+)\\s*м(\\s*\\(.+\\))?,\\s*(?P<gender>[а-я]+)\\s*.+',
+        distance_header_re='Дистанция\\s+\\d+,?\\s*(?P<gender>[А-Яа-яё]+),?\\s*(?P<distance>\\d+)\\s*м?\\s*(?P<style>[А-Яа-яё\\s]+?)(?:,?\\s*(?:год\\s+рождения\\s+)?(?P<ages>\\d{4}\\s*-\\s*\\d{4}|\\d{4}\\s*и\\s*моложе|\\d{4})?(Открытые)?)?$',
         input_file=input_file,
         output_file=output_file,
     )

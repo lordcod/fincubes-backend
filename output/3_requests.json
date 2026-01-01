@@ -1,0 +1,266 @@
+[
+  {
+    "id": 4024,
+    "data": {
+      "created_at": "2025-05-16T20:02:12.093440Z",
+      "updated_at": "2025-10-27T08:51:46.423281Z",
+      "id": 4024,
+      "last_name": "Гущина",
+      "first_name": "Анастасия",
+      "birth_year": "2013",
+      "club": "МУ ДО СШОР № 4",
+      "city": "Ярославская область",
+      "license": "II",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    },
+    "athlete": "Гущина Анастасия",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": ""
+      }
+    }
+  },
+  {
+    "id": 4030,
+    "data": {
+      "created_at": "2025-05-16T20:02:14.634328Z",
+      "updated_at": "2025-10-27T08:51:46.562794Z",
+      "id": 4030,
+      "last_name": "Захарченко",
+      "first_name": "Арина",
+      "birth_year": "2013",
+      "club": "МУ ДО СШОР № 4",
+      "city": "Ярославская область",
+      "license": "III",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    },
+    "athlete": "Захарченко Арина",
+    "changes": {
+      "license": {
+        "old": "III",
+        "new": ""
+      }
+    }
+  },
+  {
+    "id": 1210,
+    "data": {
+      "created_at": "2025-05-12T18:59:36.057578Z",
+      "updated_at": "2025-05-12T18:59:36.057578Z",
+      "id": 1210,
+      "last_name": "Лукаш",
+      "first_name": "Мария",
+      "birth_year": "2011",
+      "club": null,
+      "city": "Ярославская область",
+      "license": "КМС",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    },
+    "athlete": "Лукаш Мария",
+    "changes": {
+      "license": {
+        "old": "КМС",
+        "new": ""
+      }
+    }
+  },
+  {
+    "id": 3936,
+    "data": {
+      "created_at": "2025-05-15T21:56:22.899475Z",
+      "updated_at": "2025-10-27T09:25:07.876770Z",
+      "id": 3936,
+      "last_name": "Голубинский",
+      "first_name": "Григорий",
+      "birth_year": "2015",
+      "club": "МУ ДО СШОР № 4",
+      "city": "Ярославская область",
+      "license": "IIюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    },
+    "athlete": "Голубинский Григорий",
+    "changes": {
+      "license": {
+        "old": "IIюн",
+        "new": ""
+      }
+    }
+  },
+  {
+    "id": 1285,
+    "data": {
+      "created_at": "2025-05-12T18:59:38.322207Z",
+      "updated_at": "2025-05-12T18:59:38.322207Z",
+      "id": 1285,
+      "last_name": "Копытов",
+      "first_name": "Захар",
+      "birth_year": "2010",
+      "club": null,
+      "city": "Ярославская область",
+      "license": "I",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    },
+    "athlete": "Копытов Захар",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": ""
+      }
+    }
+  },
+  {
+    "id": 3957,
+    "data": {
+      "created_at": "2025-05-16T20:02:02.007559Z",
+      "updated_at": "2025-12-21T20:36:35.625364Z",
+      "id": 3957,
+      "last_name": "Двойнишникова",
+      "first_name": "Мария",
+      "birth_year": "2012",
+      "club": "МУДО СШ№1",
+      "city": "Тутаев",
+      "license": "КМС",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    },
+    "athlete": "Двойнишникова Мария",
+    "changes": {
+      "license": {
+        "old": "КМС",
+        "new": ""
+      }
+    }
+  },
+  {
+    "id": 6016,
+    "data": {
+      "created_at": "2025-06-05T09:12:07.345972Z",
+      "updated_at": "2025-06-05T09:12:07.345981Z",
+      "id": 6016,
+      "last_name": "Кудричев",
+      "first_name": "Иван",
+      "birth_year": "2010",
+      "club": null,
+      "city": "Ярославская область",
+      "license": "I",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    },
+    "athlete": "Кудричев Иван",
+    "changes": {
+      "license": {
+        "old": "I",
+        "new": ""
+      }
+    }
+  },
+  {
+    "id": 6009,
+    "data": {
+      "created_at": "2025-06-05T09:12:07.272680Z",
+      "updated_at": "2025-06-05T09:12:07.272688Z",
+      "id": 6009,
+      "last_name": "Тихомиров",
+      "first_name": "Арсений",
+      "birth_year": "2010",
+      "club": null,
+      "city": "Ярославская область",
+      "license": "II",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    },
+    "athlete": "Тихомиров Арсений",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": ""
+      }
+    }
+  },
+  {
+    "id": 6043,
+    "data": {
+      "created_at": "2025-06-05T09:17:02.141779Z",
+      "updated_at": "2025-10-27T09:25:08.474982Z",
+      "id": 6043,
+      "last_name": "Сушков",
+      "first_name": "Платон",
+      "birth_year": "2015",
+      "club": "СШОР №4 (отделение ДО), МУ ДО СШОР № 4",
+      "city": "Ярославская область",
+      "license": "IIIюн",
+      "gender": "M",
+      "avatar_url": null,
+      "is_top": false
+    },
+    "athlete": "Сушков Платон",
+    "changes": {
+      "license": {
+        "old": "IIIюн",
+        "new": ""
+      }
+    }
+  },
+  {
+    "id": 6034,
+    "data": {
+      "created_at": "2025-06-05T09:12:08.197409Z",
+      "updated_at": "2025-06-05T09:12:08.197417Z",
+      "id": 6034,
+      "last_name": "Смирнова",
+      "first_name": "Анастасия",
+      "birth_year": "2012",
+      "club": null,
+      "city": "Ярославская область",
+      "license": "II",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    },
+    "athlete": "Смирнова Анастасия",
+    "changes": {
+      "license": {
+        "old": "II",
+        "new": ""
+      }
+    }
+  },
+  {
+    "id": 1218,
+    "data": {
+      "created_at": "2025-05-12T18:59:36.312823Z",
+      "updated_at": "2025-05-12T18:59:36.312823Z",
+      "id": 1218,
+      "last_name": "Морозова",
+      "first_name": "Милана",
+      "birth_year": "2009",
+      "club": null,
+      "city": "Ярославская область",
+      "license": "КМС",
+      "gender": "F",
+      "avatar_url": null,
+      "is_top": false
+    },
+    "athlete": "Морозова Милана",
+    "changes": {
+      "license": {
+        "old": "КМС",
+        "new": ""
+      }
+    }
+  }
+]

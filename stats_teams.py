@@ -1,7 +1,7 @@
+import datetime
 import json
 import aiohttp
 import asyncio
-from transliterate import translit
 from __config__ import headers
 
 BASE_URL = "https://api.fincubes.ru/public/client"
@@ -35,6 +35,8 @@ async def main():
 
     clubs_cache = {}
     athlete_cache = {}
+    current_year = datetime.datetime.now().year
+
     async with aiohttp.ClientSession() as session:
         lenght = len(output["individual_results"])
         for result in output["individual_results"]:
@@ -47,6 +49,13 @@ async def main():
             else:
                 athlete_cache[key] = True
 
+            if birth_year and len(str(birth_year)) == 2:
+                birth_year = int(birth_year)
+                if birth_year <= current_year % 100:
+                    birth_year += 2000
+                else:
+                    birth_year += 1900
+            birth_year = birth_year if birth_year else ""
             print(
                 f"Processing {len(athlete_cache)}/{lenght}: {first_name_orig} {last_name_orig} ({birth_year})")
             athlete = await get_athlete(session, last_name_orig, first_name_orig, birth_year)

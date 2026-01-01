@@ -8,7 +8,7 @@ sys.path.append(os.getcwd())
 if True:
     from parser_license.time_convert import time_to_seconds
 
-SYSTEM = 'MANUAL'  # MANUAL / AUTO
+SYSTEM = 'AUTO'  # MANUAL / AUTO
 MODE = 'CHECK'  # CHECK / AUTO
 
 SKIPPED = []

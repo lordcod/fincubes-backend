@@ -5,10 +5,11 @@ import json
 with open("output/1_output_results.json", 'rb') as file:
     output = json.load(file)
 
-data = {
+data_last_names = {
     "СЕНИЧКИНА": "Александра",
     "ГОЛОВКИНА": "Александра",
 }
+data_first_names = {}
 
 stats = set()
 not_found_teams = set()
@@ -21,24 +22,27 @@ for result in output['individual_results']:
     stats.add(team)
     if team not in locations:
         not_found_teams.add(team)
-    if '.' not in result['first_name'] or '.' not in result['last_name']:
-        data[result['last_name']] = result['first_name']
+    if '.' not in result['first_name'] and '.' not in result['last_name']:
+        data_first_names[result['first_name']] = result['last_name']
+        data_last_names[result['last_name']] = result['first_name']
 
 replacement_count = 0
 for result in output['individual_results']:
     if '.' in result['first_name']:
-        value = data.get(result['last_name'])
+        value = data_last_names.get(result['last_name'])
         if value is not None:
             result['first_name'] = value
             replacement_count += 1
+            print(f"Replaced first name: {result['last_name']} -> {value}")
         else:
             not_found_names.append(
                 f"{result['last_name']} {result['first_name']}")
     if '.' in result['last_name']:
-        value = data.get(result['first_name'])
+        value = data_first_names.get(result['first_name'])
         if value is not None:
             result['last_name'] = value
             replacement_count += 1
+            print(f"Replaced last name: {result['first_name']} -> {value}")
         else:
             not_found_names.append(
                 f"{result['last_name']} {result['first_name']}")
